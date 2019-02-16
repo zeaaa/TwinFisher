@@ -1,0 +1,230 @@
+fileFormatVersion: 2
+guid: df553abad21828e42819f1485c80d894
+timeCreated: 1537363677
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: "Cinema4D_\u7F16\u8F91\u5668"
+    100002: "Cinema4D_\u7F16\u8F91\u5668_2"
+    100004: "Cinema4D_\u7F16\u8F91\u5668_2_2"
+    100006: mixamorig_Head
+    100008: mixamorig_HeadTop_End
+    100010: mixamorig_Hips
+    100012: mixamorig_LeftArm
+    100014: mixamorig_LeftFoot
+    100016: mixamorig_LeftForeArm
+    100018: mixamorig_LeftHand
+    100020: mixamorig_LeftHandIndex1
+    100022: mixamorig_LeftHandIndex2
+    100024: mixamorig_LeftHandIndex3
+    100026: mixamorig_LeftHandIndex4
+    100028: mixamorig_LeftLeg
+    100030: mixamorig_LeftShoulder
+    100032: mixamorig_LeftToe_End
+    100034: mixamorig_LeftToeBase
+    100036: mixamorig_LeftUpLeg
+    100038: mixamorig_Neck
+    100040: mixamorig_RightArm
+    100042: mixamorig_RightFoot
+    100044: mixamorig_RightForeArm
+    100046: mixamorig_RightHand
+    100048: mixamorig_RightHandIndex1
+    100050: mixamorig_RightHandIndex2
+    100052: mixamorig_RightHandIndex3
+    100054: mixamorig_RightHandIndex4
+    100056: mixamorig_RightLeg
+    100058: mixamorig_RightShoulder
+    100060: mixamorig_RightToe_End
+    100062: mixamorig_RightToeBase
+    100064: mixamorig_RightUpLeg
+    100066: mixamorig_Spine
+    100068: mixamorig_Spine1
+    100070: mixamorig_Spine2
+    100072: model_4
+    100074: //RootNode
+    400000: "Cinema4D_\u7F16\u8F91\u5668"
+    400002: "Cinema4D_\u7F16\u8F91\u5668_2"
+    400004: "Cinema4D_\u7F16\u8F91\u5668_2_2"
+    400006: mixamorig_Head
+    400008: mixamorig_HeadTop_End
+    400010: mixamorig_Hips
+    400012: mixamorig_LeftArm
+    400014: mixamorig_LeftFoot
+    400016: mixamorig_LeftForeArm
+    400018: mixamorig_LeftHand
+    400020: mixamorig_LeftHandIndex1
+    400022: mixamorig_LeftHandIndex2
+    400024: mixamorig_LeftHandIndex3
+    400026: mixamorig_LeftHandIndex4
+    400028: mixamorig_LeftLeg
+    400030: mixamorig_LeftShoulder
+    400032: mixamorig_LeftToe_End
+    400034: mixamorig_LeftToeBase
+    400036: mixamorig_LeftUpLeg
+    400038: mixamorig_Neck
+    400040: mixamorig_RightArm
+    400042: mixamorig_RightFoot
+    400044: mixamorig_RightForeArm
+    400046: mixamorig_RightHand
+    400048: mixamorig_RightHandIndex1
+    400050: mixamorig_RightHandIndex2
+    400052: mixamorig_RightHandIndex3
+    400054: mixamorig_RightHandIndex4
+    400056: mixamorig_RightLeg
+    400058: mixamorig_RightShoulder
+    400060: mixamorig_RightToe_End
+    400062: mixamorig_RightToeBase
+    400064: mixamorig_RightUpLeg
+    400066: mixamorig_Spine
+    400068: mixamorig_Spine1
+    400070: mixamorig_Spine2
+    400072: model_4
+    400074: //RootNode
+    2000000: "Cinema4D_\u7F16\u8F91\u5668"
+    2000002: "Cinema4D_\u7F16\u8F91\u5668_2"
+    2000004: "Cinema4D_\u7F16\u8F91\u5668_2_2"
+    4300000: model_4
+    7400000: CINEMA_4D___
+    7400002: mixamo.com
+    9500000: //RootNode
+    13700000: model_4
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "\u6750\u8D28"
+    second: {fileID: 2100000, guid: f41c7053ca8f3a64f9380252bfb7023d, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: CINEMA_4D___
+      takeName: CINEMA_4D___
+      firstFrame: 0
+      lastFrame: 19
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: mixamo.com
+      takeName: mixamo.com
+      firstFrame: 0
+      lastFrame: 19
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
