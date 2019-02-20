@@ -76,7 +76,7 @@ public class NodePosition : MonoBehaviour {
             line[i].transform.localScale = new Vector3(linewide, Vector3.Magnitude(linkNodeTran[i].position - transform.position) , linewide);
         }
 
-
+        GetComponent<BoxCollider>().size = new Vector3(PlayerMovement.dis* 6 /14.0f, 3, 3);
         /*
 		//原方案，无用
 		//求两点距离时，用平方会比开方好
@@ -125,5 +125,11 @@ public class NodePosition : MonoBehaviour {
 
 		}
 	}
+
+    private void OnTriggerEnter(Collider collision)
+    {
+        if (collision.CompareTag("Fish"))
+            rig.AddForce(-transform.forward *3000); 
+    }
 
 }

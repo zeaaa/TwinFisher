@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using DG.Tweening;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -14,14 +14,20 @@ public class PlayerMovement : MonoBehaviour
 	public GameObject Web;
 
     public bool skillInput;
-
+    public static float dis;
 
     public delegate void SkillInput();
     public static event SkillInput SkillInputHandler;
 
+    public GameObject lnode;
+    public GameObject rnode;
 
+    Transform playerL;
+    Transform playerR;
     void FixedUpdate ()
 	{
+        FixPlayerModelPosition();
+
         if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.UpArrow)) {
             skillInput = true;
             SkillInputHandler();
@@ -48,14 +54,25 @@ public class PlayerMovement : MonoBehaviour
 
        // Web.transform.rotation = Quaternion.Euler(60.0f, 0.0f, 0.0f);
         Web.transform.position =  new Vector3((Player_R.position.x + Player_L.position.x) / 2,Web.transform.position.y,Web.transform.position.z);
-		Web.transform.localScale = new Vector3((Player_R.position - Player_L.position).x-1.5f,7f,1.5f);
+		Web.transform.localScale = new Vector3((Player_R.position - Player_L.position).x-1.5f,9f,1.5f);
+        dis = Player_R.position.x - Player_L.position.x;
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
 
+           
+        }
 
-
-	}
+    }
 
 	void Start ()
 	{
-		//Application.targetFrameRate = 30;
-	}
+        //Application.targetFrameRate = 30;
+        playerL = transform.Find("PlayerL");
+        playerR = transform.Find("PlayerR");
+    }
+
+    void FixPlayerModelPosition() {
+        playerL.transform.position = new Vector3(Player_L.transform.position.x - 1.0f, playerL.transform.position.y, playerL.transform.position.z);
+        playerR.transform.position = new Vector3(Player_R.transform.position.x + 1.0f, playerR.transform.position.y, playerR.transform.position.z);
+    }
 }

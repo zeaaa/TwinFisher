@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using DG.Tweening;
 public class GameManager : MonoBehaviour {
 
     //public static GameManager instance;
@@ -22,7 +23,7 @@ public class GameManager : MonoBehaviour {
     int maxSkillTimes = 3;
 
     bool _inSkill;
-    float _skillDuration= 3.0f;
+    float _skillDuration= 1.2f;
     int _skillTimes = 3;
 
     [SerializeField]
@@ -31,6 +32,11 @@ public class GameManager : MonoBehaviour {
     Color WebFullColor;
     [SerializeField]
     Color WebSkillColor;
+
+    [SerializeField]
+    public DOTweenPath lp;
+    [SerializeField]
+    public DOTweenPath rp;
 
     private GameObject Web;
     private GameObject Player;
@@ -42,24 +48,35 @@ public class GameManager : MonoBehaviour {
 
     public delegate void MGameOver();
     public static event MGameOver MGameOverHandler;
+
+
+    private Material webNodeMat;
+    private Material webRopeMat;
     void Initialize()
-    { 
+    {
+
+        
         _score = 0;
         _inSkill = false;
         _curCapacity = 0;
         Speed = _playerSpeed;
         Web = GameObject.FindGameObjectWithTag("Web");
-        Player = GameObject.FindGameObjectWithTag("PlayerBase");
+
 
         TFObject.AddScoreHandler += AddScore;
         TFObject.GameOverHandler += GameOver;
         Wharf.DockHandler += Dock;
         PlayerMovement.SkillInputHandler += Skill;
+        webNodeMat = Resources.Load<Material>("Materials/WebNode");
+        webRopeMat = Resources.Load<Material>("Materials/WebRope");
 
-        //TODO: 
+        ChangeWebMatColor(WebColor);
+
+        //TODO:  I've forgot what to do 
         DisableCollision("Fish", "Rock", true);
         DisableCollision("WebNode", "Web", true);
         DisableCollision("WebNode", "WebNode", true);
+        DisableCollision("Player", "WebNode", true);
     }
 
     bool webFull = false;
@@ -93,7 +110,7 @@ public class GameManager : MonoBehaviour {
         if (_curCapacity > _maxCapacity) {
             webFull = true;
             DisableCollision("Fish", "Web", true);
-            Web.GetComponent<MeshRenderer>().material.color = WebFullColor;
+            ChangeWebMatColor(WebFullColor);
         }
             
         if (value < 0)
@@ -112,7 +129,7 @@ public class GameManager : MonoBehaviour {
         _skillTimes = maxSkillTimes;
         webFull = false;
         DisableCollision("Fish", "Web", false);
-        Web.GetComponent<MeshRenderer>().material.color = WebColor;
+        ChangeWebMatColor(WebColor);
         UpdateUIHandler(_score, _skillTimes,0);
     }
 
@@ -134,23 +151,37 @@ public class GameManager : MonoBehaviour {
         //wait for next fixedUpdate
         yield return new WaitForFixedUpdate();
         _inSkill = true;
+        WebAnim();
         DisableCollision("Fish", "Web", true);
         //DisableCollision("Fish", "Player", true);
         DisableCollision("Rock", "Web", true);    
         DisableCollision("Rock", "Player", true);
-        Web.GetComponent<MeshRenderer>().material.color = WebSkillColor;
+        ChangeWebMatColor(WebSkillColor);
         //after _skillDuration realTime;
         yield return new WaitForSeconds(_skillDuration);
         _inSkill = false;
         if (webFull) {
-            Web.GetComponent<MeshRenderer>().material.color = WebFullColor;
+            ChangeWebMatColor(WebFullColor);
         }       
         else {
-            Web.GetComponent<MeshRenderer>().material.color = WebColor;          
+            ChangeWebMatColor(WebColor);
             DisableCollision("Fish", "Web", false);
             //DisableCollision("Fish", "Player", false);
         }
         DisableCollision("Rock", "Web", false);   
         DisableCollision("Rock", "Player", false);
+    }
+
+    void ChangeWebMatColor(Color c) {    
+        webNodeMat.color = c;
+        webRopeMat.color = c;
+    }
+
+    void WebAnim() {   
+        //DORestart:  recalculate the relative path 
+        lp.DORestart(true);
+        rp.DORestart(true);
+        lp.DOPlay();
+        rp.DOPlay();
     }
 }

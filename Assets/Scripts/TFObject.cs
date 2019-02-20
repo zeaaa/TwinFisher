@@ -18,6 +18,7 @@ public class TFObject : MonoBehaviour
     public delegate void GameOver();
     public static event GameOver GameOverHandler;
 
+
     //set fish type
     public void SetTFObject(float length, float weight, int score, float speed) {
         objectTpye = TFObjectType.fish;
