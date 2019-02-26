@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using UnityEngine;
-using System.Collections;
 
 public class BGScroller : MonoBehaviour
 {
@@ -19,7 +18,7 @@ public class BGScroller : MonoBehaviour
 	{
 
 		transform.position += Vector3.forward * scrollSpeed;
-		if (transform.position.z < Camera.main.transform.position.z-length)
+		if (transform.position.z < 0 -length)
 			transform.position += Vector3.forward * time*length;
 
 	}

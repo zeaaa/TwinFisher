@@ -63,6 +63,7 @@ public class GameManager : MonoBehaviour {
         Web = GameObject.FindGameObjectWithTag("Web");
 
 
+
         TFObject.AddScoreHandler += AddScore;
         TFObject.GameOverHandler += GameOver;
         Wharf.DockHandler += Dock;
@@ -73,6 +74,19 @@ public class GameManager : MonoBehaviour {
         ChangeWebMatColor(WebColor);
 
         //TODO:  I've forgot what to do 
+
+        ResetCollisionMatrix();
+     
+    }
+
+
+    private void ResetCollisionMatrix()
+    {
+        //enable
+        DisableCollision("Fish", "Web", false);
+        DisableCollision("Rock", "Player", false);
+        DisableCollision("Rock", "Web", false);
+        //disable
         DisableCollision("Fish", "Rock", true);
         DisableCollision("WebNode", "Web", true);
         DisableCollision("WebNode", "WebNode", true);
