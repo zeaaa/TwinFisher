@@ -53,9 +53,14 @@ public class NodePosition : MonoBehaviour {
 		Judge();
 		WebJump ();
 		Deceleration();
+        AddForce();
 
 	}
 
+
+    void AddForce() {
+        rig.AddForce(Vector3.back*forge*0.02f*PlayerMovement.dis);
+    }
 	void Judge()
 
 	{
@@ -76,7 +81,7 @@ public class NodePosition : MonoBehaviour {
             line[i].transform.localScale = new Vector3(linewide, Vector3.Magnitude(linkNodeTran[i].position - transform.position) , linewide);
         }
 
-        GetComponent<BoxCollider>().size = new Vector3(PlayerMovement.dis* 6 /14.0f, 3, 3);
+        GetComponent<BoxCollider>().size = new Vector3(PlayerMovement.dis* 6 /14.0f, GetComponent<BoxCollider>().size.y, GetComponent<BoxCollider>().size.z);
         /*
 		//原方案，无用
 		//求两点距离时，用平方会比开方好
@@ -97,7 +102,6 @@ public class NodePosition : MonoBehaviour {
     }
 
     void Deceleration() //减速
-
 	{
 
 		if (rig.velocity.sqrMagnitude>50)
@@ -113,7 +117,6 @@ public class NodePosition : MonoBehaviour {
            // Debug.Log(rig.velocity.sqrMagnitude);
 			rig.velocity =Vector3.zero;
 
-
 		}
 
 	}
@@ -122,14 +125,17 @@ public class NodePosition : MonoBehaviour {
 		if (Input.GetKeyDown(KeyCode.Space))
 		{
 			rig.AddForce( transform.up * forge*5);
-
 		}
 	}
 
-    private void OnTriggerEnter(Collider collision)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (collision.CompareTag("Fish"))
-            rig.AddForce(-transform.forward *3000); 
+        if (collision.gameObject.CompareTag("Fish")) {
+           // rig.AddForce(-transform.forward * forge * 10f);
+        }
+            
+        if (collision.gameObject.CompareTag("Rock"))
+            rig.AddForce(-transform.forward * forge * 10f);
     }
 
 }

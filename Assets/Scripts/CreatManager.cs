@@ -75,7 +75,7 @@ public class CreatManager : MonoBehaviour {
             float weight = tempData.minWeight + WRange * TFMath.GaussRand();
             obj.GetComponent<TFObject>().SetTFObject(length, weight, tempData.score,tempData.speed);
             Vector3 spawnPosition = new Vector3 (Random.Range (-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
-			Instantiate (obj, spawnPosition, Quaternion.Euler(0,180,0));
+			Instantiate (obj, spawnPosition, Quaternion.Euler(-35,180,0));
             Debug.Log("生成了一条" + length.ToString("f2") + "cm," + weight.ToString("f2") + "kg的" + tempData.name);        
         }
 	}
@@ -97,7 +97,7 @@ public class CreatManager : MonoBehaviour {
         {
             float t = Random.Range(12f, 16f);
             yield return new WaitForSeconds(t);
-            int id = Random.Range(0, 3);
+            int id = Random.Range(0, 1);
             GameObject obj = (GameObject)Resources.Load("Prefabs/Rock/rock" + (id + 1).ToString());
             obj.GetComponent<TFObject>().SetTFObject();
             Vector3 spawnPosition = new Vector3(Random.Range(-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);

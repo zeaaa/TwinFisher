@@ -60,6 +60,7 @@ public class GameManager : MonoBehaviour {
         _inSkill = false;
         _curCapacity = 0;
         Speed = _playerSpeed;
+        _skillTimes = maxSkillTimes;
         Web = GameObject.FindGameObjectWithTag("Web");
 
 
@@ -138,6 +139,7 @@ public class GameManager : MonoBehaviour {
         Debug.Log("GAMEOVER");
     }
 
+
     private void Dock() {
         _curCapacity = 0;
         _skillTimes = maxSkillTimes;
@@ -197,5 +199,15 @@ public class GameManager : MonoBehaviour {
         rp.DORestart(true);
         lp.DOPlay();
         rp.DOPlay();
+
+        DOTweenPath t;
+        GameObject[] os = GameObject.FindGameObjectsWithTag("WebNode");
+        foreach (GameObject o in os) {
+            if (o.GetComponent<DOTweenPath>()) {
+                t = o.GetComponent<DOTweenPath>();
+                t.DORestart(true);
+                t.DOPlay();
+            }          
+        }
     }
 }

@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 //[AttributeUsage(AttributeTargets.Field)]
 public class RenameAttribute : PropertyAttribute {
     public string name;
@@ -11,6 +13,7 @@ public class RenameAttribute : PropertyAttribute {
 
 }
 #if UNITY_EDITOR
+
 [CustomPropertyDrawer(typeof(RenameAttribute))]
 public class RenameDrawer : PropertyDrawer
 {

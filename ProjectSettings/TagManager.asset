@@ -8,6 +8,7 @@ TagManager:
   - PlayerBase
   - WebNode
   - Fish
+  - Rock
   layers:
   - Default
   - TransparentFX
@@ -17,9 +18,9 @@ TagManager:
   - UI
   - 
   - 
-  - Suimono_Water
-  - Suimono_Depth
-  - Suimono_Screen
+  - 
+  - 
+  - 
   - Web
   - Fish
   - Rock

@@ -50,6 +50,8 @@ public class TFObject : MonoBehaviour
     [SerializeField]
     float fishCurSpeed;
 
+
+    float timer = 0;
     private void OnCollisionExit(Collision collision)
     {
         if (collision.gameObject.tag == "Player" && objectTpye == TFObjectType.fish)
@@ -62,8 +64,9 @@ public class TFObject : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter(Collision col)
+    void OnTriggerEnter(Collider col)
     {
+        
         if (col.gameObject.tag == "Player")
         {
             switch (objectTpye)
@@ -88,17 +91,11 @@ public class TFObject : MonoBehaviour
         }else
         if (col.gameObject.tag=="Web")
         {
+            Debug.Log("a");
             switch (objectTpye) {
                 case TFObjectType.fish: {
-                        this.fishCurSpeed = 0;
-                        this.transform.rotation = Quaternion.Euler(0, 180, 0);
-                        GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
-                        GetComponent<Rigidbody>().velocity = Vector3.zero;        
-                        GetComponent<Collider>().enabled = false;
-                        GetComponent<Animator>().Play("jump");
-                        AddScoreHandler(_scoreValue,_weight);
-                        //Destroy(this.gameObject, TFUtility.GetLengthByName(GetComponent<Animator>(), "jump"));
-                        Destroy(this.gameObject, 1.0f);
+
+                        StartCoroutine(FishColiWithWeb());
                         break;
                     }
                 case TFObjectType.rock:
@@ -113,6 +110,19 @@ public class TFObject : MonoBehaviour
                 default:break;
             }          
         }
+    }
+
+    IEnumerator FishColiWithWeb() {
+        yield return new WaitForSeconds(0.5f);
+        this.fishCurSpeed = 0;
+        this.transform.rotation = Quaternion.Euler(0, 180, 0);
+        GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+        GetComponent<Rigidbody>().velocity = Vector3.zero;
+        GetComponent<Collider>().enabled = false;
+        GetComponent<Animator>().Play("jump");
+        AddScoreHandler(_scoreValue, _weight);
+        //Destroy(this.gameObject, TFUtility.GetLengthByName(GetComponent<Animator>(), "jump"));
+        Destroy(this.gameObject, 0.5f);
     }
 
     private void FixedUpdate()

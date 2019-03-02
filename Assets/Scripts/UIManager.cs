@@ -21,6 +21,9 @@ public class UIManager : MonoBehaviour {
     [SerializeField]
     Slider s_capacity;
 
+    [SerializeField]
+    Image tbc;
+
     private void Awake()
     {
         GameManager.UpdateUIHandler += UpdateUI;
@@ -28,8 +31,9 @@ public class UIManager : MonoBehaviour {
     }
     private void Start()
     {
+        
        
-
+        
         b_reStart.onClick.AddListener(delegate () { SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); Time.timeScale = 1; });
         b_back.onClick.AddListener(delegate () { SceneManager.LoadScene(0); Time.timeScale = 1; });
         b_reStart.interactable = false;
@@ -55,16 +59,25 @@ public class UIManager : MonoBehaviour {
     }
 
     void ShowGameOverUI() {
+        StartCoroutine(IEShowGameOverUI());
+    }
+
+    IEnumerator IEShowGameOverUI() {
+        yield return new WaitForSeconds(1.0f);
         Time.timeScale = 0;
         bg.DOFade(0.5f, 1f).SetUpdate(true);
-        Tweener move = r_gameOver.DOLocalMove(Vector3.zero, 1.0f);
+        Tweener move = r_gameOver.DOLocalMove(Vector3.zero, 1.0f);     
         move.SetEase(Ease.InQuad);
         move.SetUpdate(true);
         move.onComplete = delegate (){
             r_gameOver.DOShakeRotation(3.0f, 5.0f).SetUpdate(true);
             b_reStart.interactable = true;
             b_back.interactable = true;        
-        };     
+        };
+
+        Tweener movetbc = tbc.rectTransform.DOAnchorPosX(0, 1.0f);
+        movetbc.SetEase(Ease.InQuint);
+        movetbc.SetUpdate(true);
     }
 
 }
