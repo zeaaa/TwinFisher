@@ -64,16 +64,18 @@ public class NodePosition : MonoBehaviour {
 	void Judge()
 
 	{
-		//附加与距离相关的弹力
+        //附加与距离相关的弹力
         /*
 		rig.AddForce((lastNodeTran.position - transform.position).normalized*forge*(Vector3.Magnitude (lastNodeTran.position - transform.position)-nodeDistance));
 		rig.AddForce((nextNodeTran.position - transform.position).normalized*forge*(Vector3.Magnitude (nextNodeTran.position - transform.position)-nodeDistance));
         */
         //对左右节点的力
-        for(int i=0;i<2;i++)
+        //for (int i = 0; i < linkNodeTran.Length; i++)
+         for (int i=0;i< 2; i++)
         {
             rig.AddForce((linkNodeTran[i].position - transform.position).normalized * forge * (Vector3.Magnitude(linkNodeTran[i].position - transform.position) - nodeDistance));
         }
+     
         //控制指向所有节点的连线
         for (int i = 0; i < linkNodeTran.Length; i++)
         {

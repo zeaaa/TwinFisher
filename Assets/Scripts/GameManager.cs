@@ -50,6 +50,9 @@ public class GameManager : MonoBehaviour {
     public static event MGameOver MGameOverHandler;
 
 
+    [Range(20, 500)]
+    [SerializeField]
+    float forge;
     private Material webNodeMat;
     private Material webRopeMat;
     void Initialize()
@@ -114,7 +117,7 @@ public class GameManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-
+        SetWebNodeForge(forge);
 	}
 
     private void AddScore(int value,float weight)
@@ -208,6 +211,17 @@ public class GameManager : MonoBehaviour {
                 t.DORestart(true);
                 t.DOPlay();
             }          
+        }
+    }
+
+    void SetWebNodeForge(float forge) {
+        GameObject[] os = GameObject.FindGameObjectsWithTag("WebNode");
+        foreach (GameObject o in os)
+        {
+            if (o.GetComponent<NodePosition>())
+            {
+                o.GetComponent<NodePosition>().forge = forge;
+            }
         }
     }
 }

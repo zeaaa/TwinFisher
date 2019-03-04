@@ -34,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate ()
 	{
         FixPlayerModelPosition();
-#if UNITY_STANDALONE_WIN
+#if UNITY_STANDALONE_WIN || UNITY_STANDALONE_OSX
         if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.UpArrow))
         {
             skillInput = true;
