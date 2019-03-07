@@ -95,6 +95,9 @@ public class GameManager : MonoBehaviour {
         DisableCollision("WebNode", "Web", true);
         DisableCollision("WebNode", "WebNode", true);
         DisableCollision("Player", "WebNode", true);
+        DisableCollision("WebNode", "Wharf", true);
+        DisableCollision("PlayerModel", "Player", true);
+
     }
 
     bool webFull = false;
@@ -197,11 +200,21 @@ public class GameManager : MonoBehaviour {
     }
 
     void WebAnim() {   
-        //DORestart:  recalculate the relative path 
+        //DORestart:  recalculate the relative path
+
+
         lp.DORestart(true);
         rp.DORestart(true);
         lp.DOPlay();
         rp.DOPlay();
+        SetWebNodeForge(0);
+        lp.gameObject.transform.DOLocalRotate(new Vector3(75, 0, -8), 0.4f, RotateMode.Fast).onComplete = delegate{
+            lp.gameObject.transform.DOLocalRotate(new Vector3(0, 0, 7), 0.6f, RotateMode.Fast).onComplete = delegate{SetWebNodeForge(forge);};
+
+        };
+        rp.gameObject.transform.DOLocalRotate(new Vector3(75, 0, 8), 0.4f, RotateMode.Fast).onComplete = delegate{
+            rp.gameObject.transform.DOLocalRotate(new Vector3(0, 0, -7), 0.6f, RotateMode.Fast);
+        };
 
         DOTweenPath t;
         GameObject[] os = GameObject.FindGameObjectsWithTag("WebNode");

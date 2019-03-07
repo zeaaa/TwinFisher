@@ -33,7 +33,7 @@ public class CreatManager : MonoBehaviour {
 
         StartCoroutine(SpawnFish());
         StartCoroutine(SpawnWharf());
-        StartCoroutine(SpawnRock());
+        //StartCoroutine(SpawnRock());
 
     }
 
@@ -84,7 +84,7 @@ public class CreatManager : MonoBehaviour {
         while (true)
         {
             float t = Random.Range(5.0f, 6.0f);
-            Vector3 spawnPosition = new Vector3(((float)Random.Range(0, 2) - 0.5f)*20f - 2f, spawnValues.y, spawnValues.z);
+            Vector3 spawnPosition = new Vector3(((float)Random.Range(0, 2) - 0.5f)*16f, spawnValues.y, spawnValues.z);
             Quaternion spawnRotation = Quaternion.identity;
             Instantiate(wharfPrefab, spawnPosition, spawnRotation);
             yield return new WaitForSeconds(t);

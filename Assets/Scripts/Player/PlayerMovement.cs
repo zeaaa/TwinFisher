@@ -6,14 +6,16 @@ using UnityEngine.UI;
 public class PlayerMovement : MonoBehaviour
 {
 
-
-
-	public float speed;
+    [SerializeField]
+    [Rename("河道宽度")]
+    private float riverWide;
+    [SerializeField]
+    [Rename("玩家移动速度")]
+	private float playerMoveSpeed;
 	public float tilt;
-	//public Boundary boundary;
 
-	public Rigidbody Player_L;
-	public Rigidbody Player_R;
+	public Rigidbody WebPole_L;
+    public Rigidbody WebPole_R;
 	public GameObject Web;
 
     public bool skillInput;
@@ -22,14 +24,24 @@ public class PlayerMovement : MonoBehaviour
     public delegate void SkillInput();
     public static event SkillInput SkillInputHandler;
 
-    public GameObject lnode;
-    public GameObject rnode;
     [SerializeField]
-    Transform playerL;
+    Transform PlayerModel_L;
     [SerializeField]
-    Transform playerR;
+    Transform PlayerModel_R;
     public Text debug;
 
+    //if move to boarder then clamp it
+    void ClampMove(){
+        if (WebPole_L.transform.position.x < -riverWide){
+            WebPole_L.transform.position = new Vector3(-riverWide + 0.05f,WebPole_L.transform.position.y,WebPole_L.transform.position.z);
+            //WebPole_L.velocity = Vector3.zero;
+        }
+            
+        if (WebPole_R.transform.position.x > riverWide)
+            WebPole_R.transform.position = new Vector3(riverWide - 0.05f, WebPole_R.transform.position.y, WebPole_R.transform.position.z);
+            //WebPole_R.velocity = Vector3.zero;
+
+    }
 
     void FixedUpdate ()
 	{
@@ -49,8 +61,12 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 movementL = new Vector3(moveHorizontalL, 0.0f, 0.0f);
         Vector3 movementR = new Vector3(moveHorizontalR, 0.0f, 0.0f);
-        Player_L.velocity = movementL * speed;
-        Player_R.velocity = movementR * speed;
+
+
+        WebPole_L.velocity = movementL * playerMoveSpeed;
+        WebPole_R.velocity = movementR * playerMoveSpeed;
+
+        ClampMove();
 #endif
 
 #if UNITY_ANDROID
@@ -88,13 +104,9 @@ public class PlayerMovement : MonoBehaviour
 		//Player_L.rotation = Quaternion.Euler (0.0f, Player_L.velocity.x * tilt, 0.0f);
 
        // Web.transform.rotation = Quaternion.Euler(60.0f, 0.0f, 0.0f);
-        Web.transform.position =  new Vector3((Player_R.position.x + Player_L.position.x) / 2,Web.transform.position.y,Web.transform.position.z);
-		Web.transform.localScale = new Vector3((Player_R.position - Player_L.position).x-1.5f,9f,1.5f);
-        dis = Player_R.position.x - Player_L.position.x;
-
-
-
-
+        Web.transform.position =  new Vector3((WebPole_R.position.x + WebPole_L.position.x) / 2,Web.transform.position.y,Web.transform.position.z);
+        Web.transform.localScale = new Vector3((WebPole_R.position - WebPole_L.position).x-1.5f,9f,1.5f);
+        dis = WebPole_R.position.x - WebPole_L.position.x;
     }
 
     void Start ()
@@ -109,7 +121,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void FixPlayerModelPosition() {
-        playerL.transform.position = new Vector3(Player_L.transform.position.x - 1.0f, playerL.transform.position.y, playerL.transform.position.z);
-        playerR.transform.position = new Vector3(Player_R.transform.position.x + 1.0f, playerR.transform.position.y, playerR.transform.position.z);
+        PlayerModel_L.transform.position = new Vector3(WebPole_L.transform.position.x - 1.0f, PlayerModel_L.transform.position.y, PlayerModel_L.transform.position.z);
+        PlayerModel_R.transform.position = new Vector3(WebPole_R.transform.position.x + 1.0f, PlayerModel_R.transform.position.y, PlayerModel_R.transform.position.z);
     }
 }

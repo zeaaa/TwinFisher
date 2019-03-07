@@ -113,14 +113,16 @@ public class TFObject : MonoBehaviour
     }
 
     IEnumerator FishColiWithWeb() {
-        yield return new WaitForSeconds(0.5f);
+        GetComponent<Animator>().Play("jump");
+       
         this.fishCurSpeed = 0;
         this.transform.rotation = Quaternion.Euler(0, 180, 0);
         GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
         GetComponent<Rigidbody>().velocity = Vector3.zero;
         GetComponent<Collider>().enabled = false;
-        GetComponent<Animator>().Play("jump");
+       
         AddScoreHandler(_scoreValue, _weight);
+        yield return new WaitForSeconds(0.5f);
         //Destroy(this.gameObject, TFUtility.GetLengthByName(GetComponent<Animator>(), "jump"));
         Destroy(this.gameObject, 0.5f);
     }
