@@ -129,7 +129,7 @@ GameObject:
   - component: {fileID: 7234242}
   - component: {fileID: 7234241}
   - component: {fileID: 7234240}
-  m_Layer: 15
+  m_Layer: 18
   m_Name: Cube 3-4
   m_TagString: WebNode
   m_Icon: {fileID: 0}
@@ -835,9 +835,9 @@ GameObject:
   - component: {fileID: 137569216}
   - component: {fileID: 137569215}
   - component: {fileID: 137569219}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: R
-  m_TagString: Player
+  m_TagString: WebPole
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1028,38 +1028,38 @@ MonoBehaviour:
   upDirection: {x: 0, y: 1, z: 0}
   tweenRigidbody: 0
   wps:
-  - {x: 5.567406, y: 1.4509226, z: 67.99001}
-  - {x: 5.567406, y: 2.4827619, z: 68.88002}
-  - {x: 5.567406, y: 3.590618, z: 68.27094}
-  - {x: 5.567406, y: 3.5920887, z: 66.95201}
-  - {x: 5.5674067, y: 2.5463889, z: 66.170616}
+  - {x: 5.567406, y: -0.02907741, z: 67.99001}
+  - {x: 5.567406, y: 1.0027618, z: 68.88002}
+  - {x: 5.567406, y: 2.1106179, z: 68.27094}
+  - {x: 5.567406, y: 2.1120887, z: 66.95201}
+  - {x: 5.5674067, y: 1.0663888, z: 66.170616}
   fullWps: []
   path:
     wpLengths:
     - 0
     - 1.5681117
     - 1.4100554
-    - 1.3166702
-    - 1.3579679
-    - 1.335802
-    - 1.1026603
+    - 1.31667
+    - 1.3579676
+    - 1.3358022
+    - 1.1026604
     type: 1
     subdivisionsXSegment: 10
     subdivisions: 70
     wps:
-    - {x: 5.5759997, y: 1.5479319, z: 66.457245}
-    - {x: 5.567406, y: 1.4509226, z: 67.99001}
-    - {x: 5.567406, y: 2.4827619, z: 68.88002}
-    - {x: 5.567406, y: 3.590618, z: 68.27094}
-    - {x: 5.567406, y: 3.5920887, z: 66.95201}
-    - {x: 5.5674067, y: 2.5463889, z: 66.170616}
-    - {x: 5.5759997, y: 1.5479319, z: 66.457245}
+    - {x: 5.5759997, y: 0.067931935, z: 66.457245}
+    - {x: 5.567406, y: -0.02907741, z: 67.99001}
+    - {x: 5.567406, y: 1.0027618, z: 68.88002}
+    - {x: 5.567406, y: 2.1106179, z: 68.27094}
+    - {x: 5.567406, y: 2.1120887, z: 66.95201}
+    - {x: 5.5674067, y: 1.0663888, z: 66.170616}
+    - {x: 5.5759997, y: 0.067931935, z: 66.457245}
     controlPoints:
-    - a: {x: 5.5674067, y: 2.5463889, z: 66.170616}
+    - a: {x: 5.5674067, y: 1.0663888, z: 66.170616}
       b: {x: 0, y: 0, z: 0}
-    - a: {x: 5.567406, y: 1.4509226, z: 67.99001}
+    - a: {x: 5.567406, y: -0.02907741, z: 67.99001}
       b: {x: 0, y: 0, z: 0}
-    length: 8.092279
+    length: 8.0922785
     isFinalized: 1
     timesTable:
     - 0.014285714
@@ -1133,10 +1133,10 @@ MonoBehaviour:
     - 0.9857143
     - 1
     lengthsTable:
-    - 0.099369295
-    - 0.2145414
-    - 0.34315628
-    - 0.4823842
+    - 0.09936932
+    - 0.21454144
+    - 0.34315634
+    - 0.48238426
     - 0.6291374
     - 0.7802459
     - 0.93251544
@@ -1151,33 +1151,33 @@ MonoBehaviour:
     - 2.104538
     - 2.2365417
     - 2.3677697
-    - 2.4962568
-    - 2.6200922
-    - 2.7374847
-    - 2.846882
-    - 2.9471724
+    - 2.4962566
+    - 2.620092
+    - 2.7374845
+    - 2.8468819
+    - 2.9471722
     - 3.0416667
     - 3.1427503
     - 3.2511652
-    - 3.3658996
+    - 3.3658993
     - 3.485436
     - 3.6079628
-    - 3.7315145
-    - 3.854044
-    - 3.973525
-    - 4.088005
-    - 4.1957445
-    - 4.295368
-    - 4.394715
-    - 4.5019746
-    - 4.61621
-    - 4.736033
-    - 4.859824
-    - 4.985819
-    - 5.1121707
-    - 5.2369986
-    - 5.358492
-    - 5.4748936
+    - 3.7315142
+    - 3.8540437
+    - 3.9735246
+    - 4.0880046
+    - 4.195744
+    - 4.2953677
+    - 4.3947144
+    - 4.501974
+    - 4.6162095
+    - 4.7360325
+    - 4.8598237
+    - 4.9858184
+    - 5.11217
+    - 5.236998
+    - 5.3584914
+    - 5.474893
     - 5.584651
     - 5.687362
     - 5.793569
@@ -1186,23 +1186,23 @@ MonoBehaviour:
     - 6.146027
     - 6.27017
     - 6.3947854
-    - 6.518005
-    - 6.6379037
-    - 6.7525682
-    - 6.8601193
-    - 6.9587784
-    - 7.0503707
-    - 7.1446786
-    - 7.24148
-    - 7.339714
-    - 7.4383616
-    - 7.536497
-    - 7.633343
-    - 7.7283425
-    - 7.8212614
-    - 7.9122844
-    - 8.002154
-    - 8.092279
+    - 6.5180044
+    - 6.637903
+    - 6.752568
+    - 6.860119
+    - 6.958778
+    - 7.05037
+    - 7.144678
+    - 7.2414794
+    - 7.3397136
+    - 7.438361
+    - 7.5364966
+    - 7.6333427
+    - 7.728342
+    - 7.821261
+    - 7.912284
+    - 8.002153
+    - 8.0922785
   inspectorMode: 0
   pathType: 1
   handlesType: 0
@@ -1212,7 +1212,7 @@ MonoBehaviour:
   showIndexes: 1
   showWpLength: 0
   pathColor: {r: 1, g: 1, b: 1, a: 0.5}
-  lastSrcPosition: {x: 5.5759997, y: 1.5479319, z: 66.457245}
+  lastSrcPosition: {x: 5.5759997, y: 0.067931935, z: 66.457245}
   wpsDropdown: 1
   dropToFloorOffset: 0
 --- !u!1 &160998455
@@ -1341,7 +1341,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 55.047, y: 139.671, z: 177.595}
 --- !u!1 &173219227
 GameObject:
@@ -1358,7 +1358,7 @@ GameObject:
   - component: {fileID: 173219231}
   - component: {fileID: 173219230}
   - component: {fileID: 173219229}
-  m_Layer: 15
+  m_Layer: 18
   m_Name: Cube 3-0
   m_TagString: WebNode
   m_Icon: {fileID: 0}
@@ -1481,10 +1481,10 @@ MonoBehaviour:
   upDirection: {x: 0, y: 1, z: 0}
   tweenRigidbody: 0
   wps:
-  - {x: -3.6899998, y: 4.0210977, z: 69.17222}
-  - {x: -3.6899998, y: 4.0802836, z: 70.47983}
-  - {x: -3.6899998, y: 2.678475, z: 70.1401}
-  - {x: -3.6899998, y: 0.33815074, z: 68.25958}
+  - {x: -3.6899998, y: 2.5410976, z: 69.17222}
+  - {x: -3.6899998, y: 2.6002836, z: 70.47983}
+  - {x: -3.6899998, y: 1.1984749, z: 70.1401}
+  - {x: -3.6899998, y: -1.1418493, z: 68.25958}
   fullWps: []
   path:
     wpLengths:
@@ -1498,12 +1498,12 @@ MonoBehaviour:
     subdivisionsXSegment: 10
     subdivisions: 60
     wps:
-    - {x: -3.72, y: 0.17507327, z: 66.873856}
-    - {x: -3.6899998, y: 4.0210977, z: 69.17222}
-    - {x: -3.6899998, y: 4.0802836, z: 70.47983}
-    - {x: -3.6899998, y: 2.678475, z: 70.1401}
-    - {x: -3.6899998, y: 0.33815074, z: 68.25958}
-    - {x: -3.72, y: 0.17507327, z: 66.873856}
+    - {x: -3.72, y: -1.3049268, z: 66.873856}
+    - {x: -3.6899998, y: 2.5410976, z: 69.17222}
+    - {x: -3.6899998, y: 2.6002836, z: 70.47983}
+    - {x: -3.6899998, y: 1.1984749, z: 70.1401}
+    - {x: -3.6899998, y: -1.1418493, z: 68.25958}
+    - {x: -3.72, y: -1.3049268, z: 66.873856}
     controlPoints: []
     length: 11.629736
     isFinalized: 1
@@ -1524,7 +1524,7 @@ MonoBehaviour:
   showIndexes: 1
   showWpLength: 0
   pathColor: {r: 1, g: 1, b: 1, a: 0.5}
-  lastSrcPosition: {x: -3.72, y: 0.17507327, z: 66.873856}
+  lastSrcPosition: {x: -3.72, y: -1.3049268, z: 66.873856}
   wpsDropdown: 1
   dropToFloorOffset: 0
 --- !u!65 &173219230
@@ -1679,7 +1679,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &202094555
 GameObject:
@@ -1744,52 +1744,6 @@ Transform:
   m_Father: {fileID: 775560298}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &213846246
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 400000, guid: d69492ecc27059b4a93436ae3c5372dc, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.25596786
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: d69492ecc27059b4a93436ae3c5372dc, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: d69492ecc27059b4a93436ae3c5372dc, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 69.23756
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: d69492ecc27059b4a93436ae3c5372dc, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: d69492ecc27059b4a93436ae3c5372dc, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: d69492ecc27059b4a93436ae3c5372dc, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: d69492ecc27059b4a93436ae3c5372dc, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: d69492ecc27059b4a93436ae3c5372dc, type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: d69492ecc27059b4a93436ae3c5372dc, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: d69492ecc27059b4a93436ae3c5372dc, type: 3}
-  m_IsPrefabAsset: 0
 --- !u!1 &269132132
 GameObject:
   m_ObjectHideFlags: 0
@@ -1880,13 +1834,13 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 290533550}
   m_LocalRotation: {x: -0.2894794, y: -0, z: -0, w: 0.95718426}
-  m_LocalPosition: {x: -8.07, y: 0.727098, z: 66}
+  m_LocalPosition: {x: -8.07, y: -0.75290203, z: 66}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 474321216}
   - {fileID: 2133992295}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &290533552
 CapsuleCollider:
@@ -2028,7 +1982,7 @@ GameObject:
   - component: {fileID: 359220303}
   - component: {fileID: 359220302}
   - component: {fileID: 359220301}
-  m_Layer: 15
+  m_Layer: 18
   m_Name: Cube 1-0
   m_TagString: WebNode
   m_Icon: {fileID: 0}
@@ -2151,10 +2105,10 @@ MonoBehaviour:
   upDirection: {x: 0, y: 1, z: 0}
   tweenRigidbody: 0
   wps:
-  - {x: -3.7459996, y: 6.5934043, z: 70.77442}
-  - {x: -3.7459996, y: 6.6525903, z: 72.08203}
-  - {x: -3.7459996, y: 5.2507815, z: 71.7423}
-  - {x: -3.7459996, y: 2.9104576, z: 69.86179}
+  - {x: -3.7459996, y: 5.1134043, z: 70.77442}
+  - {x: -3.7459996, y: 5.1725903, z: 72.08203}
+  - {x: -3.7459996, y: 3.7707815, z: 71.7423}
+  - {x: -3.7459996, y: 1.4304576, z: 69.86179}
   fullWps: []
   path:
     wpLengths:
@@ -2168,12 +2122,12 @@ MonoBehaviour:
     subdivisionsXSegment: 10
     subdivisions: 60
     wps:
-    - {x: -3.7759998, y: 2.74738, z: 64.87606}
-    - {x: -3.7459996, y: 6.5934043, z: 70.77442}
-    - {x: -3.7459996, y: 6.6525903, z: 72.08203}
-    - {x: -3.7459996, y: 5.2507815, z: 71.7423}
-    - {x: -3.7459996, y: 2.9104576, z: 69.86179}
-    - {x: -3.7759998, y: 2.74738, z: 64.87606}
+    - {x: -3.7759998, y: 1.26738, z: 64.87606}
+    - {x: -3.7459996, y: 5.1134043, z: 70.77442}
+    - {x: -3.7459996, y: 5.1725903, z: 72.08203}
+    - {x: -3.7459996, y: 3.7707815, z: 71.7423}
+    - {x: -3.7459996, y: 1.4304576, z: 69.86179}
+    - {x: -3.7759998, y: 1.26738, z: 64.87606}
     controlPoints: []
     length: 17.783617
     isFinalized: 1
@@ -2194,7 +2148,7 @@ MonoBehaviour:
   showIndexes: 1
   showWpLength: 0
   pathColor: {r: 1, g: 1, b: 1, a: 0.5}
-  lastSrcPosition: {x: -3.7759998, y: 2.74738, z: 64.87606}
+  lastSrcPosition: {x: -3.7759998, y: 1.26738, z: 64.87606}
   wpsDropdown: 1
   dropToFloorOffset: 0
 --- !u!65 &359220302
@@ -2298,7 +2252,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 367641467}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: RBottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2405,7 +2359,7 @@ RectTransform:
   - {fileID: 997023599}
   - {fileID: 2045850385}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2925,9 +2879,9 @@ GameObject:
   - component: {fileID: 602766143}
   - component: {fileID: 602766142}
   - component: {fileID: 602766146}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: L
-  m_TagString: Player
+  m_TagString: WebPole
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3118,38 +3072,38 @@ MonoBehaviour:
   upDirection: {x: 0, y: 1, z: 0}
   tweenRigidbody: 0
   wps:
-  - {x: -5.5387344, y: 1.7823961, z: 68.17416}
-  - {x: -5.5426407, y: 2.4643464, z: 68.58537}
-  - {x: -5.5387344, y: 3.16707, z: 68.25252}
-  - {x: -5.5426407, y: 3.371107, z: 67.52287}
-  - {x: -5.546547, y: 2.546389, z: 66.17061}
+  - {x: -5.5387344, y: 0.30239606, z: 68.17416}
+  - {x: -5.5426407, y: 0.9843464, z: 68.58537}
+  - {x: -5.5387344, y: 1.6870699, z: 68.25252}
+  - {x: -5.5426407, y: 1.8911071, z: 67.52287}
+  - {x: -5.546547, y: 1.0663891, z: 66.17061}
   fullWps: []
   path:
     wpLengths:
     - 0
-    - 1.7532189
-    - 0.8476581
-    - 0.79909396
+    - 1.7532187
+    - 0.84765846
+    - 0.7990933
     - 0.7983605
-    - 1.6035395
+    - 1.6035396
     - 1.1479688
     type: 1
     subdivisionsXSegment: 10
     subdivisions: 70
     wps:
-    - {x: -5.5360003, y: 1.5479319, z: 66.457245}
-    - {x: -5.5387344, y: 1.7823961, z: 68.17416}
-    - {x: -5.5426407, y: 2.4643464, z: 68.58537}
-    - {x: -5.5387344, y: 3.16707, z: 68.25252}
-    - {x: -5.5426407, y: 3.371107, z: 67.52287}
-    - {x: -5.546547, y: 2.546389, z: 66.17061}
-    - {x: -5.5360003, y: 1.5479319, z: 66.457245}
+    - {x: -5.5360003, y: 0.067931935, z: 66.457245}
+    - {x: -5.5387344, y: 0.30239606, z: 68.17416}
+    - {x: -5.5426407, y: 0.9843464, z: 68.58537}
+    - {x: -5.5387344, y: 1.6870699, z: 68.25252}
+    - {x: -5.5426407, y: 1.8911071, z: 67.52287}
+    - {x: -5.546547, y: 1.0663891, z: 66.17061}
+    - {x: -5.5360003, y: 0.067931935, z: 66.457245}
     controlPoints:
-    - a: {x: -5.546547, y: 2.546389, z: 66.17061}
+    - a: {x: -5.546547, y: 1.0663891, z: 66.17061}
       b: {x: 0, y: 0, z: 0}
-    - a: {x: -5.5387344, y: 1.7823961, z: 68.17416}
+    - a: {x: -5.5387344, y: 0.30239606, z: 68.17416}
       b: {x: 0, y: 0, z: 0}
-    length: 6.9508057
+    length: 6.9508066
     isFinalized: 1
     timesTable:
     - 0.014285714
@@ -3234,65 +3188,65 @@ MonoBehaviour:
     - 1.4032826
     - 1.5522635
     - 1.681111
-    - 1.785885
-    - 1.8775007
-    - 1.9616073
+    - 1.7858851
+    - 1.8775008
+    - 1.9616075
     - 2.040006
     - 2.1142702
     - 2.1856754
     - 2.255138
     - 2.323197
-    - 2.3900433
-    - 2.4555774
-    - 2.5194583
-    - 2.5811675
+    - 2.3900435
+    - 2.4555776
+    - 2.5194585
+    - 2.5811677
     - 2.6415288
     - 2.7050347
     - 2.7718036
-    - 2.841322
-    - 2.9129062
-    - 2.9857621
-    - 3.059033
-    - 3.1318223
-    - 3.2032175
-    - 3.2723246
-    - 3.3382862
-    - 3.4003167
-    - 3.4606805
-    - 3.5218632
-    - 3.5836525
-    - 3.6459765
-    - 3.7089567
-    - 3.7729342
-    - 3.8385262
-    - 3.9066339
-    - 3.9784229
+    - 2.8413217
+    - 2.912906
+    - 2.9857616
+    - 3.0590324
+    - 3.1318219
+    - 3.2032168
+    - 3.2723238
+    - 3.3382854
+    - 3.4003165
+    - 3.4606802
+    - 3.5218627
+    - 3.583652
+    - 3.645976
+    - 3.7089562
+    - 3.7729337
+    - 3.838526
+    - 3.9066336
+    - 3.9784226
     - 4.055274
     - 4.1387115
-    - 4.2311387
-    - 4.3428483
-    - 4.4732
-    - 4.6178346
-    - 4.772351
-    - 4.9323425
-    - 5.093447
-    - 5.2513585
-    - 5.401871
-    - 5.54099
-    - 5.6650834
-    - 5.7712913
-    - 5.8634543
-    - 5.9581385
-    - 6.0566
-    - 6.1581826
-    - 6.261793
-    - 6.3661256
-    - 6.4698257
-    - 6.571651
-    - 6.670658
-    - 6.7664094
-    - 6.859286
-    - 6.9508057
+    - 4.231139
+    - 4.342849
+    - 4.4732003
+    - 4.617835
+    - 4.7723513
+    - 4.932343
+    - 5.093448
+    - 5.2513595
+    - 5.401872
+    - 5.540991
+    - 5.6650844
+    - 5.771292
+    - 5.8634553
+    - 5.9581394
+    - 6.056601
+    - 6.1581836
+    - 6.2617936
+    - 6.3661265
+    - 6.4698267
+    - 6.571652
+    - 6.670659
+    - 6.7664104
+    - 6.859287
+    - 6.9508066
   inspectorMode: 0
   pathType: 1
   handlesType: 0
@@ -3302,7 +3256,7 @@ MonoBehaviour:
   showIndexes: 1
   showWpLength: 0
   pathColor: {r: 1, g: 1, b: 1, a: 0.5}
-  lastSrcPosition: {x: -5.5360003, y: 1.5479319, z: 66.457245}
+  lastSrcPosition: {x: -5.5360003, y: 0.067931935, z: 66.457245}
   wpsDropdown: 1
   dropToFloorOffset: 0
 --- !u!1 &634326868
@@ -3314,7 +3268,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 634326869}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: RTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3681,7 +3635,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 852660782}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: LBottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3805,13 +3759,13 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 866327733}
   m_LocalRotation: {x: -0.2894794, y: -0, z: -0, w: 0.95718426}
-  m_LocalPosition: {x: 7, y: 0.727098, z: 66}
+  m_LocalPosition: {x: 7, y: -0.75290203, z: 66}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 286316540}
   - {fileID: 952085012}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &866327736
 CapsuleCollider:
@@ -3861,7 +3815,7 @@ GameObject:
   - component: {fileID: 882078429}
   - component: {fileID: 882078428}
   - component: {fileID: 882078433}
-  m_Layer: 15
+  m_Layer: 18
   m_Name: Cube 3-2
   m_TagString: WebNode
   m_Icon: {fileID: 0}
@@ -4168,7 +4122,7 @@ GameObject:
   - component: {fileID: 907988536}
   - component: {fileID: 907988535}
   - component: {fileID: 907988540}
-  m_Layer: 15
+  m_Layer: 18
   m_Name: Cube 2-2
   m_TagString: WebNode
   m_Icon: {fileID: 0}
@@ -4584,7 +4538,7 @@ GameObject:
   - component: {fileID: 985190339}
   - component: {fileID: 985190338}
   - component: {fileID: 985190337}
-  m_Layer: 15
+  m_Layer: 18
   m_Name: Cube 2-0
   m_TagString: WebNode
   m_Icon: {fileID: 0}
@@ -4707,15 +4661,15 @@ MonoBehaviour:
   upDirection: {x: 0, y: 1, z: 0}
   tweenRigidbody: 0
   wps:
-  - {x: -3.61, y: 5.3192105, z: 69.67501}
-  - {x: -3.61, y: 5.3783965, z: 70.98262}
-  - {x: -3.61, y: 3.9765878, z: 70.64289}
-  - {x: -3.61, y: 1.6362636, z: 68.762375}
+  - {x: -3.61, y: 3.8392105, z: 69.67501}
+  - {x: -3.61, y: 3.8983965, z: 70.98262}
+  - {x: -3.61, y: 2.4965878, z: 70.64289}
+  - {x: -3.61, y: 0.15626359, z: 68.762375}
   fullWps: []
   path:
     wpLengths:
     - 0
-    - 5.476315
+    - 5.4763145
     - 1.3089484
     - 1.4423882
     - 3.002242
@@ -4724,19 +4678,19 @@ MonoBehaviour:
     subdivisionsXSegment: 10
     subdivisions: 60
     wps:
-    - {x: -3.64, y: 1.4731861, z: 65.77665}
-    - {x: -3.61, y: 5.3192105, z: 69.67501}
-    - {x: -3.61, y: 5.3783965, z: 70.98262}
-    - {x: -3.61, y: 3.9765878, z: 70.64289}
-    - {x: -3.61, y: 1.6362636, z: 68.762375}
-    - {x: -3.64, y: 1.4731861, z: 65.77665}
+    - {x: -3.64, y: -0.0068138447, z: 65.77665}
+    - {x: -3.61, y: 3.8392105, z: 69.67501}
+    - {x: -3.61, y: 3.8983965, z: 70.98262}
+    - {x: -3.61, y: 2.4965878, z: 70.64289}
+    - {x: -3.61, y: 0.15626359, z: 68.762375}
+    - {x: -3.64, y: -0.0068138447, z: 65.77665}
     controlPoints: []
     length: 14.22022
     isFinalized: 1
     timesTable:
     - 0
-    - 0.38510764
-    - 0.47715604
+    - 0.3851076
+    - 0.47715598
     - 0.57858825
     - 0.7897131
     - 1
@@ -4750,7 +4704,7 @@ MonoBehaviour:
   showIndexes: 1
   showWpLength: 0
   pathColor: {r: 1, g: 1, b: 1, a: 0.5}
-  lastSrcPosition: {x: -3.64, y: 1.4731861, z: 65.77665}
+  lastSrcPosition: {x: -3.64, y: -0.0068138447, z: 65.77665}
   wpsDropdown: 1
   dropToFloorOffset: 0
 --- !u!65 &985190338
@@ -5117,83 +5071,6 @@ Transform:
   m_Father: {fileID: 1156987384}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1048611813
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1048611817}
-  - component: {fileID: 1048611816}
-  - component: {fileID: 1048611815}
-  m_Layer: 0
-  m_Name: MainCamera Pres
-  m_TagString: MainCamera
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!81 &1048611815
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1048611813}
-  m_Enabled: 1
---- !u!20 &1048611816
-Camera:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1048611813}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_projectionMatrixMode: 1
-  m_SensorSize: {x: 36, y: 24}
-  m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
-  m_NormalizedViewPortRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 61.2
-  orthographic: 0
-  orthographic size: 25
-  m_Depth: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
-  m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
-  m_StereoConvergence: 10
-  m_StereoSeparation: 0.022
---- !u!4 &1048611817
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1048611813}
-  m_LocalRotation: {x: 0.69237405, y: -0, z: -0, w: 0.72153884}
-  m_LocalPosition: {x: -2, y: 37.7, z: 76}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: 87.637, y: 0, z: 0}
 --- !u!1 &1060770363
 GameObject:
   m_ObjectHideFlags: 0
@@ -5263,17 +5140,17 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 16835732}
   m_LocalRotation: {x: -0.31256184, y: -0, z: -0, w: 0.94989747}
-  m_LocalPosition: {x: 0, y: 1.49, z: 66.5}
+  m_LocalPosition: {x: 0, y: 0.01, z: 66.5}
   m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_Children:
   - {fileID: 1897346509}
   - {fileID: 79091835}
   - {fileID: 367850767}
-  - {fileID: 1318874461}
   - {fileID: 1285370738}
+  - {fileID: 1318874461}
   - {fileID: 1510634941}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: -36.427002, y: 0, z: 0}
 --- !u!1 &1092436735
 GameObject:
@@ -5574,7 +5451,7 @@ GameObject:
   - component: {fileID: 1160976897}
   - component: {fileID: 1160976896}
   - component: {fileID: 1160976901}
-  m_Layer: 15
+  m_Layer: 18
   m_Name: Cube 1-1
   m_TagString: WebNode
   m_Icon: {fileID: 0}
@@ -5789,10 +5666,10 @@ MonoBehaviour:
   upDirection: {x: 0, y: 1, z: 0}
   tweenRigidbody: 0
   wps:
-  - {x: -1.9459999, y: 7.0056524, z: 70.62099}
-  - {x: -1.9459999, y: 7.3692684, z: 72.55441}
-  - {x: -1.9459999, y: 6.2390633, z: 74.02634}
-  - {x: -1.9459999, y: 3.0253298, z: 73.64481}
+  - {x: -1.9459999, y: 5.5256524, z: 70.62099}
+  - {x: -1.9459999, y: 5.8892684, z: 72.55441}
+  - {x: -1.9459999, y: 4.7590632, z: 74.02634}
+  - {x: -1.9459999, y: 1.5453297, z: 73.64481}
   fullWps: []
   path:
     wpLengths:
@@ -5800,26 +5677,26 @@ MonoBehaviour:
     - 7.327818
     - 1.967321
     - 1.8557811
-    - 3.2363007
+    - 3.236301
     - 8.98622
     type: 0
     subdivisionsXSegment: 10
     subdivisions: 60
     wps:
-    - {x: -1.9760001, y: 2.7394238, z: 64.66319}
-    - {x: -1.9459999, y: 7.0056524, z: 70.62099}
-    - {x: -1.9459999, y: 7.3692684, z: 72.55441}
-    - {x: -1.9459999, y: 6.2390633, z: 74.02634}
-    - {x: -1.9459999, y: 3.0253298, z: 73.64481}
-    - {x: -1.9760001, y: 2.7394238, z: 64.66319}
+    - {x: -1.9760001, y: 1.2594236, z: 64.66319}
+    - {x: -1.9459999, y: 5.5256524, z: 70.62099}
+    - {x: -1.9459999, y: 5.8892684, z: 72.55441}
+    - {x: -1.9459999, y: 4.7590632, z: 74.02634}
+    - {x: -1.9459999, y: 1.5453297, z: 73.64481}
+    - {x: -1.9760001, y: 1.2594236, z: 64.66319}
     controlPoints: []
-    length: 23.373442
+    length: 23.373444
     isFinalized: 1
     timesTable:
     - 0
-    - 0.31351045
-    - 0.39767954
-    - 0.47707656
+    - 0.31351042
+    - 0.3976795
+    - 0.4770765
     - 0.6155371
     - 1
     lengthsTable: []
@@ -5832,55 +5709,9 @@ MonoBehaviour:
   showIndexes: 1
   showWpLength: 0
   pathColor: {r: 1, g: 1, b: 1, a: 0.5}
-  lastSrcPosition: {x: -1.9760001, y: 2.7394238, z: 64.66319}
+  lastSrcPosition: {x: -1.9760001, y: 1.2594236, z: 64.66319}
   wpsDropdown: 1
   dropToFloorOffset: 0
---- !u!1001 &1163487610
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 400002, guid: 9263f053ee3184c4b9bf9060fbf8a689, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2.69
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: 9263f053ee3184c4b9bf9060fbf8a689, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.9615364
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: 9263f053ee3184c4b9bf9060fbf8a689, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 67.95975
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: 9263f053ee3184c4b9bf9060fbf8a689, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: 9263f053ee3184c4b9bf9060fbf8a689, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: 9263f053ee3184c4b9bf9060fbf8a689, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: 9263f053ee3184c4b9bf9060fbf8a689, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: 9263f053ee3184c4b9bf9060fbf8a689, type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: 9263f053ee3184c4b9bf9060fbf8a689, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9263f053ee3184c4b9bf9060fbf8a689, type: 3}
-  m_IsPrefabAsset: 0
 --- !u!1 &1182640569
 GameObject:
   m_ObjectHideFlags: 0
@@ -5927,7 +5758,7 @@ GameObject:
   - component: {fileID: 1195475462}
   - component: {fileID: 1195475461}
   - component: {fileID: 1195475466}
-  m_Layer: 15
+  m_Layer: 18
   m_Name: Cube 1-2
   m_TagString: WebNode
   m_Icon: {fileID: 0}
@@ -6333,7 +6164,7 @@ Transform:
   - {fileID: 1751857271}
   - {fileID: 2048019636}
   m_Father: {fileID: 1089580908}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1288459678
 GameObject:
@@ -6491,7 +6322,7 @@ Transform:
   - {fileID: 2105805341}
   - {fileID: 2129898966}
   m_Father: {fileID: 1089580908}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1338592469
 GameObject:
@@ -6564,9 +6395,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1501247980}
   - component: {fileID: 1501247981}
-  - component: {fileID: 1501247982}
   - component: {fileID: 1501247983}
   - component: {fileID: 1501247984}
+  - component: {fileID: 1501247982}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameController
@@ -6585,7 +6416,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1501247981
 MonoBehaviour:
@@ -6620,7 +6451,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfa729dfb1e26c244a9f610af93681a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnValues: {x: 6.5, y: 2, z: 125}
+  spawnValues: {x: -6.5, y: 0, z: 100}
   wharfPrefab: {fileID: 1084475991879572, guid: b96c94a65f8de14458ab3c3124108a33,
     type: 2}
 --- !u!114 &1501247983
@@ -7033,7 +6864,7 @@ GameObject:
   - component: {fileID: 1751857273}
   - component: {fileID: 1751857272}
   - component: {fileID: 1751857277}
-  m_Layer: 15
+  m_Layer: 18
   m_Name: Cube 1-3
   m_TagString: WebNode
   m_Icon: {fileID: 0}
@@ -7405,7 +7236,7 @@ GameObject:
   - component: {fileID: 1778083105}
   - component: {fileID: 1778083104}
   - component: {fileID: 1778083109}
-  m_Layer: 15
+  m_Layer: 18
   m_Name: Cube 3-3
   m_TagString: WebNode
   m_Icon: {fileID: 0}
@@ -7787,7 +7618,7 @@ GameObject:
   - component: {fileID: 1807732196}
   - component: {fileID: 1807732195}
   - component: {fileID: 1807732200}
-  m_Layer: 15
+  m_Layer: 18
   m_Name: Cube 2-1
   m_TagString: WebNode
   m_Icon: {fileID: 0}
@@ -8142,6 +7973,78 @@ Transform:
   m_Father: {fileID: 882485233}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1840197146
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4363620620551648, guid: cc3c1ddf61dadf443a1dd3a20b31958b, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4363620620551648, guid: cc3c1ddf61dadf443a1dd3a20b31958b, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4363620620551648, guid: cc3c1ddf61dadf443a1dd3a20b31958b, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 84.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4363620620551648, guid: cc3c1ddf61dadf443a1dd3a20b31958b, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4363620620551648, guid: cc3c1ddf61dadf443a1dd3a20b31958b, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4363620620551648, guid: cc3c1ddf61dadf443a1dd3a20b31958b, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4363620620551648, guid: cc3c1ddf61dadf443a1dd3a20b31958b, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4363620620551648, guid: cc3c1ddf61dadf443a1dd3a20b31958b, type: 2}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1113353403826260, guid: cc3c1ddf61dadf443a1dd3a20b31958b, type: 2}
+      propertyPath: m_Name
+      value: 001 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4363620620551648, guid: cc3c1ddf61dadf443a1dd3a20b31958b, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 0}
+  m_SourcePrefab: {fileID: 100100000, guid: cc3c1ddf61dadf443a1dd3a20b31958b, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!1 &1840197147 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1113353403826260, guid: cc3c1ddf61dadf443a1dd3a20b31958b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1840197146}
+--- !u!114 &1840197148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1840197147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b353fc87bf3b0d47843ef783426a031, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectTpye: 0
+  _speed: 0
+  _score: 0
+  _length: 0
+  _weight: 0
 --- !u!1 &1852312309
 GameObject:
   m_ObjectHideFlags: 0
@@ -8224,7 +8127,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1897346509}
   - component: {fileID: 1897346510}
-  m_Layer: 11
+  m_Layer: 16
   m_Name: WebColider
   m_TagString: Web
   m_Icon: {fileID: 0}
@@ -8556,7 +8459,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 87.637, y: 0, z: 0}
 --- !u!1 &2045850384
 GameObject:
@@ -8641,7 +8544,7 @@ GameObject:
   - component: {fileID: 2048019639}
   - component: {fileID: 2048019638}
   - component: {fileID: 2048019637}
-  m_Layer: 15
+  m_Layer: 18
   m_Name: Cube 1-4
   m_TagString: WebNode
   m_Icon: {fileID: 0}
@@ -8764,10 +8667,10 @@ MonoBehaviour:
   upDirection: {x: 0, y: 1, z: 0}
   tweenRigidbody: 0
   wps:
-  - {x: 3.7340002, y: 6.5975375, z: 70.86086}
-  - {x: 3.7340002, y: 6.6567235, z: 72.16847}
-  - {x: 3.7340002, y: 5.2549143, z: 71.82874}
-  - {x: 3.7340002, y: 2.9145904, z: 69.94823}
+  - {x: 3.7340002, y: 5.1175375, z: 70.86086}
+  - {x: 3.7340002, y: 5.1767235, z: 72.16847}
+  - {x: 3.7340002, y: 3.7749143, z: 71.82874}
+  - {x: 3.7340002, y: 1.4345903, z: 69.94823}
   fullWps: []
   path:
     wpLengths:
@@ -8781,12 +8684,12 @@ MonoBehaviour:
     subdivisionsXSegment: 10
     subdivisions: 60
     wps:
-    - {x: 3.7040002, y: 2.7515128, z: 64.9625}
-    - {x: 3.7340002, y: 6.5975375, z: 70.86086}
-    - {x: 3.7340002, y: 6.6567235, z: 72.16847}
-    - {x: 3.7340002, y: 5.2549143, z: 71.82874}
-    - {x: 3.7340002, y: 2.9145904, z: 69.94823}
-    - {x: 3.7040002, y: 2.7515128, z: 64.9625}
+    - {x: 3.7040002, y: 1.2715127, z: 64.9625}
+    - {x: 3.7340002, y: 5.1175375, z: 70.86086}
+    - {x: 3.7340002, y: 5.1767235, z: 72.16847}
+    - {x: 3.7340002, y: 3.7749143, z: 71.82874}
+    - {x: 3.7340002, y: 1.4345903, z: 69.94823}
+    - {x: 3.7040002, y: 1.2715127, z: 64.9625}
     controlPoints: []
     length: 17.783615
     isFinalized: 1
@@ -8807,7 +8710,7 @@ MonoBehaviour:
   showIndexes: 1
   showWpLength: 0
   pathColor: {r: 1, g: 1, b: 1, a: 0.5}
-  lastSrcPosition: {x: 3.7040002, y: 2.7515128, z: 64.9625}
+  lastSrcPosition: {x: 3.7040002, y: 1.2715127, z: 64.9625}
   wpsDropdown: 1
   dropToFloorOffset: 0
 --- !u!65 &2048019638
@@ -8917,7 +8820,7 @@ GameObject:
   - component: {fileID: 2087699433}
   - component: {fileID: 2087699432}
   - component: {fileID: 2087699437}
-  m_Layer: 15
+  m_Layer: 18
   m_Name: Cube 3-1
   m_TagString: WebNode
   m_Icon: {fileID: 0}
@@ -9132,10 +9035,10 @@ MonoBehaviour:
   upDirection: {x: 0, y: 1, z: 0}
   tweenRigidbody: 0
   wps:
-  - {x: -1.9459996, y: 4.433346, z: 69.01878}
-  - {x: -1.9459996, y: 4.796962, z: 70.95221}
-  - {x: -1.9459996, y: 3.6667566, z: 72.42413}
-  - {x: -1.9459996, y: 0.45302343, z: 72.0426}
+  - {x: -1.9459996, y: 2.9533458, z: 69.01878}
+  - {x: -1.9459996, y: 3.3169618, z: 70.95221}
+  - {x: -1.9459996, y: 2.1867566, z: 72.42413}
+  - {x: -1.9459996, y: -1.0269766, z: 72.0426}
   fullWps: []
   path:
     wpLengths:
@@ -9149,12 +9052,12 @@ MonoBehaviour:
     subdivisionsXSegment: 10
     subdivisions: 60
     wps:
-    - {x: -1.9759998, y: 0.16711736, z: 66.66099}
-    - {x: -1.9459996, y: 4.433346, z: 69.01878}
-    - {x: -1.9459996, y: 4.796962, z: 70.95221}
-    - {x: -1.9459996, y: 3.6667566, z: 72.42413}
-    - {x: -1.9459996, y: 0.45302343, z: 72.0426}
-    - {x: -1.9759998, y: 0.16711736, z: 66.66099}
+    - {x: -1.9759998, y: -1.3128827, z: 66.66099}
+    - {x: -1.9459996, y: 2.9533458, z: 69.01878}
+    - {x: -1.9459996, y: 3.3169618, z: 70.95221}
+    - {x: -1.9459996, y: 2.1867566, z: 72.42413}
+    - {x: -1.9459996, y: -1.0269766, z: 72.0426}
+    - {x: -1.9759998, y: -1.3128827, z: 66.66099}
     controlPoints: []
     length: 17.323196
     isFinalized: 1
@@ -9175,7 +9078,7 @@ MonoBehaviour:
   showIndexes: 1
   showWpLength: 0
   pathColor: {r: 1, g: 1, b: 1, a: 0.5}
-  lastSrcPosition: {x: -1.9759998, y: 0.16711736, z: 66.66099}
+  lastSrcPosition: {x: -1.9759998, y: -1.3128827, z: 66.66099}
   wpsDropdown: 1
   dropToFloorOffset: 0
 --- !u!1 &2105805340
@@ -9193,7 +9096,7 @@ GameObject:
   - component: {fileID: 2105805343}
   - component: {fileID: 2105805342}
   - component: {fileID: 2105805347}
-  m_Layer: 15
+  m_Layer: 18
   m_Name: Cube 2-3
   m_TagString: WebNode
   m_Icon: {fileID: 0}
@@ -9410,10 +9313,10 @@ MonoBehaviour:
   upDirection: {x: 0, y: 1, z: 0}
   tweenRigidbody: 0
   wps:
-  - {x: 1.9340001, y: 5.7311497, z: 69.56157}
-  - {x: 1.9340001, y: 6.0947657, z: 71.494995}
-  - {x: 1.9340001, y: 4.9645605, z: 72.96692}
-  - {x: 1.9340001, y: 1.7508273, z: 72.58539}
+  - {x: 1.9340001, y: 4.2511497, z: 69.56157}
+  - {x: 1.9340001, y: 4.6147656, z: 71.494995}
+  - {x: 1.9340001, y: 3.4845605, z: 72.96692}
+  - {x: 1.9340001, y: 0.2708273, z: 72.58539}
   fullWps: []
   path:
     wpLengths:
@@ -9427,12 +9330,12 @@ MonoBehaviour:
     subdivisionsXSegment: 10
     subdivisions: 60
     wps:
-    - {x: 1.9040002, y: 1.4649212, z: 65.603775}
-    - {x: 1.9340001, y: 5.7311497, z: 69.56157}
-    - {x: 1.9340001, y: 6.0947657, z: 71.494995}
-    - {x: 1.9340001, y: 4.9645605, z: 72.96692}
-    - {x: 1.9340001, y: 1.7508273, z: 72.58539}
-    - {x: 1.9040002, y: 1.4649212, z: 65.603775}
+    - {x: 1.9040002, y: -0.015078833, z: 65.603775}
+    - {x: 1.9340001, y: 4.2511497, z: 69.56157}
+    - {x: 1.9340001, y: 4.6147656, z: 71.494995}
+    - {x: 1.9340001, y: 3.4845605, z: 72.96692}
+    - {x: 1.9340001, y: 0.2708273, z: 72.58539}
+    - {x: 1.9040002, y: -0.015078833, z: 65.603775}
     controlPoints: []
     length: 19.866362
     isFinalized: 1
@@ -9453,7 +9356,7 @@ MonoBehaviour:
   showIndexes: 1
   showWpLength: 0
   pathColor: {r: 1, g: 1, b: 1, a: 0.5}
-  lastSrcPosition: {x: 1.9040002, y: 1.4649212, z: 65.603775}
+  lastSrcPosition: {x: 1.9040002, y: -0.015078833, z: 65.603775}
   wpsDropdown: 1
   dropToFloorOffset: 0
 --- !u!1 &2129898965
@@ -9471,7 +9374,7 @@ GameObject:
   - component: {fileID: 2129898969}
   - component: {fileID: 2129898968}
   - component: {fileID: 2129898967}
-  m_Layer: 15
+  m_Layer: 18
   m_Name: Cube 2-4
   m_TagString: WebNode
   m_Icon: {fileID: 0}
@@ -9594,10 +9497,10 @@ MonoBehaviour:
   upDirection: {x: 0, y: 1, z: 0}
   tweenRigidbody: 0
   wps:
-  - {x: 3.63, y: 5.3297806, z: 69.7567}
-  - {x: 3.63, y: 5.3889666, z: 71.06431}
-  - {x: 3.63, y: 3.9871576, z: 70.72458}
-  - {x: 3.63, y: 1.6468333, z: 68.84406}
+  - {x: 3.63, y: 3.8497806, z: 69.7567}
+  - {x: 3.63, y: 3.9089665, z: 71.06431}
+  - {x: 3.63, y: 2.5071576, z: 70.72458}
+  - {x: 3.63, y: 0.16683328, z: 68.84406}
   fullWps: []
   path:
     wpLengths:
@@ -9611,12 +9514,12 @@ MonoBehaviour:
     subdivisionsXSegment: 10
     subdivisions: 60
     wps:
-    - {x: 3.6000001, y: 1.4837558, z: 65.85834}
-    - {x: 3.63, y: 5.3297806, z: 69.7567}
-    - {x: 3.63, y: 5.3889666, z: 71.06431}
-    - {x: 3.63, y: 3.9871576, z: 70.72458}
-    - {x: 3.63, y: 1.6468333, z: 68.84406}
-    - {x: 3.6000001, y: 1.4837558, z: 65.85834}
+    - {x: 3.6000001, y: 0.0037557576, z: 65.85834}
+    - {x: 3.63, y: 3.8497806, z: 69.7567}
+    - {x: 3.63, y: 3.9089665, z: 71.06431}
+    - {x: 3.63, y: 2.5071576, z: 70.72458}
+    - {x: 3.63, y: 0.16683328, z: 68.84406}
+    - {x: 3.6000001, y: 0.0037557576, z: 65.85834}
     controlPoints: []
     length: 14.22022
     isFinalized: 1
@@ -9637,7 +9540,7 @@ MonoBehaviour:
   showIndexes: 1
   showWpLength: 0
   pathColor: {r: 1, g: 1, b: 1, a: 0.5}
-  lastSrcPosition: {x: 3.6000001, y: 1.4837558, z: 65.85834}
+  lastSrcPosition: {x: 3.6000001, y: 0.0037557576, z: 65.85834}
   wpsDropdown: 1
   dropToFloorOffset: 0
 --- !u!65 &2129898968
@@ -9743,7 +9646,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2130171592}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: LTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9764,52 +9667,6 @@ Transform:
   m_Father: {fileID: 79091835}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &2131025653
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 400000, guid: a2bdd0fce6cc10c4498c698047800bc6, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 3.2726479
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: a2bdd0fce6cc10c4498c698047800bc6, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: a2bdd0fce6cc10c4498c698047800bc6, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 70.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: a2bdd0fce6cc10c4498c698047800bc6, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: a2bdd0fce6cc10c4498c698047800bc6, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: a2bdd0fce6cc10c4498c698047800bc6, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: a2bdd0fce6cc10c4498c698047800bc6, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: a2bdd0fce6cc10c4498c698047800bc6, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: a2bdd0fce6cc10c4498c698047800bc6, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: a2bdd0fce6cc10c4498c698047800bc6, type: 3}
-  m_IsPrefabAsset: 0
 --- !u!1 &2133992294
 GameObject:
   m_ObjectHideFlags: 0

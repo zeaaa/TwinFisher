@@ -4,14 +4,20 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.IO;
-public class CreatManager : MonoBehaviour {
+
+struct SpawnPoint{
+    public Vector3 spawnPoint;
+    public bool occupied;
+}
+public class SpawnManager : MonoBehaviour {
 
 	public Vector3 spawnValues;
-
     [SerializeField]
     GameObject wharfPrefab;
     private bool gameOver;
 	private bool restart;
+
+    private SpawnPoint[] spawnPoints;
 
 	float timer=0f;
 	int frame=0;
@@ -32,8 +38,8 @@ public class CreatManager : MonoBehaviour {
         }
 
         StartCoroutine(SpawnFish());
-        StartCoroutine(SpawnWharf());
-        //StartCoroutine(SpawnRock());
+        //StartCoroutine(SpawnWharf());
+        StartCoroutine(SpawnObstacle());
 
     }
 
@@ -60,7 +66,7 @@ public class CreatManager : MonoBehaviour {
 			timer = 0f;
 		}
 	}
-
+    
 	IEnumerator SpawnFish ()
 	{   
 		while (true)
@@ -73,13 +79,14 @@ public class CreatManager : MonoBehaviour {
             float WRange = tempData.maxWeight - tempData.minWeight;
             float length = tempData.minLength + LRange * TFMath.GaussRand();
             float weight = tempData.minWeight + WRange * TFMath.GaussRand();
-            obj.GetComponent<TFObject>().SetTFObject(length, weight, tempData.score,tempData.speed);
+            obj.GetComponent<Fish>().SetFish(tempData.speed, tempData.score,length,weight);
             Vector3 spawnPosition = new Vector3 (Random.Range (-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
 			Instantiate (obj, spawnPosition, Quaternion.Euler(-35,180,0));
-            Debug.Log("生成了一条" + length.ToString("f2") + "cm," + weight.ToString("f2") + "kg的" + tempData.name);        
+           // Debug.Log("生成了一条" + length.ToString("f2") + "cm," + weight.ToString("f2") + "kg的" + tempData.name);        
         }
 	}
 
+    /*
     IEnumerator SpawnWharf() {
         while (true)
         {
@@ -90,8 +97,8 @@ public class CreatManager : MonoBehaviour {
             yield return new WaitForSeconds(t);
         }
     }
-
-    IEnumerator SpawnRock()
+    */
+    IEnumerator SpawnObstacle()
     {
         while (true)
         {
@@ -99,7 +106,7 @@ public class CreatManager : MonoBehaviour {
             yield return new WaitForSeconds(t);
             int id = Random.Range(0, 1);
             GameObject obj = (GameObject)Resources.Load("Prefabs/Rock/rock" + (id + 1).ToString());
-            obj.GetComponent<TFObject>().SetTFObject();
+            obj.GetComponent<Obstacle>().SetObstacle(0.4f);
             Vector3 spawnPosition = new Vector3(Random.Range(-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
             Instantiate(obj, spawnPosition, Quaternion.identity);        
         }

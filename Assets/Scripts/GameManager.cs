@@ -68,8 +68,8 @@ public class GameManager : MonoBehaviour {
 
 
 
-        TFObject.AddScoreHandler += AddScore;
-        TFObject.GameOverHandler += GameOver;
+        Fish.AddScoreHandler += AddScore;
+        Obstacle.GameOverHandler += GameOver;
         Wharf.DockHandler += Dock;
         PlayerMovement.SkillInputHandler += Skill;
         webNodeMat = Resources.Load<Material>("Materials/WebNode");
@@ -96,7 +96,8 @@ public class GameManager : MonoBehaviour {
         DisableCollision("WebNode", "WebNode", true);
         DisableCollision("Player", "WebNode", true);
         DisableCollision("WebNode", "Wharf", true);
-        DisableCollision("PlayerModel", "Player", true);
+        DisableCollision("WebPole", "Player", true);
+        DisableCollision("WebPole", "WebNode", true);
 
     }
 
@@ -111,8 +112,8 @@ public class GameManager : MonoBehaviour {
     }
     private void OnDestroy()
     {
-        TFObject.AddScoreHandler -= AddScore;
-        TFObject.GameOverHandler -= GameOver;
+        Fish.AddScoreHandler -= AddScore;
+        Obstacle.GameOverHandler -= GameOver;
         Wharf.DockHandler -= Dock;
         PlayerMovement.SkillInputHandler -= Skill;
     }
@@ -201,8 +202,6 @@ public class GameManager : MonoBehaviour {
 
     void WebAnim() {   
         //DORestart:  recalculate the relative path
-
-
         lp.DORestart(true);
         rp.DORestart(true);
         lp.DOPlay();

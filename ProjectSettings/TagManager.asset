@@ -9,6 +9,7 @@ TagManager:
   - WebNode
   - Fish
   - Rock
+  - WebPole
   layers:
   - Default
   - TransparentFX
@@ -18,17 +19,17 @@ TagManager:
   - UI
   - 
   - 
-  - Wharf
-  - PlayerModel
   - 
-  - Web
+  - Player
+  - 
+  - 
   - Fish
   - Rock
-  - Player
+  - Wharf
+  - 
+  - Web
+  - WebPole
   - WebNode
-  - 
-  - 
-  - 
   - 
   - 
   - 
