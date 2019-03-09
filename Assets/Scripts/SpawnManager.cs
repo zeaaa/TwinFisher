@@ -38,7 +38,7 @@ public class SpawnManager : MonoBehaviour {
         }
 
         StartCoroutine(SpawnFish());
-        //StartCoroutine(SpawnWharf());
+        StartCoroutine(SpawnWharf());
         StartCoroutine(SpawnObstacle());
 
     }
@@ -86,7 +86,7 @@ public class SpawnManager : MonoBehaviour {
         }
 	}
 
-    /*
+    
     IEnumerator SpawnWharf() {
         while (true)
         {
@@ -97,7 +97,7 @@ public class SpawnManager : MonoBehaviour {
             yield return new WaitForSeconds(t);
         }
     }
-    */
+    
     IEnumerator SpawnObstacle()
     {
         while (true)

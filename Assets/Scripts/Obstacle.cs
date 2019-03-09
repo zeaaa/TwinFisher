@@ -10,7 +10,6 @@ public class Obstacle : TFObject{
     protected override void OnCollisionWithPlayer()
     {
         GameOverHandler();
-        throw new NotImplementedException();
     }
 
     protected override void OnCollisionWithWebNode()
@@ -30,5 +29,6 @@ public class Obstacle : TFObject{
     private void FixedUpdate()
     {
         transform.Translate(Vector3.back * _speed);
+        base.DestroyWhenOutofMap();
     }
 }

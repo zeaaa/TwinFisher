@@ -21,18 +21,18 @@ public class Fish : TFObject
 
     protected override void OnCollisionWithPlayer()
     { 
-        throw new NotImplementedException();
+        //throw new NotImplementedException();
     }
 
     protected override void OnCollisionWithWebNode()
     {
+      
         StartCoroutine(FishColiWithWeb());
-        //throw new NotImplementedException();
     }
 
     protected override void OnCollisionWithWebPole()
     {
-        throw new NotImplementedException();
+       // throw new NotImplementedException();
     }
 
     public void SetFish(float speed, int score, float length, float weight)
@@ -49,10 +49,12 @@ public class Fish : TFObject
     }
     private void FixedUpdate() {
         GetComponent<Rigidbody>().velocity = Vector3.back * _speed / Time.fixedDeltaTime;
+        base.DestroyWhenOutofMap();
     }
 
     IEnumerator FishColiWithWeb()
     {
+       
         GetComponent<Animator>().Play("jump");
 
         this.transform.rotation = Quaternion.Euler(0, 180, 0);
