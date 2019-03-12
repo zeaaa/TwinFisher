@@ -5,7 +5,6 @@ using DG.Tweening;
 using UnityEngine.UI;
 public class PlayerMovement : MonoBehaviour
 {
-
     [SerializeField]
     [Rename("河道宽度")]
     private float riverWide;

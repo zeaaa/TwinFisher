@@ -16,6 +16,8 @@ public class Fish : TFObject
     [SerializeField]
     private float _weight = 0;
 
+    private bool inCollision = false;
+
     public delegate void Colision(int score, float weight);
     public static event Colision AddScoreHandler;
 
@@ -26,8 +28,10 @@ public class Fish : TFObject
 
     protected override void OnCollisionWithWebNode()
     {
-      
-        StartCoroutine(FishColiWithWeb());
+        if (inCollision == false) {
+            StartCoroutine(FishColiWithWeb());
+            inCollision = true;
+        }      
     }
 
     protected override void OnCollisionWithWebPole()
@@ -65,6 +69,7 @@ public class Fish : TFObject
 
         AddScoreHandler(_score, _weight);
         float animLength = TFUtility.GetLengthByName(GetComponent<Animator>(), "jump");
+        Debug.Log(animLength);
         yield return new WaitForSeconds(animLength);
         Destroy(this.gameObject);
     }

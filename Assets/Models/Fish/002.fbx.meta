@@ -80,7 +80,12 @@ ModelImporter:
     13700002: "\u83AB\u897F\u5E722"
     13700004: "\u9AA8\u5934\u9C7C2"
     2186277476908879412: ImportLogs
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: 4d3a08ecddf009b4888cca80850dab04, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -236,7 +241,6 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1

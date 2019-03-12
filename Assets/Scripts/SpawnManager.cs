@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 using System.IO;
 
 struct SpawnPoint{
-    public Vector3 spawnPoint;
+    public Vector3 point;
     public bool occupied;
 }
 public class SpawnManager : MonoBehaviour {
@@ -17,6 +17,15 @@ public class SpawnManager : MonoBehaviour {
     private bool gameOver;
 	private bool restart;
 
+
+    [SerializeField] 
+    [Range(0,6)]
+    float spawnWide;
+
+    [SerializeField]
+    [Range(0,10)]
+    private int spawnPointSize;
+
     private SpawnPoint[] spawnPoints;
 
 	float timer=0f;
@@ -24,6 +33,30 @@ public class SpawnManager : MonoBehaviour {
     FishDataList fishDataList;
     int toatlRarity = 0;
     int mapID = 0;
+    
+    void InitSpawnPoints() {
+        float offset = spawnWide * 2 / (spawnPointSize-1);
+        spawnPoints = new SpawnPoint[spawnPointSize];
+        for (int i = 0; i < spawnPointSize; i++) {
+            spawnPoints[i].point = new Vector3(-spawnWide + i * offset, 0,100f) ;
+            spawnPoints[i].occupied = false;
+        }
+    }
+
+    private void OnDrawGizmos()
+    {
+        InitSpawnPoints();
+        Gizmos.color = Color.red;
+        for (int i = 0; i < spawnPoints.Length; i++) {
+            Vector3 direction = transform.TransformDirection(Vector3.back) * 30;
+            Gizmos.DrawRay(spawnPoints[i].point, direction);
+        }        
+    }
+
+    private void Awake()
+    {
+        InitSpawnPoints();
+    }
     void Start ()
 	{
 		gameOver = false;

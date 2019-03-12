@@ -38,7 +38,12 @@ ModelImporter:
     7400006: speed
     9500000: //RootNode
     13700000: "\u7A7A\u767D_2"
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "\u6750\u8D28"
+    second: {fileID: 2100000, guid: 7ee61d0a1bd89144185cdbfb35e19a7a, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -126,7 +131,7 @@ ModelImporter:
       name: jump
       takeName: CINEMA_4D___
       firstFrame: 300
-      lastFrame: 325
+      lastFrame: 320
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
