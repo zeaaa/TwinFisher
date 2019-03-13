@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour {
     public static event MGameOver MGameOverHandler;
 
 
-    [Range(20, 500)]
+    [Range(20, 2000)]
     [SerializeField]
     float forge;
     private Material webNodeMat;

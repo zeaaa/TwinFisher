@@ -5,23 +5,17 @@ using UnityEngine;
 
 public class NodePosition : MonoBehaviour {
 
-
-
 	//绳子核心算法：
 
 	//判断两个节点的距离，对节点加弹力
 
-	public float nodeDistance = 3;  //节点定长
+	float nodeDistance =0.1f;  //节点定长
 	public float forge=500f;
-	//public Transform lastNodeTran;   //上一个节点的位置
-	//public Transform nextNodeTran;	//下一个节点的位置
     public Transform[] linkNodeTran;
     Rigidbody rig;
 
-    public float linewide=0.1f;
+    float linewide=0.4f;
     public GameObject pf;
-
-    private float length = 1.5f;
 
     GameObject[] line;
 
@@ -43,14 +37,11 @@ public class NodePosition : MonoBehaviour {
     }
 
 	private void Update()
-
 	{
-
 		Judge();
 		WebJump ();
 		Deceleration();
         AddForce();
-
 	}
 
 
@@ -58,66 +49,57 @@ public class NodePosition : MonoBehaviour {
         rig.AddForce(Vector3.back*forge*0.02f*PlayerMovement.dis);
     }
 	void Judge()
-
 	{
-        //附加与距离相关的弹力
-        /*
-		rig.AddForce((lastNodeTran.position - transform.position).normalized*forge*(Vector3.Magnitude (lastNodeTran.position - transform.position)-nodeDistance));
-		rig.AddForce((nextNodeTran.position - transform.position).normalized*forge*(Vector3.Magnitude (nextNodeTran.position - transform.position)-nodeDistance));
-        */
-        //对左右节点的力
-        //for (int i = 0; i < linkNodeTran.Length; i++)
+        
+       
          for (int i=0;i< 2; i++)
         {
-            rig.AddForce((linkNodeTran[i].position - transform.position).normalized * forge * (Vector3.Magnitude(linkNodeTran[i].position - transform.position) - nodeDistance));
+          /*  if (gameObject.name[7] == '0' || gameObject.name[7] == '4') {
+                if (linkNodeTran[i].name[0] == 'L' || linkNodeTran[i].name[0] == 'R')
+                    rig.AddForce((linkNodeTran[i].position - transform.position).normalized * forge * 0.8f * (Vector3.Magnitude(linkNodeTran[i].position - transform.position) - nodeDistance));
+            }
+            else*/
+           rig.AddForce((linkNodeTran[i].position - transform.position).normalized * forge *(Vector3.Magnitude(linkNodeTran[i].position - transform.position) - nodeDistance));
+          
         }
-     
+
         //控制指向所有节点的连线
         for (int i = 0; i < linkNodeTran.Length; i++)
         {
             line[i].transform.up= (linkNodeTran[i].position - transform.position).normalized;//mark
-            line[i].transform.localScale = new Vector3(linewide, Vector3.Magnitude(linkNodeTran[i].position - transform.position) , linewide);
+            line[i].transform.localScale = new Vector3(linewide, Vector3.Magnitude(linkNodeTran[i].position - transform.position) *2  , linewide);
         }
 
-        GetComponent<BoxCollider>().size = new Vector3(PlayerMovement.dis* 6 /14.0f, GetComponent<BoxCollider>().size.y, GetComponent<BoxCollider>().size.z);
+        GetComponent<BoxCollider>().size = new Vector3(PlayerMovement.dis, GetComponent<BoxCollider>().size.y, GetComponent<BoxCollider>().size.z);
         /*
 		//原方案，无用
 		//求两点距离时，用平方会比开方好
 		//realDistance = Vector3.Magnitude (lastNodeTran.position - transform.position)-Vector3.Magnitude (nextNodeTran.position - transform.position);
 		//if (Vector3.Magnitude (lastNodeTran.position - transform.position)> nodeDistance *nodeDistance ) { //用平方来比较
 			//已经超过
-
-			//transform.position = Vector3.Lerp ((lastNodeTran.position+nextNodeTran.position)/2 , transform.position, 2*nodeDistance / realDistance);
-		//}
-		//if (Vector3.Magnitude (nextNodeTran.position - transform.position)> nodeDistance *nodeDistance ) { //用平方来比较
-
-			//已经超过
-
 			//transform.position = Vector3.Lerp ((lastNodeTran.position+nextNodeTran.position)/2 , transform.position, 2*nodeDistance / realDistance);
 		//}
 		*/
 
     }
-
+    Vector3 _velo;
     void Deceleration() //减速
 	{
+      // if(rig.velocity.sqrMagnitude>10)
+           //Debug.Log(rig.velocity.sqrMagnitude);
 
-		if (rig.velocity.sqrMagnitude>50)
-
+        
+        if (rig.velocity.sqrMagnitude>20)
 		{
-
-			rig.velocity /= 3;
-
+            rig.velocity = _velo;
 		}
-		if (rig.velocity.sqrMagnitude<10&& rig.velocity.sqrMagnitude!=0)
-
-		{
-           // Debug.Log(rig.velocity.sqrMagnitude);
+		if (rig.velocity.sqrMagnitude<20&& rig.velocity.sqrMagnitude!=0)
+		{          
 			rig.velocity =Vector3.zero;
-
 		}
+        _velo = rig.velocity;
+    }
 
-	}
 	void WebJump()
 	{
 		if (Input.GetKeyDown(KeyCode.Space))

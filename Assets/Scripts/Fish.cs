@@ -21,8 +21,15 @@ public class Fish : TFObject
     public delegate void Colision(int score, float weight);
     public static event Colision AddScoreHandler;
 
+    float m_timer = 0;
+    float animLength;
     protected override void OnCollisionWithPlayer()
-    { 
+    {
+        if (inCollision == false)
+        {
+            StartCoroutine(FishColiWithWeb());
+            inCollision = true;
+        }
         //throw new NotImplementedException();
     }
 
@@ -47,12 +54,20 @@ public class Fish : TFObject
         _weight = weight;
     }
 
+
     private void Start()
     {
-        SetSpeed(0.6f);
+        animLength = TFUtility.GetLengthByName(GetComponent<Animator>(), "jump");
+        //SetSpeed(0.6f);
     }
     private void FixedUpdate() {
-        GetComponent<Rigidbody>().velocity = Vector3.back * _speed / Time.fixedDeltaTime;
+        Debug.Log(GetComponent<Rigidbody>().velocity.z);
+        if (inCollision == false)
+            GetComponent<Rigidbody>().velocity = Vector3.back * _speed / Time.fixedDeltaTime;
+        else {       
+            //if (GetComponent<Rigidbody>().velocity.z > 0)
+               // GetComponent<Rigidbody>().velocity = Vector3.zero;
+        }
         base.DestroyWhenOutofMap();
     }
 
@@ -60,17 +75,15 @@ public class Fish : TFObject
     {
        
         GetComponent<Animator>().Play("jump");
-
-        this.transform.rotation = Quaternion.Euler(0, 180, 0);
         GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
-        //GetComponent<Rigidbody>().velocity = Vector3.zero;
+        
+         //GetComponent<Rigidbody>().velocity = Vector3.zero;
 
-        //GetComponent<Collider>().enabled = false;
+         //GetComponent<Collider>().enabled = false;
 
-        AddScoreHandler(_score, _weight);
-        float animLength = TFUtility.GetLengthByName(GetComponent<Animator>(), "jump");
-        Debug.Log(animLength);
-        yield return new WaitForSeconds(animLength);
+         AddScoreHandler(_score, _weight);
+        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(animLength - 0.5f);
         Destroy(this.gameObject);
     }
 }

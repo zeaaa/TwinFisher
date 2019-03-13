@@ -72,7 +72,7 @@ public class SpawnManager : MonoBehaviour {
 
         StartCoroutine(SpawnFish());
         StartCoroutine(SpawnWharf());
-        StartCoroutine(SpawnObstacle());
+        //StartCoroutine(SpawnObstacle());
 
     }
 
