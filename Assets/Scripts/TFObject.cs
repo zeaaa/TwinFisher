@@ -45,7 +45,7 @@ public abstract class TFObject : MonoBehaviour
 
     protected void DestroyWhenOutofMap()
     {
-        if (transform.position.z < -10f)
+        if (transform.position.z <50f)
         {
             Destroy(this.gameObject);
         }

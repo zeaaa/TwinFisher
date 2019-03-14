@@ -21,6 +21,8 @@ public class Fish : TFObject
     public delegate void Colision(int score, float weight);
     public static event Colision AddScoreHandler;
 
+    [SerializeField]
+    Texture2D tex;
     float m_timer = 0;
     float animLength;
     protected override void OnCollisionWithPlayer()
@@ -61,7 +63,7 @@ public class Fish : TFObject
         //SetSpeed(0.6f);
     }
     private void FixedUpdate() {
-        Debug.Log(GetComponent<Rigidbody>().velocity.z);
+        //Debug.Log(GetComponent<Rigidbody>().velocity.z);
         if (inCollision == false)
             GetComponent<Rigidbody>().velocity = Vector3.back * _speed / Time.fixedDeltaTime;
         else {       
@@ -75,6 +77,7 @@ public class Fish : TFObject
     {
        
         GetComponent<Animator>().Play("jump");
+        GetComponentInChildren<Renderer>().material.SetTexture("_MainTex",tex);
         GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
         
          //GetComponent<Rigidbody>().velocity = Vector3.zero;

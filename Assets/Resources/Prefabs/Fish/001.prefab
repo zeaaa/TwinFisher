@@ -126,8 +126,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4110471133734170}
   - component: {fileID: 95755272528475288}
-  - component: {fileID: 54526205000394646}
   - component: {fileID: 114697876840535164}
+  - component: {fileID: 54526205000394646}
   - component: {fileID: 136773031298015606}
   m_Layer: 12
   m_Name: 001
@@ -216,15 +216,15 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1758051989322342}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 68.2}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4896537890272186}
   - {fileID: 4730190969639602}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4191157254747040
 Transform:
   m_ObjectHideFlags: 1
@@ -370,7 +370,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1758051989322342}
   serializedVersion: 2
-  m_Mass: 40
+  m_Mass: 20
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -411,6 +411,7 @@ MonoBehaviour:
   _score: 500
   _length: 9.951553
   _weight: 13.981232
+  tex: {fileID: 0}
 --- !u!136 &136773031298015606
 CapsuleCollider:
   m_ObjectHideFlags: 1

@@ -131,7 +131,7 @@ public class GameManager : MonoBehaviour {
         _curCapacity += weight;
         if (_curCapacity > _maxCapacity) {
             webFull = true;
-            DisableCollision("Fish", "Web", true);
+            DisableCollision("Fish", "WebNode", true);
             ChangeWebMatColor(WebFullColor);
         }
             
@@ -151,7 +151,7 @@ public class GameManager : MonoBehaviour {
         _curCapacity = 0;
         _skillTimes = maxSkillTimes;
         webFull = false;
-        DisableCollision("Fish", "Web", false);
+        DisableCollision("Fish", "WebNode", false);
         ChangeWebMatColor(WebColor);
         UpdateUIHandler(_score, _skillTimes,0);
     }
@@ -175,9 +175,9 @@ public class GameManager : MonoBehaviour {
         yield return new WaitForFixedUpdate();
         _inSkill = true;
         WebAnim();
-        DisableCollision("Fish", "Web", true);
+        DisableCollision("Fish", "WebNode", true);
         //DisableCollision("Fish", "Player", true);
-        DisableCollision("Rock", "Web", true);    
+        DisableCollision("Rock", "WebNode", true);    
         DisableCollision("Rock", "Player", true);
         ChangeWebMatColor(WebSkillColor);
         //after _skillDuration realTime;
@@ -188,10 +188,10 @@ public class GameManager : MonoBehaviour {
         }       
         else {
             ChangeWebMatColor(WebColor);
-            DisableCollision("Fish", "Web", false);
+            DisableCollision("Fish", "WebNode", false);
             //DisableCollision("Fish", "Player", false);
         }
-        DisableCollision("Rock", "Web", false);   
+        DisableCollision("Rock", "WebNode", false);   
         DisableCollision("Rock", "Player", false);
     }
 

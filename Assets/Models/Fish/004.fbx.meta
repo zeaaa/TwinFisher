@@ -1,41 +1,41 @@
 fileFormatVersion: 2
-guid: 12f64251fc6e80f4ea3e59ee65ef9f86
+guid: b45b00a597ef30b44b75449c24a4ce11
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: "Cinema_4D_\u7F16\u8F91\u5668"
-    100004: "\u5173\u8282_3"
-    100006: "\u5173\u8282_4"
-    100008: "\u5173\u8282_5"
-    100010: "\u5173\u8282_6"
-    100012: "\u5173\u8282_7"
-    100014: "\u5173\u8282_8"
-    100016: "\u5173\u8282_9"
-    100018: "\u591C\u5149\u9C7C"
-    100020: "\u591C\u5149\u9C7C2"
-    100022: "\u6839\u5BF9\u8C61_1"
-    400000: //RootNode
-    400002: "Cinema_4D_\u7F16\u8F91\u5668"
-    400004: "\u5173\u8282_3"
-    400006: "\u5173\u8282_4"
-    400008: "\u5173\u8282_5"
-    400010: "\u5173\u8282_6"
-    400012: "\u5173\u8282_7"
-    400014: "\u5173\u8282_8"
-    400016: "\u5173\u8282_9"
-    400018: "\u591C\u5149\u9C7C"
-    400020: "\u591C\u5149\u9C7C2"
-    400022: "\u6839\u5BF9\u8C61_1"
-    2000000: "Cinema_4D_\u7F16\u8F91\u5668"
-    2100000: No Name
+    100000: "\u5173\u8282_3"
+    100002: "\u5173\u8282_4"
+    100004: "\u5173\u8282_5"
+    100006: "\u5173\u8282_6"
+    100008: "\u5173\u8282_7"
+    100010: "\u5173\u8282_8"
+    100012: "\u5173\u8282_9"
+    100014: //RootNode
+    100016: "\u591C\u5149\u9C7C2"
+    100018: "\u6839\u5BF9\u8C61_1"
+    400000: "\u5173\u8282_3"
+    400002: "\u5173\u8282_4"
+    400004: "\u5173\u8282_5"
+    400006: "\u5173\u8282_6"
+    400008: "\u5173\u8282_7"
+    400010: "\u5173\u8282_8"
+    400012: "\u5173\u8282_9"
+    400014: //RootNode
+    400016: "\u591C\u5149\u9C7C2"
+    400018: "\u6839\u5BF9\u8C61_1"
+    2100000: "\u6750\u8D28"
     4300000: "\u591C\u5149\u9C7C2"
-    7400000: jump
-    7400002: normal
-    7400004: speed
+    7400000: normal
+    7400002: speed
+    7400004: jump
     9500000: //RootNode
     13700000: "\u591C\u5149\u9C7C2"
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "\u6750\u8D28"
+    second: {fileID: 2100000, guid: 499ce835eeb4b554b890363f19e6b6e3, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -102,7 +102,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -123,14 +123,14 @@ ModelImporter:
       name: jump
       takeName: CINEMA_4D___
       firstFrame: 300
-      lastFrame: 350
+      lastFrame: 320
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -191,7 +191,6 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
