@@ -29,9 +29,9 @@ ModelImporter:
     2100000: "\u6750\u8D28"
     2100002: "\u6750\u8D28.2"
     4300000: "\u9AA8\u5934\u9C7C__1"
-    7400000: normal
-    7400002: speed
-    7400004: jump
+    7400000: 003normal
+    7400002: 003speed
+    7400004: 003jump
     9500000: //RootNode
     13700000: "\u9AA8\u5934\u9C7C__1"
     2186277476908879412: ImportLogs
@@ -69,7 +69,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: normal
+      name: 003normal
       takeName: CINEMA_4D___
       firstFrame: 30
       lastFrame: 240
@@ -97,7 +97,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: speed
+      name: 003speed
       takeName: CINEMA_4D___
       firstFrame: 240
       lastFrame: 300
@@ -125,7 +125,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: jump
+      name: 003jump
       takeName: CINEMA_4D___
       firstFrame: 300
       lastFrame: 320

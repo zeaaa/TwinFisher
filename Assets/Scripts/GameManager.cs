@@ -49,6 +49,9 @@ public class GameManager : MonoBehaviour {
     public delegate void MGameOver();
     public static event MGameOver MGameOverHandler;
 
+    //GameObject[] webNode = GameObject.FindGameObjectsWithTag("WebNode");
+
+
 
     [Range(20, 2000)]
     [SerializeField]
@@ -118,10 +121,16 @@ public class GameManager : MonoBehaviour {
         PlayerMovement.SkillInputHandler -= Skill;
     }
 
+    private void OnDrawGizmos()
+    {
+        if (!Application.isPlaying)
+            SetWebNodeForge(forge);
+    }
+
 
     // Update is called once per frame
     void Update () {
-        SetWebNodeForge(forge);
+        
 	}
 
     private void AddScore(int value,float weight)
