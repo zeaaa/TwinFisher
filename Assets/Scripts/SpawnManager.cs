@@ -136,8 +136,8 @@ public class SpawnManager : MonoBehaviour {
             if (pt>-1)
                 SpawnFishByID(GetRandomFishID(),pt);
 
-            //if (Random.Range(0, 4) == 0)
-               // StartCoroutine(Spawnshoal());
+            if (Random.Range(0, 8) == 0)
+                StartCoroutine(Spawnshoal());
         }   
 	}
 

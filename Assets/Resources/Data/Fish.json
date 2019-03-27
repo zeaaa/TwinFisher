@@ -1,17 +1,17 @@
 {
 	"fish": [
         { "name":"红鱼", "modelID":"001", "minLength":6,"maxLength":13, "minWeight":12, "maxWeight":15, "info":"生活在水里的红鱼","rarity":[1,0],"score":500, "speed":0.3},
-        { "name":"绿鱼", "modelID":"002", "minLength":6,"maxLength":13, "minWeight":20, "maxWeight":25, "info":"生活在水里的莫西干","rarity":[1,0], "score":200 ,"speed":0.3},
-        { "name":"蓝鱼", "modelID":"003", "minLength":6,"maxLength":13, "minWeight":8,  "maxWeight":10, "info":"生活在水里的骨头鱼","rarity":[1,0], "score":100 ,"speed":0.3},
-		{ "name":"绿鱼", "modelID":"004", "minLength":6,"maxLength":13, "minWeight":20, "maxWeight":25, "info":"生活在水里的夜光鱼","rarity":[1,0], "score":200 ,"speed":0.3},
-		{ "name":"绿鱼", "modelID":"005", "minLength":6,"maxLength":13, "minWeight":20, "maxWeight":25, "info":"生活在水里的绿鱼","rarity":[0,0], "score":200 ,"speed":0.3},
-		{ "name":"绿鱼", "modelID":"006", "minLength":6,"maxLength":13, "minWeight":20, "maxWeight":25, "info":"生活在水里的绿鱼","rarity":[0,0], "score":200 ,"speed":0.3},
-		{ "name":"绿鱼", "modelID":"007", "minLength":6,"maxLength":13, "minWeight":20, "maxWeight":25, "info":"生活在水里的绿鱼","rarity":[0,0], "score":200 ,"speed":0.3},
+        { "name":"莫西干", "modelID":"002", "minLength":6,"maxLength":13, "minWeight":20, "maxWeight":25, "info":"生活在水里的莫西干","rarity":[1,0], "score":200 ,"speed":0.3},
+        { "name":"骨头鱼", "modelID":"003", "minLength":6,"maxLength":13, "minWeight":8,  "maxWeight":10, "info":"生活在水里的骨头鱼","rarity":[1,0], "score":100 ,"speed":0.3},
+		{ "name":"夜光鱼", "modelID":"004", "minLength":6,"maxLength":13, "minWeight":20, "maxWeight":25, "info":"生活在水里的夜光鱼","rarity":[1,0], "score":200 ,"speed":0.3},
+		{ "name":"单结蛇", "modelID":"005", "minLength":6,"maxLength":13, "minWeight":20, "maxWeight":25, "info":"生活在水里的单结蛇","rarity":[1,0], "score":200 ,"speed":0.3},
+		{ "name":"蝴蝶结蛇", "modelID":"006", "minLength":6,"maxLength":13, "minWeight":20, "maxWeight":25, "info":"生活在水里的蝴蝶结蛇","rarity":[1,0], "score":200 ,"speed":0.3},
+		{ "name":"落水狗", "modelID":"007", "minLength":6,"maxLength":13, "minWeight":20, "maxWeight":25, "info":"落入水中的狗","rarity":[1,0], "score":200 ,"speed":0.3},
 		{ "name":"绿鱼", "modelID":"008", "minLength":6,"maxLength":13, "minWeight":20, "maxWeight":25, "info":"生活在水里的绿鱼","rarity":[0,0], "score":200 ,"speed":0.3},
 		{ "name":"绿鱼", "modelID":"009", "minLength":6,"maxLength":13, "minWeight":20, "maxWeight":25, "info":"生活在水里的寄居蟹","rarity":[1,0], "score":200 ,"speed":0.3},
 		{ "name":"绿鱼", "modelID":"010", "minLength":6,"maxLength":13, "minWeight":20, "maxWeight":25, "info":"生活在水里的绿鱼","rarity":[0,0], "score":200 ,"speed":0.3},
 		{ "name":"绿鱼", "modelID":"011", "minLength":6,"maxLength":13, "minWeight":20, "maxWeight":25, "info":"生活在水里的绿鱼","rarity":[0,0], "score":200 ,"speed":0.3},
 		{ "name":"绿鱼", "modelID":"012", "minLength":6,"maxLength":13, "minWeight":20, "maxWeight":25, "info":"生活在水里的绿鱼","rarity":[0,0], "score":200 ,"speed":0.3},
-		{ "name":"绿鱼", "modelID":"013", "minLength":6,"maxLength":13, "minWeight":20, "maxWeight":25, "info":"生活在水里的绿鱼","rarity":[0,0], "score":200 ,"speed":0.3}
+		{ "name":"迷路海豹", "modelID":"013", "minLength":6,"maxLength":13, "minWeight":20, "maxWeight":25, "info":"迷路的海豹","rarity":[0,0], "score":200 ,"speed":0.3}
     ]
 }

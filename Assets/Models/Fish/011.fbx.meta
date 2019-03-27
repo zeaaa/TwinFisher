@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 307963dfd0a938b4ebae4787ed6a4498
+guid: 3d6fb4d40d3f0014eb3ec51412d527a6
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: "Cinema_4D_\u7F16\u8F91\u5668"
+    100000: "Cinema_4D_\u7F16\u8F91\u5668"
+    100002: //RootNode
     100004: "\u5173\u8282_1"
     100006: "\u5173\u8282_1_2"
     100008: "\u5173\u8282_1_3"
@@ -64,8 +64,8 @@ ModelImporter:
     100116: "\u80F6\u56CA_6"
     100118: "\u80F6\u56CA_7"
     100120: "\u89E6\u624B"
-    400000: //RootNode
-    400002: "Cinema_4D_\u7F16\u8F91\u5668"
+    400000: "Cinema_4D_\u7F16\u8F91\u5668"
+    400002: //RootNode
     400004: "\u5173\u8282_1"
     400006: "\u5173\u8282_1_2"
     400008: "\u5173\u8282_1_3"
@@ -150,7 +150,12 @@ ModelImporter:
     13700010: "\u80F6\u56CA_5"
     13700012: "\u80F6\u56CA_6"
     13700014: "\u80F6\u56CA_7"
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: 45faaa9fe4510d64b9c12089a548e99c, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -189,7 +194,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -217,7 +222,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -238,14 +243,14 @@ ModelImporter:
       name: jump
       takeName: CINEMA_4D___
       firstFrame: 300
-      lastFrame: 350
+      lastFrame: 320
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -306,7 +311,6 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
