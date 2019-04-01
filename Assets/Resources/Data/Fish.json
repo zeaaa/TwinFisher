@@ -12,6 +12,6 @@
 		{ "name":"绿鱼", "modelID":"010", "minLength":6,"maxLength":13, "minWeight":20, "maxWeight":25, "info":"生活在水里的绿鱼","rarity":[0,0], "score":200 ,"speed":0.3},
 		{ "name":"绿鱼", "modelID":"011", "minLength":6,"maxLength":13, "minWeight":20, "maxWeight":25, "info":"生活在水里的绿鱼","rarity":[0,0], "score":200 ,"speed":0.3},
 		{ "name":"绿鱼", "modelID":"012", "minLength":6,"maxLength":13, "minWeight":20, "maxWeight":25, "info":"生活在水里的绿鱼","rarity":[0,0], "score":200 ,"speed":0.3},
-		{ "name":"迷路海豹", "modelID":"013", "minLength":6,"maxLength":13, "minWeight":20, "maxWeight":25, "info":"迷路的海豹","rarity":[0,0], "score":200 ,"speed":0.3}
+		{ "name":"迷路海豹", "modelID":"013", "minLength":6,"maxLength":13, "minWeight":20, "maxWeight":25, "info":"迷路的海豹","rarity":[1,0], "score":200 ,"speed":0.3}
     ]
 }

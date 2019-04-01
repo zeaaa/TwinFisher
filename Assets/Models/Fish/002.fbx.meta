@@ -1,9 +1,9 @@
 fileFormatVersion: 2
-guid: 4068f76f80bc1654eae536675d47cd22
+guid: 512dbb26e10cc8a4093148445ec67404
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: "Cinema_4D_\u7F16\u8F91\u5668"
+    100000: CINEMA_4D_Editor
     100002: "\u5173\u8282_3"
     100004: "\u5173\u8282_4"
     100006: "\u5173\u8282_5"
@@ -14,7 +14,7 @@ ModelImporter:
     100016: "\u6839\u5BF9\u8C61_1"
     100018: "\u83AB\u5E72\u897F"
     100020: //RootNode
-    400000: "Cinema_4D_\u7F16\u8F91\u5668"
+    400000: CINEMA_4D_Editor
     400002: "\u5173\u8282_3"
     400004: "\u5173\u8282_4"
     400006: "\u5173\u8282_5"
@@ -25,8 +25,8 @@ ModelImporter:
     400016: "\u6839\u5BF9\u8C61_1"
     400018: "\u83AB\u5E72\u897F"
     400020: //RootNode
-    2000000: "Cinema_4D_\u7F16\u8F91\u5668"
-    2100000: "\u6750\u8D28.1"
+    2000000: CINEMA_4D_Editor
+    2100000: No Name
     4300000: "\u83AB\u5E72\u897F"
     7400000: 002normal
     7400002: 002speed
@@ -37,7 +37,7 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: "\u6750\u8D28.1"
+      name: No Name
     second: {fileID: 2100000, guid: 6c7f37f29b307754c9428778d084e18c, type: 2}
   materials:
     importMaterials: 1

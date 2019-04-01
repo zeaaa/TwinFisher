@@ -7,9 +7,14 @@ public class Wharf : MonoBehaviour {
     public delegate void Dock();
     public static event Dock DockHandler;
 
+    Transform dock;
+    Transform tree;
+
     private void Start()
     {
-        speed = GameManager.Speed;
+        speed = 0;
+        dock = transform.Find("1");
+        tree = transform.Find("2");
     }
 
     float speed;
@@ -32,5 +37,10 @@ public class Wharf : MonoBehaviour {
         if (transform.position.z < -10f) {
             Destroy(this.gameObject);
         }
+    }
+
+    public void Open(bool b) {
+        dock.gameObject.SetActive(b);
+        tree.gameObject.SetActive(!b);
     }
 }

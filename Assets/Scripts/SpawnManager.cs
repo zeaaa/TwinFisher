@@ -12,10 +12,9 @@ struct SpawnPoint{
 }
 public class SpawnManager : MonoBehaviour {
 
-    [SerializeField]
-    GameObject wharfPrefab;
     private bool gameOver;
 	private bool restart;
+    private const float spawnZValue = 125f;
 
     [SerializeField]
     [Rename("生成鱼")]
@@ -59,7 +58,7 @@ public class SpawnManager : MonoBehaviour {
         float offset = spawnWide * 2 / (spawnPointSize-1);
         spawnPoints = new SpawnPoint[spawnPointSize];
         for (int i = 0; i < spawnPointSize; i++) {
-            spawnPoints[i].point = new Vector3(-spawnWide + i * offset, 0,100f) ;
+            spawnPoints[i].point = new Vector3(-spawnWide + i * offset, 0, spawnZValue) ;
             spawnPoints[i].occupied = false;
         }
     }
@@ -69,14 +68,12 @@ public class SpawnManager : MonoBehaviour {
         if(!Application.isPlaying)
             InitSpawnPoints();
 
-        Vector3 direction = transform.TransformDirection(Vector3.back) * 30;
+        Vector3 direction = transform.TransformDirection(Vector3.back) * 70;
         Gizmos.color = Color.red;
         for (int i = 0; i < spawnPoints.Length; i++) {        
             Gizmos.DrawRay(spawnPoints[i].point, direction);
         }
-        Gizmos.color = Color.blue;
-        Gizmos.DrawRay(new Vector3(7f, 0, 100f), direction);
-        Gizmos.DrawRay(new Vector3(-7f, 0, 100f), direction);
+        
     }
 
     private void Awake()
@@ -177,16 +174,14 @@ public class SpawnManager : MonoBehaviour {
         }
     }
 
-
+    bool generateWharf = false;
     void SpawnWharf() {
         spawnWharfTimer += Time.deltaTime;
+        
         if (spawnWharfTimer > spawnWharfInterval) {
             spawnWharfTimer = 0;
-            spawnWharfInterval = Random.Range(5.0f,6.0f);
-
-            Vector3 spawnPosition = new Vector3(((float)Random.Range(0, 2) - 0.5f) * 16f, 0, 100f);
-            Quaternion spawnRotation = Quaternion.identity;
-            Instantiate(wharfPrefab, spawnPosition, spawnRotation);
+            spawnWharfInterval = Random.Range(10,12f);
+            GameObject.Find("Path" + BGScroller.nextID.ToString()).GetComponent<BGScroller>().OpenWharf(true);
         }
     }
     
@@ -196,7 +191,7 @@ public class SpawnManager : MonoBehaviour {
         if (spawnObstacleTimer > spawnObstacleInterval)
         {
             spawnObstacleTimer = 0;
-            spawnObstacleInterval = Random.Range(12f, 16f);
+            spawnObstacleInterval = Random.Range(4f, 6f);
 
             
             int pt = GetSpawnPoint();
