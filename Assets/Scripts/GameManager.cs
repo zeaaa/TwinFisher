@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour {
     private Material webRopeMat;
     void Initialize()
     {
-
+        Screen.SetResolution(1080,1920,false);
         
         _score = 0;
         _inSkill = false;
