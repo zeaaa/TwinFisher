@@ -1,0 +1,17 @@
+{
+	"pondfish": [
+        { "name":"红鱼", "modelID":"001", "maxLength":20,  "maxWeight":30, "place":"water","score":500, "speed":0.3},
+        { "name":"绿鱼", "modelID":"002", "maxLength":-1,  "maxWeight":-1, "place":"water","score":500, "speed":0.3},
+        { "name":"蓝鱼", "modelID":"003", "maxLength":-1,  "maxWeight":-1, "place":"water","score":500, "speed":0.3},
+        { "name":"蓝鱼", "modelID":"004", "maxLength":-1,  "maxWeight":-1, "place":"water","score":500, "speed":0.3},
+        { "name":"蓝鱼", "modelID":"005", "maxLength":-1,  "maxWeight":-1, "place":"water","score":500, "speed":0.3},
+        { "name":"蓝鱼", "modelID":"006", "maxLength":-1,  "maxWeight":-1, "place":"water","score":500, "speed":0.3},
+        { "name":"蓝鱼", "modelID":"007", "maxLength":-1,  "maxWeight":-1, "place":"water","score":500, "speed":0.3},
+        { "name":"蓝鱼", "modelID":"008", "maxLength":-1,  "maxWeight":-1, "place":"water","score":500, "speed":0.3},
+        { "name":"蓝鱼", "modelID":"009", "maxLength":50,  "maxWeight":30, "place":"water","score":500, "speed":0.3},
+        { "name":"蓝鱼", "modelID":"010", "maxLength":-1,  "maxWeight":-1, "place":"water","score":500, "speed":0.3},
+        { "name":"蓝鱼", "modelID":"011", "maxLength":-1,  "maxWeight":-1, "place":"water","score":500, "speed":0.3},
+        { "name":"蓝鱼", "modelID":"012", "maxLength":64,  "maxWeight":28, "place":"water","score":500, "speed":0.3},
+        { "name":"蓝鱼", "modelID":"013", "maxLength":-1,  "maxWeight":-1, "place":"water","score":500, "speed":0.3}
+    ]
+}

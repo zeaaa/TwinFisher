@@ -14,12 +14,12 @@ public class BGScroller : MonoBehaviour
 	void Start ()
 	{
         wharf = transform.Find("Dock");
-        scrollSpeed = -GameManager.Speed;
+        scrollSpeed = 0;
     }
 
 	void FixedUpdate ()
 	{
-		transform.position += Vector3.forward * scrollSpeed;
+		transform.position += Vector3.forward * -scrollSpeed;
         if (transform.position.z < 0 - length)
         {
             transform.position += Vector3.forward * length * 2;
@@ -30,12 +30,19 @@ public class BGScroller : MonoBehaviour
             if (nextID > (totalCount - 1))
                 nextID -= totalCount;
             OpenWharf(false);
-
         }
-
 	}
+
+
 
     public void OpenWharf(bool status) {
         wharf.GetComponent<Wharf>().Open(status);
     }
+
+    public void SetSpeed(float speed)
+    {
+        scrollSpeed = speed;
+    }
+
+
 }

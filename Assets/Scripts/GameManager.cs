@@ -41,6 +41,7 @@ public class GameManager : MonoBehaviour {
     private GameObject Web;
     private GameObject Player;
 
+    //全局速度 需要实时修改
     public static float Speed;
 
     public delegate void UpdateUI(int score,int skillTimes,float capacity);
@@ -79,8 +80,6 @@ public class GameManager : MonoBehaviour {
         webRopeMat = Resources.Load<Material>("Materials/WebRope");
 
         ChangeWebMatColor(WebColor);
-
-        //TODO:  I've forgot what to do 
 
         ResetCollisionMatrix();
      

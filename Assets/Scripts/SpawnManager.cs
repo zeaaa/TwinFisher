@@ -198,7 +198,7 @@ public class SpawnManager : MonoBehaviour {
             if (pt > -1) {
                 int id = Random.Range(0, 1);
                 GameObject obj = (GameObject)Resources.Load("Prefabs/Rock/rock" + (id + 1).ToString());
-                obj.GetComponent<Obstacle>().SetObstacle(0.4f);
+                obj.GetComponent<Obstacle>().SetObstacle(GameManager.Speed);
                 Vector3 spawnPosition = spawnPoints[pt].point;
                 Instantiate(obj, spawnPosition, Quaternion.identity);
             }        
