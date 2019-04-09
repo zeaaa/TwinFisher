@@ -36,14 +36,15 @@ public class PondManager : MonoBehaviour
 
             if(tempData.maxLength<0){
                 Destroy(fishList[id]);  
+                Debug.Log("destroy"+fishList[id]);
                 continue;
             }                                                         //未捕获过该鱼
 
             GameObject obj = fishList[id];
 
             //obj.GetComponent<TFObject>().SetTFObject(tempData.maxLength , tempData.maxWeight,tempData.speed);
-            //PondFishMovement pfm=obj.GetComponent<PondFishMovement>();
-            
+            PondFishMovement pfm=obj.AddComponent<PondFishMovement>();
+            pfm.speed=tempData.speed;
            
             Debug.Log("生成了一条" + tempData.maxLength.ToString("f2") + "cm," + tempData.maxWeight.ToString("f2") + "kg的" + tempData.name);
         }
