@@ -1,0 +1,34 @@
+ManifestFileVersion: 0
+CRC: 386662144
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: d050bcd3b540eccec55aac2f3a7debd8
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: c458a52e7c42d18b22c40f6010dc4731
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 20
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 90
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 137
+  Script: {instanceID: 0}
+Assets:
+- Assets/Models/Fish/001.fbx
+Dependencies: []

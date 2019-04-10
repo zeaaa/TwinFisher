@@ -23,7 +23,6 @@ public class Fish : TFObject
 
     [SerializeField]
     Texture2D tex;
-    float m_timer = 0;
     float animLength;
     protected override void OnCollisionWithPlayer()
     {

@@ -78,7 +78,6 @@ public class PlayerMovement : MonoBehaviour
             skillInput = false;
 
         Vector3 rotationVelocity = Input.gyro.attitude.eulerAngles;
-        debug.text = rotationVelocity.ToString();
         float l = Input.gyro.attitude.eulerAngles.x;
         float threshold = 5f;
         l = l > 180f ? l - 360f : l;
@@ -93,8 +92,8 @@ public class PlayerMovement : MonoBehaviour
 
         int r = Random.Range(0, 3) - 1;
         Vector3 movementR = new Vector3(0f, 0.0f, 0.0f);
-        Player_L.velocity = movementL * speed;
-        Player_R.velocity = movementR * speed;
+        WebPole_R.velocity = movementL * playerMoveSpeed;
+        WebPole_R.velocity = movementR * playerMoveSpeed;
 #endif
         //Player_L.position = new Vector3(Mathf.Clamp (Player_L.position.x, boundary.xMin, Player_R.position.x), Player_L.position.y, Player_L.position.z);
         //Player_R.position = new Vector3(Mathf.Clamp (Player_R.position.x, Player_L.position.x, boundary.xMax), Player_R.position.y, Player_R.position.z);

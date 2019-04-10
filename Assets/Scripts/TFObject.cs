@@ -10,7 +10,7 @@ public abstract class TFObject : MonoBehaviour
     public float _speed = 0;
 
     protected void SetSpeed(float speed) { _speed = speed; }
-    float timer = 0;
+
 
     void OnCollisionEnter(Collision col)
     {

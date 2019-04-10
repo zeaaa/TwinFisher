@@ -28,7 +28,14 @@ public class Obstacle : TFObject{
 
     private void FixedUpdate()
     {
+        SetSpeed(PathManager.GetCurSpeed());
         transform.Translate(Vector3.back * _speed);
         base.DestroyWhenOutofMap();
     }
+
+    private void Awake()
+    {
+       SetObstacle(PathManager.curspeed);
+    }
+
 }

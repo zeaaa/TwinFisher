@@ -12,8 +12,6 @@ struct SpawnPoint{
 }
 public class SpawnManager : MonoBehaviour {
 
-    private bool gameOver;
-	private bool restart;
     private const float spawnZValue = 125f;
 
     [SerializeField]
@@ -38,8 +36,7 @@ public class SpawnManager : MonoBehaviour {
 
     private SpawnPoint[] spawnPoints;
 
-	float timer=0f;
-	int frame=0;
+
     FishDataList fishDataList;
     int toatlRarity = 0;
     int mapID = 0;
@@ -79,18 +76,32 @@ public class SpawnManager : MonoBehaviour {
     private void Awake()
     {
         InitSpawnPoints();
+        GameManager.MGameOverHandler += StopSpawning;
     }
+
+    void OnDestroy() {
+        GameManager.MGameOverHandler -= StopSpawning;
+    }
+
+    void StopSpawning() {
+
+    }
+
     void Start ()
 	{
-		gameOver = false;
-		restart = false;
         spawnFishInterval = 0.5f + TFMath.GaussRand() * 2f;
         spawnWharfInterval = Random.Range(5.0f, 6.0f);
         spawnObstacleInterval = Random.Range(12f, 16f);
-
-        string jsonPath = File.ReadAllText(Application.dataPath + "/Resources/Data/Fish.json");
-        fishDataList = JsonUtility.FromJson<FishDataList>(jsonPath);
-        
+        AssetBundle ab;
+#if UNITY_STANDALONE_WIN || UNITY_STANDALONE_OSX
+        ab = AssetBundle.LoadFromFile(Application.streamingAssetsPath + "/data.ab");
+#endif
+#if UNITY_ANDROID
+        ab = AssetBundle.LoadFromFile(Application.dataPath+"!assets/data.ab");  
+#endif
+        TextAsset ta = ab.LoadAsset<TextAsset>("Fish");
+        fishDataList = JsonUtility.FromJson<FishDataList>(ta.text);
+        ab.Unload(true);
         int length = fishDataList.fish.Count;
           
         foreach (var item in fishDataList.fish) {
@@ -174,7 +185,6 @@ public class SpawnManager : MonoBehaviour {
         }
     }
 
-    bool generateWharf = false;
     void SpawnWharf() {
         spawnWharfTimer += Time.deltaTime;
         
@@ -198,7 +208,6 @@ public class SpawnManager : MonoBehaviour {
             if (pt > -1) {
                 int id = Random.Range(0, 1);
                 GameObject obj = (GameObject)Resources.Load("Prefabs/Rock/rock" + (id + 1).ToString());
-                obj.GetComponent<Obstacle>().SetObstacle(GameManager.Speed);
                 Vector3 spawnPosition = spawnPoints[pt].point;
                 Instantiate(obj, spawnPosition, Quaternion.identity);
             }        

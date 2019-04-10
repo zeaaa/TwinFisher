@@ -20,11 +20,11 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 0.1, g: 0.1, b: 0.1, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
+  m_AmbientMode: 4
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
   m_HaloStrength: 0.5
@@ -7608,7 +7608,7 @@ Prefab:
     - target: {fileID: 114371123573809666, guid: 8b02596d824f74fcc939d35e855a83bf,
         type: 2}
       propertyPath: enableMacroNormals
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114371123573809666, guid: 8b02596d824f74fcc939d35e855a83bf,
         type: 2}
@@ -16045,8 +16045,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1501247980}
-  - component: {fileID: 1501247981}
   - component: {fileID: 1501247983}
+  - component: {fileID: 1501247981}
   - component: {fileID: 1501247984}
   - component: {fileID: 1501247982}
   - component: {fileID: 1501247985}
@@ -16083,8 +16083,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _score: 0
   _curCapacity: 0
-  _maxCapacity: 1000000
-  _playerSpeed: 0.6
+  _maxCapacity: 1000
   maxSkillTimes: 100
   WebColor: {r: 1, g: 0.78103447, b: 0.066176474, a: 1}
   WebFullColor: {r: 1, g: 0, b: 0, a: 1}
@@ -16153,6 +16152,8 @@ MonoBehaviour:
   pathTransform: {fileID: 1141868619}
   mileage: 0
   speed: 0
+  _maxSpeed: 0.25
+  _accelTime: 5
 --- !u!1 &1501504026
 GameObject:
   m_ObjectHideFlags: 0
@@ -20857,40 +20858,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1929566879}
-  - component: {fileID: 1929566878}
-  - component: {fileID: 1929566877}
   m_Layer: 0
-  m_Name: GameDrawManager
+  m_Name: xxx
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &1929566877
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1929566876}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300000, guid: c0535c54ac674694299a50d7e6ead7a9, type: 3}
---- !u!114 &1929566878
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1929566876}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1074409957, guid: c8ec32a81b1c30145acc9c42b292b2bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1929566879
 Transform:
   m_ObjectHideFlags: 1

@@ -10,12 +10,30 @@ public class PathManager : MonoBehaviour {
     [ReadOnly]
     [SerializeField]
     float mileage = 0;
+
+    //Just for showing on inspector
     [ReadOnly]
     [SerializeField]
     float speed = 0;
 
+    public static float curspeed = 0;
+
+    [Rename("场景最大速度")]
+    [SerializeField]
+    float _maxSpeed;
+
+
+    [Rename("加速所需时间")]
+    [SerializeField]
+    float _accelTime;
+
     List<BGScroller> paths;
 
+
+
+    public static float GetCurSpeed() {
+        return curspeed;
+    }
     
 	// Use this for initialization
 	void Awake () {
@@ -24,28 +42,39 @@ public class PathManager : MonoBehaviour {
         for (int i = 0; i < bgs.Length; i++) {
             paths.Add(bgs[i]);
         }
+        GameManager.MGameOverHandler += StopScrolling;
     }
+
+    private void OnDestroy()
+    {
+        GameManager.MGameOverHandler -= StopScrolling;
+    }
+
+    void StopScrolling() {
+        StartCoroutine(ChangeSpeed(0f, 1.0f));
+}
 
     void Start()
     {
-       StartCoroutine(ChangeSpeed(GameManager.Speed, 3.0f));      
+       StartCoroutine(ChangeSpeed(_maxSpeed, _accelTime));      
     }
 
     private void FixedUpdate()
     {
         mileage += speed * Time.fixedDeltaTime;
+        speed = curspeed;
     }
 
 
     IEnumerator ChangeSpeed(float endSpeed, float time) {
         WaitForFixedUpdate wffu = new WaitForFixedUpdate();
         float startTime = Time.time;
-        float startSpeed = speed;
+        float startSpeed = curspeed;
         while (true) {
             float timeSinceStarted = Time.time - startTime;
             float percentage= timeSinceStarted / time;
-            speed = Mathf.Lerp(startSpeed, endSpeed, percentage);
-            SetSpeed(speed);
+            curspeed = Mathf.Lerp(startSpeed, endSpeed, percentage);
+            SetSpeed(curspeed);
             yield return wffu;
             if (percentage >= 1.0f)
             {

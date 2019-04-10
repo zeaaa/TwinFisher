@@ -17,9 +17,6 @@ public class GameManager : MonoBehaviour {
     float _maxCapacity;
 
     [SerializeField]
-    float _playerSpeed;
-
-    [SerializeField]
     int maxSkillTimes = 3;
 
     bool _inSkill;
@@ -38,11 +35,8 @@ public class GameManager : MonoBehaviour {
     [SerializeField]
     public DOTweenPath rp;
 
-    private GameObject Web;
     private GameObject Player;
 
-    //全局速度 需要实时修改
-    public static float Speed;
 
     public delegate void UpdateUI(int score,int skillTimes,float capacity);
     public static event UpdateUI UpdateUIHandler;
@@ -51,7 +45,7 @@ public class GameManager : MonoBehaviour {
     public static event MGameOver MGameOverHandler;
 
     //GameObject[] webNode = GameObject.FindGameObjectsWithTag("WebNode");
-
+    
 
 
     [Range(20, 2000)]
@@ -66,9 +60,7 @@ public class GameManager : MonoBehaviour {
         _score = 0;
         _inSkill = false;
         _curCapacity = 0;
-        Speed = _playerSpeed;
         _skillTimes = maxSkillTimes;
-        Web = GameObject.FindGameObjectWithTag("Web");
 
 
 

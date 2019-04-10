@@ -63,7 +63,7 @@ public class UIManager : MonoBehaviour {
     }
 
     IEnumerator IEShowGameOverUI() {
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(1f);
         Time.timeScale = 0;
         bg.DOFade(0.5f, 1f).SetUpdate(true);
         Tweener move = r_gameOver.DOLocalMove(Vector3.zero, 1.0f);     
