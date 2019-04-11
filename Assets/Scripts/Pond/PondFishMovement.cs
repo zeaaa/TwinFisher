@@ -13,7 +13,8 @@ public class PondFishMovement : MonoBehaviour
     void Start()
     {
         nav=gameObject.AddComponent<NavMeshAgent>();
-        
+        nav.height=1f;
+        nav.radius=1f;
     }
 
     // Update is called once per frame
