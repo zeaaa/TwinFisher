@@ -46,7 +46,7 @@ public class NodePosition : MonoBehaviour {
 
 
     void AddForce() {
-        rig.AddForce(Vector3.back*forge*0.02f*PlayerMovement.dis);
+        rig.AddForce(Vector3.back*forge*0.02f * Mathf.Abs(PlayerMovement.dis));
     }
 	void Judge()
 	{

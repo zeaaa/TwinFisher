@@ -92,6 +92,9 @@ public class GameManager : MonoBehaviour {
         DisableCollision("WebNode", "Wharf", true);
         DisableCollision("WebPole", "Player", true);
         DisableCollision("WebPole", "WebNode", true);
+        //player collision
+        DisableCollision("WebPole", "WebPole", true);
+        DisableCollision("Player", "Player", true);
 
     }
 

@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using DG.Tweening;
 public class PathManager : MonoBehaviour {
 
     [SerializeField]
@@ -56,7 +56,10 @@ public class PathManager : MonoBehaviour {
 
     void Start()
     {
-       StartCoroutine(ChangeSpeed(_maxSpeed, _accelTime));      
+        SetSpeed(0);
+        float cameraAnimTime = 3.0f;
+        Camera.main.transform.DOMoveZ(45f, cameraAnimTime).SetEase(Ease.Linear).onComplete = delegate { StartCoroutine(ChangeSpeed(_maxSpeed, _accelTime)); };
+        Camera.main.transform.DORotate(new Vector3(50, 0, 0), cameraAnimTime);
     }
 
     private void FixedUpdate()

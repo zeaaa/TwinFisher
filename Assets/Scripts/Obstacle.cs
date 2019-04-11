@@ -4,22 +4,34 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Obstacle : TFObject{
-
+    bool gameOver = false;
     public delegate void GameOver();
     public static event GameOver GameOverHandler;
     protected override void OnCollisionWithPlayer()
     {
-        GameOverHandler();
+        if (!gameOver) {
+            GameOverHandler();
+            gameOver = true;
+        }
+            
     }
 
     protected override void OnCollisionWithWebNode()
     {
-        GameOverHandler();
+        if (!gameOver)
+        {
+            GameOverHandler();
+            gameOver = true;
+        }
     }
 
     protected override void OnCollisionWithWebPole()
     {
-        GameOverHandler();
+        if (!gameOver)
+        {
+            GameOverHandler();
+            gameOver = true;
+        }
     }
 
     public void SetObstacle(float speed) {

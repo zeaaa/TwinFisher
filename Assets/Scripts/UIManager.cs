@@ -31,9 +31,6 @@ public class UIManager : MonoBehaviour {
     }
     private void Start()
     {
-        
-       
-        
         b_reStart.onClick.AddListener(delegate () { SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); Time.timeScale = 1; });
         b_back.onClick.AddListener(delegate () { SceneManager.LoadScene(0); Time.timeScale = 1; });
         b_reStart.interactable = false;
@@ -64,7 +61,7 @@ public class UIManager : MonoBehaviour {
 
     IEnumerator IEShowGameOverUI() {
         yield return new WaitForSeconds(1f);
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
         bg.DOFade(0.5f, 1f).SetUpdate(true);
         Tweener move = r_gameOver.DOLocalMove(Vector3.zero, 1.0f);     
         move.SetEase(Ease.InQuad);

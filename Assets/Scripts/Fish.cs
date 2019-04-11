@@ -59,12 +59,11 @@ public class Fish : TFObject
     private void Start()
     {
         animLength = TFUtility.GetLengthByName(GetComponent<Animator>(), "jump");
-        //SetSpeed(0.6f);
     }
     private void FixedUpdate() {
         //Debug.Log(GetComponent<Rigidbody>().velocity.z);
         if (inCollision == false)
-            GetComponent<Rigidbody>().velocity = Vector3.back * _speed / Time.fixedDeltaTime;
+            GetComponent<Rigidbody>().velocity = Vector3.back * (_speed + PathManager.GetCurSpeed()) / Time.fixedUnscaledDeltaTime;
         else {       
             //if (GetComponent<Rigidbody>().velocity.z > 0)
                // GetComponent<Rigidbody>().velocity = Vector3.zero;

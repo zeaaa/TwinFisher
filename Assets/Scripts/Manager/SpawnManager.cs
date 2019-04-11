@@ -201,7 +201,7 @@ public class SpawnManager : MonoBehaviour {
         if (spawnObstacleTimer > spawnObstacleInterval)
         {
             spawnObstacleTimer = 0;
-            spawnObstacleInterval = Random.Range(4f, 6f);
+            spawnObstacleInterval = Random.Range(1f, 4f);
 
             
             int pt = GetSpawnPoint();

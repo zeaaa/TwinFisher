@@ -39,14 +39,15 @@ public class PlayerMovement : MonoBehaviour
         if (WebPole_R.transform.position.x > riverWide)
             WebPole_R.transform.position = new Vector3(riverWide - 0.05f, WebPole_R.transform.position.y, WebPole_R.transform.position.z);
             //WebPole_R.velocity = Vector3.zero;
-
     }
+
+    bool killMovement = false;
 
     void FixedUpdate ()
 	{
         FixPlayerModelPosition();
 #if UNITY_STANDALONE_WIN || UNITY_STANDALONE_OSX
-        if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.UpArrow)&&!killMovement)
         {
             skillInput = true;
             SkillInputHandler();
@@ -55,8 +56,9 @@ public class PlayerMovement : MonoBehaviour
             skillInput = false;
 
 
-        float moveHorizontalL = Input.GetAxis("HorizontalL");
-        float moveHorizontalR = Input.GetAxis("HorizontalR");
+        
+        float moveHorizontalL = killMovement ? 0: Input.GetAxis("HorizontalL");
+        float moveHorizontalR = killMovement ? 0: Input.GetAxis("HorizontalR");
 
         Vector3 movementL = new Vector3(moveHorizontalL, 0.0f, 0.0f);
         Vector3 movementR = new Vector3(moveHorizontalR, 0.0f, 0.0f);
@@ -105,6 +107,21 @@ public class PlayerMovement : MonoBehaviour
         Web.transform.position =  new Vector3((WebPole_R.position.x + WebPole_L.position.x) / 2,Web.transform.position.y,Web.transform.position.z);
         Web.transform.localScale = new Vector3((WebPole_R.position - WebPole_L.position).x-1.5f,9f,1.5f);
         dis = WebPole_R.position.x - WebPole_L.position.x;
+    }
+
+    void KillMovement() {
+        killMovement = true;
+    }
+
+
+    private void Awake()
+    {
+        GameManager.MGameOverHandler += KillMovement;
+    }
+
+    private void OnDestroy()
+    {
+        GameManager.MGameOverHandler -= KillMovement;
     }
 
     void Start ()

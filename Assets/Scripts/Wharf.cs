@@ -24,10 +24,7 @@ public class Wharf : MonoBehaviour {
         {
             DockHandler();
             //TODO 防止多次触发
-            //this.GetComponent<Renderer>().material.DOColor()
-            transform.DOShakeScale(1.0f, 1.5f, 2).onComplete = delegate {
-                
-            };
+            Debug.Log("hit wharf");
         }
     }
 
