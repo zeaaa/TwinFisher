@@ -16,6 +16,8 @@ public class Fish : TFObject
     [SerializeField]
     private float _weight = 0;
 
+    private int _spId = 0;
+
     private bool inCollision = false;
 
     public delegate void Colision(int score, float weight);
@@ -47,12 +49,13 @@ public class Fish : TFObject
        // throw new NotImplementedException();
     }
 
-    public void SetFish(float speed, int score, float length, float weight)
+    public void SetFish(float speed, int score, float length, float weight,int spawnPointId)
     {
         base.SetSpeed(speed);
         _score = score;
         _length = length;
         _weight = weight;
+        _spId = spawnPointId;
     }
 
 

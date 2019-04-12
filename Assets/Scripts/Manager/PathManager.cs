@@ -27,6 +27,10 @@ public class PathManager : MonoBehaviour {
     [SerializeField]
     float _accelTime;
 
+    [Rename("开场镜头动画")]
+    [SerializeField]
+    bool cameraAnim = true;
+
     List<BGScroller> paths;
 
 
@@ -58,8 +62,17 @@ public class PathManager : MonoBehaviour {
     {
         SetSpeed(0);
         float cameraAnimTime = 3.0f;
-        Camera.main.transform.DOMoveZ(45f, cameraAnimTime).SetEase(Ease.Linear).onComplete = delegate { StartCoroutine(ChangeSpeed(_maxSpeed, _accelTime)); };
-        Camera.main.transform.DORotate(new Vector3(50, 0, 0), cameraAnimTime);
+        if (cameraAnim)
+        {
+            Camera.main.transform.DOMoveZ(45f, cameraAnimTime).SetEase(Ease.Linear).onComplete = delegate { StartCoroutine(ChangeSpeed(_maxSpeed, _accelTime)); };
+            Camera.main.transform.DORotate(new Vector3(50, 0, 0), cameraAnimTime);
+        }
+        else {
+            StartCoroutine(ChangeSpeed(_maxSpeed, _accelTime));
+            Camera.main.transform.position = new Vector3(0,56f,45f);
+            Camera.main.transform.localEulerAngles = new Vector3(50, 0, 0);
+        }
+       
     }
 
     private void FixedUpdate()

@@ -50,7 +50,7 @@ public class SpawnManager : MonoBehaviour {
     float spawnObstacleTimer = 0;
     float spawnObstacleInterval = 0;
 
-    List<int> spawnPointsId = new List<int>();
+    List<int> spawnPointsIdList = new List<int>();
     void InitSpawnPoints() {
         float offset = spawnWide * 2 / (spawnPointSize-1);
         spawnPoints = new SpawnPoint[spawnPointSize];
@@ -141,25 +141,29 @@ public class SpawnManager : MonoBehaviour {
             spawnFishInterval = 0.5f + TFMath.GaussRand() * 2f;
 
             int pt = GetSpawnPoint();
-            if (pt>-1)
-                SpawnFishByID(GetRandomFishID(),pt);
+            if (pt > -1) {
+                spawnPoints[pt].occupied = true;
+                SpawnFishByID(GetRandomFishID(), pt);
+            }
+            else
+                return;
 
-            if (Random.Range(0, 8) == 0)
-                StartCoroutine(Spawnshoal());
+            //if (Random.Range(0, 8) == 0)
+                //StartCoroutine(Spawnshoal());
         }   
 	}
 
     int GetSpawnPoint() {
-        spawnPointsId.Clear();
+        spawnPointsIdList.Clear();
         for (int i = 0; i < spawnPointSize; i++)
         {
             if (spawnPoints[i].occupied == false)
             {
-                spawnPointsId.Add(i);
+                spawnPointsIdList.Add(i);
             }
         }
-        if (spawnPointsId.Count != 0)
-            return Random.Range(0, spawnPointsId.Count);
+        if (spawnPointsIdList.Count != 0)
+            return spawnPointsIdList[Random.Range(0, spawnPointsIdList.Count)];
         else
             return -1;
     }
@@ -171,9 +175,9 @@ public class SpawnManager : MonoBehaviour {
         float WRange = tempData.maxWeight - tempData.minWeight;
         float length = tempData.minLength + LRange * TFMath.GaussRand();
         float weight = tempData.minWeight + WRange * TFMath.GaussRand();
-        obj.GetComponent<Fish>().SetFish(tempData.speed, tempData.score, length, weight);
-        Vector3 spawnPosition = spawnPoints[spawnPointsId[spawnPointID]].point;
-        
+        obj.GetComponent<Fish>().SetFish(tempData.speed, tempData.score, length, weight, spawnPointID);
+        Vector3 spawnPosition = spawnPoints[spawnPointID].point;
+
         Instantiate(obj, spawnPosition, Quaternion.Euler(-35, 180, 0));
         // Debug.Log("生成了一条" + length.ToString("f2") + "cm," + weight.ToString("f2") + "kg的" + tempData.name);
     }
