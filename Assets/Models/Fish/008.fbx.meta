@@ -1,41 +1,46 @@
 fileFormatVersion: 2
-guid: 069bb93f7918b3b46befff7152994cad
+guid: f883a6cd6f7456d43954329a9eadb9d7
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: "Cinema_4D_\u7F16\u8F91\u5668"
-    100004: "\u524D\u817F"
-    100006: "\u53F3\u81C2_1"
-    100008: "\u540E\u817F"
-    100010: "\u8783\u87F9"
-    100012: "\u8EAB\u4F53"
-    400000: //RootNode
-    400002: "Cinema_4D_\u7F16\u8F91\u5668"
-    400004: "\u524D\u817F"
-    400006: "\u53F3\u81C2_1"
-    400008: "\u540E\u817F"
-    400010: "\u8783\u87F9"
-    400012: "\u8EAB\u4F53"
-    2000000: "Cinema_4D_\u7F16\u8F91\u5668"
+    100000: CINEMA_4D_Editor
+    100002: "\u524D\u817F"
+    100004: "\u540E\u817F"
+    100006: //RootNode
+    100008: "\u8783\u87F9"
+    100010: "\u8EAB\u4F53"
+    100012: "\u94B3\u5B50"
+    400000: CINEMA_4D_Editor
+    400002: "\u524D\u817F"
+    400004: "\u540E\u817F"
+    400006: //RootNode
+    400008: "\u8783\u87F9"
+    400010: "\u8EAB\u4F53"
+    400012: "\u94B3\u5B50"
+    2000000: CINEMA_4D_Editor
     2100000: No Name
     2300000: "\u524D\u817F"
-    2300002: "\u53F3\u81C2_1"
-    2300004: "\u540E\u817F"
-    2300006: "\u8EAB\u4F53"
+    2300002: "\u540E\u817F"
+    2300004: "\u8EAB\u4F53"
+    2300006: "\u94B3\u5B50"
     3300000: "\u524D\u817F"
-    3300002: "\u53F3\u81C2_1"
-    3300004: "\u540E\u817F"
-    3300006: "\u8EAB\u4F53"
+    3300002: "\u540E\u817F"
+    3300004: "\u8EAB\u4F53"
+    3300006: "\u94B3\u5B50"
     4300000: "\u8EAB\u4F53"
-    4300002: "\u524D\u817F"
-    4300004: "\u540E\u817F"
-    4300006: "\u53F3\u81C2_1"
-    7400000: normal
-    7400002: speed
-    7400004: jump
+    4300002: "\u540E\u817F"
+    4300004: "\u524D\u817F"
+    4300006: "\u94B3\u5B50"
+    7400000: 008normal
+    7400002: 008speed
+    7400004: 008jump
     9500000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: ec18c30cf4f2def42952cb44f8f0e810, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -64,7 +69,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: normal
+      name: 008normal
       takeName: CINEMA_4D___
       firstFrame: 30
       lastFrame: 240
@@ -92,7 +97,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: speed
+      name: 008speed
       takeName: CINEMA_4D___
       firstFrame: 240
       lastFrame: 300
@@ -120,17 +125,17 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: jump
+      name: 008jump
       takeName: CINEMA_4D___
       firstFrame: 300
-      lastFrame: 350
+      lastFrame: 320
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -153,9 +158,10 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 1
+    importCameras: 0
     importLights: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
@@ -177,6 +183,9 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
@@ -191,7 +200,6 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1

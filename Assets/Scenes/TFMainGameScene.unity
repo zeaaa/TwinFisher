@@ -2304,7 +2304,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 1208121219325625194}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 129697430}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -3647,6 +3647,7 @@ GameObject:
   m_Component:
   - component: {fileID: 170076735}
   - component: {fileID: 170076734}
+  - component: {fileID: 170076736}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -3706,6 +3707,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 70.416, y: 123.478004, z: 156.671}
+--- !u!114 &170076736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 170076733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87a0ac86bf4f0464ca33b48ce383ef4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dirLight: {fileID: 170076734}
 --- !u!1 &173219227
 GameObject:
   m_ObjectHideFlags: 0
@@ -9768,7 +9782,7 @@ PrefabInstance:
     - target: {fileID: 114371123573809666, guid: 8b02596d824f74fcc939d35e855a83bf,
         type: 3}
       propertyPath: showLighting
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114371123573809666, guid: 8b02596d824f74fcc939d35e855a83bf,
         type: 3}
@@ -9848,7 +9862,7 @@ PrefabInstance:
     - target: {fileID: 114371123573809666, guid: 8b02596d824f74fcc939d35e855a83bf,
         type: 3}
       propertyPath: showIntersection
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114371123573809666, guid: 8b02596d824f74fcc939d35e855a83bf,
         type: 3}
@@ -9888,7 +9902,7 @@ PrefabInstance:
     - target: {fileID: 114371123573809666, guid: 8b02596d824f74fcc939d35e855a83bf,
         type: 3}
       propertyPath: depth
-      value: 2.2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114371123573809666, guid: 8b02596d824f74fcc939d35e855a83bf,
         type: 3}
@@ -9995,6 +10009,16 @@ PrefabInstance:
       propertyPath: rimDistortion
       value: 0.346
       objectReference: {fileID: 0}
+    - target: {fileID: 114371123573809666, guid: 8b02596d824f74fcc939d35e855a83bf,
+        type: 3}
+      propertyPath: fresnel
+      value: -0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 114371123573809666, guid: 8b02596d824f74fcc939d35e855a83bf,
+        type: 3}
+      propertyPath: shadowCaster
+      value: 
+      objectReference: {fileID: 170076734}
     - target: {fileID: 33705837590322018, guid: 8b02596d824f74fcc939d35e855a83bf,
         type: 3}
       propertyPath: m_Mesh
@@ -31125,6 +31149,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CenterPoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 1208121219337881074, guid: e26e1e239ab01e5448e19954d59bbf67,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1208121219337881072, guid: e26e1e239ab01e5448e19954d59bbf67,
         type: 3}

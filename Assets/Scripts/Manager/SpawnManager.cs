@@ -142,7 +142,7 @@ public class SpawnManager : MonoBehaviour {
 
             int pt = GetSpawnPoint();
             if (pt > -1) {
-                spawnPoints[pt].occupied = true;
+                //spawnPoints[pt].occupied = true;
                 SpawnFishByID(GetRandomFishID(), pt);
             }
             else

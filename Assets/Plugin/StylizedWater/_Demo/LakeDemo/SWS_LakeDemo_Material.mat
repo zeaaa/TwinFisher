@@ -62,7 +62,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _Cutoff: 0.5
-    - _Depth: 2.2
+    - _Depth: 0
     - _Depthdarkness: 0
     - _ENABLE_GRADIENT: 0
     - _ENABLE_NORMALS: 1
@@ -76,7 +76,7 @@ Material:
     - _FoamSize: 0.204
     - _FoamSpeed: 0.3
     - _FoamTiling: 0.100000076
-    - _Fresnelexponent: 1.38
+    - _Fresnelexponent: -0.15
     - _Glossiness: 0.823
     - _HighlightPanning: 0
     - _IntersectionDistortion: 0.1
