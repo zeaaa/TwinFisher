@@ -94,7 +94,7 @@ Material:
     - _Reflection: 0
     - _ReflectionFresnel: 6.32
     - _ReflectionRefraction: 0.012
-    - _ReflectionStrength: 0
+    - _ReflectionStrength: 1
     - _RefractionAmount: 0.095
     - _RimContrast: 1
     - _RimDistance: 1.13
