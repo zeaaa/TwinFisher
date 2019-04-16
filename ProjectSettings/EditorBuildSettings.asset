@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/StartScene.unity
     guid: 196ca26482d89014886b4c39c5408ec0
   - enabled: 1
-    path: Assets/Scenes/TFMainGameScene.unity
+    path: Assets/Scenes/pond222.unity
     guid: 99c9720ab356a0642a771bea13969a05
   m_configObjects: {}
