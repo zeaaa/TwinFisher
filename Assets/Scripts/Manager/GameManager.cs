@@ -56,14 +56,11 @@ public class GameManager : MonoBehaviour {
     void Initialize()
     {
         Screen.SetResolution(1080,1920,false);
-        
         _score = 0;
         _inSkill = false;
         _curCapacity = 0;
         _skillTimes = maxSkillTimes;
-
-
-
+ 
         Fish.AddScoreHandler += AddScore;
         Obstacle.GameOverHandler += GameOver;
         Wharf.DockHandler += Dock;
@@ -72,11 +69,8 @@ public class GameManager : MonoBehaviour {
         webRopeMat = Resources.Load<Material>("Materials/WebRope");
 
         ChangeWebMatColor(WebColor);
-
         ResetCollisionMatrix();
-     
     }
-
 
     private void ResetCollisionMatrix()
     {
@@ -120,7 +114,6 @@ public class GameManager : MonoBehaviour {
         if (!Application.isPlaying)
             SetWebNodeForge(forge);
     }
-
 
     // Update is called once per frame
     void Update () {

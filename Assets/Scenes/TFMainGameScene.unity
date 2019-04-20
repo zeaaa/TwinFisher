@@ -9777,7 +9777,7 @@ PrefabInstance:
     - target: {fileID: 114371123573809666, guid: 8b02596d824f74fcc939d35e855a83bf,
         type: 3}
       propertyPath: waveTint
-      value: 0.42
+      value: -0.28
       objectReference: {fileID: 0}
     - target: {fileID: 114371123573809666, guid: 8b02596d824f74fcc939d35e855a83bf,
         type: 3}
@@ -9797,7 +9797,7 @@ PrefabInstance:
     - target: {fileID: 114371123573809666, guid: 8b02596d824f74fcc939d35e855a83bf,
         type: 3}
       propertyPath: transparency
-      value: 1
+      value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: 114371123573809666, guid: 8b02596d824f74fcc939d35e855a83bf,
         type: 3}
@@ -9807,17 +9807,17 @@ PrefabInstance:
     - target: {fileID: 114371123573809666, guid: 8b02596d824f74fcc939d35e855a83bf,
         type: 3}
       propertyPath: glossiness
-      value: 1
+      value: 0.637
       objectReference: {fileID: 0}
     - target: {fileID: 114371123573809666, guid: 8b02596d824f74fcc939d35e855a83bf,
         type: 3}
       propertyPath: edgeFade
-      value: 2.13
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114371123573809666, guid: 8b02596d824f74fcc939d35e855a83bf,
         type: 3}
       propertyPath: refractionAmount
-      value: 0.095
+      value: 0.027
       objectReference: {fileID: 0}
     - target: {fileID: 114371123573809666, guid: 8b02596d824f74fcc939d35e855a83bf,
         type: 3}
@@ -9827,7 +9827,7 @@ PrefabInstance:
     - target: {fileID: 114371123573809666, guid: 8b02596d824f74fcc939d35e855a83bf,
         type: 3}
       propertyPath: normalStrength
-      value: 0.544
+      value: 0.391
       objectReference: {fileID: 0}
     - target: {fileID: 114371123573809666, guid: 8b02596d824f74fcc939d35e855a83bf,
         type: 3}
@@ -9837,7 +9837,7 @@ PrefabInstance:
     - target: {fileID: 114371123573809666, guid: 8b02596d824f74fcc939d35e855a83bf,
         type: 3}
       propertyPath: foamOpacity
-      value: 0.14
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114371123573809666, guid: 8b02596d824f74fcc939d35e855a83bf,
         type: 3}
@@ -9907,12 +9907,12 @@ PrefabInstance:
     - target: {fileID: 114371123573809666, guid: 8b02596d824f74fcc939d35e855a83bf,
         type: 3}
       propertyPath: waterColor.g
-      value: 0.44861397
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114371123573809666, guid: 8b02596d824f74fcc939d35e855a83bf,
         type: 3}
       propertyPath: waterColor.b
-      value: 0.839
+      value: 0.882921
       objectReference: {fileID: 0}
     - target: {fileID: 114371123573809666, guid: 8b02596d824f74fcc939d35e855a83bf,
         type: 3}
@@ -9942,17 +9942,17 @@ PrefabInstance:
     - target: {fileID: 114371123573809666, guid: 8b02596d824f74fcc939d35e855a83bf,
         type: 3}
       propertyPath: waterShallowColor.g
-      value: 0.9254902
+      value: 0.9245283
       objectReference: {fileID: 0}
     - target: {fileID: 114371123573809666, guid: 8b02596d824f74fcc939d35e855a83bf,
         type: 3}
       propertyPath: waterShallowColor.b
-      value: 0.7044776
+      value: 0.786931
       objectReference: {fileID: 0}
     - target: {fileID: 114371123573809666, guid: 8b02596d824f74fcc939d35e855a83bf,
         type: 3}
       propertyPath: waterShallowColor.r
-      value: 0.23137255
+      value: 0.06541473
       objectReference: {fileID: 0}
     - target: {fileID: 114371123573809666, guid: 8b02596d824f74fcc939d35e855a83bf,
         type: 3}
@@ -9967,27 +9967,27 @@ PrefabInstance:
     - target: {fileID: 114371123573809666, guid: 8b02596d824f74fcc939d35e855a83bf,
         type: 3}
       propertyPath: fresnelColor.r
-      value: 0.19744569
+      value: 0.5254902
       objectReference: {fileID: 0}
     - target: {fileID: 114371123573809666, guid: 8b02596d824f74fcc939d35e855a83bf,
         type: 3}
       propertyPath: fresnelColor.g
-      value: 0.51304513
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114371123573809666, guid: 8b02596d824f74fcc939d35e855a83bf,
         type: 3}
       propertyPath: fresnelColor.b
-      value: 0.8207547
+      value: 0.8382747
       objectReference: {fileID: 0}
     - target: {fileID: 114371123573809666, guid: 8b02596d824f74fcc939d35e855a83bf,
         type: 3}
       propertyPath: rimSize
-      value: 5.2
+      value: 8.9
       objectReference: {fileID: 0}
     - target: {fileID: 114371123573809666, guid: 8b02596d824f74fcc939d35e855a83bf,
         type: 3}
       propertyPath: rimFalloff
-      value: 4.7
+      value: 19.2
       objectReference: {fileID: 0}
     - target: {fileID: 114371123573809666, guid: 8b02596d824f74fcc939d35e855a83bf,
         type: 3}
@@ -10002,7 +10002,7 @@ PrefabInstance:
     - target: {fileID: 114371123573809666, guid: 8b02596d824f74fcc939d35e855a83bf,
         type: 3}
       propertyPath: rimColor.a
-      value: 0.16862746
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114371123573809666, guid: 8b02596d824f74fcc939d35e855a83bf,
         type: 3}
@@ -10012,7 +10012,7 @@ PrefabInstance:
     - target: {fileID: 114371123573809666, guid: 8b02596d824f74fcc939d35e855a83bf,
         type: 3}
       propertyPath: fresnel
-      value: 0.56
+      value: 4.01
       objectReference: {fileID: 0}
     - target: {fileID: 114371123573809666, guid: 8b02596d824f74fcc939d35e855a83bf,
         type: 3}
@@ -10037,7 +10037,17 @@ PrefabInstance:
     - target: {fileID: 114371123573809666, guid: 8b02596d824f74fcc939d35e855a83bf,
         type: 3}
       propertyPath: reflectionFresnel
-      value: 6.27
+      value: 6.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 114371123573809666, guid: 8b02596d824f74fcc939d35e855a83bf,
+        type: 3}
+      propertyPath: macroNormalsDistance
+      value: 448
+      objectReference: {fileID: 0}
+    - target: {fileID: 114371123573809666, guid: 8b02596d824f74fcc939d35e855a83bf,
+        type: 3}
+      propertyPath: waveSize
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 33705837590322018, guid: 8b02596d824f74fcc939d35e855a83bf,
         type: 3}
@@ -21312,6 +21322,7 @@ GameObject:
   - component: {fileID: 1501247984}
   - component: {fileID: 1501247982}
   - component: {fileID: 1501247985}
+  - component: {fileID: 1501247986}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameController
@@ -21423,6 +21434,18 @@ MonoBehaviour:
   _maxSpeed: 0.4
   _accelTime: 10
   cameraAnim: 1
+--- !u!114 &1501247986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1501247979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daeae23c611ca7046ac87bf65f486b40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1501504026
 GameObject:
   m_ObjectHideFlags: 0

@@ -47,7 +47,8 @@ public class PlayerMovement : MonoBehaviour
 	{
         FixPlayerModelPosition();
 #if UNITY_STANDALONE_WIN || UNITY_STANDALONE_OSX
-        if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.UpArrow)&&!killMovement)
+
+        if ((int)Input.GetAxis("JoyStick1RPad") == -1 && (int)Input.GetAxis("JoyStick2RPad") == -1&&!killMovement)
         {
             skillInput = true;
             SkillInputHandler();
@@ -55,11 +56,28 @@ public class PlayerMovement : MonoBehaviour
         else
             skillInput = false;
 
-
-        
-        float moveHorizontalL = killMovement ? 0: Input.GetAxis("HorizontalL");
-        float moveHorizontalR = killMovement ? 0: Input.GetAxis("HorizontalR");
-
+        string[] joyStickNames = Input.GetJoystickNames();
+        /*
+        for (int x = 0; x < joyStickNames.Length; x++)
+        {
+            print(x + joyStickNames[x]);
+        }*/
+        float moveHorizontalL = 0;
+        float moveHorizontalR = 0;
+        if (joyStickNames.Length == 0)
+        {
+            moveHorizontalL = killMovement ? 0 : Input.GetAxis("HorizontalL");
+            moveHorizontalR = killMovement ? 0 : Input.GetAxis("HorizontalR");
+        }
+        else if (joyStickNames.Length == 1) {
+            moveHorizontalL = killMovement ? 0 : Input.GetAxis("JoyStick1LPad");
+            moveHorizontalR = killMovement ? 0 : Input.GetAxis("HorizontalR");
+        }
+        else if (joyStickNames.Length >= 2) {
+            moveHorizontalL = killMovement ? 0 : Input.GetAxis("JoyStick1LPad");
+            moveHorizontalR = killMovement ? 0 : Input.GetAxis("JoyStick2LPad");
+        }
+            
         Vector3 movementL = new Vector3(moveHorizontalL, 0.0f, 0.0f);
         Vector3 movementR = new Vector3(moveHorizontalR, 0.0f, 0.0f);
 
