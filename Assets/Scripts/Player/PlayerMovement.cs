@@ -123,8 +123,9 @@ public class PlayerMovement : MonoBehaviour
 
        // Web.transform.rotation = Quaternion.Euler(60.0f, 0.0f, 0.0f);
         Web.transform.position =  new Vector3((WebPole_R.position.x + WebPole_L.position.x) / 2,Web.transform.position.y,Web.transform.position.z);
-        Web.transform.localScale = new Vector3((WebPole_R.position - WebPole_L.position).x-1.5f,9f,1.5f);
+        
         dis = WebPole_R.position.x - WebPole_L.position.x;
+        Web.transform.localScale = new Vector3(Mathf.Abs(dis), 9f, 1.5f);
     }
 
     void KillMovement() {

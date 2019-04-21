@@ -41,6 +41,7 @@ public class GameManager : MonoBehaviour {
     public delegate void UpdateUI(int score,int skillTimes,float capacity);
     public static event UpdateUI UpdateUIHandler;
 
+
     public delegate void MGameOver();
     public static event MGameOver MGameOverHandler;
 

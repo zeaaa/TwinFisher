@@ -70,7 +70,7 @@ public class NodePosition : MonoBehaviour {
             line[i].transform.localScale = new Vector3(linewide, Vector3.Magnitude(linkNodeTran[i].position - transform.position) *2  , linewide);
         }
 
-        GetComponent<BoxCollider>().size = new Vector3(PlayerMovement.dis, GetComponent<BoxCollider>().size.y, GetComponent<BoxCollider>().size.z);
+        GetComponent<BoxCollider>().size = new Vector3(Mathf.Abs(PlayerMovement.dis), GetComponent<BoxCollider>().size.y, GetComponent<BoxCollider>().size.z);
         /*
 		//原方案，无用
 		//求两点距离时，用平方会比开方好

@@ -31,11 +31,13 @@ public class SpawnManager : MonoBehaviour {
     float spawnWide;
 
     [SerializeField]
-    [Range(0,10)]
+    [Range(0,10)] 
     private int spawnPointSize;
 
-    private SpawnPoint[] spawnPoints;
+    [SerializeField]
+    bool drawLine = true;
 
+    private SpawnPoint[] spawnPoints;
 
     FishDataList fishDataList;
     int toatlRarity = 0;
@@ -67,6 +69,7 @@ public class SpawnManager : MonoBehaviour {
 
         Vector3 direction = transform.TransformDirection(Vector3.back) * 70;
         Gizmos.color = Color.red;
+        if(drawLine)
         for (int i = 0; i < spawnPoints.Length; i++) {        
             Gizmos.DrawRay(spawnPoints[i].point, direction);
         }
@@ -138,7 +141,7 @@ public class SpawnManager : MonoBehaviour {
         spawnFishTimer += Time.deltaTime;
         if (spawnFishTimer > spawnFishInterval) {
             spawnFishTimer = 0;
-            spawnFishInterval = 0.5f + TFMath.GaussRand() * 2f;
+            spawnFishInterval = 5f + TFMath.GaussRand() * 2f;
 
             int pt = GetSpawnPoint();
             if (pt > -1) {
