@@ -1,27 +1,17 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &100100000
-Prefab:
-  m_ObjectHideFlags: 1
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications: []
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1171677115716136}
-  m_IsPrefabAsset: 1
---- !u!1 &1171677115716136
+--- !u!1 &470123590126140474
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4703722124665622}
-  - component: {fileID: 33705837590322018}
-  - component: {fileID: 23060285945633274}
-  - component: {fileID: 114371123573809666}
+  - component: {fileID: 470123590126140486}
+  - component: {fileID: 470123590126140485}
+  - component: {fileID: 470123590126140484}
+  - component: {fileID: 470123590126140475}
   m_Layer: 4
   m_Name: Water
   m_TagString: Untagged
@@ -29,25 +19,35 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4703722124665622
+--- !u!4 &470123590126140486
 Transform:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1171677115716136}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 470123590126140474}
   m_LocalRotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: -51.2, y: 16, z: -82.4}
-  m_LocalScale: {x: 1.2610531, y: 1.2610528, z: 1.2610528}
+  m_LocalPosition: {x: 0.2, y: -0.16, z: 83.3}
+  m_LocalScale: {x: 0.05, y: 1, z: 0.18}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23060285945633274
-MeshRenderer:
-  m_ObjectHideFlags: 1
+--- !u!33 &470123590126140485
+MeshFilter:
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1171677115716136}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 470123590126140474}
+  m_Mesh: {fileID: 4300008, guid: 5fcac6ea62606f844b312837ed35e1ae, type: 3}
+--- !u!23 &470123590126140484
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 470123590126140474}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -56,8 +56,9 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
+  m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f6317624d362488489be67462f09d002, type: 2}
+  - {fileID: 2100000, guid: c684f9e87f6bb17459f5e4ee7673992e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -77,19 +78,13 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33705837590322018
-MeshFilter:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1171677115716136}
-  m_Mesh: {fileID: 4300006, guid: 5fcac6ea62606f844b312837ed35e1ae, type: 3}
---- !u!114 &114371123573809666
+--- !u!114 &470123590126140475
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1171677115716136}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 470123590126140474}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1cc7260e5c788434f8949885bb0e0241, type: 3}
@@ -101,7 +96,7 @@ MonoBehaviour:
   shaderIndex: 0
   shader: {fileID: 4800000, guid: 4bcc0b68579a5c740ad31644411ffb54, type: 3}
   renderQueue: 3000
-  enableVertexColors: 1
+  enableVertexColors: 0
   isUnlit: 0
   enableGradient: 0
   colorGradient:
@@ -133,54 +128,54 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
-  waterShallowColor: {r: 0, g: 1, b: 0.6689658, a: 0}
-  depth: 13.5
-  waterColor: {r: 0.1397059, g: 0.6796147, b: 1, a: 0}
-  fresnelColor: {r: 0.29411763, g: 0.64949304, b: 1, a: 0}
-  fresnel: 1.38
-  rimColor: {r: 1, g: 1, b: 1, a: 0.221}
-  waveTint: -0.074
+  waterShallowColor: {r: 0.23137255, g: 0.9254902, b: 0.7044776, a: 0}
+  depth: 0
+  waterColor: {r: 0, g: 0.44861397, b: 0.839, a: 1}
+  fresnelColor: {r: 0.19744569, g: 0.51304513, b: 0.8207547, a: 0}
+  fresnel: 0.56
+  rimColor: {r: 0.5566038, g: 0.5566038, b: 0.5566038, a: 0.16862746}
+  waveTint: 0.42
   pixelate: 1
-  transparency: 1
-  glossiness: 0.96
-  edgeFade: 2.1
+  transparency: 0.821
+  glossiness: 1
+  edgeFade: 2.13
   tilingMethodNames:
   - Mesh UV
   - World-aligned (planar)
   worldSpaceTiling: 1
-  refractionAmount: 0.013
+  refractionAmount: 0.095
   enableNormalMap: 1
-  normalStrength: 0.175
-  enableMacroNormals: 0
+  normalStrength: 0.743
+  enableMacroNormals: 1
   macroNormalsDistance: 250
   normalTiling: 0.9
   intersectionSolver: 0
   intersectionSolverNames:
   - Depth-based
   - Vertex color (red)
-  rimSize: 6.5
-  rimFalloff: 8.2
+  rimSize: 5.2
+  rimFalloff: 4.7
   rimTiling: 0.3299995
-  rimDistortion: 0.192
+  rimDistortion: 0.346
   enableVCIntersection: 0
   foamSolver: 0
   foamSolverNames:
   - Normal map
   - Intersection texture
-  foamOpacity: 0.03
+  foamOpacity: 0.14
   foamTiling: 0.100000076
-  foamSize: 0
-  foamDistortion: 0.66
-  foamSpeed: 0
+  foamSize: 0.204
+  foamDistortion: 0.68
+  foamSpeed: 0.3
   waveFoam: 0
-  reflectionStrength: 1
-  reflectionFresnel: 2
+  reflectionStrength: 0
+  reflectionFresnel: 6.32
   showReflection: 0
   reflectionRefraction: 0.012
-  waveSpeed: 1.05
+  waveSpeed: 4.72
   waveStrength: 0.127
   waveDirectionXZ: {x: 0.01, y: 0, z: 0.69, w: 0}
-  enableSecondaryWaves: 1
+  enableSecondaryWaves: 0
   customIntersection: {fileID: 0}
   customNormal: {fileID: 0}
   customHeightmap: {fileID: 0}
@@ -260,16 +255,16 @@ MonoBehaviour:
   - Advanced
   enableShadows: 1
   shadowCaster: {fileID: 0}
-  material: {fileID: 2100000, guid: f6317624d362488489be67462f09d002, type: 2}
+  material: {fileID: 2100000, guid: c684f9e87f6bb17459f5e4ee7673992e, type: 2}
   isMobileAdvanced: 0
   isMobilePlatform: 0
   isMobileBasic: 0
   shaderName: StylizedWater/Desktop
-  isWaterLayer: 0
+  isWaterLayer: 1
   hasShaderParams: 1
   hasMaterial: 1
   usingSinglePassRendering: 0
-  showLighting: 0
+  showLighting: 1
   showColors: 0
   showSurface: 0
   showNormals: 0

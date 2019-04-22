@@ -63,20 +63,97 @@ public class Fish : TFObject
     {
         animLength = TFUtility.GetLengthByName(GetComponent<Animator>(), "jump");
     }
+
+    int curHash = 0;
+
+    bool inDodge = false;
+    
     private void FixedUpdate() {
-        //Debug.Log(GetComponent<Rigidbody>().velocity.z);
-        if (inCollision == false)
-            GetComponent<Rigidbody>().velocity = Vector3.back * (_speed + PathManager.GetCurSpeed()) / Time.fixedUnscaledDeltaTime;
-        else {       
+        Vector3 dir = Vector3.back;
+        RaycastHit hit;
+        Debug.DrawLine(transform.position, transform.position + Vector3.back * 10, Color.red);
+       
+        if ( Physics.Raycast(transform.position , Vector3.back, out hit, 10))
+        {        
+            curHash = hit.collider.gameObject.GetHashCode();
+            if (!inDodge && (hit.collider.gameObject.CompareTag("Fish") || hit.collider.gameObject.CompareTag("Rock")))
+            {
+                inDodge = true;
+                   
+                    StartCoroutine(Dodge(curHash));
+                   
+                Debug.Log("Start Dodge");
+
+            }
+        }
+        else
+        {
+                curHash = 0;
+        }
+        
+
+        if (!inCollision && !inDodge)
+        {
+           
+            GetComponent<Rigidbody>().velocity = dir * (_speed + PathManager.GetCurSpeed()) / Time.fixedUnscaledDeltaTime;
+        }
+        else
+        {
             //if (GetComponent<Rigidbody>().velocity.z > 0)
-               // GetComponent<Rigidbody>().velocity = Vector3.zero;
+            // GetComponent<Rigidbody>().velocity = Vector3.zero;
         }
         base.DestroyWhenOutofMap();
     }
 
+    IEnumerator Dodge(int hash){      
+        GetComponent<Animator>().Play("speed");
+
+        float dis1 = 100f;
+        float dis2 = 100f;
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, new Vector3(1f, 0, -1f), out hit, 10)){
+            dis1 = Vector3.Distance(hit.point,transform.position);
+        }
+        if (Physics.Raycast(transform.position, new Vector3(-1f, 0, -1f), out hit, 10))
+        {
+            dis2 = Vector3.Distance(hit.point, transform.position);
+        }
+
+        int d = dis1 > dis2 ? 1 : -1;
+        //int d = (UnityEngine.Random.Range(0, 2) * 2 - 1);
+        Vector3 dir = new Vector3(0.3f*d ,0,-0.3f);
+        transform.localEulerAngles = new Vector3(0, -180f - d * 45f, 0);
+
+        float timer = 0;
+        WaitForFixedUpdate wffu = new WaitForFixedUpdate();
+        int diffCounter = 0;
+        while (true) {
+            GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+            GetComponent<Rigidbody>().velocity = dir * (_speed + PathManager.GetCurSpeed()) / Time.fixedUnscaledDeltaTime;
+            timer += Time.fixedDeltaTime;
+            /*if (timer > 2f) {
+                Debug.Log("End by time");
+                break;
+            }*/
+            if (diffCounter > 5)
+            {
+                Debug.Log("End by exit");
+                break;
+            }      
+            if (hash != curHash)
+            {
+                diffCounter++;
+            }
+            yield return wffu;
+        }
+        GetComponent<Animator>().Play("normal");
+        transform.localEulerAngles = new Vector3(0, -180f, 0);
+        inDodge = false;
+    }
+
     IEnumerator FishColiWithWeb()
     {
-       
+        
         GetComponent<Animator>().Play("jump");
         GetComponentInChildren<Renderer>().material.SetTexture("_MainTex",tex);
         GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
