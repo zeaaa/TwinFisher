@@ -189,7 +189,7 @@ ModelImporter:
     - serializedVersion: 16
       name: boyskill
       takeName: CINEMA_4D___
-      firstFrame: 170
+      firstFrame: 180
       lastFrame: 220
       wrapMode: 0
       orientationOffsetY: 0

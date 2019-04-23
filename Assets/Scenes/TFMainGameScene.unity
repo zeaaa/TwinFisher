@@ -690,8 +690,8 @@ MonoBehaviour:
   WebPole_R: {fileID: 137569215}
   Web: {fileID: 1897346508}
   skillInput: 0
-  PlayerModel_L: {fileID: 6064961422236468106}
-  PlayerModel_R: {fileID: 866327734}
+  PlayerModel_L: {fileID: 866327734}
+  PlayerModel_R: {fileID: 6064961422236468106}
   debug: {fileID: 0}
 --- !u!1 &22972810
 GameObject:
@@ -11087,7 +11087,7 @@ GameObject:
   - component: {fileID: 866327737}
   - component: {fileID: 866327736}
   m_Layer: 9
-  m_Name: PlayerR
+  m_Name: PlayerL
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11102,7 +11102,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 866327733}
   m_LocalRotation: {x: -0.2894794, y: -0, z: -0, w: 0.95718426}
-  m_LocalPosition: {x: 7, y: -1.2, z: 66}
+  m_LocalPosition: {x: -6.76, y: -1.2, z: 66}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 286316540}
@@ -11221,7 +11221,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &870385143
 Transform:
   m_ObjectHideFlags: 0
@@ -20340,7 +20340,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   b_spawmFish: 1
   b_spawnWharf: 1
-  b_spawnObstacle: 0
+  b_spawnObstacle: 1
   spawnWide: 6
   spawnPointSize: 7
   drawLine: 0
@@ -29831,7 +29831,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6064961422236704682}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.82, y: -3.57, z: 67.36}
+  m_LocalPosition: {x: 7.1, y: -3.57, z: 67.36}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6064961422236468104}
@@ -30244,7 +30244,7 @@ GameObject:
   - component: {fileID: 6064961422227188842}
   - component: {fileID: 6064961422236704683}
   m_Layer: 9
-  m_Name: PlayerL
+  m_Name: PlayerR
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
