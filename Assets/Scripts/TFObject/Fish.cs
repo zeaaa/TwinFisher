@@ -157,11 +157,16 @@ public class Fish : TFObject
         GetComponent<Animator>().Play("jump");
         GetComponentInChildren<Renderer>().material.SetTexture("_MainTex",tex);
         GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
-        
-         //GetComponent<Rigidbody>().velocity = Vector3.zero;
+        AudioSource source= gameObject.AddComponent<AudioSource>();
+       
+        int size = SoundManager.instance.bubble.Length;
+        int i = UnityEngine.Random.Range(0, size);
+        source.clip = SoundManager.instance.bubble[i];
+        source.Play();
+        //GetComponent<Rigidbody>().velocity = Vector3.zero;
 
-         //GetComponent<Collider>().enabled = false;
-
+        //GetComponent<Collider>().enabled = false;
+         
          AddScoreHandler(_score, _weight);
         yield return new WaitForSeconds(0.5f);
         yield return new WaitForSeconds(animLength - 0.5f);

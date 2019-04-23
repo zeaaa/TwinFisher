@@ -22,7 +22,8 @@ public class PlayerMovement : MonoBehaviour
 
     public delegate void SkillInput();
     public static event SkillInput SkillInputHandler;
-
+    Animator anim_L;
+    Animator anim_R;
     [SerializeField]
     Transform PlayerModel_L;
     [SerializeField]
@@ -50,11 +51,14 @@ public class PlayerMovement : MonoBehaviour
 
         if ((int)Input.GetAxis("JoyStick1RPad") == -1 && (int)Input.GetAxis("JoyStick2RPad") == -1&&!killMovement)
         {
+            
             skillInput = true;
             SkillInputHandler();
         }
         else
             skillInput = false;
+
+        anim_L.SetBool("Skill", skillInput);
 
         string[] joyStickNames = Input.GetJoystickNames();
         /*
@@ -77,7 +81,8 @@ public class PlayerMovement : MonoBehaviour
             moveHorizontalL = killMovement ? 0 : Input.GetAxis("JoyStick1LPad");
             moveHorizontalR = killMovement ? 0 : Input.GetAxis("JoyStick2LPad");
         }
-            
+
+        anim_L.SetInteger("Input",(int)moveHorizontalL);
         Vector3 movementL = new Vector3(moveHorizontalL, 0.0f, 0.0f);
         Vector3 movementR = new Vector3(moveHorizontalR, 0.0f, 0.0f);
 
@@ -136,6 +141,7 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         GameManager.MGameOverHandler += KillMovement;
+        anim_L = PlayerModel_L.GetComponent<Animator>();
     }
 
     private void OnDestroy()

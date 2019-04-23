@@ -137,7 +137,11 @@ public class GameManager : MonoBehaviour {
         UpdateUIHandler(_score, _skillTimes, _curCapacity / _maxCapacity);
     }
 
-    private void GameOver() {
+    private void GameOver(int i) {
+
+        GameObject.Find("PlayerL").GetComponent<Animator>().SetInteger("GameOver", i);
+        //GameObject.Find("PlayerR").GetComponent<Animator>().SetInteger("GameOver", i);
+
         MGameOverHandler();
         //Destroy(Player);
         Debug.Log("GAMEOVER");

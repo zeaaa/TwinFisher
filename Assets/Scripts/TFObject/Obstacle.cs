@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class Obstacle : TFObject{
     bool gameOver = false;
-    public delegate void GameOver();
+    public delegate void GameOver(int i);
     public static event GameOver GameOverHandler;
     protected override void OnCollisionWithPlayer()
     {
         if (!gameOver) {
-            GameOverHandler();
+            GameOverHandler(0);
             gameOver = true;
         }
             
@@ -20,7 +20,7 @@ public class Obstacle : TFObject{
     {
         if (!gameOver)
         {
-            GameOverHandler();
+            GameOverHandler(1);
             gameOver = true;
         }
     }
@@ -29,7 +29,7 @@ public class Obstacle : TFObject{
     {
         if (!gameOver)
         {
-            GameOverHandler();
+            GameOverHandler(0);
             gameOver = true;
         }
     }
