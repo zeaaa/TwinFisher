@@ -49,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
         FixPlayerModelPosition();
 #if UNITY_STANDALONE_WIN || UNITY_STANDALONE_OSX
 
-        if ((int)Input.GetAxis("JoyStick1RPad") == -1 && (int)Input.GetAxis("JoyStick2RPad") == -1&&!killMovement)
+        if ((((int)Input.GetAxis("JoyStick1RPad") == -1 && (int)Input.GetAxis("JoyStick2RPad") == -1)||Input.GetKey(KeyCode.Q))&&!killMovement)
         {
             
             skillInput = true;
@@ -58,7 +58,8 @@ public class PlayerMovement : MonoBehaviour
         else
             skillInput = false;
 
-        anim_L.SetBool("Skill", skillInput);
+       // anim_L.SetBool("Skill", skillInput);
+        anim_R.SetBool("Skill", skillInput);
 
         string[] joyStickNames = Input.GetJoystickNames();
         /*
@@ -81,8 +82,8 @@ public class PlayerMovement : MonoBehaviour
             moveHorizontalL = killMovement ? 0 : Input.GetAxis("JoyStick1LPad");
             moveHorizontalR = killMovement ? 0 : Input.GetAxis("JoyStick2LPad");
         }
-
-        anim_L.SetInteger("Input",(int)moveHorizontalL);
+        anim_L.SetInteger("Input", (int)moveHorizontalL);
+        anim_R.SetInteger("Input", (int)moveHorizontalR);
         Vector3 movementL = new Vector3(moveHorizontalL, 0.0f, 0.0f);
         Vector3 movementR = new Vector3(moveHorizontalR, 0.0f, 0.0f);
 
@@ -142,6 +143,7 @@ public class PlayerMovement : MonoBehaviour
     {
         GameManager.MGameOverHandler += KillMovement;
         anim_L = PlayerModel_L.GetComponent<Animator>();
+        anim_R = PlayerModel_R.GetComponent<Animator>();
     }
 
     private void OnDestroy()

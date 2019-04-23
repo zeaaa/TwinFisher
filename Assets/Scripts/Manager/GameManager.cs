@@ -139,8 +139,8 @@ public class GameManager : MonoBehaviour {
 
     private void GameOver(int i) {
 
-        GameObject.Find("PlayerL").GetComponent<Animator>().SetInteger("GameOver", i);
-        //GameObject.Find("PlayerR").GetComponent<Animator>().SetInteger("GameOver", i);
+        //GameObject.Find("PlayerL").GetComponent<Animator>().SetInteger("GameOver", i);
+        GameObject.Find("PlayerR").GetComponent<Animator>().SetInteger("GameOver", i);
 
         MGameOverHandler();
         //Destroy(Player);
