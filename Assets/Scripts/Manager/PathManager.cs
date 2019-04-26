@@ -46,17 +46,22 @@ public class PathManager : MonoBehaviour {
         for (int i = 0; i < bgs.Length; i++) {
             paths.Add(bgs[i]);
         }
-        GameManager.MGameOverHandler += StopScrolling;
+        Obstacle.GameOverHandler += StopScrolling;
     }
 
     private void OnDestroy()
     {
-        GameManager.MGameOverHandler -= StopScrolling;
+        Obstacle.GameOverHandler -= StopScrolling;
     }
 
-    void StopScrolling() {
-        StartCoroutine(ChangeSpeed(0f, 1.0f));
-}
+    void StopScrolling(int i) {
+        if (i == 0) {
+            curspeed = 0;
+            SetSpeed(0);
+        }     
+        else
+            StartCoroutine(ChangeSpeed(0f, 0.5f));
+    }
 
     void Start()
     {

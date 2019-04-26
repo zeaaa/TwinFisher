@@ -82,7 +82,7 @@ public class PlayerMovement : MonoBehaviour
             moveHorizontalL = killMovement ? 0 : Input.GetAxis("JoyStick1LPad");
             moveHorizontalR = killMovement ? 0 : Input.GetAxis("JoyStick2LPad");
         }
-        anim_L.SetInteger("Input", (int)moveHorizontalL);
+        //anim_L.SetInteger("Input", (int)moveHorizontalL);
         anim_R.SetInteger("Input", (int)moveHorizontalR);
         Vector3 movementL = new Vector3(moveHorizontalL, 0.0f, 0.0f);
         Vector3 movementR = new Vector3(moveHorizontalR, 0.0f, 0.0f);
@@ -134,21 +134,21 @@ public class PlayerMovement : MonoBehaviour
         Web.transform.localScale = new Vector3(Mathf.Abs(dis), 9f, 1.5f);
     }
 
-    void KillMovement() {
+    void KillMovement(int i) {
         killMovement = true;
     }
 
 
     private void Awake()
     {
-        GameManager.MGameOverHandler += KillMovement;
+        Obstacle.GameOverHandler += KillMovement;
         anim_L = PlayerModel_L.GetComponent<Animator>();
         anim_R = PlayerModel_R.GetComponent<Animator>();
     }
 
     private void OnDestroy()
     {
-        GameManager.MGameOverHandler -= KillMovement;
+        Obstacle.GameOverHandler -= KillMovement;
     }
 
     void Start ()

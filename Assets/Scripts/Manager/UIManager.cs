@@ -27,7 +27,7 @@ public class UIManager : MonoBehaviour {
     private void Awake()
     {
         GameManager.UpdateUIHandler += UpdateUI;
-        GameManager.MGameOverHandler += ShowGameOverUI;
+        Obstacle.GameOverHandler += ShowGameOverUI;
     }
     private void Start()
     {
@@ -41,7 +41,7 @@ public class UIManager : MonoBehaviour {
     private void OnDestroy()
     {
         GameManager.UpdateUIHandler -= UpdateUI;
-        GameManager.MGameOverHandler -= ShowGameOverUI;
+        Obstacle.GameOverHandler -= ShowGameOverUI;
     }
 
     // Update is called once per frame
@@ -55,7 +55,7 @@ public class UIManager : MonoBehaviour {
         s_capacity.DOValue(capacity > 1 ? 1 : capacity, 0.5f).SetUpdate(true); ;
     }
 
-    void ShowGameOverUI() {
+    void ShowGameOverUI(int i) {
         StartCoroutine(IEShowGameOverUI());
     }
 

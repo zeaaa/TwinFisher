@@ -108,14 +108,14 @@ Shader "Cg shader for toon shading Tex" {
 			
 			fragmentColor = _LightColor0.rgb * mainTex.rgb;
 		}
-
+		/*
 		// higher priority: outline
 		if (dot(viewDirection, normalDirection)
 			< lerp(_UnlitOutlineThickness, _LitOutlineThickness,
 				max(0.0, dot(normalDirection, lightDirection))))
 		{
 			fragmentColor = _LightColor0.rgb * _OutlineColor.rgb;
-		}
+		}*/
 
 		// highest priority: highlights
 		if (dot(normalDirection, lightDirection) > 0.0
