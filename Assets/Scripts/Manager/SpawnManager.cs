@@ -79,15 +79,16 @@ public class SpawnManager : MonoBehaviour {
     private void Awake()
     {
         InitSpawnPoints();
-        GameManager.MGameOverHandler += StopSpawning;
+        Obstacle.GameOverHandler += StopSpawning;
     }
 
     void OnDestroy() {
-        GameManager.MGameOverHandler -= StopSpawning;
+        Obstacle.GameOverHandler -= StopSpawning;
     }
 
-    void StopSpawning() {
-
+    void StopSpawning(int i) {
+        b_spawnWharf = false;
+        b_spawnObstacle = false;
     }
 
     void Start ()

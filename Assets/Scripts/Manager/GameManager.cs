@@ -42,8 +42,6 @@ public class GameManager : MonoBehaviour {
     public static event UpdateUI UpdateUIHandler;
 
 
-    public delegate void MGameOver();
-    public static event MGameOver MGameOverHandler;
 
     //GameObject[] webNode = GameObject.FindGameObjectsWithTag("WebNode");
     
@@ -141,10 +139,15 @@ public class GameManager : MonoBehaviour {
 
         //GameObject.Find("PlayerL").GetComponent<Animator>().SetInteger("GameOver", i);
         GameObject.Find("PlayerR").GetComponent<Animator>().SetInteger("GameOver", i);
-
-        MGameOverHandler();
-        //Destroy(Player);
-        Debug.Log("GAMEOVER");
+        DisableCollision("Fish", "WebNode", true);
+        if (i == 0) {        
+            DisableCollision("Rock", "WebNode", true);
+        }
+        if (i == 1) {
+            SetWebNodeForge(100f);
+        }
+            
+        Debug.Log("GAMEOVER" + i);
     }
 
 

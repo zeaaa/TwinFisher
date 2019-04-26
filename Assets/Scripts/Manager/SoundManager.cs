@@ -18,15 +18,15 @@ public class SoundManager : MonoBehaviour
     {
         bgmAS = transform.Find("Bgm").GetComponent<AudioSource>();
         instance = this;
-        GameManager.MGameOverHandler += PlayGameOverSound;
+        Obstacle.GameOverHandler += PlayGameOverSound;
     }
 
     private void OnDestroy()
     {
-        GameManager.MGameOverHandler -= PlayGameOverSound;
+       Obstacle.GameOverHandler -= PlayGameOverSound;
     }
 
-    void PlayGameOverSound()
+    void PlayGameOverSound(int i)
     {    
         status = bgm.Length - 1;
         bgmAS.loop = false;

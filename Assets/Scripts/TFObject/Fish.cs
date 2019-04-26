@@ -72,7 +72,7 @@ public class Fish : TFObject
         Vector3 dir = Vector3.back;
         RaycastHit hit;
         Debug.DrawLine(transform.position, transform.position + Vector3.back * 10, Color.red);
-       
+
         if ( Physics.Raycast(transform.position , Vector3.back, out hit, 10))
         {        
             curHash = hit.collider.gameObject.GetHashCode();
@@ -88,9 +88,9 @@ public class Fish : TFObject
         }
         else
         {
-                curHash = 0;
+             curHash = 0;
         }
-        
+        GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
 
         if (!inCollision && !inDodge)
         {
@@ -128,7 +128,7 @@ public class Fish : TFObject
         WaitForFixedUpdate wffu = new WaitForFixedUpdate();
         int diffCounter = 0;
         while (true) {
-            GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+            transform.localEulerAngles = new Vector3(0, -180f - d * 45f, 0);
             GetComponent<Rigidbody>().velocity = dir * (_speed + PathManager.GetCurSpeed()) / Time.fixedUnscaledDeltaTime;
             timer += Time.fixedDeltaTime;
             /*if (timer > 2f) {
