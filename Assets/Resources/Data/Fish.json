@@ -15,7 +15,7 @@
 		{ "name":"迷路海豹", "modelID":"013", "minLength":6,"maxLength":13, "minWeight":20, "maxWeight":25, "info":"迷路的海豹","rarity":[1,0], "score":200 ,"speed":0.4},
 		{ "name":"猫鱼", "modelID":"014", "minLength":6,"maxLength":13, "minWeight":20, "maxWeight":25, "info":"miao","rarity":[1,0], "score":200 ,"speed":0.3},
 		{ "name":"木偶鱼", "modelID":"015", "minLength":6,"maxLength":13, "minWeight":20, "maxWeight":25, "info":"臭久","rarity":[1,0], "score":200 ,"speed":0.3},
-		{ "name":"暴暴河豚", "modelID":"016", "minLength":6,"maxLength":13, "minWeight":20, "maxWeight":25, "info":"西内","rarity":[0,0], "score":200 ,"speed":0.3},
+		{ "name":"暴暴河豚", "modelID":"016", "minLength":6,"maxLength":13, "minWeight":20, "maxWeight":25, "info":"西内","rarity":[1,0], "score":200 ,"speed":0.3},
 		{ "name":"轰轰鱼", "modelID":"017", "minLength":6,"maxLength":13, "minWeight":20, "maxWeight":25, "info":"你听说过个性婚姻么","rarity":[1,0], "score":200 ,"speed":0.3}
     ]
 }
