@@ -74,6 +74,7 @@ public class GameManager : MonoBehaviour {
     private void ResetCollisionMatrix()
     {
         //enable
+        DisableCollision("Fish", "WebNode", false);
         DisableCollision("Fish", "Web", false);
         DisableCollision("Rock", "Player", false);
         DisableCollision("Rock", "Web", false);
