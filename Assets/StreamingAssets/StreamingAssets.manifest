@@ -1,10 +1,10 @@
 ManifestFileVersion: 0
-CRC: 1979960741
+CRC: 4233906034
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
-      Name: data.ab
+      Name: fish.ab
       Dependencies: {}
     Info_1:
-      Name: fish.ab
+      Name: data.ab
       Dependencies: {}
