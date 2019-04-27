@@ -70,7 +70,7 @@ MonoBehaviour:
   _score: 0
   _length: 0
   _weight: 0
-  tex: {fileID: 2800000, guid: f5ff90b4ee6a2e144bb7ae8a89f8ac98, type: 3}
+  tex: {fileID: 2800000, guid: 6554e75a376ef5f46a39bc15ca97b7c7, type: 3}
 --- !u!54 &1345850237
 Rigidbody:
   m_ObjectHideFlags: 0

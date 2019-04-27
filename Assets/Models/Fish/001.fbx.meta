@@ -1,48 +1,38 @@
 fileFormatVersion: 2
-guid: 9263f053ee3184c4b9bf9060fbf8a689
+guid: 9d7cd167bfc94df4aa614030b8aaf21c
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: 01
-    100002: //RootNode
-    100004: "Cinema_4D_\u7F16\u8F91\u5668"
-    100006: "\u5173\u8282_3"
-    100008: "\u5173\u8282_4"
-    100010: "\u5173\u8282_5"
-    100012: "\u5173\u8282_6"
-    100014: "\u5173\u8282_7"
-    100016: "\u5173\u8282_8"
-    100018: "\u5173\u8282_9"
-    100020: "\u6839\u5BF9\u8C61"
-    100022: "\u7A7A\u767D_2"
-    400000: 01
-    400002: //RootNode
-    400004: "Cinema_4D_\u7F16\u8F91\u5668"
-    400006: "\u5173\u8282_3"
-    400008: "\u5173\u8282_4"
-    400010: "\u5173\u8282_5"
-    400012: "\u5173\u8282_6"
-    400014: "\u5173\u8282_7"
-    400016: "\u5173\u8282_8"
-    400018: "\u5173\u8282_9"
-    400020: "\u6839\u5BF9\u8C61"
-    400022: "\u7A7A\u767D_2"
-    2000000: "Cinema_4D_\u7F16\u8F91\u5668"
-    2100000: "\u6750\u8D28"
-    2100002: "\u6750\u8D28.1"
-    2100004: "\u6750\u8D28.2"
+    100000: "\u5173\u8282_3"
+    100002: "\u5173\u8282_4"
+    100004: "\u5173\u8282_5"
+    100006: "\u5173\u8282_6"
+    100008: "\u5173\u8282_7"
+    100010: "\u5173\u8282_8"
+    100012: "\u5173\u8282_9"
+    100014: //RootNode
+    100016: "\u6839\u5BF9\u8C61"
+    400000: "\u5173\u8282_3"
+    400002: "\u5173\u8282_4"
+    400004: "\u5173\u8282_5"
+    400006: "\u5173\u8282_6"
+    400008: "\u5173\u8282_7"
+    400010: "\u5173\u8282_8"
+    400012: "\u5173\u8282_9"
+    400014: //RootNode
+    400016: "\u6839\u5BF9\u8C61"
+    2100000: No Name
     4300000: "\u7A7A\u767D_2"
-    7400000: 001jump
-    7400002: CINEMA_4D___
-    7400004: 001normal
-    7400006: 001speed
+    7400000: 001normal
+    7400002: 001speed
+    7400004: 001jump
     9500000: //RootNode
-    13700000: "\u7A7A\u767D_2"
+    13700000: //RootNode
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: "\u6750\u8D28"
+      name: No Name
     second: {fileID: 2100000, guid: 7ee61d0a1bd89144185cdbfb35e19a7a, type: 2}
   materials:
     importMaterials: 1
@@ -110,7 +100,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -161,10 +151,11 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -185,6 +176,9 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
@@ -207,5 +201,5 @@ ModelImporter:
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
-  assetBundleName: fish
-  assetBundleVariant: ab
+  assetBundleName: 
+  assetBundleVariant: 
