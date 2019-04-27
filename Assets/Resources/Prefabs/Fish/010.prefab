@@ -510,7 +510,7 @@ MonoBehaviour:
   _score: 0
   _length: 0
   _weight: 0
-  tex: {fileID: 2800000, guid: d40fa64da9bc22741b1d042d6fe340ed, type: 3}
+  tex: {fileID: 2800000, guid: b1212ee9d55cf424bb0e6184c5e0c929, type: 3}
 --- !u!54 &8909125696025570760
 Rigidbody:
   m_ObjectHideFlags: 0
