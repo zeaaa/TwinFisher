@@ -7,8 +7,17 @@
         { "name":"单节蛇", "modelID":"05", "maxLength":1,  "maxWeight":-1, "place":"land","score":500, "speed":0.3},
         { "name":"蝴蝶结蛇", "modelID":"06", "maxLength":1,  "maxWeight":-1, "place":"land","score":500, "speed":0.3},
         { "name":"狗", "modelID":"07", "maxLength":1,  "maxWeight":-1, "place":"water","score":500, "speed":0.3},
-        { "name":"螃蟹", "modelID":"09", "maxLength":1,  "maxWeight":-1, "place":"land","score":500, "speed":0.3},
-        { "name":"海豹", "modelID":"13", "maxLength":50,  "maxWeight":30, "place":"montain","score":500, "speed":0.3}
+        { "name":"螃蟹", "modelID":"08", "maxLength":1,  "maxWeight":-1, "place":"land","score":500, "speed":0.3},
+        { "name":"海豹", "modelID":"09", "maxLength":50,  "maxWeight":30, "place":"montain","score":500, "speed":0.3},
+        { "name":"红鱼", "modelID":"10", "maxLength":20,  "maxWeight":30, "place":"water","score":500, "speed":0.3},
+        { "name":"莫干西鱼", "modelID":"11", "maxLength":1,  "maxWeight":-1, "place":"water","score":500, "speed":0.3},
+        { "name":"骨头鱼", "modelID":"12", "maxLength":1,  "maxWeight":-1, "place":"montain","score":500, "speed":0.3},
+        { "name":"夜光鱼", "modelID":"13", "maxLength":1,  "maxWeight":-1, "place":"water","score":500, "speed":0.3},
+        { "name":"单节蛇", "modelID":"14", "maxLength":1,  "maxWeight":-1, "place":"land","score":500, "speed":0.3},
+        { "name":"蝴蝶结蛇", "modelID":"15", "maxLength":1,  "maxWeight":-1, "place":"land","score":500, "speed":0.3},
+        { "name":"狗", "modelID":"17", "maxLength":1,  "maxWeight":-1, "place":"water","score":500, "speed":0.3}
+        
+       
         
     ]
 }
