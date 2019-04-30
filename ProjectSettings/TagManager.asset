@@ -10,6 +10,7 @@ TagManager:
   - Fish
   - Rock
   - WebPole
+  - PlayerForFish
   layers:
   - Default
   - TransparentFX
@@ -21,7 +22,7 @@ TagManager:
   - 
   - 
   - Player
-  - 
+  - PlayerForFish
   - 
   - Fish
   - Obstacle

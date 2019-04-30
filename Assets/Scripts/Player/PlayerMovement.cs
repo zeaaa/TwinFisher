@@ -28,6 +28,10 @@ public class PlayerMovement : MonoBehaviour
     Transform PlayerModel_L;
     [SerializeField]
     Transform PlayerModel_R;
+    [SerializeField]
+    Transform PlayerForFish_L;
+    [SerializeField]
+    Transform PlayerForFish_R;
     public Text debug;
 
     //if move to boarder then clamp it
@@ -165,5 +169,7 @@ public class PlayerMovement : MonoBehaviour
     void FixPlayerModelPosition() {
         PlayerModel_L.transform.position = new Vector3(WebPole_L.transform.position.x - 1.0f, PlayerModel_L.transform.position.y, PlayerModel_L.transform.position.z);
         PlayerModel_R.transform.position = new Vector3(WebPole_R.transform.position.x + 1.0f, PlayerModel_R.transform.position.y, PlayerModel_R.transform.position.z);
+        PlayerForFish_L.transform.position = new Vector3(WebPole_L.transform.position.x - 1.0f, PlayerModel_L.transform.position.y, PlayerModel_L.transform.position.z);
+        PlayerForFish_R.transform.position = new Vector3(WebPole_R.transform.position.x + 1.0f, PlayerModel_R.transform.position.y, PlayerModel_R.transform.position.z);
     }
 }

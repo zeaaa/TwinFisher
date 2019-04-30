@@ -52,4 +52,8 @@ public class Obstacle : TFObject{
        SetObstacle(PathManager.curspeed);
     }
 
+    protected override void OnCollisionWithPlayer(string s)
+    {
+        throw new NotImplementedException();
+    }
 }

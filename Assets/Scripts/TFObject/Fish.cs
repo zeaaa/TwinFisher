@@ -26,9 +26,9 @@ public class Fish : TFObject
     [SerializeField]
     Texture2D tex;
     float animLength;
-    protected override void OnCollisionWithPlayer()
+    protected override void OnCollisionWithPlayer(string s)
     {
-        if (inCollision == false)
+        if (inCollision == false&&s.Equals("Fish"))
         {
             StartCoroutine(FishColiWithWeb());
             inCollision = true;
@@ -171,5 +171,9 @@ public class Fish : TFObject
         yield return new WaitForSeconds(0.5f);
         yield return new WaitForSeconds(animLength - 0.5f);
         Destroy(this.gameObject);
+    }
+
+    protected override void OnCollisionWithPlayer()
+    {
     }
 }

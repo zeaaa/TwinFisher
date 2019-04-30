@@ -86,6 +86,14 @@ public class GameManager : MonoBehaviour {
         DisableCollision("WebNode", "Dock", true);
         DisableCollision("WebPole", "Player", true);
         DisableCollision("WebPole", "WebNode", true);
+        //
+        DisableCollision("Player", "Fish", true);
+        DisableCollision("WebPole", "Fish", true);
+        
+        DisableCollision("PlayerForFish", "Player",true);
+        DisableCollision("PlayerForFish", "WebNode", true);
+        DisableCollision("PlayerForFish", "WebPole", true);
+        DisableCollision("PlayerForFish", "PlayerForFish", true);
         //player collision
         DisableCollision("WebPole", "WebPole", !playerInnerColli);
         DisableCollision("Player", "Player", !playerInnerColli);
