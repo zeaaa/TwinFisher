@@ -42,14 +42,14 @@ public class GameManager : MonoBehaviour {
     public static event UpdateUI UpdateUIHandler;
 
 
-
-    //GameObject[] webNode = GameObject.FindGameObjectsWithTag("WebNode");
-    
-
-
     [Range(20, 2000)]
     [SerializeField]
     float forge;
+    
+    [Rename("玩家间碰撞")]
+    [SerializeField]
+    private bool playerInnerColli;
+
     private Material webNodeMat;
     private Material webRopeMat;
     void Initialize()
@@ -62,7 +62,7 @@ public class GameManager : MonoBehaviour {
  
         Fish.AddScoreHandler += AddScore;
         Obstacle.GameOverHandler += GameOver;
-        Wharf.DockHandler += Dock;
+        Dock.DockHitHandler += PlayerDock;
         PlayerMovement.SkillInputHandler += Skill;
         webNodeMat = Resources.Load<Material>("Materials/WebNode");
         webRopeMat = Resources.Load<Material>("Materials/WebRope");
@@ -76,20 +76,20 @@ public class GameManager : MonoBehaviour {
         //enable
         DisableCollision("Fish", "WebNode", false);
         DisableCollision("Fish", "Web", false);
-        DisableCollision("Rock", "Player", false);
-        DisableCollision("Rock", "Web", false);
+        DisableCollision("Obstacle", "Player", false);
+        DisableCollision("Obstacle", "Web", false);
         //disable
-        DisableCollision("Fish", "Rock", true);
+        DisableCollision("Fish", "Obstacle", true);
         DisableCollision("WebNode", "Web", true);
         DisableCollision("WebNode", "WebNode", true);
         DisableCollision("Player", "WebNode", true);
-        DisableCollision("WebNode", "Wharf", true);
+        DisableCollision("WebNode", "Dock", true);
         DisableCollision("WebPole", "Player", true);
         DisableCollision("WebPole", "WebNode", true);
         //player collision
-        DisableCollision("WebPole", "WebPole", true);
-        DisableCollision("Player", "Player", true);
-
+        DisableCollision("WebPole", "WebPole", !playerInnerColli);
+        DisableCollision("Player", "Player", !playerInnerColli);
+    
     }
 
     bool webFull = false;
@@ -105,7 +105,7 @@ public class GameManager : MonoBehaviour {
     {
         Fish.AddScoreHandler -= AddScore;
         Obstacle.GameOverHandler -= GameOver;
-        Wharf.DockHandler -= Dock;
+        Dock.DockHitHandler -= PlayerDock;
         PlayerMovement.SkillInputHandler -= Skill;
     }
 
@@ -142,17 +142,17 @@ public class GameManager : MonoBehaviour {
         GameObject.Find("PlayerR").GetComponent<Animator>().SetInteger("GameOver", i);
         DisableCollision("Fish", "WebNode", true);
         if (i == 0) {        
-            DisableCollision("Rock", "WebNode", true);
+            DisableCollision("Obstacle", "WebNode", true);
         }
         if (i == 1) {
             SetWebNodeForge(100f);
-        }
+        } 
             
         Debug.Log("GAMEOVER" + i);
     }
 
 
-    private void Dock() {
+    private void PlayerDock() {
         _curCapacity = 0;
         _skillTimes = maxSkillTimes;
         webFull = false;
@@ -182,8 +182,8 @@ public class GameManager : MonoBehaviour {
         WebAnim();
         DisableCollision("Fish", "WebNode", true);
         //DisableCollision("Fish", "Player", true);
-        DisableCollision("Rock", "WebNode", true);    
-        DisableCollision("Rock", "Player", true);
+        DisableCollision("Obstacle", "WebNode", true);    
+        DisableCollision("Obstacle", "Player", true);
         ChangeWebMatColor(WebSkillColor);
         //after _skillDuration realTime;
         yield return new WaitForSeconds(_skillDuration);
@@ -196,8 +196,8 @@ public class GameManager : MonoBehaviour {
             DisableCollision("Fish", "WebNode", false);
             //DisableCollision("Fish", "Player", false);
         }
-        DisableCollision("Rock", "WebNode", false);   
-        DisableCollision("Rock", "Player", false);
+        DisableCollision("Obstacle", "WebNode", false);   
+        DisableCollision("Obstacle", "Player", false);
     }
 
     void ChangeWebMatColor(Color c) {    

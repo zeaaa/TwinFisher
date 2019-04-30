@@ -38,6 +38,15 @@ public class SpawnManager : MonoBehaviour {
     bool drawLine = true;
 
     private SpawnPoint[] spawnPoints;
+    private SpawnPoint[] spawnObstaclePoints;
+
+    [SerializeField]
+    [Range(0, 10)]
+    private int spawnObstaclePointSize = 1;
+
+    [SerializeField]
+    [Range(0, 10)]
+    private float spawnObstacleWide = 6;
 
     FishDataList fishDataList;
     int toatlRarity = 0;
@@ -56,9 +65,17 @@ public class SpawnManager : MonoBehaviour {
     void InitSpawnPoints() {
         float offset = spawnWide * 2 / (spawnPointSize-1);
         spawnPoints = new SpawnPoint[spawnPointSize];
+        spawnObstaclePoints = new SpawnPoint[spawnObstaclePointSize];
         for (int i = 0; i < spawnPointSize; i++) {
             spawnPoints[i].point = new Vector3(-spawnWide + i * offset, 0, spawnZValue) ;
             spawnPoints[i].occupied = false;
+        }
+
+        offset = spawnObstacleWide * 2 / (spawnObstaclePointSize - 1);
+        for (int i = 0; i < spawnObstaclePointSize; i++)
+        {
+            spawnObstaclePoints[i].point = new Vector3(-spawnObstacleWide + i * offset, 0, spawnZValue);
+            spawnObstaclePoints[i].occupied = false;
         }
     }
 
@@ -68,11 +85,21 @@ public class SpawnManager : MonoBehaviour {
             InitSpawnPoints();
 
         Vector3 direction = transform.TransformDirection(Vector3.back) * 70;
-        Gizmos.color = Color.red;
-        if(drawLine)
-        for (int i = 0; i < spawnPoints.Length; i++) {        
-            Gizmos.DrawRay(spawnPoints[i].point, direction);
+       
+        if (drawLine) {
+
+            Gizmos.color = Color.black;
+            for (int i = 0; i < spawnPoints.Length; i++)
+            {
+                Gizmos.DrawRay(spawnPoints[i].point, direction);
+            }
+            Gizmos.color = Color.red;
+            for (int i = 0; i < spawnObstaclePoints.Length; i++)
+            {
+                Gizmos.DrawRay(spawnObstaclePoints[i].point, direction);
+            }
         }
+       
         
     }
 
@@ -199,7 +226,7 @@ public class SpawnManager : MonoBehaviour {
         if (spawnWharfTimer > spawnWharfInterval) {
             spawnWharfTimer = 0;
             spawnWharfInterval = Random.Range(10,12f);
-            GameObject.Find("Path" + BGScroller.nextID.ToString()).GetComponent<BGScroller>().OpenWharf(true);
+            GameObject.Find("Path" + BGScroller.nextID.ToString()).GetComponent<BGScroller>().OpenDock(true);
         }
     }
     
@@ -212,11 +239,12 @@ public class SpawnManager : MonoBehaviour {
             spawnObstacleInterval = Random.Range(1f, 4f);
 
             
-            int pt = GetSpawnPoint();
+            //int pt = GetSpawnPoint();
+            int pt = Random.Range(0, spawnObstaclePoints.Length);
             if (pt > -1) {
                 int id = Random.Range(0, 1);
                 GameObject obj = (GameObject)Resources.Load("Prefabs/Rock/rock" + (id + 1).ToString());
-                Vector3 spawnPosition = spawnPoints[pt].point;
+                Vector3 spawnPosition = spawnObstaclePoints[pt].point;
                 Instantiate(obj, spawnPosition, Quaternion.identity);
             }        
         }

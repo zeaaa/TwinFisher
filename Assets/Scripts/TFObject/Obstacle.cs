@@ -9,6 +9,7 @@ public class Obstacle : TFObject{
     public static event GameOver GameOverHandler;
     protected override void OnCollisionWithPlayer()
     {
+        Debug.Log("colli");
         if (!gameOver) {
             GameOverHandler(0);
             gameOver = true;
@@ -27,6 +28,7 @@ public class Obstacle : TFObject{
 
     protected override void OnCollisionWithWebPole()
     {
+        Debug.Log("colli pole");
         if (!gameOver)
         {
             GameOverHandler(0);

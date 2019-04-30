@@ -36,16 +36,16 @@ public class BGScroller : MonoBehaviour
             nextID = currentID + (totalCount - 1);
             if (nextID > (totalCount - 1))
                 nextID -= totalCount;
-            OpenWharf(false);
+            //OpenWharf(false);
         }
 	}
 
 
-
-    public void OpenWharf(bool status) {
-        wharf.GetComponent<Wharf>().Open(status);
+    
+    public void OpenDock(bool status) {
+        wharf.GetComponent<Dock>().Open(status);
     }
-
+    
     public void SetSpeed(float speed)
     {
         scrollSpeed = speed;
