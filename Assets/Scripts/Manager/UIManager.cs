@@ -24,10 +24,15 @@ public class UIManager : MonoBehaviour {
     [SerializeField]
     Image tbc;
 
+    [SerializeField]
+    Image fog;
+
     private void Awake()
     {
         GameManager.UpdateUIHandler += UpdateUI;
         Obstacle.GameOverHandler += ShowGameOverUI;
+        fog.color = new Color(1, 1, 1, 0);
+        fog.DOFade(1.0f, 0.0f);
     }
     private void Start()
     {
@@ -35,6 +40,8 @@ public class UIManager : MonoBehaviour {
         b_back.onClick.AddListener(delegate () { SceneManager.LoadScene(0); Time.timeScale = 1; });
         b_reStart.interactable = false;
         b_back.interactable = false;
+        
+        fog.DOFade(0.0f, 3.0f);
         
     }
 
@@ -63,7 +70,7 @@ public class UIManager : MonoBehaviour {
         yield return new WaitForSeconds(1f);
         //Time.timeScale = 0;
         bg.DOFade(0.5f, 1f).SetUpdate(true);
-        Tweener move = r_gameOver.DOLocalMove(Vector3.zero, 1.0f);     
+        Tweener move = r_gameOver.DOLocalMove(Vector3.zero, 1.0f);
         move.SetEase(Ease.InQuad);
         move.SetUpdate(true);
         move.onComplete = delegate (){

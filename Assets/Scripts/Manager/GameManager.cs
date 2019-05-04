@@ -138,7 +138,6 @@ public class GameManager : MonoBehaviour {
             DisableCollision("Fish", "WebNode", true);
             ChangeWebMatColor(WebFullColor);
         }
-            
         if (value < 0)
             value = 0;
         UpdateUIHandler(_score, _skillTimes, _curCapacity / _maxCapacity);
