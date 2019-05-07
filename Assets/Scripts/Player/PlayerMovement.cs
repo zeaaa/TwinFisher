@@ -86,8 +86,8 @@ public class PlayerMovement : MonoBehaviour
             moveHorizontalL = killMovement ? 0 : Input.GetAxis("JoyStick1LPad");
             moveHorizontalR = killMovement ? 0 : Input.GetAxis("JoyStick2LPad");
         }
-        //anim_L.SetInteger("Input", (int)moveHorizontalL);
-        anim_R.SetInteger("Input", (int)moveHorizontalR);
+        anim_L.SetFloat("Input", moveHorizontalL);
+        anim_R.SetFloat("Input", moveHorizontalR);
         Vector3 movementL = new Vector3(moveHorizontalL, 0.0f, 0.0f);
         Vector3 movementR = new Vector3(moveHorizontalR, 0.0f, 0.0f);
 

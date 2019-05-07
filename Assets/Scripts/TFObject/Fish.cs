@@ -26,17 +26,24 @@ public class Fish : TFObject
     [SerializeField]
     Texture2D tex;
     float animLength;
-    protected override void OnCollisionWithPlayer(string s)
+    protected override void OnCollisionWithPlayer(string s, Collision col)
     {
-        if (inCollision == false&&s.Equals("Fish"))
+        if (inCollision == false && s.Equals("Fish"))
         {
+            col.gameObject.GetComponent<ColliForFish>().Player.GetComponent<Animator>().SetBool("ColliFish", true);
+            StartCoroutine(Delay(0.1f, col.gameObject));
             StartCoroutine(FishColiWithWeb());
             inCollision = true;
         }
         //throw new NotImplementedException();
     }
 
-    protected override void OnCollisionWithWebNode()
+    IEnumerator Delay(float time,GameObject o) {
+        yield return new WaitForSecondsRealtime(time);
+        o.GetComponent<ColliForFish>().Player.GetComponent<Animator>().SetBool("ColliFish", false);
+    }
+
+    protected override void OnCollisionWithWebNode(Collision col)
     {
         if (inCollision == false) {
             StartCoroutine(FishColiWithWeb());
@@ -44,7 +51,7 @@ public class Fish : TFObject
         }      
     }
 
-    protected override void OnCollisionWithWebPole()
+    protected override void OnCollisionWithWebPole(Collision col)
     {
        // throw new NotImplementedException();
     }
@@ -173,7 +180,7 @@ public class Fish : TFObject
         Destroy(this.gameObject);
     }
 
-    protected override void OnCollisionWithPlayer()
+    protected override void OnCollisionWithPlayer(Collision col)
     {
     }
 }

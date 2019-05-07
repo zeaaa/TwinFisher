@@ -144,20 +144,27 @@ public class GameManager : MonoBehaviour {
     }
 
     private void GameOver(int i) {
-
-        //GameObject.Find("PlayerL").GetComponent<Animator>().SetInteger("GameOver", i);
-        GameObject.Find("PlayerR").GetComponent<Animator>().SetInteger("GameOver", i);
         DisableCollision("Fish", "WebNode", true);
-        if (i == 0) {        
+        StartCoroutine(Delay(0.1f));
+        //player
+        if (i == 0) {    
             DisableCollision("Obstacle", "WebNode", true);
-        }
+        }//web
         if (i == 1) {
             SetWebNodeForge(100f);
+            GameObject.Find("PlayerL").GetComponent<Animator>().SetInteger("GameOver", 1);
+            GameObject.Find("PlayerR").GetComponent<Animator>().SetInteger("GameOver", 1);
         } 
             
         Debug.Log("GAMEOVER" + i);
     }
 
+
+    IEnumerator Delay(float time) {
+        yield return new WaitForSecondsRealtime(time);
+        GameObject.Find("PlayerL").GetComponent<Animator>().SetInteger("GameOver", 2);
+        GameObject.Find("PlayerR").GetComponent<Animator>().SetInteger("GameOver", 2);
+    }
 
     private void PlayerDock() {
         _curCapacity = 0;

@@ -16,18 +16,18 @@ public abstract class TFObject : MonoBehaviour
     {
         if (col.gameObject.CompareTag("WebNode"))
         {
-            OnCollisionWithWebNode();
+            OnCollisionWithWebNode(col);
         }
         else if (col.gameObject.CompareTag("Player"))
         {
-            OnCollisionWithPlayer();
+            OnCollisionWithPlayer(col);
         }
         else if (col.gameObject.CompareTag("WebPole"))
         {
-            OnCollisionWithWebPole();
+            OnCollisionWithWebPole(col);
         }
         else if (col.gameObject.CompareTag("PlayerForFish")) {
-            OnCollisionWithPlayer("Fish");
+            OnCollisionWithPlayer("Fish",col);
         }
     }
 
@@ -41,10 +41,10 @@ public abstract class TFObject : MonoBehaviour
     }
     
 
-    protected abstract void OnCollisionWithWebNode();
-    protected abstract void OnCollisionWithPlayer();
-    protected abstract void OnCollisionWithWebPole();
-    protected abstract void OnCollisionWithPlayer(string s);
+    protected abstract void OnCollisionWithWebNode(Collision col);
+    protected abstract void OnCollisionWithPlayer(Collision col);
+    protected abstract void OnCollisionWithWebPole(Collision col);
+    protected abstract void OnCollisionWithPlayer(string s, Collision col);
 
 
 }

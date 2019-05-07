@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 321876ad0e242b34aa72ef35341682c1
+guid: 22fa93d8b71c01145a40949a15ee1ce9
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -66,12 +66,14 @@ ModelImporter:
     3300000: "\u955C\u7247"
     4300000: boy_1
     4300002: "\u955C\u7247"
-    7400000: boynormal
-    7400002: boyleft
-    7400004: boyright
-    7400006: boyskill
-    7400008: boywebcolli
-    7400010: boycolli
+    7400000: boy_normal
+    7400002: boy_left
+    7400004: boy_right
+    7400006: boy_skill
+    7400008: boy_webColli
+    7400010: boy_playerColli
+    7400012: boy_idle
+    7400014: boy_fishColli
     9500000: //RootNode
     13700000: boy_1
   externalObjects: {}
@@ -103,7 +105,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: boynormal
+      name: boy_normal
       takeName: CINEMA_4D___
       firstFrame: 0
       lastFrame: 70
@@ -131,7 +133,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: boyleft
+      name: boy_left
       takeName: CINEMA_4D___
       firstFrame: 70
       lastFrame: 120
@@ -159,7 +161,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: boyright
+      name: boy_right
       takeName: CINEMA_4D___
       firstFrame: 120
       lastFrame: 170
@@ -187,9 +189,9 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: boyskill
+      name: boy_skill
       takeName: CINEMA_4D___
-      firstFrame: 180
+      firstFrame: 170
       lastFrame: 220
       wrapMode: 0
       orientationOffsetY: 0
@@ -215,7 +217,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: boywebcolli
+      name: boy_webColli
       takeName: CINEMA_4D___
       firstFrame: 220
       lastFrame: 290
@@ -243,10 +245,66 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: boycolli
+      name: boy_playerColli
       takeName: CINEMA_4D___
       firstFrame: 290
       lastFrame: 390
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: boy_idle
+      takeName: CINEMA_4D___
+      firstFrame: 391
+      lastFrame: 494
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: boy_fishColli
+      takeName: CINEMA_4D___
+      firstFrame: 495
+      lastFrame: 530
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

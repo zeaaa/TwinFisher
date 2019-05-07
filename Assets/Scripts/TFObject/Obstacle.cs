@@ -7,17 +7,18 @@ public class Obstacle : TFObject{
     bool gameOver = false;
     public delegate void GameOver(int i);
     public static event GameOver GameOverHandler;
-    protected override void OnCollisionWithPlayer()
+    protected override void OnCollisionWithPlayer(Collision col)
     {
         Debug.Log("colli");
         if (!gameOver) {
             GameOverHandler(0);
+            col.gameObject.GetComponent<Animator>().SetInteger("GameOver", 0);
             gameOver = true;
         }
             
     }
 
-    protected override void OnCollisionWithWebNode()
+    protected override void OnCollisionWithWebNode(Collision col)
     {
         if (!gameOver)
         {
@@ -26,14 +27,9 @@ public class Obstacle : TFObject{
         }
     }
 
-    protected override void OnCollisionWithWebPole()
+    protected override void OnCollisionWithWebPole(Collision col)
     {
-        Debug.Log("colli pole");
-        if (!gameOver)
-        {
-            GameOverHandler(0);
-            gameOver = true;
-        }
+       
     }
 
     public void SetObstacle(float speed) {
@@ -52,7 +48,7 @@ public class Obstacle : TFObject{
        SetObstacle(PathManager.curspeed);
     }
 
-    protected override void OnCollisionWithPlayer(string s)
+    protected override void OnCollisionWithPlayer(string s,Collision col)
     {
         throw new NotImplementedException();
     }
