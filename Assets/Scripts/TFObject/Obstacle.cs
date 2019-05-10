@@ -13,6 +13,15 @@ public class Obstacle : TFObject{
         if (!gameOver) {
             GameOverHandler(0);
             col.gameObject.GetComponent<Animator>().SetInteger("GameOver", 0);
+            if (col.gameObject.name.Equals("PlayerL")) {
+                GameObject.Find("PlayerR").GetComponent<Animator>().Play("GameOverIdle");
+            }
+            else
+            {
+                GameObject.Find("PlayerL").GetComponent<Animator>().Play("GameOverIdle");
+
+            }
+                
             gameOver = true;
         }
             
