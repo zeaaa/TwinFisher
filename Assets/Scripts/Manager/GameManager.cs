@@ -145,7 +145,7 @@ public class GameManager : MonoBehaviour {
 
     private void GameOver(int i) {
         DisableCollision("Fish", "WebNode", true);
-        StartCoroutine(Delay(0.1f));
+        StartCoroutine(Delay(1.0f));
         //player
         if (i == 0) {    
             DisableCollision("Obstacle", "WebNode", true);
@@ -162,6 +162,8 @@ public class GameManager : MonoBehaviour {
 
     IEnumerator Delay(float time) {
         yield return new WaitForSecondsRealtime(time);
+        //GameObject.Find("PlayerL").GetComponent<Animator>().Play("GameOverIdle");
+        //GameObject.Find("PlayerR").GetComponent<Animator>().Play("GameOverIdle");
         GameObject.Find("PlayerL").GetComponent<Animator>().SetInteger("GameOver", 2);
         GameObject.Find("PlayerR").GetComponent<Animator>().SetInteger("GameOver", 2);
     }
