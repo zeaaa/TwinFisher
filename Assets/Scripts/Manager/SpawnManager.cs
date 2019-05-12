@@ -154,9 +154,12 @@ public class SpawnManager : MonoBehaviour {
         return 0;
     }
 
+
+    float waitTime = 5.0f;
 	void Update ()
 	{
-        if (b_spawmFish)
+        waitTime -= Time.deltaTime;
+        if (b_spawmFish&&waitTime<0)
             SpawnFish();
         if (b_spawnWharf)
             SpawnWharf();
