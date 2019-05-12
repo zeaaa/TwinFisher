@@ -22,9 +22,7 @@ public class PondFishMovement : MonoBehaviour
     {
         nav.SetDestination (GetRandomLocation());
     }
-    public void SetFishSpeed(float speed) {
-        
-      
+    public void SetFishSpeed(float speed) { 
         nav.speed=speed;
     }
 

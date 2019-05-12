@@ -38,8 +38,7 @@ public class PondManager : MonoBehaviour
                 Destroy(fishList[id]);  
                 Debug.Log("destroy"+fishList[id]);
                 continue;
-            }                                                         //未捕获过该鱼
-
+            }
             GameObject obj = fishList[id];
 
             //obj.GetComponent<TFObject>().SetTFObject(tempData.maxLength , tempData.maxWeight,tempData.speed);
