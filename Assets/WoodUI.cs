@@ -7,16 +7,7 @@ public class WoodUI : MonoBehaviour
 
     Color c = new Color(19/256f, 179/256f,180/256f);
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private void OnMouseEnter()
     {
@@ -40,6 +31,8 @@ public class WoodUI : MonoBehaviour
         foreach (CharacterJoint cj in cjs) {
             Destroy(cj);
         }
-        GetComponent<Rigidbody>().AddForce(Vector3.down * GetComponent<Rigidbody>().mass*2000);   
+        //Destroy(GetComponent<Rigidbody>());
+        //transform.Translate(Vector3.left);
+        GetComponent<Rigidbody>().velocity = Vector3.down * 20f;
     }
 }

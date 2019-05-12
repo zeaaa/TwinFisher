@@ -70,7 +70,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _FoamSmooth: 0.02
-    - _FoamSpread: 2.07
+    - _FoamSpread: 2
     - _FoamStrength: 0.748
     - _GlossMapScale: 1
     - _Glossiness: 0.5
@@ -89,7 +89,7 @@ Material:
     - _UVSec: 0
     - _UVWaveAmplitude: 0.05
     - _UVWaveFrequency: 1
-    - _UVWaveSpeed: 1
+    - _UVWaveSpeed: 1.1
     - _ZWrite: 1
     - __dummy__: 0
     m_Colors:

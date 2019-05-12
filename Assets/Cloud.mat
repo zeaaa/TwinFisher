@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Cloud
   m_Shader: {fileID: 4800000, guid: e8ef7d420c050d145ad00a4e1556fc26, type: 3}
-  m_ShaderKeywords: TCP2_NONE TCP2_OUTLINE_CONST_SIZE
+  m_ShaderKeywords: TCP2_NONE
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -62,7 +62,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _DstBlendOutline: 10
-    - _EnableConstSizeOutline: 1
+    - _EnableConstSizeOutline: 0
     - _EnableTexturedOutline: 0
     - _EnableZSmooth: 0
     - _GlossMapScale: 1
@@ -73,7 +73,7 @@ Material:
     - _OcclusionStrength: 1
     - _Offset1: 0
     - _Offset2: 0
-    - _Outline: 6
+    - _Outline: 4.32
     - _Parallax: 0.02
     - _RampSmooth: 1
     - _RampSmoothOtherLights: 0.5
@@ -102,4 +102,4 @@ Material:
     - _OutlineColor: {r: 0.6603774, g: 0.6603774, b: 0.6603774, a: 1}
     - _RimColor: {r: 0.3160377, g: 0.8256567, b: 1, a: 0}
     - _SColor: {r: 0.46274513, g: 0.7686275, b: 0.9490197, a: 1}
-    - _SpecColor: {r: 0, g: 0.62903214, b: 1, a: 1}
+    - _SpecColor: {r: 1, g: 0.14656208, b: 0, a: 1}
