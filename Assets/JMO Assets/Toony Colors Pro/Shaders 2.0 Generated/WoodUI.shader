@@ -191,7 +191,7 @@ Shader "Toony Colors Pro 2/User/WoodUI"
 
 		CGPROGRAM
 
-		#pragma surface surf ToonyColorsCustom  exclude_path:deferred exclude_path:prepass
+		#pragma surface surf ToonyColorsCustom noshadow exclude_path:deferred exclude_path:prepass
 		#pragma target 3.0
 
 		//================================================================

@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class WoodUI : MonoBehaviour
 {
-
+    [SerializeField]
+    int id;
     Color c = new Color(19/256f, 179/256f,180/256f);
     // Start is called before the first frame update
 
+    private void Update()
+    {
+        if (transform.position.y < -50)
+            Destroy(this.gameObject);
+    }
 
     private void OnMouseEnter()
     {
@@ -31,8 +37,10 @@ public class WoodUI : MonoBehaviour
         foreach (CharacterJoint cj in cjs) {
             Destroy(cj);
         }
-        //Destroy(GetComponent<Rigidbody>());
-        //transform.Translate(Vector3.left);
         GetComponent<Rigidbody>().velocity = Vector3.down * 20f;
+        if (id == 0)
+            WoodUIManager.instance.StartLoad();
+        if (id == 1)
+            WoodUIManager.instance.EnterPond();
     }
 }
