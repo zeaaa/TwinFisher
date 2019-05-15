@@ -247,7 +247,7 @@ ModelImporter:
     - serializedVersion: 16
       name: boy_playerColli
       takeName: CINEMA_4D___
-      firstFrame: 290
+      firstFrame: 294
       lastFrame: 390
       wrapMode: 0
       orientationOffsetY: 0
@@ -303,7 +303,7 @@ ModelImporter:
     - serializedVersion: 16
       name: boy_fishColli
       takeName: CINEMA_4D___
-      firstFrame: 495
+      firstFrame: 508
       lastFrame: 530
       wrapMode: 0
       orientationOffsetY: 0
