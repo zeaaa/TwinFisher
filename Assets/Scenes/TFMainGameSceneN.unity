@@ -788,6 +788,8 @@ MonoBehaviour:
   skillInput: 0
   PlayerModel_L: {fileID: 290533551}
   PlayerModel_R: {fileID: 866327734}
+  PlayerForFish_L: {fileID: 0}
+  PlayerForFish_R: {fileID: 0}
   debug: {fileID: 1805906823}
 --- !u!1001 &17980573
 PrefabInstance:
@@ -21321,12 +21323,12 @@ PrefabInstance:
     - target: {fileID: 108678785778762980, guid: 645ba8fcf47f04f82a62a183787fb2a2,
         type: 3}
       propertyPath: m_Shadows.m_Strength
-      value: 0.345
+      value: 0.47
       objectReference: {fileID: 0}
     - target: {fileID: 108678785778762980, guid: 645ba8fcf47f04f82a62a183787fb2a2,
         type: 3}
       propertyPath: m_Shadows.m_Bias
-      value: 0.48
+      value: 0.28
       objectReference: {fileID: 0}
     - target: {fileID: 108678785778762980, guid: 645ba8fcf47f04f82a62a183787fb2a2,
         type: 3}
@@ -21337,6 +21339,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Shadows.m_NearPlane
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 108678785778762980, guid: 645ba8fcf47f04f82a62a183787fb2a2,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 1.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 108678785778762980, guid: 645ba8fcf47f04f82a62a183787fb2a2,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 645ba8fcf47f04f82a62a183787fb2a2, type: 3}
@@ -22804,6 +22816,7 @@ MonoBehaviour:
   lp: {fileID: 602766146}
   rp: {fileID: 137569219}
   forge: 460
+  playerInnerColli: 0
 --- !u!114 &1501247982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22822,6 +22835,8 @@ MonoBehaviour:
   spawnWide: 6
   spawnPointSize: 7
   drawLine: 1
+  spawnObstaclePointSize: 1
+  spawnObstacleWide: 6
 --- !u!114 &1501247983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22842,6 +22857,7 @@ MonoBehaviour:
   b_back: {fileID: 638405877}
   s_capacity: {fileID: 1130556549}
   tbc: {fileID: 997023600}
+  fog: {fileID: 0}
 --- !u!114 &1501247984
 MonoBehaviour:
   m_ObjectHideFlags: 0
