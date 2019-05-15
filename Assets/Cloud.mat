@@ -77,7 +77,7 @@ Material:
     - _Parallax: 0.02
     - _RampSmooth: 1
     - _RampSmoothOtherLights: 0.5
-    - _RampThreshold: 0.153
+    - _RampThreshold: 0.799
     - _RampThresholdOtherLights: 0.5
     - _RimMax: 0
     - _RimMin: 0
