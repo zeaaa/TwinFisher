@@ -1,4 +1,4 @@
-﻿// Toony Colors Pro+Mobile 2
+// Toony Colors Pro+Mobile 2
 // (c) 2014-2019 Jean Moreno
 
 // This script handles lights' and ambient intensities depending on if the Editor is set to Gamma or Linear color space

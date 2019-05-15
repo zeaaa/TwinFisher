@@ -1,4 +1,4 @@
-UnityChan assets (textures, models, animations) © Unity Technologies Japan/UCL
+UnityChan assets (textures, models, animations) ?Unity Technologies Japan/UCL
 Contains texture modifications by Jean Moreno
 
 Please read "UnityChan License.pdf" for the full UnityChan license terms.

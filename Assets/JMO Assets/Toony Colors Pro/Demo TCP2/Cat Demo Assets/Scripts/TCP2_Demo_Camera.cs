@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 public class TCP2_Demo_Camera : MonoBehaviour
 {

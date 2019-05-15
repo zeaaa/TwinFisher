@@ -1,7 +1,6 @@
 Toony Colors Pro, version 2.3
 2019/03/01
-© 2019 - Jean Moreno
-=============================
+?2019 - Jean Moreno
 
 QUICK START
 -----------
