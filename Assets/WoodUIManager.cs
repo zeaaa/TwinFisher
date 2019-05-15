@@ -10,6 +10,11 @@ public class WoodUIManager : MonoBehaviour
     public static WoodUIManager instance;
 
     [SerializeField]
+    Transform infoBoard;
+
+    Transform mainUI;
+
+    [SerializeField]
     Transform l;
 
     [SerializeField]
@@ -25,12 +30,19 @@ public class WoodUIManager : MonoBehaviour
     [SerializeField]
     RawImage bg;
 
+    [SerializeField]
+    Transform back;
+
     private AsyncOperation async = null;
 
     private void Awake()
     {
         instance = this;
+        mainUI = transform.Find("MainUI");
     }
+
+    [SerializeField]
+    Transform backl;
 
 
     // Start is called before the first frame update
@@ -48,11 +60,52 @@ public class WoodUIManager : MonoBehaviour
     public void EnterPond() {
         l.DOMoveY(l.transform.position.y + 20.0f, 1.0f).onComplete = delegate {
             start.DOFieldOfView(28,1.0f);
-            start.transform.DORotate(new Vector3(23f,-177.4f,0f),1.0f);
+            start.transform.DORotate(new Vector3(23f,-177.4f,0f),1.0f).onComplete = delegate {
+                Destroy(mainUI.gameObject);
+                back.gameObject.SetActive(true);
+                infoBoard.gameObject.SetActive(true);
+                infoBoard.DOMoveY(infoBoard.transform.position.y + 10.0f, 1.0f);
+                backl.DOMoveY(backl.transform.position.y - 10.0f, 1.0f).onComplete = delegate {
+                    backl.DOMoveY(backl.transform.position.y + 0.4f, 0.2f).onComplete = delegate {
+                        backl.DOMoveY(backl.transform.position.y - 0.4f, 0.4f);
+                    };
+                    
+
+                };
+               
+            };
+           
             //c.gameObject.SetActive(true);
             //ui.gameObject.SetActive(true);
         };
         
+
+    }
+
+    public void GetBack()
+    {
+        
+        infoBoard.DOMoveY(infoBoard.transform.position.y - 10.0f, 1.0f);
+        backl.DOMoveY(backl.transform.position.y + 10.0f, 1.0f).onComplete = delegate {   
+            back.gameObject.SetActive(false);
+            infoBoard.gameObject.SetActive(false);
+            start.DOFieldOfView(60, 1.0f);
+            start.transform.DORotate(new Vector3(14f, -177.4f, 0f), 1.0f).onComplete = delegate {
+                GameObject ui = (GameObject)Resources.Load("Prefabs/MainUI");
+                GameObject UI = Instantiate(ui, transform.position+Vector3.up*20,Quaternion.identity);
+                UI.transform.parent = transform;
+                mainUI = UI.transform;
+                l = mainUI.transform.Find("w");
+                l.DOMoveY(l.transform.position.y - 20.0f, 1.0f);
+
+
+
+            };
+
+            //c.gameObject.SetActive(true);
+            //ui.gameObject.SetActive(true);
+        };
+
 
     }
 

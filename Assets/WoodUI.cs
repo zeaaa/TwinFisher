@@ -34,6 +34,7 @@ public class WoodUI : MonoBehaviour
     private void OnMouseDown()
     {
         CharacterJoint[] cjs = GetComponents<CharacterJoint>();
+        if(id!=2)
         foreach (CharacterJoint cj in cjs) {
             Destroy(cj);
         }
@@ -42,5 +43,8 @@ public class WoodUI : MonoBehaviour
             WoodUIManager.instance.StartLoad();
         if (id == 1)
             WoodUIManager.instance.EnterPond();
+        if (id == 2)
+            WoodUIManager.instance.GetBack();
+       
     }
 }
