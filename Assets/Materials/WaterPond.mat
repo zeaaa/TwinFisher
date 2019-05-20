@@ -62,13 +62,13 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _Cutoff: 0.5
-    - _Depth: 61
+    - _Depth: 0
     - _Depthdarkness: 0
     - _ENABLE_GRADIENT: 0
     - _ENABLE_NORMALS: 1
     - _ENABLE_SHADOWS: 1
     - _ENABLE_VC: 0
-    - _EdgeFade: 2.66
+    - _EdgeFade: 1.22
     - _EnableVertexColors: 1
     - _Float3: 0.85
     - _FoamDistortion: 1.55
@@ -110,7 +110,7 @@ Material:
     - _Surfacehightlightsize: 0
     - _Tessellation: 20
     - _Tiling: 0.7500001
-    - _Transparency: 0.67
+    - _Transparency: 1
     - _USE_VC_INTERSECTION: 0
     - _Unlit: 0
     - _UseIntersectionFoam: 0
@@ -126,7 +126,7 @@ Material:
     - __dirty: 0
     m_Colors:
     - _FresnelColor: {r: 0.19744569, g: 0.51304513, b: 0.8207547, a: 0}
-    - _RimColor: {r: 0.5566038, g: 0.5566038, b: 0.5566038, a: 0.16862746}
-    - _WaterColor: {r: 0, g: 0.40016243, b: 0.8392157, a: 1}
-    - _WaterShallowColor: {r: 0.23137255, g: 0.9254902, b: 0.7044776, a: 0}
+    - _RimColor: {r: 0.58, g: 0.5566038, b: 0.5566038, a: 0.3372549}
+    - _WaterColor: {r: 0, g: 0.4800078, b: 0.8392157, a: 1}
+    - _WaterShallowColor: {r: 0.31318974, g: 0.9622642, b: 0.75690734, a: 0}
     - _WaveDirection: {r: 0.01, g: 0, b: 0.69, a: 0}
