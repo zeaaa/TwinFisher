@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: sand
-  m_Shader: {fileID: 4800000, guid: f76ecbae4702d8841978b8a750ff3dc4, type: 3}
+  m_Shader: {fileID: 4800000, guid: 7cf6e0bd6774e2a438d4701ceb5e6bae, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -19,6 +19,14 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _BlendTex1:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BlendTex2:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BumpMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -69,6 +77,17 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _RampSmooth: 0.1
+    - _RampSmoothDir: 0.5
+    - _RampSmoothPoint: 0.5
+    - _RampSmoothSpot: 0.5
+    - _RampThreshold: 0.5
+    - _RampThresholdDir: 0.5
+    - _RampThresholdPoint: 0.5
+    - _RampThresholdSpot: 0.5
+    - _Shadow_HSV_H: 0
+    - _Shadow_HSV_S: 0
+    - _Shadow_HSV_V: 0
     - _Shininess: 10
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -76,9 +95,16 @@ Material:
     - _UVSec: 0
     - _UnlitOutlineThickness: 0.4
     - _ZWrite: 1
+    - __BeginGroup_OtherLights: 0
+    - __EndGroup: 0
+    - __dummy__: 0
     m_Colors:
-    - _Color: {r: 0.8207547, g: 0.64180595, b: 0.23616053, a: 1}
+    - _Color: {r: 0.5943396, g: 0.47124904, b: 0.20465466, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _HColor: {r: 0.785, g: 0.785, b: 0.785, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
+    - _SColor: {r: 0.195, g: 0.195, b: 0.195, a: 1}
     - _SpecColor: {r: 1, g: 1, b: 1, a: 0}
     - _UnlitColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _VColorBlendOffset: {r: 0, g: 0, b: 0, a: 0}
+    - _VColorBlendSmooth: {r: 0.25, g: 0.25, b: 0.25, a: 0.25}
