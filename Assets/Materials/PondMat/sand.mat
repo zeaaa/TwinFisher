@@ -99,7 +99,7 @@ Material:
     - __EndGroup: 0
     - __dummy__: 0
     m_Colors:
-    - _Color: {r: 0.5943396, g: 0.47124904, b: 0.20465466, a: 1}
+    - _Color: {r: 0.5660378, g: 0.50149393, b: 0.19490923, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _HColor: {r: 0.785, g: 0.785, b: 0.785, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
