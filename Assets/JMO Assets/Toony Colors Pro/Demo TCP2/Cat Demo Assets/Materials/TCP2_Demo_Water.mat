@@ -79,16 +79,16 @@ Material:
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DepthAlpha: 0.5
-    - _DepthDistance: 0.49
+    - _DepthDistance: 0.28
     - _DepthMinAlpha: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _DstBlendTCP2: 10
     - _EmisPulseMin: 0
     - _EmisPulseSpeed: 2
-    - _FoamSmooth: 0.24
-    - _FoamSpread: 0.82
-    - _FoamStrength: 0.785
+    - _FoamSmooth: 0.5
+    - _FoamSpread: 0.2
+    - _FoamStrength: 0.57
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
@@ -111,20 +111,20 @@ Material:
     - _UVSec: 0
     - _UVWaveAmplitude: 0.001
     - _UVWaveFrequency: 3.11
-    - _UVWaveSpeed: 1
+    - _UVWaveSpeed: 11.48
     - _WaveFrequency: 6.93
-    - _WaveHeight: 0.03
+    - _WaveHeight: 0
     - _WaveSpeed: 1
     - _ZWrite: 1
     - __dummy__: 0
     m_Colors:
     - _BumpSpeed: {r: 0.2, g: 0.2, b: 0.3, a: 0.3}
-    - _Color: {r: 0.15294115, g: 0.9137255, b: 0.5075052, a: 0.28627452}
+    - _Color: {r: 0.18325028, g: 0.5471698, b: 0.4551411, a: 0.28627452}
     - _DepthColor: {r: 0.15294115, g: 0.5340799, b: 0.6901961, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FoamColor: {r: 1, g: 0.95817137, b: 0.5801887, a: 1}
     - _FoamSpeed: {r: -1, g: -1, b: -2, a: -2}
-    - _HColor: {r: 0.9528302, g: 0.9528302, b: 0.9528302, a: 1}
+    - _HColor: {r: 1, g: 1, b: 1, a: 1}
     - _MaskedColor: {r: 1, g: 0, b: 0, a: 1}
     - _RimColor: {r: 1, g: 1, b: 1, a: 0.078431375}
     - _SColor: {r: 0, g: 0, b: 0, a: 1}

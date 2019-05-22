@@ -127,6 +127,6 @@ Material:
     m_Colors:
     - _FresnelColor: {r: 0.19744569, g: 0.51304513, b: 0.8207547, a: 0}
     - _RimColor: {r: 0.58, g: 0.5566038, b: 0.5566038, a: 0.3372549}
-    - _WaterColor: {r: 0, g: 0.75894314, b: 0.8392157, a: 1}
+    - _WaterColor: {r: 0, g: 0.67662656, b: 0.8392157, a: 1}
     - _WaterShallowColor: {r: 0.31318974, g: 0.9622642, b: 0.75690734, a: 0}
     - _WaveDirection: {r: 0.01, g: 0, b: 0.69, a: 0}
