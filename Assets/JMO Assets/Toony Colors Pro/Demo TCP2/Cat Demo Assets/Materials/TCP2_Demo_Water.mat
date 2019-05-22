@@ -87,8 +87,8 @@ Material:
     - _EmisPulseMin: 0
     - _EmisPulseSpeed: 2
     - _FoamSmooth: 0.5
-    - _FoamSpread: 0.2
-    - _FoamStrength: 0.57
+    - _FoamSpread: 0.73
+    - _FoamStrength: 0.347
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
@@ -98,7 +98,7 @@ Material:
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _RampSmooth: 0.77
-    - _RampThreshold: 0.5
+    - _RampThreshold: 0.385
     - _ReflRoughness: 0
     - _ReflStrength: 1
     - _RimMax: 0.881
@@ -108,24 +108,27 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _SrcBlendTCP2: 5
+    - _UVScrollingX: 0
+    - _UVScrollingY: 5
     - _UVSec: 0
-    - _UVWaveAmplitude: 0.001
-    - _UVWaveFrequency: 3.11
-    - _UVWaveSpeed: 11.48
-    - _WaveFrequency: 6.93
+    - _UVWaveAmplitude: 0.011
+    - _UVWaveFrequency: 0.33
+    - _UVWaveSpeed: 10
+    - _WaveFrequency: 0
     - _WaveHeight: 0
-    - _WaveSpeed: 1
+    - _WaveSpeed: 0
     - _ZWrite: 1
     - __dummy__: 0
     m_Colors:
     - _BumpSpeed: {r: 0.2, g: 0.2, b: 0.3, a: 0.3}
-    - _Color: {r: 0.18325028, g: 0.5471698, b: 0.4551411, a: 0.28627452}
-    - _DepthColor: {r: 0.15294115, g: 0.5340799, b: 0.6901961, a: 1}
+    - _Color: {r: 1, g: 0, b: 0, a: 0.84705883}
+    - _DepthColor: {r: 0.2783019, g: 0.7892853, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FoamColor: {r: 1, g: 0.95817137, b: 0.5801887, a: 1}
     - _FoamSpeed: {r: -1, g: -1, b: -2, a: -2}
     - _HColor: {r: 1, g: 1, b: 1, a: 1}
     - _MaskedColor: {r: 1, g: 0, b: 0, a: 1}
     - _RimColor: {r: 1, g: 1, b: 1, a: 0.078431375}
-    - _SColor: {r: 0, g: 0, b: 0, a: 1}
+    - _SColor: {r: 0.11320752, g: 0.11320752, b: 0.11320752, a: 1}
     - _SpecColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _WaveColor: {r: 0, g: 1, b: 0.13166809, a: 1}
