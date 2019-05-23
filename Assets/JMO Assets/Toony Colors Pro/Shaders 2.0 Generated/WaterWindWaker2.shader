@@ -1,7 +1,7 @@
 ﻿// Toony Colors Pro+Mobile 2
 // (c) 2014-2019 Jean Moreno
 
-Shader "Toony Colors Pro 2/Examples/Water/Water WindWaker2"
+Shader "Toony Colors Pro 2/Examples/Water/Water WindWaker2 Copy"
 {
 	Properties
 	{
@@ -10,7 +10,7 @@ Shader "Toony Colors Pro 2/Examples/Water/Water WindWaker2"
 		//TOONY COLORS
 		_HColor ("Highlight Color", Color) = (0.6,0.6,0.6,1.0)
 		_SColor ("Shadow Color", Color) = (0.3,0.3,0.3,1.0)
-		_WaveColor("Wave Color", Color) = (1,1,1,1)
+
 		//DIFFUSE
 		_MainTex ("Main Texture (RGB)", 2D) = "white" {}
 	[TCP2Separator]
@@ -40,14 +40,16 @@ Shader "Toony Colors Pro 2/Examples/Water/Water WindWaker2"
 		_WaveHeight ("Height", Float) = 0.1
 		_WaveFrequency ("Frequency", Range(0,10)) = 1
 
-		[Header(UV Scrolling)]
-		_UVScrollingX ("X Speed", Float) = 0.1
-		_UVScrollingY ("Y Speed", Float) = 0.1
-
 		[Header(UV Waves Animation)]
 		_UVWaveSpeed ("Speed", Float) = 1
 		_UVWaveAmplitude ("Amplitude", Range(0.001,0.5)) = 0.05
 		_UVWaveFrequency ("Frequency", Range(0,10)) = 1
+	[TCP2Separator]
+	[TCP2HeaderHelp(RIM, Rim)]
+		//RIM LIGHT
+		_RimColor ("Rim Color", Color) = (0.8,0.8,0.8,0.6)
+		_RimMin ("Rim Min", Range(0,1)) = 0.5
+		_RimMax ("Rim Max", Range(0,1)) = 1.0
 	[TCP2Separator]
 		//Avoid compile error if the properties are ending with a drawer
 		[HideInInspector] __dummy__ ("unused", Float) = 0
@@ -77,22 +79,23 @@ Shader "Toony Colors Pro 2/Examples/Water/Water WindWaker2"
 		half _FoamStrength;
 		sampler2D _FoamTex;
 		fixed4 _FoamColor;
-		fixed4 _WaveColor;
 		half _FoamSmooth;
 		half _WaveHeight;
 		half _WaveFrequency;
 		half _WaveSpeed;
-		half _UVScrollingX;
-		half _UVScrollingY;
 		half _UVWaveAmplitude;
 		half _UVWaveFrequency;
 		half _UVWaveSpeed;
 
+		fixed4 _RimColor;
+		fixed _RimMin;
+		fixed _RimMax;
 
 
 		struct Input
 		{
 			float2 texcoord;
+			half3 viewDir;
 			float2 sinAnim;
 			float4 sPos;
 		};
@@ -195,7 +198,6 @@ Shader "Toony Colors Pro 2/Examples/Water/Water WindWaker2"
 			//Main texture UVs
 			float3 worldPos = mul(unity_ObjectToWorld, v.vertex).xyz;
 			float2 mainTexcoords = worldPos.xz * 0.1;
-			mainTexcoords.xy += half2(_UVScrollingX, _UVScrollingY) * TIME * 0.1;
 			o.texcoord.xy = TRANSFORM_TEX(mainTexcoords.xy, _MainTex);
 			half2 x = ((v.vertex.xy+v.vertex.yz) * _UVWaveFrequency) + (TIME.xx * _UVWaveSpeed);
 			o.sinAnim = x;
@@ -228,6 +230,7 @@ Shader "Toony Colors Pro 2/Examples/Water/Water WindWaker2"
 
 			half2 uvDistort = ((sin(0.9*IN.sinAnim.xy) + sin(1.33*IN.sinAnim.xy+3.14) + sin(2.4*IN.sinAnim.xy+5.3))/3) * _UVWaveAmplitude;
 			IN.texcoord.xy += uvDistort.xy;
+			half ndv = saturate( dot(IN.viewDir, o.Normal) );
 			fixed4 mainTex = tex2D(_MainTex, IN.texcoord.xy);
 			float sceneZ = SAMPLE_DEPTH_TEXTURE_PROJ(_CameraDepthTexture, UNITY_PROJ_COORD(IN.sPos));
 			if(unity_OrthoParams.w > 0)
@@ -254,10 +257,13 @@ Shader "Toony Colors Pro 2/Examples/Water/Water WindWaker2"
 			half foamTerm = (smoothstep(foam.r - _FoamSmooth, foam.r + _FoamSmooth, saturate(_FoamStrength - foamDepth)) * saturate(1 - foamDepth)) * _FoamColor.a;
 			//Alter color based on depth buffer (soft particles technique)
 			mainTex.rgb = lerp(_DepthColor.rgb, mainTex.rgb, saturate(_DepthDistance * depthDiff));	//N.V corrects the result based on view direction (depthDiff tends to not look consistent depending on view angle)));
-			_Color = lerp(fixed4(_WaveColor.r, _WaveColor.g, _WaveColor.b,1), _Color, mainTex.a);
+			_Color = lerp(fixed4(1,1,1,1), _Color, mainTex.a);
 			o.Albedo = lerp(mainTex.rgb * _Color.rgb, _FoamColor.rgb, foamTerm);
 			o.Alpha = mainTex.a * _Color.a;
 			o.Alpha = lerp(o.Alpha, _FoamColor.a, foamTerm);
+			//Rim
+			half3 rim = smoothstep(_RimMax, _RimMin, 1-Pow4(1-ndv)) * _RimColor.rgb * _RimColor.a;
+			o.Emission += rim.rgb;
 		}
 
 		ENDCG

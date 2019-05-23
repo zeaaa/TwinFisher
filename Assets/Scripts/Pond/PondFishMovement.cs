@@ -12,7 +12,7 @@ public class PondFishMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        nav=gameObject.AddComponent<NavMeshAgent>();
+        nav = gameObject.AddComponent<NavMeshAgent>();
         nav.height=1f;
         nav.radius=1f;
     }
