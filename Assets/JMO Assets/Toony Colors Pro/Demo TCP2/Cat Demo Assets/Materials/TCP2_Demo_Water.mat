@@ -116,11 +116,7 @@ Material:
     - _UVWaveSpeed: 10
     - _WaveFrequency: 0
     - _WaveHeight: 0
-<<<<<<< HEAD
-    - _WaveSpeed: 3
-=======
     - _WaveSpeed: 0
->>>>>>> 9fb3bb62fc4817f393c007b5cb8813e693b8899b
     - _ZWrite: 1
     - __dummy__: 0
     m_Colors:
@@ -132,12 +128,7 @@ Material:
     - _FoamSpeed: {r: -1, g: -1, b: -2, a: -2}
     - _HColor: {r: 1, g: 1, b: 1, a: 1}
     - _MaskedColor: {r: 1, g: 0, b: 0, a: 1}
-<<<<<<< HEAD
-    - _RimColor: {r: 1, g: 0, b: 0, a: 1}
-    - _SColor: {r: 0, g: 0, b: 0, a: 1}
-=======
     - _RimColor: {r: 1, g: 1, b: 1, a: 0.078431375}
     - _SColor: {r: 0.11320752, g: 0.11320752, b: 0.11320752, a: 1}
->>>>>>> 9fb3bb62fc4817f393c007b5cb8813e693b8899b
     - _SpecColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _WaveColor: {r: 0, g: 1, b: 0.13166809, a: 1}
