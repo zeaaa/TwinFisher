@@ -83,8 +83,8 @@ Material:
     - _UVScrollingX: 0
     - _UVScrollingY: 5
     - _UVSec: 0
-    - _UVWaveAmplitude: 0.038
-    - _UVWaveFrequency: 1
+    - _UVWaveAmplitude: 0.075
+    - _UVWaveFrequency: 0.54
     - _UVWaveSpeed: 1
     - _WaveFrequency: 0
     - _WaveHeight: 0
@@ -92,11 +92,11 @@ Material:
     - _ZWrite: 1
     - __dummy__: 0
     m_Colors:
-    - _Color: {r: 0.3647059, g: 0.8117647, b: 0.7107215, a: 1}
+    - _Color: {r: 0.26406196, g: 0.8113208, b: 0.68650734, a: 1}
     - _DepthColor: {r: 0, g: 0.8105297, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FoamColor: {r: 0.9, g: 0.9, b: 0.9, a: 1}
     - _FoamSpeed: {r: 2, g: 2, b: 2, a: 2}
     - _HColor: {r: 1, g: 1, b: 1, a: 1}
     - _SColor: {r: 0.3, g: 0.3, b: 0.3, a: 1}
-    - _WaveColor: {r: 0.7825713, g: 0.8584906, b: 0.77345145, a: 1}
+    - _WaveColor: {r: 0.6047526, g: 0.8490566, b: 0.8133718, a: 1}
