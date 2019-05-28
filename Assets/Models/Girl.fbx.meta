@@ -1,0 +1,397 @@
+fileFormatVersion: 2
+guid: 52674eea9d4db38418876fe4cf78cd22
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: CINEMA_4D_Editor
+    100002: girl_1
+    100004: Moon
+    100006: Shadow_Plane
+    100008: Sky_Null
+    100010: Sun
+    100012: "\u5173\u8282"
+    100014: "\u5173\u8282_1"
+    100016: "\u5173\u8282_1_2"
+    100018: "\u5173\u8282_1_3"
+    100020: "\u5173\u8282_2"
+    100022: "\u5173\u8282_2_2"
+    100024: "\u5173\u8282_2_3"
+    100026: "\u5173\u8282_3"
+    100028: "\u5173\u8282_3_2"
+    100030: "\u5173\u8282_3_3"
+    100032: "\u5173\u8282_3_4"
+    100034: "\u5173\u8282_4"
+    100036: "\u5173\u8282_4_2"
+    100038: "\u5173\u8282_4_3"
+    100040: "\u5173\u8282_4_4"
+    100042: "\u5173\u8282_5"
+    100044: "\u5173\u8282_5_2"
+    100046: "\u5173\u8282_5_3"
+    100048: "\u5173\u8282_6"
+    100050: "\u5173\u8282_6_2"
+    100052: "\u5173\u8282_6_3"
+    100054: "\u5173\u8282_7"
+    100056: "\u5173\u8282_7_2"
+    100058: //RootNode
+    100060: "\u6839\u5BF9\u8C61_1"
+    100062: "\u7269\u7406\u5929\u7A7A"
+    100064: "\u955C\u7247"
+    400000: CINEMA_4D_Editor
+    400002: girl_1
+    400004: Moon
+    400006: Shadow_Plane
+    400008: Sky_Null
+    400010: Sun
+    400012: "\u5173\u8282"
+    400014: "\u5173\u8282_1"
+    400016: "\u5173\u8282_1_2"
+    400018: "\u5173\u8282_1_3"
+    400020: "\u5173\u8282_2"
+    400022: "\u5173\u8282_2_2"
+    400024: "\u5173\u8282_2_3"
+    400026: "\u5173\u8282_3"
+    400028: "\u5173\u8282_3_2"
+    400030: "\u5173\u8282_3_3"
+    400032: "\u5173\u8282_3_4"
+    400034: "\u5173\u8282_4"
+    400036: "\u5173\u8282_4_2"
+    400038: "\u5173\u8282_4_3"
+    400040: "\u5173\u8282_4_4"
+    400042: "\u5173\u8282_5"
+    400044: "\u5173\u8282_5_2"
+    400046: "\u5173\u8282_5_3"
+    400048: "\u5173\u8282_6"
+    400050: "\u5173\u8282_6_2"
+    400052: "\u5173\u8282_6_3"
+    400054: "\u5173\u8282_7"
+    400056: "\u5173\u8282_7_2"
+    400058: //RootNode
+    400060: "\u6839\u5BF9\u8C61_1"
+    400062: "\u7269\u7406\u5929\u7A7A"
+    400064: "\u955C\u7247"
+    2000000: CINEMA_4D_Editor
+    2100000: No Name
+    2300000: "\u955C\u7247"
+    3300000: "\u955C\u7247"
+    4300000: girl_1
+    4300002: "\u955C\u7247"
+    7400000: girl_normal
+    7400002: girl_left
+    7400004: girl_right
+    7400006: girl_skill
+    7400008: girl_webColli
+    7400010: girl_playerColli
+    7400012: girl_idle
+    7400014: girl_fishColli
+    9500000: //RootNode
+    13700000: girl_1
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: girl_normal
+      takeName: CINEMA_4D___
+      firstFrame: 0
+      lastFrame: 70
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: girl_left
+      takeName: CINEMA_4D___
+      firstFrame: 70
+      lastFrame: 120
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: girl_right
+      takeName: CINEMA_4D___
+      firstFrame: 120
+      lastFrame: 170
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: girl_skill
+      takeName: CINEMA_4D___
+      firstFrame: 170
+      lastFrame: 220
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: girl_webColli
+      takeName: CINEMA_4D___
+      firstFrame: 220
+      lastFrame: 290
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: girl_playerColli
+      takeName: CINEMA_4D___
+      firstFrame: 294
+      lastFrame: 390
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: girl_idle
+      takeName: CINEMA_4D___
+      firstFrame: 391
+      lastFrame: 494
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: girl_fishColli
+      takeName: CINEMA_4D___
+      firstFrame: 508
+      lastFrame: 530
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 22fa93d8b71c01145a40949a15ee1ce9
+guid: d7d69e1b3e9e5484982d22f26b5b29f8
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     100002: boy_1
-    100004: "Cinema_4D_\u7F16\u8F91\u5668"
+    100004: CINEMA_4D_Editor
     100006: "\u5173\u8282"
     100008: "\u5173\u8282_1"
     100010: "\u5173\u8282_1_2"
@@ -33,7 +33,7 @@ ModelImporter:
     100054: "\u955C\u7247"
     400000: //RootNode
     400002: boy_1
-    400004: "Cinema_4D_\u7F16\u8F91\u5668"
+    400004: CINEMA_4D_Editor
     400006: "\u5173\u8282"
     400008: "\u5173\u8282_1"
     400010: "\u5173\u8282_1_2"
@@ -59,9 +59,8 @@ ModelImporter:
     400050: "\u5173\u8282_7_2"
     400052: "\u6839\u5BF9\u8C61"
     400054: "\u955C\u7247"
-    2000000: "Cinema_4D_\u7F16\u8F91\u5668"
-    2100000: "\u6750\u8D28.2"
-    2100002: "\u6750\u8D28.1"
+    2000000: CINEMA_4D_Editor
+    2100000: No Name
     2300000: "\u955C\u7247"
     3300000: "\u955C\u7247"
     4300000: boy_1
