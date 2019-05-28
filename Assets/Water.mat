@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Water
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: 0a6da58fb245a9a4192c27c7c5ce9b8d, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -39,9 +39,13 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
+    - _FoamTex:
+        m_Texture: {fileID: 2800000, guid: 532c9e2e0905df744860e5e5c36ada26, type: 3}
         m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 5930a2cf4b06d4747878f6bdaad8d95f, type: 3}
+        m_Scale: {x: 4, y: 4}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
@@ -58,8 +62,12 @@ Material:
     m_Floats:
     - _BumpScale: 1
     - _Cutoff: 0.5
+    - _DepthDistance: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
+    - _FoamSmooth: 0.02
+    - _FoamSpread: 2
+    - _FoamStrength: 0.8
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
@@ -67,11 +75,28 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _RampSmooth: 1
+    - _RampThreshold: 1
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
+    - _UVScrollingX: 0
+    - _UVScrollingY: 5
     - _UVSec: 0
+    - _UVWaveAmplitude: 0.038
+    - _UVWaveFrequency: 1
+    - _UVWaveSpeed: 1
+    - _WaveFrequency: 0
+    - _WaveHeight: 0
+    - _WaveSpeed: 0
     - _ZWrite: 1
+    - __dummy__: 0
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0.3647059, g: 0.8117647, b: 0.7107215, a: 1}
+    - _DepthColor: {r: 0, g: 0.8105297, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _FoamColor: {r: 0.9, g: 0.9, b: 0.9, a: 1}
+    - _FoamSpeed: {r: 2, g: 2, b: 2, a: 2}
+    - _HColor: {r: 1, g: 1, b: 1, a: 1}
+    - _SColor: {r: 0.3, g: 0.3, b: 0.3, a: 1}
+    - _WaveColor: {r: 0.7825713, g: 0.8584906, b: 0.77345145, a: 1}
