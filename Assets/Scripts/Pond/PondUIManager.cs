@@ -15,7 +15,7 @@ public class PondUIManager : MonoBehaviour
     {
         string jsonPath = File.ReadAllText(Application.dataPath + "/Resources/Data/Pond.json");
         pondDataList=JsonUtility.FromJson<PondDataList>(jsonPath);
-        SetPondUI();
+        //SetPondUI();
     }
 
     // Update is called once per frame

@@ -18,8 +18,20 @@ public class SceneLoader : MonoBehaviour
     Button b_pond;
     [SerializeField]
     Button b_back;
+
+
     [SerializeField]
     RectTransform scroll;
+
+    [SerializeField]
+    Button b_sb0;
+    [SerializeField]
+    Button b_sb1;
+    [SerializeField]
+    Button b_sb2;
+    [SerializeField]
+    RectTransform scrollView;
+
     public string nextSceneName;
     private AsyncOperation async = null;
     // Start is called before the first frame update
@@ -27,6 +39,17 @@ public class SceneLoader : MonoBehaviour
     {
         b_pond.onClick.AddListener(ShowScroll);
         b_back.onClick.AddListener(HideScroll);
+        b_sb1.onClick.AddListener(ShowList);
+        b_sb2.onClick.AddListener(ShowDetail);
+    }
+
+    void ShowDetail() {
+        scrollView.gameObject.SetActive(false);
+    }
+
+    void ShowList()
+    {
+        scrollView.gameObject.SetActive(true);
     }
 
     void ShowScroll() {
