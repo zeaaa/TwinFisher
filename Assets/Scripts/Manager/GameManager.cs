@@ -154,8 +154,8 @@ public class GameManager : MonoBehaviour {
             SetWebNodeForge(100f);
             GameObject.Find("PlayerL").GetComponent<Animator>().SetInteger("GameOver", 1);
             GameObject.Find("PlayerR").GetComponent<Animator>().SetInteger("GameOver", 1);
-        } 
-            
+        }
+       
         Debug.Log("GAMEOVER" + i);
     }
 

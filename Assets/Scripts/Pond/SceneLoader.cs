@@ -31,25 +31,96 @@ public class SceneLoader : MonoBehaviour
     Button b_sb2;
     [SerializeField]
     RectTransform scrollView;
-
-    public string nextSceneName;
+    [SerializeField]
+    RectTransform arhievement;
+    [SerializeField]
+    RectTransform detailView;   
+    [SerializeField]
+    Text name;
+    [SerializeField]
+    Text info;
+    [SerializeField]
+    Text farthest;
+    [SerializeField]
+    Text fishCount;
+    [SerializeField]
+    Text fishType;
+    FishDataList fishDataList;
     private AsyncOperation async = null;
+
+
+    //Button[] buttons;
+    private void Awake()
+    {
+        //PlayerPrefs.SetInt("FishCount", 0);
+        //PlayerPrefs.SetFloat("Farthest", 100f);
+    }
     // Start is called before the first frame update
     void Start()
     {
         b_pond.onClick.AddListener(ShowScroll);
         b_back.onClick.AddListener(HideScroll);
+        b_sb0.onClick.AddListener(ShowArchievement);
         b_sb1.onClick.AddListener(ShowList);
-        b_sb2.onClick.AddListener(ShowDetail);
+        b_sb2.onClick.AddListener(delegate { ShowDetail(0);});
+
+
+        //strangely it doesnt work
+        //buttons = scrollView.GetComponentsInChildren<Button>();
+        //for (int i = 0; i < buttons.Length; i++) {
+        //    Debug.Log(i);
+        //    Debug.Log(buttons[i].name);
+        //    buttons[i].onClick.AddListener(delegate { ShowDetail(i); });
+        //}
+
+        AssetBundle ab;
+#if UNITY_STANDALONE_WIN || UNITY_STANDALONE_OSX
+        ab = AssetBundle.LoadFromFile(Application.streamingAssetsPath + "/data.ab");
+#endif
+#if UNITY_ANDROID
+        ab = AssetBundle.LoadFromFile(Application.dataPath+"!assets/data.ab");  
+#endif
+        TextAsset ta = ab.LoadAsset<TextAsset>("Fish");
+        fishDataList = JsonUtility.FromJson<FishDataList>(ta.text);
+        ab.Unload(true);
+        fishType.text = "0/0";
+        fishCount.text = PlayerPrefs.GetInt("FishCount").ToString();
+        farthest.text = PlayerPrefs.GetFloat("Farthest").ToString("f2")+"M";
     }
 
-    void ShowDetail() {
+    private void OnDestroy()
+    {
+        b_pond.onClick.RemoveAllListeners();
+        b_back.onClick.RemoveAllListeners();
+        b_sb1.onClick.RemoveAllListeners();
+        b_sb2.onClick.RemoveAllListeners();
+        //for (int i = 0; i < buttons.Length; i++)
+        //{
+        //    buttons[i].onClick.RemoveAllListeners();
+        //}
+    }
+
+
+    public void ShowDetail(int id) {
+        arhievement.gameObject.SetActive(false);
+        detailView.gameObject.SetActive(true);
         scrollView.gameObject.SetActive(false);
+        name.text = fishDataList.fish[id].name;
+        info.text = fishDataList.fish[id].info;
     }
 
     void ShowList()
     {
+        arhievement.gameObject.SetActive(false);
+        detailView.gameObject.SetActive(false);
         scrollView.gameObject.SetActive(true);
+    }
+
+    void ShowArchievement()
+    {
+        arhievement.gameObject.SetActive(true);
+        detailView.gameObject.SetActive(false);
+        scrollView.gameObject.SetActive(false);
     }
 
     void ShowScroll() {

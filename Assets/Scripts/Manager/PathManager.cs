@@ -55,12 +55,16 @@ public class PathManager : MonoBehaviour {
     }
 
     void StopScrolling(int i) {
-        if (i == 0) {
+        PlayerPrefs.SetFloat("Farthest", mileage);
+        if (i == 0)
+        {
             curspeed = 0;
             SetSpeed(0);
-        }     
-        else
-            StartCoroutine(ChangeSpeed(0f, 0.5f));
+        }
+        else {
+            StartCoroutine(ChangeSpeed(0f, 0.5f));     
+        }
+            
     }
 
     void Start()
@@ -102,6 +106,7 @@ public class PathManager : MonoBehaviour {
                 break;
             }
         }
+        //PlayerPrefs.SetFloat("Farthest", mileage);
         SetSpeed(endSpeed);
     }
 
