@@ -206,7 +206,7 @@ public class SpawnManager : MonoBehaviour {
         float WRange = tempData.maxWeight - tempData.minWeight;
         float length = tempData.minLength + LRange * TFMath.GaussRand();
         float weight = tempData.minWeight + WRange * TFMath.GaussRand();
-        obj.GetComponent<Fish>().SetFish(tempData.speed, tempData.score, length, weight, spawnPointID);
+        obj.GetComponent<Fish>().SetFish(tempData.speed, tempData.score, length, weight, spawnPointID,fishID);
         Vector3 spawnPosition = spawnPoints[spawnPointID].point;
 
         Instantiate(obj, spawnPosition, Quaternion.Euler(-35, 180, 0));

@@ -45,6 +45,12 @@ public class SceneLoader : MonoBehaviour
     Text fishCount;
     [SerializeField]
     Text fishType;
+    [SerializeField]
+    Text meetTime;
+    [SerializeField]
+    Text research;
+    [SerializeField]
+    Text range;
     FishDataList fishDataList;
     private AsyncOperation async = null;
 
@@ -83,9 +89,20 @@ public class SceneLoader : MonoBehaviour
         TextAsset ta = ab.LoadAsset<TextAsset>("Fish");
         fishDataList = JsonUtility.FromJson<FishDataList>(ta.text);
         ab.Unload(true);
-        fishType.text = "0/0";
-        fishCount.text = PlayerPrefs.GetInt("FishCount").ToString();
-        farthest.text = PlayerPrefs.GetFloat("Farthest").ToString("f2")+"M";
+        
+        fishCount.text = PlayerPrefs.GetInt("FishCount",0).ToString();
+        farthest.text = PlayerPrefs.GetFloat("Farthest",0f).ToString("f2")+"M";
+        PlayerPrefs.SetInt("TotalFishType", fishDataList.fish.Count);
+        bool[] array = PlayerPrefsX.GetBoolArray("FishType",false,fishDataList.fish.Count);
+        int count = 0;
+        for (int i = 0; i < array.Length; i++) {
+            if (array[i] == true){
+                count++;
+            }
+        }
+        fishType.text = count.ToString() + "/" + array.Length;
+
+        
     }
 
     private void OnDestroy()
@@ -107,6 +124,9 @@ public class SceneLoader : MonoBehaviour
         scrollView.gameObject.SetActive(false);
         name.text = fishDataList.fish[id].name;
         info.text = fishDataList.fish[id].info;
+        int[] arrayInt = PlayerPrefsX.GetIntArray("FishCountArray", 0, fishDataList.fish.Count);
+        meetTime.text = arrayInt[id].ToString();
+        range.text = fishDataList.fish[id].range;
     }
 
     void ShowList()
