@@ -13,6 +13,7 @@ public class FishData {
     public int[] rarity;
     public int score;
     public float speed;
+    public string range;
 }
 
 public class FishDataList{

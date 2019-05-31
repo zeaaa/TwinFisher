@@ -1,19 +1,17 @@
 ManifestFileVersion: 0
-CRC: 1608069088
+CRC: 889858951
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: d9eb09cbc57f3a7c0802ff56240366c1
+    Hash: c1b38e3115550eaf9d279b8497e9b688
   TypeTreeHash:
     serializedVersion: 2
-    Hash: b1489460ef3334fa6c05341d2de57edf
+    Hash: a766d75ea8097aead62690ae27310fb0
 HashAppended: 0
 ClassTypes:
 - Class: 1
   Script: {instanceID: 0}
 - Class: 4
-  Script: {instanceID: 0}
-- Class: 20
   Script: {instanceID: 0}
 - Class: 21
   Script: {instanceID: 0}
@@ -53,7 +51,6 @@ Assets:
 - Assets/Resources/Prefabs/Fish/007.prefab
 - Assets/Resources/Prefabs/Fish/010.prefab
 - Assets/Resources/Prefabs/Fish/015.prefab
-- Assets/Models/Fish/001.fbx
 - Assets/Resources/Prefabs/Fish/005.prefab
 - Assets/Resources/Prefabs/Fish/004.prefab
 - Assets/Resources/Prefabs/Fish/003.prefab
@@ -64,5 +61,4 @@ Assets:
 - Assets/Resources/Prefabs/Fish/012.prefab
 - Assets/Resources/Prefabs/Fish/002.prefab
 - Assets/Resources/Prefabs/Fish/011.prefab
-- Assets/Resources/Prefabs/Fish/001.prefab
 Dependencies: []

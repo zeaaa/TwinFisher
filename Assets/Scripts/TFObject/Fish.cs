@@ -15,6 +15,9 @@ public class Fish : TFObject
     [ReadOnly]
     [SerializeField]
     private float _weight = 0;
+    [ReadOnly]
+    [SerializeField]
+    private int _id = 0;
 
     private int _spId = 0;
 
@@ -56,13 +59,14 @@ public class Fish : TFObject
        // throw new NotImplementedException();
     }
 
-    public void SetFish(float speed, int score, float length, float weight,int spawnPointId)
+    public void SetFish(float speed, int score, float length, float weight,int spawnPointId,int id)
     {
         base.SetSpeed(speed);
         _score = score;
         _length = length;
         _weight = weight;
         _spId = spawnPointId;
+        _id = id;
     }
 
 
@@ -178,6 +182,14 @@ public class Fish : TFObject
         int count = PlayerPrefs.GetInt("FishCount");
         count++;
         PlayerPrefs.SetInt("FishCount",count);
+
+        //PlayerPrefsX.SetSingleBoolInArray("FishType", _id ,true);
+        bool[] array = PlayerPrefsX.GetBoolArray("FishType", false, PlayerPrefs.GetInt("TotalFishType"));
+        array[_id] = true;
+        PlayerPrefsX.SetBoolArray("FishType", array);
+        int[] arrayInt = PlayerPrefsX.GetIntArray("FishCountArray", 0, PlayerPrefs.GetInt("TotalFishType"));
+        arrayInt[_id]++;
+        PlayerPrefsX.SetIntArray("FishCountArray", arrayInt);
         yield return new WaitForSeconds(0.5f);
         yield return new WaitForSeconds(animLength - 0.5f);
         Destroy(this.gameObject);
