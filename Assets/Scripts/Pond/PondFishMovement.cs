@@ -12,19 +12,25 @@ public class PondFishMovement : MonoBehaviour
     float timer;
     Vector3 target;
 
+    public GameObject cube;
+    Animator anim;
     private int area;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
+        anim = GetComponent<Animator>();
+        
         nav = gameObject.GetComponent<NavMeshAgent>();
         timer = 0;
-        area = 4;
-        Debug.Log(nav.areaMask);
+        okVertice = new List<int>();
+        area = nav.areaMask;
         navData = NavMesh.CalculateTriangulation();
+    }
+
+    private void Start()
+    {
+        anim.speed = 0.1f;
         StartCoroutine(RandMove());
-        
-       
-        
     }
 
     // Update is called once per frame
@@ -33,55 +39,56 @@ public class PondFishMovement : MonoBehaviour
 
 
         timer += Time.deltaTime;
-        //Debug.Log((nav.destination-target).magnitude);
+
+        if( (nav.destination - target).magnitude < 0.1f){
+            anim.speed = 0.1f;
+        }
     }
     public void SetFishSpeed(float speed)
     {
-
         nav.speed = speed;
     }
     IEnumerator RandMove()
     {
         while (true)
         {
+            float x = Random.Range(4, 10f);
+            yield return new WaitForSeconds(x);
             target = GetRandomLocation();
             nav.SetDestination(target);
+            anim.speed = 1f;
 
             //if(!nav.hasPath){nav.SetDestination(transform.position);continue;}
             timer = 0;
-            yield return new WaitUntil(TestWait);
-
+            yield return new WaitUntil(Wait);
         }
     }
-    bool TestWait()
-    {
 
-        if ((nav.destination - target).magnitude < 0.6f || timer > 5f) return true;
-        else return false;
+    bool Wait() {
+        if ((nav.destination - target).magnitude < 0.1f && timer > 20.0f)
+            return true;
+        else
+            return false;
     }
-    
+
+    List<int> okVertice;
     public Vector3 GetRandomLocation()
     {
 
-        navData = NavMesh.CalculateTriangulation();
+        //navData = NavMesh.CalculateTriangulation();
 
-        List<int> okVertice;
-        okVertice = new List<int>();
+        
+   
         for (int i = 0; i < navData.areas.Length; i+=3) {
-            if (navData.areas[i / 3] == area) {
+            if (1<<navData.areas[i / 3] == area) {
+               
                 okVertice.Add(i);
             }
         }
-        Debug.Log(okVertice.Count);
         int t = Random.Range(0,okVertice.Count);
-        //Debug.Log(t);
-
-        //for(int i=0;i<p.Length;i++)p[0+i].transform.position= navMeshData.vertices[t+i];
-
-        Vector3 point = Vector3.Lerp(navData.vertices[t*3], navData.vertices[t*3 + 1], Random.value);
-        point = Vector3.Lerp(point, navData.vertices[t*3 + 2], Random.value);
-
-
+        Vector3 point = Vector3.Lerp(navData.vertices[navData.indices[okVertice[t]]], navData.vertices[navData.indices[okVertice[t] + 1]], Random.value);
+        point = Vector3.Lerp(point, navData.vertices[navData.indices[okVertice[t] + 2]], Random.value);
+        okVertice.Clear();
         return point;
     }
 }

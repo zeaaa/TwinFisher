@@ -88,7 +88,7 @@ public class PathManager : MonoBehaviour {
 
     private void FixedUpdate()
     {
-        mileage += speed * Time.fixedDeltaTime;
+        mileage += speed * Time.fixedDeltaTime*30;
         speed = curspeed;
     }
 
