@@ -27,7 +27,6 @@ public class UVScroll : MonoBehaviour
         
         float newOffsetU = USpeed * Time.time;
         float newOffsetV = curve.Evaluate((Time.time/time)%1);
-        Debug.Log(newOffsetV);
  
         if (null != tex)
         {

@@ -7,35 +7,61 @@ public class PondFishMovement : MonoBehaviour
 
     [SerializeField]
     UnityEngine.AI.NavMeshAgent nav;
-    public float speed;
 
+    public float speed;
+    float timer;
+    Vector3 target;
     // Start is called before the first frame update
     void Start()
     {
-        nav = gameObject.AddComponent<NavMeshAgent>();
-        nav.height=1f;
-        nav.radius=1f;
+        nav = gameObject.GetComponent<NavMeshAgent>();
+        timer = 0;
+        StartCoroutine(RandMove());
     }
 
     // Update is called once per frame
     void Update()
     {
-        nav.SetDestination (GetRandomLocation());
-    }
-    public void SetFishSpeed(float speed) {
-        
-      
-        nav.speed=speed;
-    }
 
+
+        timer += Time.deltaTime;
+        //Debug.Log((nav.destination-target).magnitude);
+    }
+    public void SetFishSpeed(float speed)
+    {
+
+        nav.speed = speed;
+    }
+    IEnumerator RandMove()
+    {
+        while (true)
+        {
+            target = GetRandomLocation();
+            nav.SetDestination(target);
+
+            //if(!nav.hasPath){nav.SetDestination(transform.position);continue;}
+            timer = 0;
+            yield return new WaitUntil(TestWait);
+
+        }
+    }
+    bool TestWait()
+    {
+
+        if ((nav.destination - target).magnitude < 0.6f || timer > 5f) return true;
+        else return false;
+    }
     public Vector3 GetRandomLocation()
     {
         NavMeshTriangulation navMeshData = NavMesh.CalculateTriangulation();
 
-        int t = Random.Range(0, navMeshData.indices.Length - 3);
+        int t = Random.Range(0, navMeshData.vertices.Length - 3);
+        //Debug.Log(t);
+        //for(int i=0;i<p.Length;i++)p[0+i].transform.position= navMeshData.vertices[t+i];
 
-        Vector3 point = Vector3.Lerp(navMeshData.vertices[navMeshData.indices[t]], navMeshData.vertices[navMeshData.indices[t + 1]], Random.value);
-        point = Vector3.Lerp(point, navMeshData.vertices[navMeshData.indices[t + 2]], Random.value);
+        Vector3 point = Vector3.Lerp(navMeshData.vertices[t], navMeshData.vertices[t + 1], Random.value);
+        point = Vector3.Lerp(point, navMeshData.vertices[t + 2], Random.value);
+
 
         return point;
     }
