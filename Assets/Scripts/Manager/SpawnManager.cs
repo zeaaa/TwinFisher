@@ -48,9 +48,11 @@ public class SpawnManager : MonoBehaviour {
     [Range(0, 10)]
     private float spawnObstacleWide = 6;
 
-    FishDataList fishDataList;
+    static FishDataList fishDataList;
     int toatlRarity = 0;
     int mapID = 0;
+
+    
 
     float spawnFishTimer = 0;
     float spawnFishInterval = 0;
@@ -62,6 +64,11 @@ public class SpawnManager : MonoBehaviour {
     float spawnObstacleInterval = 0;
 
     List<int> spawnPointsIdList = new List<int>();
+
+    public static FishDataList GetFishList() {
+        return fishDataList;
+    }
+
     void InitSpawnPoints() {
         float offset = spawnWide * 2 / (spawnPointSize-1);
         spawnPoints = new SpawnPoint[spawnPointSize];

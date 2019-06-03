@@ -19,7 +19,7 @@ public class NodePosition : MonoBehaviour {
 
     GameObject[] line;
 
-
+    
 
     private void Start()
 
@@ -110,8 +110,9 @@ public class NodePosition : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
+        
         if (collision.gameObject.CompareTag("Fish")) {
-           // rig.AddForce(-transform.forward * forge * 10f);
+            //rig.AddForce(-transform.forward * forge * 8f);
         }
             
         if (collision.gameObject.CompareTag("Rock"))

@@ -25,6 +25,7 @@ public class Fish : TFObject
 
     public delegate void Colision(int score, float weight);
     public static event Colision AddScoreHandler;
+    public static event FirstMeet FirstMeetHandler;
 
     [SerializeField]
     Texture2D tex;
@@ -80,6 +81,7 @@ public class Fish : TFObject
     bool inDodge = false;
     
     private void FixedUpdate() {
+        Debug.Log("call");
         Vector3 dir = Vector3.back;
         RaycastHit hit;
         Debug.DrawLine(transform.position, transform.position + Vector3.back * 10, Color.red);
@@ -162,6 +164,8 @@ public class Fish : TFObject
         inDodge = false;
     }
 
+    public delegate void FirstMeet(int id);
+
     IEnumerator FishColiWithWeb()
     {
         
@@ -174,24 +178,32 @@ public class Fish : TFObject
         int i = UnityEngine.Random.Range(0, size);
         source.clip = SoundManager.instance.bubble[i];
         source.Play();
-        //GetComponent<Rigidbody>().velocity = Vector3.zero;
 
+        //GetComponent<Rigidbody>().velocity = Vector3.zero;
         //GetComponent<Collider>().enabled = false;
          
+        
+        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(animLength - 0.5f);
+
         AddScoreHandler(_score, _weight);
         int count = PlayerPrefs.GetInt("FishCount");
         count++;
-        PlayerPrefs.SetInt("FishCount",count);
+        PlayerPrefs.SetInt("FishCount", count);
 
         //PlayerPrefsX.SetSingleBoolInArray("FishType", _id ,true);
         bool[] array = PlayerPrefsX.GetBoolArray("FishType", false, PlayerPrefs.GetInt("TotalFishType"));
-        array[_id] = true;
+        if (!array[_id])
+        {
+            array[_id] = true;
+            FirstMeetHandler.Invoke(_id);
+        }
+
         PlayerPrefsX.SetBoolArray("FishType", array);
         int[] arrayInt = PlayerPrefsX.GetIntArray("FishCountArray", 0, PlayerPrefs.GetInt("TotalFishType"));
         arrayInt[_id]++;
         PlayerPrefsX.SetIntArray("FishCountArray", arrayInt);
-        yield return new WaitForSeconds(0.5f);
-        yield return new WaitForSeconds(animLength - 0.5f);
+
         Destroy(this.gameObject);
     }
 
