@@ -54,6 +54,24 @@ public class SceneLoader : MonoBehaviour
     FishDataList fishDataList;
     private AsyncOperation async = null;
 
+    [SerializeField]
+    Image boy;
+    [SerializeField]
+    Image girl;
+
+    [SerializeField]
+    Sprite boySelected;
+    [SerializeField]
+    Sprite girlSelected;
+
+    [SerializeField]
+    Image wave1;
+    [SerializeField]
+    Image wave2;
+
+    Sprite boyOrigin;
+    Sprite girlOrigin;
+
 
     //Button[] buttons;
     private void Awake()
@@ -70,7 +88,8 @@ public class SceneLoader : MonoBehaviour
         b_sb1.onClick.AddListener(ShowList);
         b_sb2.onClick.AddListener(delegate { ShowDetail(0);});
 
-
+        boyOrigin = boy.sprite;
+        girlOrigin = girl.sprite;
         //strangely it doesnt work
         //buttons = scrollView.GetComponentsInChildren<Button>();
         //for (int i = 0; i < buttons.Length; i++) {
@@ -103,6 +122,24 @@ public class SceneLoader : MonoBehaviour
         fishType.text = count.ToString() + "/" + array.Length;
 
         
+    }
+
+    public void OnPondSelected()
+    {
+        girl.sprite = girlSelected;
+    }
+    public void OnPondDeselected()
+    {
+        girl.sprite = girlOrigin;
+    }
+
+    public void OnStartSelected()
+    {
+        boy.sprite = boySelected;
+    }
+    public void OnStartDeselected()
+    {
+        boy.sprite = boyOrigin;
     }
 
     private void OnDestroy()
@@ -143,12 +180,21 @@ public class SceneLoader : MonoBehaviour
         scrollView.gameObject.SetActive(false);
     }
 
+    //show pannel
     void ShowScroll() {
+        Tween jump = girl.GetComponent<RectTransform>().DOJumpAnchorPos(new Vector2(136, 0), 50, 1, 0.5f);
+        jump.onComplete = delegate {
+            boy.GetComponent<RectTransform>().DOAnchorPosX(-650, 1f);
+            girl.GetComponent<RectTransform>().DOAnchorPosX(650, 1f);
+        };
+        jump.SetEase(Ease.Flash);
+
         b_pond.transform.GetComponent<Image>().DOFade(0.0f, 1.5f);
         b_pond.transform.DOScale(new Vector3(2.0f, 2.0f, 1.0f), 1.5f);
-       
-        Tweener moveBanner = banner.rectTransform.DOAnchorPosY(600, 1.5f);
+        Tweener moveBanner = banner.rectTransform.DOAnchorPosY(900, 1.5f);
         Tweener moveButton = b_start.transform.GetComponent<RectTransform>().DOAnchorPosY(-600, 1.5f);
+        wave1.rectTransform.DOAnchorPosY(-200, 1.5f);
+        wave2.rectTransform.DOAnchorPosY(-200, 1.5f);
         moveButton.onComplete = delegate {
             scroll.DOAnchorPosY(0, 1f);
             b_back.gameObject.GetComponent<RectTransform>().DOAnchorPosY(0, 1f).onComplete = delegate {
@@ -157,10 +203,16 @@ public class SceneLoader : MonoBehaviour
         };
     }
 
+
+    // hide pannel
     void HideScroll()
-    {
+    {   
         b_back.interactable = false;
         scroll.DOAnchorPosY(-675f, 1f).onComplete = delegate {
+            wave1.rectTransform.DOAnchorPosY(0, 1.5f);
+            wave2.rectTransform.DOAnchorPosY(0, 1.5f);
+            boy.rectTransform.DOAnchorPosX(-124, 0.5f);
+            girl.rectTransform.DOAnchorPosX(136, 0.5f);
             Color c = b_pond.transform.GetComponent<Image>().color;
             b_pond.transform.GetComponent<Image>().color = new Color(c.r,c.g, c.b,1);
             b_pond.transform.localScale = Vector3.one;
@@ -186,11 +238,16 @@ public class SceneLoader : MonoBehaviour
     }
 
     IEnumerator LoadScene(){
-        
+        Tween jump = boy.GetComponent<RectTransform>().DOJumpAnchorPos(new Vector2(-124,0), 50, 1, 0.5f);
+        jump.onComplete = delegate {
+            boy.GetComponent<RectTransform>().DOAnchorPosX(-650, 1f);
+            girl.GetComponent<RectTransform>().DOAnchorPosX(650, 1f);
+        };
+        jump.SetEase(Ease.Flash);
         b_start.transform.GetComponent<Image>().DOFade(0.0f, 1.5f);
         b_start.transform.DOScale(new Vector3(2.0f, 2.0f, 1.0f), 1.5f);
         
-        Tweener moveBanner = banner.rectTransform.DOAnchorPosY(600, 1.5f);
+        Tweener moveBanner = banner.rectTransform.DOAnchorPosY(900, 1.5f);
         Tweener moveButton = b_pond.transform.GetComponent<RectTransform>().DOAnchorPosY(-600, 1.5f);
         bg.DOFade(1.0f, 3.0f);
         async = SceneManager.LoadSceneAsync(1);
