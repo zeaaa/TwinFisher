@@ -98,15 +98,15 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 2
     agentTypeID: 0
-    agentRadius: 0.5
+    agentRadius: 0.55
     agentHeight: 2
-    agentSlope: 16.9
-    agentClimb: 0.63
+    agentSlope: 19.2
+    agentClimb: 0.1
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     minRegionArea: 2
     manualCellSize: 0
-    cellSize: 0.16666667
+    cellSize: 0.18333334
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
@@ -443,7 +443,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2
-  m_BaseOffset: 0
+  m_BaseOffset: -0.1
   m_WalkableMask: 16
   m_ObstacleAvoidanceType: 4
 --- !u!114 &48825875
@@ -822,7 +822,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100018, guid: 51f2bc4a5267c3e4db0b9ea429cd5d9e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100018, guid: 51f2bc4a5267c3e4db0b9ea429cd5d9e, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -842,7 +842,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400018, guid: 51f2bc4a5267c3e4db0b9ea429cd5d9e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.66
+      value: 3.43
       objectReference: {fileID: 0}
     - target: {fileID: 400018, guid: 51f2bc4a5267c3e4db0b9ea429cd5d9e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -10793,7 +10793,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &493816785
 GameObject:
@@ -12480,7 +12480,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100006, guid: f883a6cd6f7456d43954329a9eadb9d7, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: f883a6cd6f7456d43954329a9eadb9d7, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -12656,7 +12656,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100018, guid: 79a0326053c25ed48b894d6782381328, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 79a0326053c25ed48b894d6782381328, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -12668,11 +12668,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400018, guid: 79a0326053c25ed48b894d6782381328, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.6607242
+      value: 8.43
       objectReference: {fileID: 0}
     - target: {fileID: 400018, guid: 79a0326053c25ed48b894d6782381328, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.2028503
+      value: 3.89
       objectReference: {fileID: 0}
     - target: {fileID: 400018, guid: 79a0326053c25ed48b894d6782381328, type: 3}
       propertyPath: m_LocalPosition.z
@@ -14741,7 +14741,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2
-  m_BaseOffset: 0
+  m_BaseOffset: 0.5
   m_WalkableMask: 16
   m_ObstacleAvoidanceType: 4
 --- !u!114 &1212091758
@@ -18125,7 +18125,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100028, guid: 4b1626a34e6c424489525491b73f4856, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 4b1626a34e6c424489525491b73f4856, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -18145,7 +18145,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400028, guid: 4b1626a34e6c424489525491b73f4856, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7.12698
+      value: -4.38
       objectReference: {fileID: 0}
     - target: {fileID: 400028, guid: 4b1626a34e6c424489525491b73f4856, type: 3}
       propertyPath: m_LocalRotation.x
@@ -18452,7 +18452,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2
-  m_BaseOffset: 0
+  m_BaseOffset: 0.5
   m_WalkableMask: 16
   m_ObstacleAvoidanceType: 4
 --- !u!114 &1825581146
@@ -19903,7 +19903,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 92a886451b79940feb475ef8ce1c6cf3, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 92a886451b79940feb475ef8ce1c6cf3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -19984,7 +19984,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100030, guid: 8e1d876546f88b54d99285436b0ce3c6, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 8e1d876546f88b54d99285436b0ce3c6, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -20369,7 +20369,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &235403464135727952
 GameObject:
   m_ObjectHideFlags: 0
@@ -21750,7 +21750,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1001 &4833695329671850195
 PrefabInstance:
   m_ObjectHideFlags: 0
