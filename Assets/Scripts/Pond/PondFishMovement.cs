@@ -51,12 +51,19 @@ public class PondFishMovement : MonoBehaviour
         if ((nav.destination - target).magnitude < 0.6f || timer > 5f) return true;
         else return false;
     }
+
     public Vector3 GetRandomLocation()
     {
         NavMeshTriangulation navMeshData = NavMesh.CalculateTriangulation();
-
+        
         int t = Random.Range(0, navMeshData.vertices.Length - 3);
-        //Debug.Log(t);
+
+        
+        for (int i = 0; i < navMeshData.areas.Length; i++) {
+            Debug.Log(navMeshData.areas[i]);
+        }
+       //while(navMeshData.areas[t]!=)
+       
         //for(int i=0;i<p.Length;i++)p[0+i].transform.position= navMeshData.vertices[t+i];
 
         Vector3 point = Vector3.Lerp(navMeshData.vertices[t], navMeshData.vertices[t + 1], Random.value);

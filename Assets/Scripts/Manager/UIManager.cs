@@ -27,13 +27,44 @@ public class UIManager : MonoBehaviour {
     [SerializeField]
     Image fog;
 
+
+    [SerializeField]
+    RectTransform firstMeetUI;
+
+    [SerializeField]
+    Text t_meetFishId;
+
+    [SerializeField]
+    Button b_meetFishOk;
+
+    [SerializeField]
+    Image meetFishImg;
     private void Awake()
     {
         GameManager.UpdateUIHandler += UpdateUI;
         Obstacle.GameOverHandler += ShowGameOverUI;
+        Fish.FirstMeetHandler += ShowFirstMeetUI;
+
+        b_meetFishOk.onClick.AddListener(HideMeetUI); 
         fog.color = new Color(1, 1, 1, 0);
         fog.DOFade(1.0f, 0.0f);
     }
+
+    private void ShowFirstMeetUI(int id) {
+        Time.timeScale = 0;
+        Tweener move = firstMeetUI.DOLocalMove(Vector3.zero, 1.0f);
+        move.SetEase(Ease.InQuad);
+        move.SetUpdate(true);
+        t_meetFishId.text = SpawnManager.GetFishList().fish[id].name;
+    }
+
+    void HideMeetUI() {
+        Time.timeScale = 1;
+        Tweener move = firstMeetUI.DOLocalMove(Vector3.up*1600f, 1.0f);
+        move.SetEase(Ease.InQuad);
+        move.SetUpdate(true);
+    }
+
     private void Start()
     {
         b_reStart.onClick.AddListener(delegate () { SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); Time.timeScale = 1; });
@@ -49,6 +80,7 @@ public class UIManager : MonoBehaviour {
     {
         GameManager.UpdateUIHandler -= UpdateUI;
         Obstacle.GameOverHandler -= ShowGameOverUI;
+        Fish.FirstMeetHandler -= ShowFirstMeetUI;
     }
 
     // Update is called once per frame
