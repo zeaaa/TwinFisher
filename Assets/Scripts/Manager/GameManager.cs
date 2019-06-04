@@ -52,8 +52,21 @@ public class GameManager : MonoBehaviour {
 
     private Material webNodeMat;
     private Material webRopeMat;
+
+    void ClearFishMeet() {
+        int type = PlayerPrefs.GetInt("TotalFishType");
+        bool[] falseArray = new bool[type];
+        for (int i = 0; i < type; i++)
+        {
+            falseArray[i] = false;
+        }
+        PlayerPrefsX.SetBoolArray("FishType", falseArray);
+    }
+
     void Initialize()
     {
+        ClearFishMeet();
+
         Screen.SetResolution(1080,1920,false);
         _score = 0;
         _inSkill = false;

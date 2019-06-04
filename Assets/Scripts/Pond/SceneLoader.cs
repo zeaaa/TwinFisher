@@ -72,6 +72,18 @@ public class SceneLoader : MonoBehaviour
     Sprite boyOrigin;
     Sprite girlOrigin;
 
+    Sprite buttonOrigin;
+    [SerializeField]
+    Sprite buttonSelected;
+
+    Image img_sb0;
+    Image img_sb1;
+    Image img_sb2;
+
+    [SerializeField]
+    Color imgSelectedColor;
+    [SerializeField]
+    Color imgDeSelectedColor;
 
     //Button[] buttons;
     private void Awake()
@@ -88,8 +100,12 @@ public class SceneLoader : MonoBehaviour
         b_sb1.onClick.AddListener(ShowList);
         b_sb2.onClick.AddListener(delegate { ShowDetail(0);});
 
+        buttonOrigin = b_sb0.GetComponent<Image>().sprite;
         boyOrigin = boy.sprite;
         girlOrigin = girl.sprite;
+        img_sb0 = b_sb0.transform.Find("Image").GetComponent<Image>();
+        img_sb1 = b_sb1.transform.Find("Image").GetComponent<Image>();
+        img_sb2 = b_sb2.transform.Find("Image").GetComponent<Image>();
         //strangely it doesnt work
         //buttons = scrollView.GetComponentsInChildren<Button>();
         //for (int i = 0; i < buttons.Length; i++) {
@@ -121,7 +137,10 @@ public class SceneLoader : MonoBehaviour
         }
         fishType.text = count.ToString() + "/" + array.Length;
 
-        
+        ShowArchievement();
+
+
+
     }
 
     public void OnPondSelected()
@@ -159,11 +178,22 @@ public class SceneLoader : MonoBehaviour
         arhievement.gameObject.SetActive(false);
         detailView.gameObject.SetActive(true);
         scrollView.gameObject.SetActive(false);
+
+        b_sb0.GetComponent<Image>().sprite = buttonOrigin;
+        b_sb1.GetComponent<Image>().sprite = buttonOrigin;
+        b_sb2.GetComponent<Image>().sprite = buttonSelected;
+
+        img_sb0.color = imgDeSelectedColor;
+        img_sb1.color = imgDeSelectedColor;
+        img_sb2.color = imgSelectedColor;
+
         name.text = fishDataList.fish[id].name;
         info.text = fishDataList.fish[id].info;
         int[] arrayInt = PlayerPrefsX.GetIntArray("FishCountArray", 0, fishDataList.fish.Count);
         meetTime.text = arrayInt[id].ToString();
         range.text = fishDataList.fish[id].range;
+
+
     }
 
     void ShowList()
@@ -171,6 +201,15 @@ public class SceneLoader : MonoBehaviour
         arhievement.gameObject.SetActive(false);
         detailView.gameObject.SetActive(false);
         scrollView.gameObject.SetActive(true);
+
+        b_sb0.GetComponent<Image>().sprite = buttonOrigin;
+        b_sb1.GetComponent<Image>().sprite = buttonSelected;
+        b_sb2.GetComponent<Image>().sprite = buttonOrigin;
+        img_sb0.color = imgDeSelectedColor;
+        img_sb1.color = imgSelectedColor;
+        img_sb2.color = imgDeSelectedColor;
+
+
     }
 
     void ShowArchievement()
@@ -178,6 +217,15 @@ public class SceneLoader : MonoBehaviour
         arhievement.gameObject.SetActive(true);
         detailView.gameObject.SetActive(false);
         scrollView.gameObject.SetActive(false);
+
+        b_sb0.GetComponent<Image>().sprite = buttonSelected;
+        b_sb1.GetComponent<Image>().sprite = buttonOrigin;
+        b_sb2.GetComponent<Image>().sprite = buttonOrigin;
+        img_sb0.color = imgSelectedColor;
+        img_sb1.color = imgDeSelectedColor;
+        img_sb2.color = imgDeSelectedColor;
+
+
     }
 
     //show pannel
@@ -191,8 +239,10 @@ public class SceneLoader : MonoBehaviour
 
         b_pond.transform.GetComponent<Image>().DOFade(0.0f, 1.5f);
         b_pond.transform.DOScale(new Vector3(2.0f, 2.0f, 1.0f), 1.5f);
+        b_pond.interactable = false;
+        b_start.interactable = false;
         Tweener moveBanner = banner.rectTransform.DOAnchorPosY(900, 1.5f);
-        Tweener moveButton = b_start.transform.GetComponent<RectTransform>().DOAnchorPosY(-600, 1.5f);
+        Tweener moveButton = b_start.transform.GetComponent<RectTransform>().DOAnchorPosY(-600f, 1.5f);
         wave1.rectTransform.DOAnchorPosY(-200, 1.5f);
         wave2.rectTransform.DOAnchorPosY(-200, 1.5f);
         moveButton.onComplete = delegate {
@@ -208,7 +258,7 @@ public class SceneLoader : MonoBehaviour
     void HideScroll()
     {   
         b_back.interactable = false;
-        scroll.DOAnchorPosY(-675f, 1f).onComplete = delegate {
+        scroll.DOAnchorPosY(-1000f, 1f).onComplete = delegate {
             wave1.rectTransform.DOAnchorPosY(0, 1.5f);
             wave2.rectTransform.DOAnchorPosY(0, 1.5f);
             boy.rectTransform.DOAnchorPosX(-124, 0.5f);
@@ -217,7 +267,8 @@ public class SceneLoader : MonoBehaviour
             b_pond.transform.GetComponent<Image>().color = new Color(c.r,c.g, c.b,1);
             b_pond.transform.localScale = Vector3.one;
             b_pond.gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(0,-600);
-
+            b_pond.interactable = true;
+            b_start.interactable = true;
             Tweener moveBanner = banner.rectTransform.DOAnchorPosY(0, 1.5f);
             b_start.transform.GetComponent<RectTransform>().DOAnchorPosY(0, 1.5f);
             b_pond.transform.GetComponent<RectTransform>().DOAnchorPosY(0, 1.5f);

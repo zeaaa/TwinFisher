@@ -36,7 +36,7 @@ public class NodePosition : MonoBehaviour {
         }
     }
 
-	private void Update()
+	private void FixedUpdate()
 	{
 		Judge();
 		WebJump ();

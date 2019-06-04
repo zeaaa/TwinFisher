@@ -168,23 +168,6 @@ public class Fish : TFObject
 
     IEnumerator FishColiWithWeb()
     {
-        
-        GetComponent<Animator>().Play("jump");
-        GetComponentInChildren<Renderer>().material.SetTexture("_MainTex",tex);
-        GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
-        AudioSource source= gameObject.AddComponent<AudioSource>();
-       
-        int size = SoundManager.instance.bubble.Length;
-        int i = UnityEngine.Random.Range(0, size);
-        source.clip = SoundManager.instance.bubble[i];
-        source.Play();
-
-        //GetComponent<Rigidbody>().velocity = Vector3.zero;
-        //GetComponent<Collider>().enabled = false;
-         
-        
-        yield return new WaitForSeconds(0.5f);
-        yield return new WaitForSeconds(animLength - 0.5f);
 
         AddScoreHandler(_score, _weight);
         int count = PlayerPrefs.GetInt("FishCount");
@@ -203,6 +186,25 @@ public class Fish : TFObject
         int[] arrayInt = PlayerPrefsX.GetIntArray("FishCountArray", 0, PlayerPrefs.GetInt("TotalFishType"));
         arrayInt[_id]++;
         PlayerPrefsX.SetIntArray("FishCountArray", arrayInt);
+
+        GetComponent<Animator>().Play("jump");
+        GetComponentInChildren<Renderer>().material.SetTexture("_MainTex",tex);
+        GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+        AudioSource source= gameObject.AddComponent<AudioSource>();
+       
+        int size = SoundManager.instance.bubble.Length;
+        int i = UnityEngine.Random.Range(0, size);
+        source.clip = SoundManager.instance.bubble[i];
+        source.Play();
+
+        //GetComponent<Rigidbody>().velocity = Vector3.zero;
+        //GetComponent<Collider>().enabled = false;
+         
+        
+        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(animLength - 0.5f);
+
+       
 
         Destroy(this.gameObject);
     }
