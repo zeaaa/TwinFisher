@@ -168,7 +168,8 @@ public class Fish : TFObject
 
     IEnumerator FishColiWithWeb()
     {
-
+        GameManager.totalMeet++;
+        
         AddScoreHandler(_score, _weight);
         int count = PlayerPrefs.GetInt("FishCount");
         count++;
@@ -178,6 +179,7 @@ public class Fish : TFObject
         bool[] array = PlayerPrefsX.GetBoolArray("FishType", false, PlayerPrefs.GetInt("TotalFishType"));
         if (!array[_id])
         {
+            GameManager.newMeet++;
             array[_id] = true;
             FirstMeetHandler.Invoke(_id);
         }

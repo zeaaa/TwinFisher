@@ -53,6 +53,10 @@ public class GameManager : MonoBehaviour {
     private Material webNodeMat;
     private Material webRopeMat;
 
+
+    public static int totalMeet;
+    public static int newMeet;
+
     void ClearFishMeet() {
         int type = PlayerPrefs.GetInt("TotalFishType");
         bool[] falseArray = new bool[type];
@@ -65,6 +69,8 @@ public class GameManager : MonoBehaviour {
 
     void Initialize()
     {
+        totalMeet = 0;
+        newMeet = 0;
         ClearFishMeet();
 
         Screen.SetResolution(1080,1920,false);

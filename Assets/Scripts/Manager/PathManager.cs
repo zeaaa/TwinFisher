@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.UI;
 public class PathManager : MonoBehaviour {
 
     [SerializeField]
@@ -33,7 +34,8 @@ public class PathManager : MonoBehaviour {
 
     List<BGScroller> paths;
 
-
+    [SerializeField]
+    Text Mile;
 
     public static float GetCurSpeed() {
         return curspeed;
@@ -88,7 +90,8 @@ public class PathManager : MonoBehaviour {
 
     private void FixedUpdate()
     {
-        mileage += speed * Time.fixedDeltaTime*30;
+        mileage += speed * Time.fixedDeltaTime*60;
+        Mile.text = mileage.ToString() + "M";
         speed = curspeed;
     }
 

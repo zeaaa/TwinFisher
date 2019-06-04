@@ -22,9 +22,6 @@ public class UIManager : MonoBehaviour {
     Slider s_capacity;
 
     [SerializeField]
-    Image tbc;
-
-    [SerializeField]
     Image fog;
 
 
@@ -32,13 +29,25 @@ public class UIManager : MonoBehaviour {
     RectTransform firstMeetUI;
 
     [SerializeField]
-    Text t_meetFishId;
+    Text t_meetFishName;
+
+    [SerializeField]
+    Text t_meetFishInfo;
 
     [SerializeField]
     Button b_meetFishOk;
 
     [SerializeField]
     Image meetFishImg;
+
+    [SerializeField]
+    Text t_toatlCount;
+    [SerializeField]
+    Text t_meetCount;
+
+    [SerializeField]
+    Sprite[] meetFishImgList;
+   
     private void Awake()
     {
         GameManager.UpdateUIHandler += UpdateUI;
@@ -55,14 +64,16 @@ public class UIManager : MonoBehaviour {
         Tweener move = firstMeetUI.DOLocalMove(Vector3.zero, 1.0f);
         move.SetEase(Ease.InQuad);
         move.SetUpdate(true);
-        t_meetFishId.text = SpawnManager.GetFishList().fish[id].name;
+        t_meetFishName.text = SpawnManager.GetFishList().fish[id].name;
+        t_meetFishInfo.text = SpawnManager.GetFishList().fish[id].info;
+        meetFishImg.sprite = meetFishImgList[id];
     }
 
     void HideMeetUI() {
-        Time.timeScale = 1;
-        Tweener move = firstMeetUI.DOLocalMove(Vector3.up*1600f, 1.0f);
+        Tweener move = firstMeetUI.DOLocalMove(Vector3.up*1600f, 0.5f);
         move.SetEase(Ease.InQuad);
         move.SetUpdate(true);
+        move.onComplete = delegate { Time.timeScale = 1; };
     }
 
     private void Start()
@@ -99,6 +110,8 @@ public class UIManager : MonoBehaviour {
     }
 
     IEnumerator IEShowGameOverUI() {
+        t_toatlCount.text = GameManager.totalMeet.ToString();
+        t_meetCount.text = GameManager.newMeet.ToString();
         yield return new WaitForSeconds(1f);
         //Time.timeScale = 0;
         bg.DOFade(0.5f, 1f).SetUpdate(true);
@@ -110,10 +123,6 @@ public class UIManager : MonoBehaviour {
             b_reStart.interactable = true;
             b_back.interactable = true;        
         };
-
-        Tweener movetbc = tbc.rectTransform.DOAnchorPosX(0, 1.0f);
-        movetbc.SetEase(Ease.InQuint);
-        movetbc.SetUpdate(true);
     }
 
 }
