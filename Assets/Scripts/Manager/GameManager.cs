@@ -3,6 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using DG.Tweening;
+
+public enum GameState
+{
+    Playing,
+    Pause,
+    GameOver
+}
+
 public class GameManager : MonoBehaviour {
 
     //public static GameManager instance;
@@ -38,6 +46,9 @@ public class GameManager : MonoBehaviour {
     private GameObject Player;
 
 
+
+    public static GameState gameState;
+
     public delegate void UpdateUI(int score,int skillTimes,float capacity);
     public static event UpdateUI UpdateUIHandler;
 
@@ -69,9 +80,11 @@ public class GameManager : MonoBehaviour {
 
     void Initialize()
     {
+        gameState = GameState.Playing;
         totalMeet = 0;
         newMeet = 0;
-        ClearFishMeet();
+
+        //ClearFishMeet();
 
         Screen.SetResolution(1080,1920,false);
         _score = 0;
@@ -163,6 +176,7 @@ public class GameManager : MonoBehaviour {
     }
 
     private void GameOver(int i) {
+        gameState = GameState.GameOver;
         DisableCollision("Fish", "WebNode", true);
         StartCoroutine(Delay(1.0f));
         //player

@@ -91,7 +91,7 @@ public class PathManager : MonoBehaviour {
     private void FixedUpdate()
     {
         mileage += speed * Time.fixedDeltaTime*60;
-        Mile.text = mileage.ToString() + "M";
+        Mile.text = mileage.ToString("0") + "M";
         speed = curspeed;
     }
 

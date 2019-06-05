@@ -14,6 +14,7 @@ public class FishData {
     public int score;
     public float speed;
     public string range;
+    public int research;
 }
 
 public class FishDataList{
