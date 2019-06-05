@@ -88,7 +88,7 @@ public class GameManager : MonoBehaviour {
         totalMeet = 0;
         newMeet = 0;
 
-        //ClearFishMeet();
+        ClearFishMeet();
 
         Screen.SetResolution(1080,1920,false);
         _score = 0;
@@ -163,24 +163,26 @@ public class GameManager : MonoBehaviour {
     public static event EventHandler OnCloseMeetUI;
     
     // Update is called once per frame
-    void FixedUpdate () {
+    void Update () {
+
+
+
         if (gameState.Equals(GameState.GameOver)) { 
-            if (Input.GetAxis("JoyStick1A") >0) {
+            if (Input.GetKeyDown(KeyCode.Joystick1Button0)) {
                 //reload
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); Time.timeScale = 1;
             }
             else 
-            if (Input.GetAxis("JoyStick1B") > 0)
+            if (Input.GetKeyDown(KeyCode.Joystick1Button1))
             {
                 SceneManager.LoadScene(0); Time.timeScale = 1;
             }
         }
         else if (gameState.Equals(GameState.FirstMeet))
         {
-            Debug.Log("instate");
-            if (Input.GetAxis("JoyStick1A") > 0)
+            if (Input.GetKeyDown(KeyCode.Joystick1Button0))
             {
-                Debug.Log("trigger");
+                GameManager.gameState = GameState.Animating;
                 OnCloseMeetUI.Invoke(this, EventArgs.Empty);
             }
         }
@@ -202,7 +204,6 @@ public class GameManager : MonoBehaviour {
     }
 
     private void GameOver(int i) {
-        gameState = GameState.GameOver;
         DisableCollision("Fish", "WebNode", true);
         StartCoroutine(Delay(1.0f));
         //player

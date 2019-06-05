@@ -62,13 +62,12 @@ public class UIManager : MonoBehaviour {
     }
 
     private void ShowFirstMeetUI(int id) {
-        Debug.Log("call1");
         GameManager.gameState = GameState.Animating;
         Time.timeScale = 0;
         Tweener move = firstMeetUI.DOLocalMove(Vector3.zero, 1.0f);
         move.SetEase(Ease.InQuad);
         move.SetUpdate(true);
-        move.onComplete = delegate { Debug.Log("call2"); GameManager.gameState = GameState.FirstMeet; };
+        move.onComplete = delegate { GameManager.gameState = GameState.FirstMeet; };
         t_meetFishName.text = SpawnManager.GetFishList().fish[id].name;
         t_meetFishInfo.text = SpawnManager.GetFishList().fish[id].info;
         meetFishImg.sprite = meetFishImgList[id];
@@ -79,7 +78,7 @@ public class UIManager : MonoBehaviour {
         Tweener move = firstMeetUI.DOLocalMove(Vector3.up * 1600f, 0.5f);
         move.SetEase(Ease.InQuad);
         move.SetUpdate(true);
-        move.onComplete = delegate { Time.timeScale = 1; };
+        move.onComplete = delegate { Time.timeScale = 1; GameManager.gameState = GameState.Playing; };
     }
 
     public void HideMeetUI() {
@@ -122,6 +121,7 @@ public class UIManager : MonoBehaviour {
     }
 
     IEnumerator IEShowGameOverUI() {
+        GameManager.gameState = GameState.Animating;
         t_toatlCount.text = GameManager.totalMeet.ToString();
         t_meetCount.text = GameManager.newMeet.ToString();
         yield return new WaitForSeconds(1f);
@@ -133,7 +133,8 @@ public class UIManager : MonoBehaviour {
         move.onComplete = delegate (){
             r_gameOver.DOShakeRotation(3.0f, 5.0f).SetUpdate(true);
             b_reStart.interactable = true;
-            b_back.interactable = true;        
+            b_back.interactable = true;
+            GameManager.gameState = GameState.GameOver;     
         };
     }
 

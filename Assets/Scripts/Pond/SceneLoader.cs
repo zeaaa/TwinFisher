@@ -111,6 +111,8 @@ public class SceneLoader : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Application.OpenURL(@"C:\Windows\System32\osk.exe");
+        Debug.Log(TouchScreenKeyboard.isSupported);
         b_pond.onClick.AddListener(ShowScroll);
         b_back.onClick.AddListener(HideScroll);
 
@@ -223,29 +225,36 @@ public class SceneLoader : MonoBehaviour
         int id = int.Parse(sender.name.Split('(', ')')[1]) - 1;
         ShowDetail(id);
     }
+    //when switch scene , unload automaticly
+    AssetBundle spriteAB;
     void FillList() {
-        AssetBundle ab;
+
 #if UNITY_STANDALONE_WIN || UNITY_STANDALONE_OSX
-        ab = AssetBundle.LoadFromFile(Application.streamingAssetsPath + "/ponduifish.ab");
+        spriteAB = AssetBundle.LoadFromFile(Application.streamingAssetsPath + "/ponduifish.ab");
 #endif
 #if UNITY_ANDROID
-        ab = AssetBundle.LoadFromFile(Application.dataPath+"!assets/data.ab");  
+        spriteAB = AssetBundle.LoadFromFile(Application.dataPath+"!assets/data.ab");  
 #endif
-        Sprite[] sprites = ab.LoadAllAssets<Sprite>();
-        ab.Unload(true);
         Button[] btns = scrollView.GetComponentsInChildren<Button>();
         bool[] array = PlayerPrefsX.GetBoolArray("FishType", false, fishDataList.fish.Count);
+   
         for (int i = 0; i < btns.Length; i++) {
             if (array[i]) {
-                btns[i].gameObject.transform.Find("Image").GetComponent<Image>().sprite = sprites[i];
+                btns[i].gameObject.transform.Find("Image").GetComponent<Image>().sprite = spriteAB.LoadAsset<Sprite>((i+1).ToString());
                 btns[i].gameObject.transform.Find("name").GetComponent<Text>().text = fishDataList.fish[i].name;
                 int[] arrayInt = PlayerPrefsX.GetIntArray("FishCountArray", 0, fishDataList.fish.Count);
-                float percent = arrayInt[i] * 100 / fishDataList.fish[i].research;
-                btns[i].gameObject.transform.Find("per").GetComponent<Text>().text = percent.ToString("0") + "%";
-                btns[i].gameObject.transform.Find("Silder").GetComponent<Slider>().value = percent;
+                float percent;
+                if (arrayInt[i] == 0)
+                    percent = 0;
+                else
+                {
+                    percent = arrayInt[i] / fishDataList.fish[i].research;
+                }                
+                btns[i].gameObject.transform.Find("per").GetComponent<Text>().text = (percent * 100f).ToString("0") + "%";
+                btns[i].gameObject.transform.Find("Slider").GetComponent<Slider>().value = percent;
             }
             else {
-                btns[i].gameObject.transform.Find("Image").GetComponent<Image>().sprite = null;
+                btns[i].gameObject.transform.Find("Image").GetComponent<Image>().sprite = spriteAB.LoadAsset<Sprite>("Null");
                 btns[i].gameObject.transform.Find("name").GetComponent<Text>().text = "尚未遇到的鱼";
                 float percent = 0;
                 btns[i].gameObject.transform.Find("per").GetComponent<Text>().text = percent.ToString("0") + "%";
@@ -255,7 +264,8 @@ public class SceneLoader : MonoBehaviour
                 btns[i].gameObject.transform.Find("no").GetComponent<Text>().text = "0" + (i+1).ToString() + ".";
             else
                 btns[i].gameObject.transform.Find("no").GetComponent<Text>().text = (i + 1).ToString() + ".";
-        }
+        }    
+        //dont unload ab here
     }
 
     
@@ -360,7 +370,6 @@ public class SceneLoader : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject);
         bool LTPressed= false;
         bool RTPressed = false;
         float LRT = Input.GetAxis("JoyStick1LRT");

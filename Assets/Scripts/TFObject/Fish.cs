@@ -81,7 +81,6 @@ public class Fish : TFObject
     bool inDodge = false;
     
     private void FixedUpdate() {
-        Debug.Log("call");
         Vector3 dir = Vector3.back;
         RaycastHit hit;
         Debug.DrawLine(transform.position, transform.position + Vector3.back * 10, Color.red);

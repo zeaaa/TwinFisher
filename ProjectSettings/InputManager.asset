@@ -396,14 +396,14 @@ InputManager:
     negativeButton: 
     positiveButton: joystick button 0
     altNegativeButton: 
-    altPositiveButton: 
+    altPositiveButton: joystick button 0
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
     snap: 0
     invert: 0
     type: 0
-    axis: 4
+    axis: 0
     joyNum: 1
   - serializedVersion: 3
     m_Name: JoyStick2A
@@ -412,14 +412,14 @@ InputManager:
     negativeButton: 
     positiveButton: joystick button 0
     altNegativeButton: 
-    altPositiveButton: 
+    altPositiveButton: joystick button 0
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
     snap: 0
     invert: 0
     type: 0
-    axis: 4
+    axis: 0
     joyNum: 2
   - serializedVersion: 3
     m_Name: JoyStick1B
@@ -436,7 +436,7 @@ InputManager:
     invert: 0
     type: 0
     axis: 4
-    joyNum: 2
+    joyNum: 1
   - serializedVersion: 3
     m_Name: JoyStick2B
     descriptiveName: 
