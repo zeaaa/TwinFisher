@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
+using System;
 
 public enum GameState
 {
     Playing,
     Pause,
+    Animating,
+    FirstMeet,
     GameOver
 }
 
@@ -96,6 +100,7 @@ public class GameManager : MonoBehaviour {
         Obstacle.GameOverHandler += GameOver;
         Dock.DockHitHandler += PlayerDock;
         PlayerMovement.SkillInputHandler += Skill;
+        
         webNodeMat = Resources.Load<Material>("Materials/WebNode");
         webRopeMat = Resources.Load<Material>("Materials/WebRope");
 
@@ -155,10 +160,31 @@ public class GameManager : MonoBehaviour {
             SetWebNodeForge(forge);
     }
 
+    public static event EventHandler OnCloseMeetUI;
+    
     // Update is called once per frame
-    void Update () {
-        
-	}
+    void FixedUpdate () {
+        if (gameState.Equals(GameState.GameOver)) { 
+            if (Input.GetAxis("JoyStick1A") >0) {
+                //reload
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); Time.timeScale = 1;
+            }
+            else 
+            if (Input.GetAxis("JoyStick1B") > 0)
+            {
+                SceneManager.LoadScene(0); Time.timeScale = 1;
+            }
+        }
+        else if (gameState.Equals(GameState.FirstMeet))
+        {
+            Debug.Log("instate");
+            if (Input.GetAxis("JoyStick1A") > 0)
+            {
+                Debug.Log("trigger");
+                OnCloseMeetUI.Invoke(this, EventArgs.Empty);
+            }
+        }
+    }
 
     private void AddScore(int value,float weight)
     {

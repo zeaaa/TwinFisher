@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 using UnityEngine.SceneManagement;
+using System;
+
 public class UIManager : MonoBehaviour {
     [SerializeField]
     Text t_score;
@@ -53,23 +55,34 @@ public class UIManager : MonoBehaviour {
         GameManager.UpdateUIHandler += UpdateUI;
         Obstacle.GameOverHandler += ShowGameOverUI;
         Fish.FirstMeetHandler += ShowFirstMeetUI;
-
+        GameManager.OnCloseMeetUI += CloseMeetUI;
         b_meetFishOk.onClick.AddListener(HideMeetUI); 
         fog.color = new Color(1, 1, 1, 0);
         fog.DOFade(1.0f, 0.0f);
     }
 
     private void ShowFirstMeetUI(int id) {
+        Debug.Log("call1");
+        GameManager.gameState = GameState.Animating;
         Time.timeScale = 0;
         Tweener move = firstMeetUI.DOLocalMove(Vector3.zero, 1.0f);
         move.SetEase(Ease.InQuad);
         move.SetUpdate(true);
+        move.onComplete = delegate { Debug.Log("call2"); GameManager.gameState = GameState.FirstMeet; };
         t_meetFishName.text = SpawnManager.GetFishList().fish[id].name;
         t_meetFishInfo.text = SpawnManager.GetFishList().fish[id].info;
         meetFishImg.sprite = meetFishImgList[id];
+        //b_meetFishOk.Select();
     }
 
-    void HideMeetUI() {
+    public void CloseMeetUI(object sender,EventArgs args) {
+        Tweener move = firstMeetUI.DOLocalMove(Vector3.up * 1600f, 0.5f);
+        move.SetEase(Ease.InQuad);
+        move.SetUpdate(true);
+        move.onComplete = delegate { Time.timeScale = 1; };
+    }
+
+    public void HideMeetUI() {
         Tweener move = firstMeetUI.DOLocalMove(Vector3.up*1600f, 0.5f);
         move.SetEase(Ease.InQuad);
         move.SetUpdate(true);
@@ -82,9 +95,7 @@ public class UIManager : MonoBehaviour {
         b_back.onClick.AddListener(delegate () { SceneManager.LoadScene(0); Time.timeScale = 1; });
         b_reStart.interactable = false;
         b_back.interactable = false;
-        
-        fog.DOFade(0.0f, 3.0f);
-        
+        fog.DOFade(0.0f, 3.0f);      
     }
 
     private void OnDestroy()
@@ -92,6 +103,7 @@ public class UIManager : MonoBehaviour {
         GameManager.UpdateUIHandler -= UpdateUI;
         Obstacle.GameOverHandler -= ShowGameOverUI;
         Fish.FirstMeetHandler -= ShowFirstMeetUI;
+        GameManager.OnCloseMeetUI -= CloseMeetUI;
     }
 
     // Update is called once per frame
