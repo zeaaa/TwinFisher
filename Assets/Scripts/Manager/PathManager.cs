@@ -103,10 +103,12 @@ public class PathManager : MonoBehaviour {
        
     }
 
+    public const float scaler = 1f;
+
     private void FixedUpdate()
     {
         mileage += speed * Time.fixedDeltaTime * 50;
-        Mile.text = mileage.ToString("0") + "M";
+        Mile.text = (mileage*scaler).ToString("0") + "米" ;
         speed = curspeed;
     }
 

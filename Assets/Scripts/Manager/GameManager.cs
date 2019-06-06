@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour {
     public static event EventHandler OnCloseMeetUI;
     public static event EventHandler OnEnterPause;
     public static event EventHandler OnLeavePause;
-
+    public static event EventHandler OnReturnToMenu;
 
     public static GameState gameState;
 
@@ -162,8 +162,6 @@ public class GameManager : MonoBehaviour {
         if (!Application.isPlaying)
             SetWebNodeForge(forge);
     }
-
-   
     
     // Update is called once per frame
     void Update () {
@@ -198,6 +196,11 @@ public class GameManager : MonoBehaviour {
             if (Input.GetKeyDown(KeyCode.Joystick1Button0)|| Input.GetKeyDown(KeyCode.Joystick2Button0))
             {
                 OnLeavePause.Invoke(this, EventArgs.Empty);
+            }
+            if (Input.GetKeyDown(KeyCode.Joystick1Button1) || Input.GetKeyDown(KeyCode.Joystick2Button1))
+            {
+                //OnReturnToMenu.Invoke(this, EventArgs.Empty);
+                SceneManager.LoadScene(0); Time.timeScale = 1;
             }
         }
     }
