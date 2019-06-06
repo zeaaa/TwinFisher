@@ -60,6 +60,21 @@ public class PathManager : MonoBehaviour {
         float distance = PlayerPrefs.GetFloat("Farthest");
         if(distance< mileage)
             PlayerPrefs.SetFloat("Farthest", mileage);
+
+        float[] data = PlayerPrefsX.GetFloatArray("Rank", 0, 10);
+        for (int k = 0; k< data.Length; k++) {
+            if (data[k] < mileage) {
+                for (int j = data.Length- 1 ; j > k; j--) {
+                    data[j] = data[j - 1];
+                }
+                data[k] = mileage;
+                break;
+            }
+        }
+        for (int k = 0; k < data.Length; k++) {
+            print(data[k]);
+        }
+        PlayerPrefsX.SetFloatArray("Rank",data);
         if (i == 0)
         {
             curspeed = 0;
@@ -90,7 +105,7 @@ public class PathManager : MonoBehaviour {
 
     private void FixedUpdate()
     {
-        mileage += speed * Time.fixedDeltaTime*60;
+        mileage += speed * Time.fixedDeltaTime * 50;
         Mile.text = mileage.ToString("0") + "M";
         speed = curspeed;
     }

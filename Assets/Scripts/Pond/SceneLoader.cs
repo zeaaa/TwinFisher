@@ -98,6 +98,12 @@ public class SceneLoader : MonoBehaviour
     [SerializeField]
     Color imgDeSelectedColor;
 
+    [SerializeField]
+    Transform[] cameraGroup;
+
+    [SerializeField]
+    Transform[] fish;
+
     int curPage;
 
     //Button[] buttons;
@@ -108,11 +114,38 @@ public class SceneLoader : MonoBehaviour
         gameState = PondGameState.title;
         curPage = 0;
     }
+
+    void OpenMainCamera() {
+        cameraGroup[0].gameObject.SetActive(true);
+        for (int k = 1; k< cameraGroup.Length; k++) {
+            cameraGroup[k].gameObject.SetActive(false);
+        }
+    }
+
+    void OpenPondCamera()
+    {     
+        for (int k = 0; k < cameraGroup.Length-1; k++)
+        {
+            cameraGroup[k].gameObject.SetActive(false);
+        }
+        cameraGroup[cameraGroup.Length - 1].gameObject.SetActive(true);
+    }
+
+    void OpenFishCamera(int id)
+    {     
+        for (int k = 0; k < cameraGroup.Length; k++)
+        {
+            if (k == (id + 1)) 
+                cameraGroup[k].gameObject.SetActive(true);
+            else
+                cameraGroup[k].gameObject.SetActive(false);
+        }
+   
+    }
     // Start is called before the first frame update
     void Start()
     {
         //Application.OpenURL(@"C:\Windows\System32\osk.exe");
-        Debug.Log(TouchScreenKeyboard.isSupported);
         b_pond.onClick.AddListener(ShowScroll);
         b_back.onClick.AddListener(HideScroll);
 
@@ -237,7 +270,10 @@ public class SceneLoader : MonoBehaviour
 #endif
         Button[] btns = scrollView.GetComponentsInChildren<Button>();
         bool[] array = PlayerPrefsX.GetBoolArray("FishType", false, fishDataList.fish.Count);
-   
+
+        for (int i = 0; i < fishDataList.fish.Count; i++) {
+            Debug.Log(fishDataList.fish[i].research);
+        }
         for (int i = 0; i < btns.Length; i++) {
             if (array[i]) {
                 btns[i].gameObject.transform.Find("Image").GetComponent<Image>().sprite = spriteAB.LoadAsset<Sprite>((i+1).ToString());
@@ -248,6 +284,7 @@ public class SceneLoader : MonoBehaviour
                     percent = 0;
                 else
                 {
+                    
                     percent = arrayInt[i] / fishDataList.fish[i].research;
                 }                
                 btns[i].gameObject.transform.Find("per").GetComponent<Text>().text = (percent * 100f).ToString("0") + "%";
@@ -277,8 +314,9 @@ public class SceneLoader : MonoBehaviour
     }
 
     public void ShowDetail(int id)
-    {
-        curPage = 1;
+    {   
+        fish[id].GetComponent<Animator>().Play("jump");
+        OpenFishCamera(id);
         arhievement.gameObject.SetActive(false);
         detailView.gameObject.SetActive(true);
         scrollView.gameObject.SetActive(false);
@@ -313,6 +351,7 @@ public class SceneLoader : MonoBehaviour
 
     //show pannel
     void ShowScroll() {
+        OpenPondCamera();
         gameState = PondGameState.animating;
         //ShowList();
         Tween jump = girl.GetComponent<RectTransform>().DOJumpAnchorPos(new Vector2(136, 0), 50, 1, 0.5f);
@@ -343,6 +382,7 @@ public class SceneLoader : MonoBehaviour
     // hide pannel
     void HideScroll()
     {
+        OpenMainCamera();
         gameState = PondGameState.animating;
         b_back.interactable = false;
         scroll.DOAnchorPosY(-1000f, 1f).onComplete = delegate {

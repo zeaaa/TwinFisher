@@ -26,9 +26,14 @@ public class UIManager : MonoBehaviour {
     [SerializeField]
     Image fog;
 
-
+    [SerializeField]
+    Image pauseImg;
+    
     [SerializeField]
     RectTransform firstMeetUI;
+
+    [SerializeField]
+    RectTransform pauseUI;
 
     [SerializeField]
     Text t_meetFishName;
@@ -56,10 +61,14 @@ public class UIManager : MonoBehaviour {
         Obstacle.GameOverHandler += ShowGameOverUI;
         Fish.FirstMeetHandler += ShowFirstMeetUI;
         GameManager.OnCloseMeetUI += CloseMeetUI;
+        GameManager.OnEnterPause += OpenPauseUI;
+        GameManager.OnLeavePause += ClosePauseUI;
         b_meetFishOk.onClick.AddListener(HideMeetUI); 
         fog.color = new Color(1, 1, 1, 0);
         fog.DOFade(1.0f, 0.0f);
     }
+
+
 
     private void ShowFirstMeetUI(int id) {
         GameManager.gameState = GameState.Animating;
@@ -72,6 +81,27 @@ public class UIManager : MonoBehaviour {
         t_meetFishInfo.text = SpawnManager.GetFishList().fish[id].info;
         meetFishImg.sprite = meetFishImgList[id];
         //b_meetFishOk.Select();
+    }
+
+    public void OpenPauseUI(object sender,EventArgs args) {
+        GameManager.gameState = GameState.Animating;
+        Time.timeScale = 0;
+        Tweener move = pauseUI.DOLocalMove(Vector3.zero, 0.5f);
+        move.SetEase(Ease.InQuad);
+        move.SetUpdate(true);
+        pauseImg.gameObject.SetActive(true);
+        move.onComplete = delegate { GameManager.gameState = GameState.Pause; };
+    }
+
+
+    public void ClosePauseUI(object sender, EventArgs args)
+    {
+        GameManager.gameState = GameState.Animating;
+        Tweener move = pauseUI.DOLocalMove(Vector3.up * 1600f, 0.5f);
+        move.SetEase(Ease.InQuad);
+        move.SetUpdate(true);
+        pauseImg.gameObject.SetActive(false);
+        move.onComplete = delegate { GameManager.gameState = GameState.Playing; Time.timeScale = 1; };
     }
 
     public void CloseMeetUI(object sender,EventArgs args) {
