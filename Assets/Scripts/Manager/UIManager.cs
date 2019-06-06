@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 using UnityEngine.SceneManagement;
+using System;
+
 public class UIManager : MonoBehaviour {
     [SerializeField]
     Text t_score;
@@ -22,47 +24,98 @@ public class UIManager : MonoBehaviour {
     Slider s_capacity;
 
     [SerializeField]
-    Image tbc;
-
-    [SerializeField]
     Image fog;
 
-
+    [SerializeField]
+    Image pauseImg;
+    
     [SerializeField]
     RectTransform firstMeetUI;
 
     [SerializeField]
-    Text t_meetFishId;
+    RectTransform pauseUI;
+
+    [SerializeField]
+    Text t_meetFishName;
+
+    [SerializeField]
+    Text t_meetFishInfo;
 
     [SerializeField]
     Button b_meetFishOk;
 
     [SerializeField]
     Image meetFishImg;
+
+    [SerializeField]
+    Text t_toatlCount;
+    [SerializeField]
+    Text t_meetCount;
+
+    [SerializeField]
+    Sprite[] meetFishImgList;
+   
     private void Awake()
     {
         GameManager.UpdateUIHandler += UpdateUI;
         Obstacle.GameOverHandler += ShowGameOverUI;
         Fish.FirstMeetHandler += ShowFirstMeetUI;
-
+        GameManager.OnCloseMeetUI += CloseMeetUI;
+        GameManager.OnEnterPause += OpenPauseUI;
+        GameManager.OnLeavePause += ClosePauseUI;
         b_meetFishOk.onClick.AddListener(HideMeetUI); 
         fog.color = new Color(1, 1, 1, 0);
         fog.DOFade(1.0f, 0.0f);
     }
 
+
+
     private void ShowFirstMeetUI(int id) {
+        GameManager.gameState = GameState.Animating;
         Time.timeScale = 0;
         Tweener move = firstMeetUI.DOLocalMove(Vector3.zero, 1.0f);
         move.SetEase(Ease.InQuad);
         move.SetUpdate(true);
-        t_meetFishId.text = SpawnManager.GetFishList().fish[id].name;
+        move.onComplete = delegate { GameManager.gameState = GameState.FirstMeet; };
+        t_meetFishName.text = SpawnManager.GetFishList().fish[id].name;
+        t_meetFishInfo.text = SpawnManager.GetFishList().fish[id].info;
+        meetFishImg.sprite = meetFishImgList[id];
+        //b_meetFishOk.Select();
     }
 
-    void HideMeetUI() {
-        Time.timeScale = 1;
-        Tweener move = firstMeetUI.DOLocalMove(Vector3.up*1600f, 1.0f);
+    public void OpenPauseUI(object sender,EventArgs args) {
+        GameManager.gameState = GameState.Animating;
+        Time.timeScale = 0;
+        Tweener move = pauseUI.DOLocalMove(Vector3.zero, 0.5f);
         move.SetEase(Ease.InQuad);
         move.SetUpdate(true);
+        pauseImg.gameObject.SetActive(true);
+        move.onComplete = delegate { GameManager.gameState = GameState.Pause; };
+    }
+
+
+    public void ClosePauseUI(object sender, EventArgs args)
+    {
+        GameManager.gameState = GameState.Animating;
+        Tweener move = pauseUI.DOLocalMove(Vector3.up * 1600f, 0.5f);
+        move.SetEase(Ease.InQuad);
+        move.SetUpdate(true);
+        pauseImg.gameObject.SetActive(false);
+        move.onComplete = delegate { GameManager.gameState = GameState.Playing; Time.timeScale = 1; };
+    }
+
+    public void CloseMeetUI(object sender,EventArgs args) {
+        Tweener move = firstMeetUI.DOLocalMove(Vector3.up * 1600f, 0.5f);
+        move.SetEase(Ease.InQuad);
+        move.SetUpdate(true);
+        move.onComplete = delegate { Time.timeScale = 1; GameManager.gameState = GameState.Playing; };
+    }
+
+    public void HideMeetUI() {
+        Tweener move = firstMeetUI.DOLocalMove(Vector3.up*1600f, 0.5f);
+        move.SetEase(Ease.InQuad);
+        move.SetUpdate(true);
+        move.onComplete = delegate { Time.timeScale = 1; };
     }
 
     private void Start()
@@ -71,9 +124,7 @@ public class UIManager : MonoBehaviour {
         b_back.onClick.AddListener(delegate () { SceneManager.LoadScene(0); Time.timeScale = 1; });
         b_reStart.interactable = false;
         b_back.interactable = false;
-        
-        fog.DOFade(0.0f, 3.0f);
-        
+        fog.DOFade(0.0f, 3.0f);      
     }
 
     private void OnDestroy()
@@ -81,6 +132,7 @@ public class UIManager : MonoBehaviour {
         GameManager.UpdateUIHandler -= UpdateUI;
         Obstacle.GameOverHandler -= ShowGameOverUI;
         Fish.FirstMeetHandler -= ShowFirstMeetUI;
+        GameManager.OnCloseMeetUI -= CloseMeetUI;
     }
 
     // Update is called once per frame
@@ -99,6 +151,9 @@ public class UIManager : MonoBehaviour {
     }
 
     IEnumerator IEShowGameOverUI() {
+        GameManager.gameState = GameState.Animating;
+        t_toatlCount.text = GameManager.totalMeet.ToString();
+        t_meetCount.text = GameManager.newMeet.ToString();
         yield return new WaitForSeconds(1f);
         //Time.timeScale = 0;
         bg.DOFade(0.5f, 1f).SetUpdate(true);
@@ -108,12 +163,9 @@ public class UIManager : MonoBehaviour {
         move.onComplete = delegate (){
             r_gameOver.DOShakeRotation(3.0f, 5.0f).SetUpdate(true);
             b_reStart.interactable = true;
-            b_back.interactable = true;        
+            b_back.interactable = true;
+            GameManager.gameState = GameState.GameOver;     
         };
-
-        Tweener movetbc = tbc.rectTransform.DOAnchorPosX(0, 1.0f);
-        movetbc.SetEase(Ease.InQuint);
-        movetbc.SetUpdate(true);
     }
 
 }

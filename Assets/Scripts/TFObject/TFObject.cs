@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
+
 public abstract class TFObject : MonoBehaviour
 {
     [ReadOnly]
@@ -14,6 +15,7 @@ public abstract class TFObject : MonoBehaviour
 
     void OnCollisionEnter(Collision col)
     {
+        if(!GameManager.gameState.Equals(GameState.GameOver))
         if (col.gameObject.CompareTag("WebNode"))
         {
             OnCollisionWithWebNode(col);

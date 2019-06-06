@@ -3,6 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
+using System;
+
+public enum GameState
+{
+    Playing,
+    Pause,
+    Animating,
+    FirstMeet,
+    GameOver
+}
+
 public class GameManager : MonoBehaviour {
 
     //public static GameManager instance;
@@ -37,6 +49,12 @@ public class GameManager : MonoBehaviour {
 
     private GameObject Player;
 
+    public static event EventHandler OnCloseMeetUI;
+    public static event EventHandler OnEnterPause;
+    public static event EventHandler OnLeavePause;
+
+
+    public static GameState gameState;
 
     public delegate void UpdateUI(int score,int skillTimes,float capacity);
     public static event UpdateUI UpdateUIHandler;
@@ -52,8 +70,29 @@ public class GameManager : MonoBehaviour {
 
     private Material webNodeMat;
     private Material webRopeMat;
+
+
+    public static int totalMeet;
+    public static int newMeet;
+
+    void ClearFishMeet() {
+        int type = PlayerPrefs.GetInt("TotalFishType");
+        bool[] falseArray = new bool[type];
+        for (int i = 0; i < type; i++)
+        {
+            falseArray[i] = false;
+        }
+        PlayerPrefsX.SetBoolArray("FishType", falseArray);
+    }
+
     void Initialize()
     {
+        gameState = GameState.Playing;
+        totalMeet = 0;
+        newMeet = 0;
+
+        //ClearFishMeet();
+
         Screen.SetResolution(1080,1920,false);
         _score = 0;
         _inSkill = false;
@@ -64,6 +103,7 @@ public class GameManager : MonoBehaviour {
         Obstacle.GameOverHandler += GameOver;
         Dock.DockHitHandler += PlayerDock;
         PlayerMovement.SkillInputHandler += Skill;
+        
         webNodeMat = Resources.Load<Material>("Materials/WebNode");
         webRopeMat = Resources.Load<Material>("Materials/WebRope");
 
@@ -123,10 +163,44 @@ public class GameManager : MonoBehaviour {
             SetWebNodeForge(forge);
     }
 
+   
+    
     // Update is called once per frame
     void Update () {
-        
-	}
+        if (gameState.Equals(GameState.GameOver)) {
+            if (Input.GetKeyDown(KeyCode.Joystick1Button0)) {
+                //reload
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); Time.timeScale = 1;
+            }
+            else
+            if (Input.GetKeyDown(KeyCode.Joystick1Button1))
+            {
+                SceneManager.LoadScene(0); Time.timeScale = 1;
+            }
+        }
+        else if (gameState.Equals(GameState.FirstMeet))
+        {
+            if (Input.GetKeyDown(KeyCode.Joystick1Button0))
+            {
+                GameManager.gameState = GameState.Animating;
+                OnCloseMeetUI.Invoke(this, EventArgs.Empty);
+            }
+        } else if (gameState.Equals(GameState.Playing)) {
+
+            if (Input.GetKeyDown(KeyCode.Joystick1Button7) || Input.GetKeyDown(KeyCode.Joystick2Button7))
+            {
+                OnEnterPause.Invoke(this, EventArgs.Empty);
+            }
+            
+        }
+        else if (gameState.Equals(GameState.Pause))
+        {
+            if (Input.GetKeyDown(KeyCode.Joystick1Button0)|| Input.GetKeyDown(KeyCode.Joystick2Button0))
+            {
+                OnLeavePause.Invoke(this, EventArgs.Empty);
+            }
+        }
+    }
 
     private void AddScore(int value,float weight)
     {

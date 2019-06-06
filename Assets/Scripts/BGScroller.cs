@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class BGScroller : MonoBehaviour
@@ -11,24 +12,64 @@ public class BGScroller : MonoBehaviour
     public int id;
     Transform wharf;
 
+    int passBy;
+    [SerializeField]
+    GameObject Line;
+
     private const int totalCount = 3;
 
     private void Awake()
     {
+        passBy = 0;
         scrollSpeed = 0;
         wharf = transform.Find("Dock");
     }
 
     void Start ()
 	{
-        
+        lines = new List<GameObject>();
+        GenerateMark(length*id);
     }
+
+    List<GameObject> lines;
+
+    const float startOffest = 72f;
+    public void GenerateMark(float start) {
+        float[] data = { 0,20,40,60,80,100,120,140,160,180};
+        for (int i = 0;i<data.Length;i++) {
+            if (data[i] != 0) { 
+                float mile = data[i] + startOffest;
+                if (mile > start && mile < (start + length)) {
+                    GameObject line = Instantiate(Line, this.gameObject.transform);
+                    float relativePos;
+                    if (data[i] > length) {
+                        relativePos = (int)data[i] % (int)length + 4;
+                    }
+                    else {
+                        relativePos = (int)data[i]+ 4;
+                    }
+                    if (relativePos > length)
+                        relativePos -= length;
+                    line.transform.localPosition = new Vector3(0, 1, relativePos);
+                    line.name = data[i].ToString();
+                    lines.Add(line);
+                }
+            }
+        }       
+    }
+
 
 	void FixedUpdate ()
 	{
 		transform.position += Vector3.forward * -scrollSpeed;
         if (transform.position.z < 0 - length)
         {
+            Debug.Log("call" + id);
+            passBy++;
+            for (int i = 0; i < lines.Count; i++)
+                Destroy(lines[i]);
+            lines.Clear();
+            GenerateMark((passBy*totalCount+id)*length);
             transform.position += Vector3.forward * length * totalCount;
             currentID++;
             if (currentID > (totalCount - 1))
