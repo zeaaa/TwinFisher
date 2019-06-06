@@ -16,6 +16,9 @@ public class BGScroller : MonoBehaviour
     [SerializeField]
     GameObject Line;
 
+
+
+
     private const int totalCount = 3;
 
     private void Awake()
@@ -27,11 +30,21 @@ public class BGScroller : MonoBehaviour
 
     void Start ()
 	{
+        ClearRank();
         lines = new List<GameObject>();
         GenerateMark(length*id);
     }
 
     List<GameObject> lines;
+
+    public void ClearRank() {
+        float[] data = PlayerPrefsX.GetFloatArray("Rank", 0, 10);
+        for (int i = 0; i < data.Length; i++) {
+            data[i] = 0f;
+        }
+        PlayerPrefsX.SetFloatArray("Rank", data);
+    }
+
 
     const float startOffest = 72f;
     public void GenerateMark(float start) {
