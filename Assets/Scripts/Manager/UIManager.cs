@@ -24,6 +24,11 @@ public class UIManager : MonoBehaviour {
     Slider s_capacity;
 
     [SerializeField]
+    Button b_continue;
+    [SerializeField]
+    Button b_toTitle;
+
+    [SerializeField]
     Image fog;
 
     [SerializeField]
@@ -142,7 +147,7 @@ public class UIManager : MonoBehaviour {
 
     void UpdateUI(int score, int skillTimes, float capacity) {
         t_score.text = "score:" + score.ToString();
-        t_skill.text = "skill:" + skillTimes.ToString();
+        t_skill.text =  skillTimes.ToString();
         s_capacity.DOValue(capacity > 1 ? 1 : capacity, 0.5f).SetUpdate(true); ;
     }
 

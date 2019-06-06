@@ -16,6 +16,9 @@ public class BGScroller : MonoBehaviour
     [SerializeField]
     GameObject Line;
 
+
+
+
     private const int totalCount = 3;
 
     private void Awake()
@@ -27,15 +30,25 @@ public class BGScroller : MonoBehaviour
 
     void Start ()
 	{
+        ClearRank();
         lines = new List<GameObject>();
         GenerateMark(length*id);
     }
 
     List<GameObject> lines;
 
+    public void ClearRank() {
+        float[] data = PlayerPrefsX.GetFloatArray("Rank", 0, 10);
+        for (int i = 0; i < data.Length; i++) {
+            data[i] = 0f;
+        }
+        PlayerPrefsX.SetFloatArray("Rank", data);
+    }
+
+
     const float startOffest = 72f;
     public void GenerateMark(float start) {
-        float[] data = { 0,20,40,60,80,100,120,140,160,180};
+        float[] data = PlayerPrefsX.GetFloatArray("Rank", 0, 10);
         for (int i = 0;i<data.Length;i++) {
             if (data[i] != 0) { 
                 float mile = data[i] + startOffest;
@@ -50,9 +63,15 @@ public class BGScroller : MonoBehaviour
                     }
                     if (relativePos > length)
                         relativePos -= length;
-                    line.transform.localPosition = new Vector3(0, 1, relativePos);
+                    line.transform.localPosition = new Vector3(0, 0, relativePos);
                     line.name = data[i].ToString();
-                    lines.Add(line);
+                    TextMesh[] tms = line.GetComponentsInChildren<TextMesh>();
+                    foreach (TextMesh tm in tms) {
+                        tm.text = "No:" + (i + 1).ToString();
+                    }
+                   
+                    line.GetComponentInChildren<RankLine>().no = i + 1;
+                   lines.Add(line);
                 }
             }
         }       
@@ -61,10 +80,10 @@ public class BGScroller : MonoBehaviour
 
 	void FixedUpdate ()
 	{
+       
 		transform.position += Vector3.forward * -scrollSpeed;
         if (transform.position.z < 0 - length)
         {
-            Debug.Log("call" + id);
             passBy++;
             for (int i = 0; i < lines.Count; i++)
                 Destroy(lines[i]);

@@ -48,12 +48,59 @@ public class PlayerMovement : MonoBehaviour
 
     bool killMovement = false;
 
+    float lastFrameP1RT = 0;
+    float lastFrameP2RT = 0;
+
+    bool P1RTPressed = false;
+    bool P2RTPressed = false;
+
+    IEnumerator CountDown1P(float time)
+    {
+        yield return new WaitForSeconds(time);
+        P1RTPressed = false;
+    }
+
+    IEnumerator CountDown2P(float time)
+    {
+        yield return new WaitForSeconds(time);
+        P2RTPressed = false;
+    }
+
+    Coroutine count1p;
+    Coroutine count2p;
+
+
     void FixedUpdate ()
 	{
         FixPlayerModelPosition();
 #if UNITY_STANDALONE_WIN || UNITY_STANDALONE_OSX
 
-        if ((((int)Input.GetAxis("JoyStick1RPad") == -1 && (int)Input.GetAxis("JoyStick2RPad") == -1)||Input.GetKey(KeyCode.Q))&&!killMovement)
+
+        float RTP1 = Input.GetAxis("JoyStick1LRT");
+        float RTP2 = Input.GetAxis("JoyStick2LRT");
+        if (lastFrameP1RT == 0 && RTP1 > 0.05f)
+        {
+            
+            P1RTPressed = true;
+            if (count1p != null)
+                StopCoroutine(count1p);
+            count1p = StartCoroutine(CountDown1P(0.5f));
+
+        }
+        if (lastFrameP2RT == 0 && RTP2 > 0.05f) {
+            P2RTPressed = true;
+            if(count2p!=null)
+                StopCoroutine(count2p);
+            count2p = StartCoroutine(CountDown2P(0.5f));
+        }
+           
+
+        lastFrameP1RT = RTP1;
+        lastFrameP2RT = RTP2;
+
+        //Debug.Log(P1RTPressed);
+        Debug.Log(P2RTPressed);
+        if (((P1RTPressed && P2RTPressed) || Input.GetKey(KeyCode.Q))&&!killMovement)
         {
             
             skillInput = true;

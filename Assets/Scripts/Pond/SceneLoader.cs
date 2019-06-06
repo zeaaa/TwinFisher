@@ -194,6 +194,8 @@ public class SceneLoader : MonoBehaviour
         ShowListUI();
     }
 
+
+
     void ShowListUI()
     {
         arhievement.gameObject.SetActive(false);
@@ -228,6 +230,7 @@ public class SceneLoader : MonoBehaviour
 
     private void OnDestroy()
     {
+        spriteAB.Unload(true);
         b_pond.onClick.RemoveAllListeners();
         b_back.onClick.RemoveAllListeners();
         b_sb1.onClick.RemoveAllListeners();
@@ -285,7 +288,7 @@ public class SceneLoader : MonoBehaviour
                 else
                 {
                     
-                    percent = arrayInt[i] / fishDataList.fish[i].research;
+                    percent = arrayInt[i] / (float)fishDataList.fish[i].research;
                 }                
                 btns[i].gameObject.transform.Find("per").GetComponent<Text>().text = (percent * 100f).ToString("0") + "%";
                 btns[i].gameObject.transform.Find("Slider").GetComponent<Slider>().value = percent;
@@ -305,8 +308,6 @@ public class SceneLoader : MonoBehaviour
         //dont unload ab here
     }
 
-    
-
     void ShowList()
     {
         curPage = 0;
@@ -314,7 +315,8 @@ public class SceneLoader : MonoBehaviour
     }
 
     public void ShowDetail(int id)
-    {   
+    {
+        curPage = 1;
         fish[id].GetComponent<Animator>().Play("jump");
         OpenFishCamera(id);
         arhievement.gameObject.SetActive(false);
@@ -424,15 +426,13 @@ public class SceneLoader : MonoBehaviour
                 b_start.Select();
             }
         }
-
+        Debug.Log(LTPressed);
         if (gameState.Equals(PondGameState.pannel)){
-
-
-
             switch (curPage) {
                 case 0:
                     { 
                         if (RTPressed) {
+                            Debug.Log("call");
                             if (UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject == null || UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name.Equals(b_back.name))
                             {
                                 int id = int.Parse(defaultFish.name.Split('(', ')')[1]) - 1;
