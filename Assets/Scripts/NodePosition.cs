@@ -5,10 +5,8 @@ using UnityEngine;
 
 public class NodePosition : MonoBehaviour {
 
-	//绳子核心算法：
-
+	//绳子核心算法
 	//判断两个节点的距离，对节点加弹力
-
 	float nodeDistance =0.1f;  //节点定长
 	public float forge=500f;
 
@@ -28,9 +26,7 @@ public class NodePosition : MonoBehaviour {
     public bool down;
 
     private void Start()
-
 	{
-       
         rig = GetComponent<Rigidbody>();
         //生成连接线
         line = new GameObject[4];
@@ -77,10 +73,10 @@ public class NodePosition : MonoBehaviour {
     void AddForce() {
         rig.AddForce(Vector3.back*forge*0.02f * Mathf.Abs(PlayerMovement.dis));
     }
+
+
 	void Judge()
 	{
-        
-       
          for (int i=0;i< 2; i++)
         {
           /*  if (gameObject.name[7] == '0' || gameObject.name[7] == '4') {

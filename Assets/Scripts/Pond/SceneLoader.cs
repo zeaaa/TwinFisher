@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using DG.Tweening;
 
-
 public enum PondGameState {
     title,
     pannel,
@@ -230,6 +229,7 @@ public class SceneLoader : MonoBehaviour
 
     private void OnDestroy()
     {
+
         spriteAB.Unload(true);
         b_pond.onClick.RemoveAllListeners();
         b_back.onClick.RemoveAllListeners();
@@ -493,18 +493,17 @@ public class SceneLoader : MonoBehaviour
                     }
                 default:break;
             }
-
-            
-
         }
-
     }
 
+
     public void StartLoad(){
+        b_start.interactable = false;
         StartCoroutine("LoadScene");
     }
 
     IEnumerator LoadScene(){
+        Debug.Log("start");
         Tween jump = boy.GetComponent<RectTransform>().DOJumpAnchorPos(new Vector2(-124,0), 50, 1, 0.5f);
         jump.onComplete = delegate {
             boy.GetComponent<RectTransform>().DOAnchorPosX(-650, 1f);
@@ -516,12 +515,13 @@ public class SceneLoader : MonoBehaviour
         
         Tweener moveBanner = banner.rectTransform.DOAnchorPosY(900, 1.5f);
         Tweener moveButton = b_pond.transform.GetComponent<RectTransform>().DOAnchorPosY(-600, 1.5f);
-        bg.DOFade(1.0f, 3.0f);
-        async = SceneManager.LoadSceneAsync(1);
-        async.allowSceneActivation = false;
-        yield return new WaitForSeconds(3f);
-        async.allowSceneActivation = true;
+        SceneData.nextSceneId = 2;
+        bg.DOFade(1.0f, 3.0f).onComplete =   delegate{ SceneManager.LoadScene(1); };
         yield return null;
+
+
+       
+        
     }
 
     
