@@ -11,7 +11,10 @@ public class NodePosition : MonoBehaviour {
 
 	float nodeDistance =0.1f;  //节点定长
 	public float forge=500f;
+
+    //left right up down
     public Transform[] linkNodeTran;
+
     Rigidbody rig;
 
     float linewide=0.4f;
@@ -19,7 +22,10 @@ public class NodePosition : MonoBehaviour {
 
     GameObject[] line;
 
-    
+    public bool left;
+    public bool right;
+    public bool up;
+    public bool down;
 
     private void Start()
 
@@ -27,12 +33,35 @@ public class NodePosition : MonoBehaviour {
        
         rig = GetComponent<Rigidbody>();
         //生成连接线
-        line = new GameObject[linkNodeTran.Length];
-        for (int i = 0; i < linkNodeTran.Length; i++)
+        line = new GameObject[4];
+        if (linkNodeTran[0] && left)
         {
-            line[i]=Instantiate(pf, transform.position, Quaternion.identity);
-            line[i].transform.parent = gameObject.transform;
-            //Debug.Log("0++++++++++++++++++++"+i);
+            line[0] = Instantiate(pf, transform.position, Quaternion.identity);
+            line[0].GetComponentInChildren<WebColor>().flip = true;
+            line[0].GetComponentInChildren<WebColor>().vertical = true;
+            line[0].GetComponentInChildren<WebColor>().id = int.Parse(gameObject.name[7].ToString());
+            line[0].transform.parent = gameObject.transform;
+        }
+        if (linkNodeTran[1] && right)
+        {
+            line[1] = Instantiate(pf, transform.position, Quaternion.identity);
+            line[1].transform.parent = gameObject.transform;
+            line[1].GetComponentInChildren<WebColor>().id = int.Parse(gameObject.name[7].ToString())+1;
+            line[1].GetComponentInChildren<WebColor>().vertical = true;
+        }
+        if (linkNodeTran[2] && up)
+        {
+            line[2] = Instantiate(pf, transform.position, Quaternion.identity);
+            line[2].transform.parent = gameObject.transform;
+            line[2].GetComponentInChildren<WebColor>().id = int.Parse(gameObject.name[7].ToString())+1;
+            line[2].GetComponentInChildren<WebColor>().vertical = false;
+        }
+        if (linkNodeTran[3] && down)
+        {
+            line[3] = Instantiate(pf, transform.position, Quaternion.identity);
+            line[3].transform.parent = gameObject.transform;
+            line[3].GetComponentInChildren<WebColor>().id = int.Parse(gameObject.name[7].ToString())+1;
+            line[3].GetComponentInChildren<WebColor>().vertical = false;
         }
     }
 
@@ -59,16 +88,34 @@ public class NodePosition : MonoBehaviour {
                     rig.AddForce((linkNodeTran[i].position - transform.position).normalized * forge * 0.8f * (Vector3.Magnitude(linkNodeTran[i].position - transform.position) - nodeDistance));
             }
             else*/
+            
            rig.AddForce((linkNodeTran[i].position - transform.position).normalized * forge *(Vector3.Magnitude(linkNodeTran[i].position - transform.position) - nodeDistance));
           
         }
 
-        //控制指向所有节点的连线
-        for (int i = 0; i < linkNodeTran.Length; i++)
+
+        if (linkNodeTran[0] && left)
         {
-            line[i].transform.up= (linkNodeTran[i].position - transform.position).normalized;//mark
-            line[i].transform.localScale = new Vector3(linewide, Vector3.Magnitude(linkNodeTran[i].position - transform.position) *2  , linewide);
+            line[0].transform.up = (linkNodeTran[0].position - transform.position).normalized;//mark
+            line[0].transform.localScale = new Vector3(linewide, Vector3.Magnitude(linkNodeTran[0].position - transform.position)* 2f, linewide);
         }
+        if (linkNodeTran[1] && right)
+        {
+            line[1].transform.up = (linkNodeTran[1].position - transform.position).normalized;//mark
+            line[1].transform.localScale = new Vector3(linewide, Vector3.Magnitude(linkNodeTran[1].position - transform.position) * 2f, linewide);
+        }
+        if (linkNodeTran[2] && up)
+        {
+            line[2].transform.up = (linkNodeTran[2].position - transform.position).normalized;//mark
+            line[2].transform.localScale = new Vector3(linewide, Vector3.Magnitude(linkNodeTran[2].position - transform.position) * 2f, linewide);
+        }
+        if (linkNodeTran[3] && down)
+        {
+            line[3].transform.up = (linkNodeTran[3].position - transform.position).normalized;//mark
+            line[3].transform.localScale = new Vector3(linewide, Vector3.Magnitude(linkNodeTran[3].position - transform.position) * 2, linewide);
+        }
+
+
 
         GetComponent<BoxCollider>().size = new Vector3(Mathf.Abs(PlayerMovement.dis), GetComponent<BoxCollider>().size.y, GetComponent<BoxCollider>().size.z);
         /*
