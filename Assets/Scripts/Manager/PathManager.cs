@@ -60,7 +60,6 @@ public class PathManager : MonoBehaviour {
         float distance = PlayerPrefs.GetFloat("Farthest");
         if(distance< mileage)
             PlayerPrefs.SetFloat("Farthest", mileage);
-
         float[] data = PlayerPrefsX.GetFloatArray("Rank", 0, 10);
         for (int k = 0; k< data.Length; k++) {
             if (data[k] < mileage) {
@@ -92,18 +91,18 @@ public class PathManager : MonoBehaviour {
         float cameraAnimTime = 3.0f;
         if (cameraAnim)
         {
-            Camera.main.transform.DOMoveZ(45f, cameraAnimTime).SetEase(Ease.Linear).onComplete = delegate { StartCoroutine(ChangeSpeed(_maxSpeed, _accelTime)); };
+            Camera.main.transform.DOMoveZ(52f, cameraAnimTime).SetEase(Ease.Linear).onComplete = delegate { StartCoroutine(ChangeSpeed(_maxSpeed, _accelTime)); };
             Camera.main.transform.DORotate(new Vector3(50, 0, 0), cameraAnimTime);
         }
         else {
             StartCoroutine(ChangeSpeed(_maxSpeed, _accelTime));
-            Camera.main.transform.position = new Vector3(0,56f,45f);
+            Camera.main.transform.position = new Vector3(0,46f,52f);
             Camera.main.transform.localEulerAngles = new Vector3(50, 0, 0);
         }
        
     }
 
-    public const float scaler = 1f;
+    public const float scaler = 0.5f;
 
     private void FixedUpdate()
     {

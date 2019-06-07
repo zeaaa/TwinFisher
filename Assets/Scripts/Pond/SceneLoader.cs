@@ -179,7 +179,7 @@ public class SceneLoader : MonoBehaviour
         ab.Unload(true);
         
         fishCount.text = PlayerPrefs.GetInt("FishCount",0).ToString();
-        farthest.text = PlayerPrefs.GetFloat("Farthest",0f).ToString("f2")+"M";
+        farthest.text =( PlayerPrefs.GetFloat("Farthest",0f) * 0.5f).ToString("f2")+"M";
         PlayerPrefs.SetInt("TotalFishType", fishDataList.fish.Count);
         bool[] array = PlayerPrefsX.GetBoolArray("FishType",false,fishDataList.fish.Count);
         int count = 0;
