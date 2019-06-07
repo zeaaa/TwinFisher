@@ -67,12 +67,17 @@ public class UIManager : MonoBehaviour {
 
     [SerializeField]
     Sprite[] meetFishImgList;
-   
+
+    [Rename("遇到新鱼弹出窗口")]
+    [SerializeField]
+    bool popMeetFishUI = true;
     private void Awake()
     {
         GameManager.UpdateUIHandler += UpdateUI;
         Obstacle.GameOverHandler += ShowGameOverUI;
-        Fish.FirstMeetHandler += ShowFirstMeetUI;
+
+        if(popMeetFishUI)
+            Fish.FirstMeetHandler += ShowFirstMeetUI;
         GameManager.OnCloseMeetUI += CloseMeetUI;
         GameManager.OnEnterPause += OpenPauseUI;
         GameManager.OnLeavePause += ClosePauseUI;
@@ -80,7 +85,14 @@ public class UIManager : MonoBehaviour {
         fog.color = new Color(1, 1, 1, 0);
         fog.DOFade(1.0f, 0.0f);
     }
-
+    private void OnDestroy()
+    {
+        GameManager.UpdateUIHandler -= UpdateUI;
+        Obstacle.GameOverHandler -= ShowGameOverUI;
+        if (popMeetFishUI)
+            Fish.FirstMeetHandler -= ShowFirstMeetUI;
+        GameManager.OnCloseMeetUI -= CloseMeetUI;
+    }
 
 
     private void ShowFirstMeetUI(int id) {
@@ -140,13 +152,7 @@ public class UIManager : MonoBehaviour {
         fog.DOFade(0.0f, 3.0f);      
     }
 
-    private void OnDestroy()
-    {
-        GameManager.UpdateUIHandler -= UpdateUI;
-        Obstacle.GameOverHandler -= ShowGameOverUI;
-        Fish.FirstMeetHandler -= ShowFirstMeetUI;
-        GameManager.OnCloseMeetUI -= CloseMeetUI;
-    }
+   
 
     // Update is called once per frame
     void Update () {

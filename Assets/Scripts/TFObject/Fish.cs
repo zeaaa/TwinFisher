@@ -180,6 +180,7 @@ public class Fish : TFObject
         {
             GameManager.newMeet++;
             array[_id] = true;
+            if(FirstMeetHandler!=null)
             FirstMeetHandler.Invoke(_id);
         }
 

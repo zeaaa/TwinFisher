@@ -30,20 +30,13 @@ public class BGScroller : MonoBehaviour
 
     void Start ()
 	{
-        ClearRank();
+        //ClearRank();
         lines = new List<GameObject>();
         GenerateMark(length*id);
     }
 
     List<GameObject> lines;
 
-    public void ClearRank() {
-        float[] data = PlayerPrefsX.GetFloatArray("Rank", 0, 10);
-        for (int i = 0; i < data.Length; i++) {
-            data[i] = 0f;
-        }
-        PlayerPrefsX.SetFloatArray("Rank", data);
-    }
 
 
     const float startOffest = 72f;
@@ -63,7 +56,7 @@ public class BGScroller : MonoBehaviour
                     }
                     if (relativePos > length)
                         relativePos -= length;
-                    line.transform.localPosition = new Vector3(0, 0, relativePos);
+                    line.transform.localPosition = new Vector3(0.1f, 0, relativePos);
                     line.name = data[i].ToString();
                     TextMesh[] tms = line.GetComponentsInChildren<TextMesh>();
                     foreach (TextMesh tm in tms) {

@@ -808,8 +808,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 1
   length: 17.65
-  speed: 1
-  time: 1
+  speed: 0.9
+  time: 3
   curve:
     serializedVersion: 2
     m_Curve:
@@ -1257,8 +1257,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   length: 17.65
-  speed: 1
-  time: 1
+  speed: 0.9
+  time: 3
   curve:
     serializedVersion: 2
     m_Curve:

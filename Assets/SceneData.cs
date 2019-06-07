@@ -4,6 +4,6 @@ using UnityEngine;
 
 public class SceneData 
 {
-    public static int mode = 0;
+    public static int mode = 2;
     public static int nextSceneId;
 }
