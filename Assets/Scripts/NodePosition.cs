@@ -5,10 +5,8 @@ using UnityEngine;
 
 public class NodePosition : MonoBehaviour {
 
-	//绳子核心算法：
-
+	//绳子核心算法
 	//判断两个节点的距离，对节点加弹力
-
 	float nodeDistance =0.1f;  //节点定长
 	public float forge=500f;
 
@@ -28,40 +26,38 @@ public class NodePosition : MonoBehaviour {
     public bool down;
 
     private void Start()
-
 	{
-       
         rig = GetComponent<Rigidbody>();
         //生成连接线
         line = new GameObject[4];
         if (linkNodeTran[0] && left)
         {
             line[0] = Instantiate(pf, transform.position, Quaternion.identity);
-            line[0].GetComponentInChildren<WebColor>().flip = true;
-            line[0].GetComponentInChildren<WebColor>().vertical = true;
-            line[0].GetComponentInChildren<WebColor>().id = int.Parse(gameObject.name[7].ToString());
+           // line[0].GetComponentInChildren<WebColor>().flip = true;
+          //  line[0].GetComponentInChildren<WebColor>().vertical = true;
+          //  line[0].GetComponentInChildren<WebColor>().id = int.Parse(gameObject.name[7].ToString());
             line[0].transform.parent = gameObject.transform;
         }
         if (linkNodeTran[1] && right)
         {
             line[1] = Instantiate(pf, transform.position, Quaternion.identity);
             line[1].transform.parent = gameObject.transform;
-            line[1].GetComponentInChildren<WebColor>().id = int.Parse(gameObject.name[7].ToString())+1;
-            line[1].GetComponentInChildren<WebColor>().vertical = true;
+           // line[1].GetComponentInChildren<WebColor>().id = int.Parse(gameObject.name[7].ToString())+1;
+            //line[1].GetComponentInChildren<WebColor>().vertical = true;
         }
         if (linkNodeTran[2] && up)
         {
             line[2] = Instantiate(pf, transform.position, Quaternion.identity);
             line[2].transform.parent = gameObject.transform;
-            line[2].GetComponentInChildren<WebColor>().id = int.Parse(gameObject.name[7].ToString())+1;
-            line[2].GetComponentInChildren<WebColor>().vertical = false;
+            ///line[2].GetComponentInChildren<WebColor>().id = int.Parse(gameObject.name[7].ToString())+1;
+            //line[2].GetComponentInChildren<WebColor>().vertical = false;
         }
         if (linkNodeTran[3] && down)
         {
             line[3] = Instantiate(pf, transform.position, Quaternion.identity);
             line[3].transform.parent = gameObject.transform;
-            line[3].GetComponentInChildren<WebColor>().id = int.Parse(gameObject.name[7].ToString())+1;
-            line[3].GetComponentInChildren<WebColor>().vertical = false;
+            //line[3].GetComponentInChildren<WebColor>().id = int.Parse(gameObject.name[7].ToString())+1;
+           // line[3].GetComponentInChildren<WebColor>().vertical = false;
         }
     }
 
@@ -77,10 +73,10 @@ public class NodePosition : MonoBehaviour {
     void AddForce() {
         rig.AddForce(Vector3.back*forge*0.02f * Mathf.Abs(PlayerMovement.dis));
     }
+
+
 	void Judge()
 	{
-        
-       
          for (int i=0;i< 2; i++)
         {
           /*  if (gameObject.name[7] == '0' || gameObject.name[7] == '4') {

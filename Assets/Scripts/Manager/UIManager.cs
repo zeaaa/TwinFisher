@@ -153,6 +153,8 @@ public class UIManager : MonoBehaviour {
         
     }
 
+    
+
     public void CallSlider() {
         onCapacityChanged.Invoke(this, new FloatArgs(s_capacity.value));
     }

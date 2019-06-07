@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Pond.unity
     guid: ba5cc70732e244782a4fb5e61e489e08
   - enabled: 1
+    path: Assets/Scenes/FadeScene.unity
+    guid: 8be2e95867d21c24fa983bab12782f8b
+  - enabled: 1
     path: Assets/Scenes/TFMainGameScene.unity
     guid: ffe37fdc31efd6049a8350e4816aa061
   m_configObjects: {}

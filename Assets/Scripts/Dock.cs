@@ -23,6 +23,8 @@ public class Dock : MonoBehaviour {
         
         if (colli.gameObject.tag == "Player" && isOpen)
         {
+
+
             DockHitHandler();
             //TODO 防止多次触发
             Debug.Log("hit wharf" + colli.gameObject.name);
