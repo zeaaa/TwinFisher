@@ -37,31 +37,31 @@ public class NodePosition : MonoBehaviour {
         if (linkNodeTran[0] && left)
         {
             line[0] = Instantiate(pf, transform.position, Quaternion.identity);
-            line[0].GetComponentInChildren<WebColor>().flip = true;
-            line[0].GetComponentInChildren<WebColor>().vertical = true;
-            line[0].GetComponentInChildren<WebColor>().id = int.Parse(gameObject.name[7].ToString());
+           // line[0].GetComponentInChildren<WebColor>().flip = true;
+          //  line[0].GetComponentInChildren<WebColor>().vertical = true;
+          //  line[0].GetComponentInChildren<WebColor>().id = int.Parse(gameObject.name[7].ToString());
             line[0].transform.parent = gameObject.transform;
         }
         if (linkNodeTran[1] && right)
         {
             line[1] = Instantiate(pf, transform.position, Quaternion.identity);
             line[1].transform.parent = gameObject.transform;
-            line[1].GetComponentInChildren<WebColor>().id = int.Parse(gameObject.name[7].ToString())+1;
-            line[1].GetComponentInChildren<WebColor>().vertical = true;
+           // line[1].GetComponentInChildren<WebColor>().id = int.Parse(gameObject.name[7].ToString())+1;
+            //line[1].GetComponentInChildren<WebColor>().vertical = true;
         }
         if (linkNodeTran[2] && up)
         {
             line[2] = Instantiate(pf, transform.position, Quaternion.identity);
             line[2].transform.parent = gameObject.transform;
-            line[2].GetComponentInChildren<WebColor>().id = int.Parse(gameObject.name[7].ToString())+1;
-            line[2].GetComponentInChildren<WebColor>().vertical = false;
+            ///line[2].GetComponentInChildren<WebColor>().id = int.Parse(gameObject.name[7].ToString())+1;
+            //line[2].GetComponentInChildren<WebColor>().vertical = false;
         }
         if (linkNodeTran[3] && down)
         {
             line[3] = Instantiate(pf, transform.position, Quaternion.identity);
             line[3].transform.parent = gameObject.transform;
-            line[3].GetComponentInChildren<WebColor>().id = int.Parse(gameObject.name[7].ToString())+1;
-            line[3].GetComponentInChildren<WebColor>().vertical = false;
+            //line[3].GetComponentInChildren<WebColor>().id = int.Parse(gameObject.name[7].ToString())+1;
+           // line[3].GetComponentInChildren<WebColor>().vertical = false;
         }
     }
 

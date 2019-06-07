@@ -2,8 +2,12 @@
 	Properties{
 		_Color("Color", Color) = (1,1,1,1)
 		_MainTex("Albedo (RGB)", 2D) = "white" {}
-	_Glossiness("Smoothness", Range(0,1)) = 0.5
+		_Glossiness("Smoothness", Range(0,1)) = 0.5
 		_Metallic("Metallic", Range(0,1)) = 0.0
+
+		_StartX("start", Float) = 0.0
+		_EndX("end", Float) = 0.0
+		_Value("value",Float) = 0.5
 
 		//1.以下四个属性为新加入的实现渐变色属性（参见学习小结（七））
 		_Center("Center", range(-120,420)) = 0
@@ -27,6 +31,8 @@
 	float _Center;
 	float _R;
 
+
+
 	struct Input {
 		float2 uv_MainTex;
 		float x;                       //4.
@@ -37,6 +43,9 @@
 	fixed4 _Color;
 	fixed4 _SecColor;
 	fixed4 _MainColor;
+	float _StartX;
+	float _EndX;
+	float _Value;
 
 	//5.
 	void vert(inout appdata_full v, out Input o)
@@ -55,7 +64,9 @@
 
 		o.Alpha = c.a;
 
-		//6.
+		float range = _EndX -_StartX;
+		float target = _StartX + _Value * range;
+		_Center = target;
 		float s = IN.x - (_Center - _R / 2);
 		float f = saturate(s / _R);
 		fixed4 col = lerp(_MainColor, _SecColor, f);

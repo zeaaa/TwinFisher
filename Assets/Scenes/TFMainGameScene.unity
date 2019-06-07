@@ -795,7 +795,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &39587728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17955,7 +17955,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _score: 0
   _curCapacity: 0
-  _maxCapacity: 200
+  _maxCapacity: 100
   maxSkillTimes: 3
   WebColor: {r: 1, g: 0.78103447, b: 0.066176474, a: 1}
   WebFullColor: {r: 1, g: 0, b: 0, a: 1}
@@ -28581,7 +28581,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &6943616239545119630
 GameObject:
   m_ObjectHideFlags: 0
@@ -28598,7 +28598,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &7252420717593259483
 MonoBehaviour:
   m_ObjectHideFlags: 0

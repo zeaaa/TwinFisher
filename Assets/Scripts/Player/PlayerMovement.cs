@@ -19,6 +19,8 @@ public class PlayerMovement : MonoBehaviour
 
     public bool skillInput;
     public static float dis;
+    public static float p1x;
+    public static float p2x;
 
     public delegate void SkillInput();
     public static event SkillInput SkillInputHandler;
@@ -180,8 +182,9 @@ public class PlayerMovement : MonoBehaviour
 
        // Web.transform.rotation = Quaternion.Euler(60.0f, 0.0f, 0.0f);
         Web.transform.position =  new Vector3((WebPole_R.position.x + WebPole_L.position.x) / 2,Web.transform.position.y,Web.transform.position.z);
-        
-        dis = WebPole_R.position.x - WebPole_L.position.x;
+        p1x = WebPole_L.position.x;
+        p2x = WebPole_R.position.x;
+        dis = p2x - p1x;
         Web.transform.localScale = new Vector3(Mathf.Abs(dis), 9f, 1.5f);
     }
 

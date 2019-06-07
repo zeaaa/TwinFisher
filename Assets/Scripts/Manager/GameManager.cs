@@ -165,6 +165,8 @@ public class GameManager : MonoBehaviour {
     
     // Update is called once per frame
     void Update () {
+        OnCapaCityChanged();
+
         if (gameState.Equals(GameState.GameOver)) {
             if (Input.GetKeyDown(KeyCode.Joystick1Button0)) {
                 //reload
@@ -205,20 +207,24 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-    
+    float capaPercent = 0;
 
     private void AddScore(int value,float weight)
     {
 
         _score += value;
         _curCapacity += weight;
+       
         if (_curCapacity > _maxCapacity) {
+            _curCapacity = _maxCapacity;
             webFull = true;
             DisableCollision("Fish", "WebNode", true);
             ChangeWebMatColor(WebFullColor);
         }
         if (value < 0)
-            value = 0;
+            value = 0;      
+        DOTween.To(() => capaPercent, x => capaPercent = x, _curCapacity / _maxCapacity, 0.5f);
+
         UpdateUIHandler(_score, _skillTimes, _curCapacity / _maxCapacity);
     }
 
@@ -293,6 +299,12 @@ public class GameManager : MonoBehaviour {
         }
         DisableCollision("Obstacle", "WebNode", false);   
         DisableCollision("Obstacle", "Player", false);
+    }
+
+    public void OnCapaCityChanged() {
+        webRopeMat.SetFloat("_StartX",PlayerMovement.p1x);
+        webRopeMat.SetFloat("_EndX", PlayerMovement.p2x);
+        webRopeMat.SetFloat("_Value",capaPercent);
     }
 
     void ChangeWebMatColor(Color c) {    
