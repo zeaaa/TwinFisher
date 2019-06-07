@@ -6,6 +6,14 @@ using DG.Tweening;
 using UnityEngine.SceneManagement;
 using System;
 
+
+public class FloatArgs : EventArgs {
+
+     public FloatArgs(float v){
+        value = v;
+      }
+    public float value;
+}
 public class UIManager : MonoBehaviour {
     [SerializeField]
     Text t_score;
@@ -142,13 +150,23 @@ public class UIManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-		
-	}
+        
+    }
+
+    public void CallSlider() {
+        onCapacityChanged.Invoke(this, new FloatArgs(s_capacity.value));
+    }
+
+    public static event EventHandler<FloatArgs> onCapacityChanged;
+
+    public static bool CapacityChanging = false;
 
     void UpdateUI(int score, int skillTimes, float capacity) {
         t_score.text = "score:" + score.ToString();
         t_skill.text =  skillTimes.ToString();
-        s_capacity.DOValue(capacity > 1 ? 1 : capacity, 0.5f).SetUpdate(true); ;
+        CapacityChanging = true;
+        Tween t = s_capacity.DOValue(capacity > 1 ? 1 : capacity, 0.5f).SetUpdate(true);
+        t.onComplete = delegate { CapacityChanging = false; };
     }
 
     void ShowGameOverUI(int i) {

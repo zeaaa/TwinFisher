@@ -205,6 +205,8 @@ public class GameManager : MonoBehaviour {
         }
     }
 
+    
+
     private void AddScore(int value,float weight)
     {
 
