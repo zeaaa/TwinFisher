@@ -54,6 +54,8 @@ public class SceneLoader : MonoBehaviour
     Text fishCount;
     [SerializeField]
     Text fishType;
+
+
     [SerializeField]
     Text meetTime;
     [SerializeField]
@@ -103,6 +105,8 @@ public class SceneLoader : MonoBehaviour
     [SerializeField]
     Transform[] fish;
 
+    [SerializeField]
+    RectTransform detailContent;
     int curPage;
 
     //Button[] buttons;
@@ -179,7 +183,7 @@ public class SceneLoader : MonoBehaviour
         ab.Unload(true);
         
         fishCount.text = PlayerPrefs.GetInt("FishCount",0).ToString();
-        farthest.text =( PlayerPrefs.GetFloat("Farthest",0f) * 0.5f).ToString("f2")+"M";
+        farthest.text =( PlayerPrefs.GetFloat("Farthest",0f) * 0.5f).ToString("0");
         PlayerPrefs.SetInt("TotalFishType", fishDataList.fish.Count);
         bool[] array = PlayerPrefsX.GetBoolArray("FishType",false,fishDataList.fish.Count);
         int count = 0;
@@ -188,8 +192,9 @@ public class SceneLoader : MonoBehaviour
                 count++;
             }
         }
-        fishType.text = count.ToString() + "/" + array.Length;
+        fishType.text = count.ToString();
         FillList();
+        FillDetail();
         ShowListUI();
     }
 
@@ -256,6 +261,23 @@ public class SceneLoader : MonoBehaviour
         sender.transform.Find("Selected").gameObject.SetActive(false);
     }
 
+    public void OnFishDetailSelected(GameObject sender)
+    {
+        int id = int.Parse(sender.name.Split('(', ')')[1]) - 1;
+        float width = sender.GetComponent<RectTransform>().rect.width;
+        float offset = id * width;
+        Debug.Log(width);
+        detailContent.DOAnchorPosX(-offset, 0.5f);
+        sender.GetComponent<Button>().Select();
+    }
+
+    public void OnFishDetailDeSelected(GameObject sender)
+    {
+        
+    }
+
+
+
 
     public void OnClickShowDetail(GameObject sender) {
         int id = int.Parse(sender.name.Split('(', ')')[1]) - 1;
@@ -274,9 +296,9 @@ public class SceneLoader : MonoBehaviour
         Button[] btns = scrollView.GetComponentsInChildren<Button>();
         bool[] array = PlayerPrefsX.GetBoolArray("FishType", false, fishDataList.fish.Count);
 
-        for (int i = 0; i < fishDataList.fish.Count; i++) {
-            Debug.Log(fishDataList.fish[i].research);
-        }
+        //for (int i = 0; i < fishDataList.fish.Count; i++) {
+        //    Debug.Log(fishDataList.fish[i].research);
+        //}
         for (int i = 0; i < btns.Length; i++) {
             if (array[i]) {
                 btns[i].gameObject.transform.Find("Image").GetComponent<Image>().sprite = spriteAB.LoadAsset<Sprite>((i+1).ToString());
@@ -286,8 +308,7 @@ public class SceneLoader : MonoBehaviour
                 if (arrayInt[i] == 0)
                     percent = 0;
                 else
-                {
-                    
+                {                
                     percent = arrayInt[i] / (float)fishDataList.fish[i].research;
                 }                
                 btns[i].gameObject.transform.Find("per").GetComponent<Text>().text = (percent * 100f).ToString("0") + "%";
@@ -308,6 +329,57 @@ public class SceneLoader : MonoBehaviour
         //dont unload ab here
     }
 
+
+    void FillDetail ()
+    {
+
+#if UNITY_STANDALONE_WIN || UNITY_STANDALONE_OSX
+      
+#endif
+#if UNITY_ANDROID
+        spriteAB = AssetBundle.LoadFromFile(Application.dataPath+"!assets/data.ab");  
+#endif
+        Button[] btns = detailContent.GetComponentsInChildren<Button>();
+        bool[] array = PlayerPrefsX.GetBoolArray("FishType", false, fishDataList.fish.Count);
+
+        //for (int i = 0; i < fishDataList.fish.Count; i++) {
+        //    Debug.Log(fishDataList.fish[i].research);
+        //}
+        for (int i = 0; i < btns.Length; i++)
+        {
+            int[] arrayInt = PlayerPrefsX.GetIntArray("FishCountArray", 0, fishDataList.fish.Count);
+            if (array[i])
+            {
+                btns[i].gameObject.transform.Find("Image").GetComponent<Image>().sprite = spriteAB.LoadAsset<Sprite>((i + 1).ToString());
+                btns[i].gameObject.transform.Find("name").GetComponent<Text>().text = fishDataList.fish[i].name;
+                btns[i].gameObject.transform.Find("Info").GetComponent<Text>().text = fishDataList.fish[i].info;
+                
+                
+                float percent;
+                if (arrayInt[i] == 0)
+                    percent = 0;
+                else
+                {
+                    percent = arrayInt[i] / (float)fishDataList.fish[i].research;
+                }
+                btns[i].gameObject.transform.Find("per").GetComponent<Text>().text = (percent * 100f).ToString("0") + "%";
+               
+            }
+            else
+            {
+
+                btns[i].gameObject.transform.Find("Image").GetComponent<Image>().sprite = spriteAB.LoadAsset<Sprite>("Null");
+                btns[i].gameObject.transform.Find("name").GetComponent<Text>().text = "尚未遇到的鱼";
+                btns[i].gameObject.transform.Find("Info").GetComponent<Text>().text = "???";
+                float percent = 0;
+                btns[i].gameObject.transform.Find("per").GetComponent<Text>().text = percent.ToString("0") + "%";            
+            }
+            btns[i].gameObject.transform.Find("meet").GetComponent<Text>().text = arrayInt[i].ToString();
+            btns[i].gameObject.transform.Find("Range").GetComponent<Text>().text = fishDataList.fish[i].range;
+        }
+        //dont unload ab here
+    }
+
     void ShowList()
     {
         curPage = 0;
@@ -319,21 +391,30 @@ public class SceneLoader : MonoBehaviour
         curPage = 1;
         fish[id].GetComponent<Animator>().Play("jump");
         OpenFishCamera(id);
+
+
         arhievement.gameObject.SetActive(false);
         detailView.gameObject.SetActive(true);
         scrollView.gameObject.SetActive(false);
+
         b_sb0.GetComponent<Image>().sprite = buttonOrigin;
         b_sb1.GetComponent<Image>().sprite = buttonSelected;
         b_sb2.GetComponent<Image>().sprite = buttonOrigin;
+
         img_sb0.color = imgDeSelectedColor;
         img_sb1.color = imgSelectedColor;
         img_sb2.color = imgDeSelectedColor;
-        name.text = fishDataList.fish[id].name;
-        info.text = fishDataList.fish[id].info;
-        int[] arrayInt = PlayerPrefsX.GetIntArray("FishCountArray", 0, fishDataList.fish.Count);
-        meetTime.text = arrayInt[id].ToString();
-        range.text = fishDataList.fish[id].range;
-        
+        Debug.Log("data" + "(" + (id + 1).ToString() + ")");
+        OnFishDetailSelected(GameObject.Find("data " + "(" + (id+1).ToString()+ ")"));
+      
+       
+        //name.text = fishDataList.fish[id].name;
+        //info.text = fishDataList.fish[id].info;
+        //int[] arrayInt = PlayerPrefsX.GetIntArray("FishCountArray", 0, fishDataList.fish.Count);
+        //meetTime.text = arrayInt[id].ToString();
+        //range.text = fishDataList.fish[id].range;
+        //research.text = (arrayInt[id]/(float)fishDataList.fish[id].research*100).ToString() + "%";
+
     }
 
     void ShowArchievement()
@@ -426,12 +507,12 @@ public class SceneLoader : MonoBehaviour
                 b_start.Select();
             }
         }
-        Debug.Log(LTPressed);
+        
         if (gameState.Equals(PondGameState.pannel)){
             switch (curPage) {
                 case 0:
                     { 
-                        if (RTPressed) {
+                        if (Input.GetKeyDown(KeyCode.Joystick1Button5)) {
                             Debug.Log("call");
                             if (UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject == null || UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name.Equals(b_back.name))
                             {
@@ -454,17 +535,34 @@ public class SceneLoader : MonoBehaviour
                         break; }
                 case 1: 
                     {
-                        if (LTPressed)
+                        if (Input.GetKeyDown(KeyCode.Joystick1Button4))
                         {
                             defaultFish.Select();
                             ShowList();
                             break;
                         }
-                        if (RTPressed)
+                        if (Input.GetKeyDown(KeyCode.Joystick1Button5))
                         {
                             ShowArchievement();
                             break;
                         }
+
+                        //if (Input.GetAxis("Horizontal") > 0)
+                        //{
+                        //    int id = int.Parse(defaultFish.name.Split('(', ')')[1]) - 1;
+                        //    if(id < fishDataList.fish.Count)
+                        //        ShowDetail(id + 1);
+                        //    break;
+                        //}
+
+                        //if (Input.GetAxis("Horizontal") < 0)
+                        //{
+                        //    int id = int.Parse(defaultFish.name.Split('(', ')')[1]) - 1;
+                        //    if (id > 0)
+                        //        ShowDetail(id - 1);
+                        //    break;
+                        //}
+
                         if (UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject == null)
                         {
                             if (Input.GetAxis("Vertical") > 0 )
@@ -472,11 +570,17 @@ public class SceneLoader : MonoBehaviour
                                 b_back.Select();
                             }
                         }
-                        break;                      
+
+                       
+
+                        break;
+                        
+
+
                     }
                 case 2:
                     {
-                        if (LTPressed)
+                        if (Input.GetKeyDown(KeyCode.Joystick1Button4))
                         {
                             int id = int.Parse(defaultFish.name.Split('(', ')')[1]) - 1;
                             ShowDetail(id);
@@ -515,13 +619,9 @@ public class SceneLoader : MonoBehaviour
         
         Tweener moveBanner = banner.rectTransform.DOAnchorPosY(900, 1.5f);
         Tweener moveButton = b_pond.transform.GetComponent<RectTransform>().DOAnchorPosY(-600, 1.5f);
-        SceneData.nextSceneId = 2;
-        bg.DOFade(1.0f, 3.0f).onComplete =   delegate{ SceneManager.LoadScene(1); };
+        moveButton.onComplete =  delegate { SceneData.nextSceneId = 2; SceneManager.LoadScene(1); };
+        //bg.DOFade(1.0f, 3.0f);
         yield return null;
-
-
-       
-        
     }
 
     

@@ -143,6 +143,7 @@ public class PlayerMovement : MonoBehaviour
         anim_L.SetBool("Skill", skillInput);
         anim_R.SetBool("Skill", skillInput);
 
+        
         string[] joyStickNames = Input.GetJoystickNames();
         /*
         for (int x = 0; x < joyStickNames.Length; x++)
@@ -152,31 +153,46 @@ public class PlayerMovement : MonoBehaviour
         float moveHorizontalL = 0;
         float moveHorizontalR = 0;
 
-
-
+        //Debug.Log(joyStickNames.Length);
+        //multiplayer
         if (SceneData.mode == 2)
         {
-            moveHorizontalL = killMovement ? 0 : Input.GetAxis("JoyStick1LPad");
-            moveHorizontalR = killMovement ? 0 : Input.GetAxis("JoyStick2LPad");
-        }
+            if (joyStickNames.Length == 0)
+            {
+                moveHorizontalL = killMovement ? 0 : Input.GetAxis("HorizontalL");
+                moveHorizontalR = killMovement ? 0 : Input.GetAxis("HorizontalR");
+            }
+            else if (joyStickNames.Length == 1)
+            {
+                moveHorizontalL = killMovement ? 0 : Input.GetAxis("JoyStick1LPad");
+                moveHorizontalR = killMovement ? 0 : Input.GetAxis("HorizontalL");
+            }
+            else if (joyStickNames.Length >= 2)
+            {
+                moveHorizontalL = killMovement ? 0 : Input.GetAxis("JoyStick1LPad");
+                moveHorizontalR = killMovement ? 0 : Input.GetAxis("JoyStick2LPad");
+            }
+            
+        }//single player
         else if (SceneData.mode == 1) {
-            moveHorizontalL = killMovement ? 0 : Input.GetAxis("JoyStick1LPad");
-            moveHorizontalR = killMovement ? 0 : Input.GetAxis("JoyStick1RPad");
-
+            if (joyStickNames.Length == 0)
+            {
+                moveHorizontalL = killMovement ? 0 : Input.GetAxis("HorizontalL");
+                moveHorizontalR = killMovement ? 0 : Input.GetAxis("HorizontalR");
+            }
+            else if (joyStickNames.Length == 1)
+            {
+                moveHorizontalL = killMovement ? 0 : Input.GetAxis("JoyStick1LPad");
+                moveHorizontalR = killMovement ? 0 : Input.GetAxis("JoyStick1RPad");
+            }
+            else if (joyStickNames.Length >= 2)
+            {
+                moveHorizontalL = killMovement ? 0 : Input.GetAxis("JoyStick1LPad");
+                moveHorizontalR = killMovement ? 0 : Input.GetAxis("JoyStick1RPad");
+            }
         }
 
-        //if (joyStickNames.Length == 0)
-        //{
-        //    moveHorizontalL = killMovement ? 0 : Input.GetAxis("HorizontalL");
-        //    moveHorizontalR = killMovement ? 0 : Input.GetAxis("HorizontalR");
-        //}
-        //else if (joyStickNames.Length == 1) {
-        //    moveHorizontalL = killMovement ? 0 : Input.GetAxis("JoyStick1LPad");
-        //    moveHorizontalR = killMovement ? 0 : Input.GetAxis("HorizontalR");
-        //}
-        //else if (joyStickNames.Length >= 2) {
-           
-        //}
+        
         anim_L.SetFloat("Input", moveHorizontalL);
         anim_R.SetFloat("Input", moveHorizontalR);
         Vector3 movementL = new Vector3(moveHorizontalL, 0.0f, 0.0f);
@@ -216,14 +232,14 @@ public class PlayerMovement : MonoBehaviour
         WebPole_R.velocity = movementL * playerMoveSpeed;
         WebPole_R.velocity = movementR * playerMoveSpeed;
 #endif
-        //Player_L.position = new Vector3(Mathf.Clamp (Player_L.position.x, boundary.xMin, Player_R.position.x), Player_L.position.y, Player_L.position.z);
-        //Player_R.position = new Vector3(Mathf.Clamp (Player_R.position.x, Player_L.position.x, boundary.xMax), Player_R.position.y, Player_R.position.z);
+            //Player_L.position = new Vector3(Mathf.Clamp (Player_L.position.x, boundary.xMin, Player_R.position.x), Player_L.position.y, Player_L.position.z);
+            //Player_R.position = new Vector3(Mathf.Clamp (Player_R.position.x, Player_L.position.x, boundary.xMax), Player_R.position.y, Player_R.position.z);
 
-        //Player_R.rotation = Quaternion.Euler (0.0f, Player_R.velocity.x * tilt, 0.0f);
-		//Player_L.rotation = Quaternion.Euler (0.0f, Player_L.velocity.x * tilt, 0.0f);
+            //Player_R.rotation = Quaternion.Euler (0.0f, Player_R.velocity.x * tilt, 0.0f);
+            //Player_L.rotation = Quaternion.Euler (0.0f, Player_L.velocity.x * tilt, 0.0f);
 
-       // Web.transform.rotation = Quaternion.Euler(60.0f, 0.0f, 0.0f);
-        Web.transform.position =  new Vector3((WebPole_R.position.x + WebPole_L.position.x) / 2,Web.transform.position.y,Web.transform.position.z);
+            // Web.transform.rotation = Quaternion.Euler(60.0f, 0.0f, 0.0f);
+        Web.transform.position = new Vector3((WebPole_R.position.x + WebPole_L.position.x) / 2, Web.transform.position.y, Web.transform.position.z);
         p1x = WebPole_L.position.x;
         p2x = WebPole_R.position.x;
         dis = p2x - p1x;

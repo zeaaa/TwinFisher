@@ -51,6 +51,8 @@ public class PathManager : MonoBehaviour {
         Obstacle.GameOverHandler += StopScrolling;
     }
 
+     static int times = 0;
+
     private void OnDestroy()
     {
         Obstacle.GameOverHandler -= StopScrolling;
@@ -70,9 +72,9 @@ public class PathManager : MonoBehaviour {
                 break;
             }
         }
-        for (int k = 0; k < data.Length; k++) {
-            print(data[k]);
-        }
+        //for (int k = 0; k < data.Length; k++) {
+        //    print(data[k]);
+        //}
         PlayerPrefsX.SetFloatArray("Rank",data);
         if (i == 0)
         {

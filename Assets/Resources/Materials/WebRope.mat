@@ -85,11 +85,11 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _StartX: -5.5360003
+    - _StartX: -6.016
     - _TexLod: 5
     - _UVSec: 0
     - _UnlitOutlineThickness: 0.226
-    - _Value: 0
+    - _Value: 0.43840972
     - _ZSmooth: -0.5
     - _ZWrite: 0
     m_Colors:

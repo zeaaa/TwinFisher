@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,7 +17,7 @@ public class BGScroller : MonoBehaviour
     [SerializeField]
     GameObject Line;
 
-
+    public static int spawnTimes;
 
 
     private const int totalCount = 3;
@@ -25,7 +26,9 @@ public class BGScroller : MonoBehaviour
     {
         passBy = 0;
         scrollSpeed = 0;
+        spawnTimes = 0;
         wharf = transform.Find("Dock");
+        //SpawnManager.OnSentSpawnMessage += WaitToGenerate;
     }
 
     void Start ()
@@ -33,6 +36,17 @@ public class BGScroller : MonoBehaviour
         //ClearRank();
         lines = new List<GameObject>();
         GenerateMark(length*id);
+
+    }
+
+    private void OnDestroy()
+    {
+       // SpawnManager.OnSentSpawnMessage -= WaitToGenerate;
+    }
+
+    static void WaitToGenerate(object sender,EventArgs args) {
+        Debug.Log("call");
+        spawnTimes++;
     }
 
     List<GameObject> lines;
@@ -90,6 +104,16 @@ public class BGScroller : MonoBehaviour
             if (nextID > (totalCount - 1))
                 nextID -= totalCount;
             //OpenWharf(false);
+            if (spawnTimes > 0)
+            {
+                spawnTimes--;
+                OpenDock(true);
+            }
+            else {
+
+                OpenDock(false);
+            }
+
         }
 	}
 
