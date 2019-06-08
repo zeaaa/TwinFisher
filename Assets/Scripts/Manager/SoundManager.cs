@@ -36,6 +36,8 @@ public class SoundManager : MonoBehaviour
 
     private void Start()
     {
+        string path =  "游玩记录.txt";
+        GetTime.LogPlay(path);
         bgmAS.clip = bgm[status];
         bgmAS.Play();
         
@@ -46,6 +48,7 @@ public class SoundManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       
         playTimer += Time.deltaTime;
         if(status<1)
         if (playTimer >= bgmAS.clip.length)

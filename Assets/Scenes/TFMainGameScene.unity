@@ -21545,7 +21545,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _score: 0
   _curCapacity: 0
-  _maxCapacity: 100
+  _maxCapacity: 300
   maxSkillTimes: 3
   WebSkillColor: {r: 1, g: 1, b: 1, a: 1}
   WebBaseColor: {r: 1, g: 1, b: 1, a: 1}
@@ -21578,9 +21578,9 @@ MonoBehaviour:
   spawnObstacleWide: 4.44
   fishAmount: 50
   obstacleAmount: 20
-  dockAmount: 5
-  firstObstacleTime: 10
-  firstDockTime: 10
+  dockAmount: 10
+  firstObstacleTime: 5
+  firstDockTime: 7
 --- !u!114 &1501247983
 MonoBehaviour:
   m_ObjectHideFlags: 0
