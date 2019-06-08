@@ -53,7 +53,25 @@ public class SpawnManager : MonoBehaviour {
     int toatlRarity = 0;
     int mapID = 0;
 
+    [Rename("刷新鱼数量（每分钟）")]
+    [SerializeField]
+    int fishAmount;
 
+    [Rename("刷新障碍数量（每分钟）")]
+    [SerializeField]
+    int obstacleAmount;
+
+    [Rename("刷新码头数量（每分钟）")]
+    [SerializeField]
+    int dockAmount;
+
+    [Rename("第一次刷新障碍的时间")]
+    [SerializeField]
+    float firstObstacleTime;
+
+    [Rename("第一次刷新码头的时间")]
+    [SerializeField]
+    float firstDockTime;
 
     float spawnFishTimer = 0;
     float spawnFishInterval = 0;
@@ -128,9 +146,9 @@ public class SpawnManager : MonoBehaviour {
 
     void Start()
     {
-        spawnFishInterval = 0.5f + TFMath.GaussRand() * 2f;
-        spawnWharfInterval = UnityEngine.Random.Range(5.0f, 6.0f);
-        spawnObstacleInterval = UnityEngine.Random.Range(12f, 16f);
+        spawnFishInterval = 0.5f + TFMath.GaussRand() * 5f;
+        spawnWharfInterval = firstDockTime;
+        spawnObstacleInterval = firstObstacleTime;
         AssetBundle ab;
 #if UNITY_STANDALONE_WIN || UNITY_STANDALONE_OSX
         ab = AssetBundle.LoadFromFile(Application.streamingAssetsPath + "/data.ab");
@@ -177,7 +195,7 @@ public class SpawnManager : MonoBehaviour {
         spawnFishTimer += Time.deltaTime;
         if (spawnFishTimer > spawnFishInterval) {
             spawnFishTimer = 0;
-            spawnFishInterval = 5f + TFMath.GaussRand() * 2f;
+            spawnFishInterval = TFMath.GaussRand() * 60 / (float)fishAmount;
 
             int pt = GetSpawnPoint();
             if (pt > -1) {
@@ -231,11 +249,10 @@ public class SpawnManager : MonoBehaviour {
     public static event EventHandler OnSentSpawnMessage;
 
     void SpawnWharf() {
-        spawnWharfTimer += Time.deltaTime;
-        
+        spawnWharfTimer += Time.deltaTime;      
         if (spawnWharfTimer > spawnWharfInterval) {
             spawnWharfTimer = 0;
-            spawnWharfInterval = UnityEngine.Random.Range(10,12f);
+            spawnWharfInterval = TFMath.GaussRand() * 60 / (float)dockAmount;
             //Debug.Log(BGScroller.currentID + "xx"+ BGScroller.nextID);
             //OnSentSpawnMessage.Invoke(this, EventArgs.Empty);
             BGScroller.spawnTimes++;
@@ -248,9 +265,9 @@ public class SpawnManager : MonoBehaviour {
         if (spawnObstacleTimer > spawnObstacleInterval)
         {
             spawnObstacleTimer = 0;
-            spawnObstacleInterval = UnityEngine.Random.Range(1f, 4f);
+            spawnObstacleInterval = TFMath.GaussRand() * 60 / (float)obstacleAmount;
 
-            
+
             //int pt = GetSpawnPoint();
             int pt = UnityEngine.Random.Range(0, spawnObstaclePoints.Length);
             if (pt > -1) {

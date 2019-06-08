@@ -2,102 +2,117 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using DG.Tweening;
+enum FishState {
+    idle,
+    move,
+    show
+}
+
 public class PondFishMovement : MonoBehaviour
 {
 
-    [SerializeField]
-    UnityEngine.AI.NavMeshAgent nav;
-    NavMeshTriangulation navData;
+    DOTweenPath path;
+
+
+    FishState state;
     public float speed;
     float timer;
     Vector3 target;
 
     [SerializeField]
-    Transform camera;
+    Transform lookAtCamera;
 
-    public GameObject cube;
+    
+
+    float waitTime = 2.0f;
+    float idleTime = 1.0f;
+
     Animator anim;
     private int area;
     // Start is called before the first frame update
     void Awake()
     {
         anim = GetComponent<Animator>();
-        
-        nav = gameObject.GetComponent<NavMeshAgent>();
-        timer = 0;
-        okVertice = new List<int>();
-        area = nav.areaMask;
-        navData = NavMesh.CalculateTriangulation();
+        path = GetComponent<DOTweenPath>();
+        state = FishState.move;
+        //path.loopType = LoopType.Incremental;
+        //path.loops = -1;
     }
 
     private void Start()
     {
-        //anim.speed = 0.1f;
-        StartCoroutine(RandMove());
+
     }
 
+    Vector3 stayPos;
+
     public void OnShow() {
-        anim.speed = 1.0f;
+        if (state != FishState.show)
+            StartCoroutine(Show());
+    }
+
+    IEnumerator Show() {
+        FishState temp = state;
+        state = FishState.show;
+             
+
+        if (temp == FishState.move)
+            path.DOPause();
+        if (temp == FishState.idle)
+            anim.speed = 1.0f;
+
+        state = FishState.show;
+        Vector3 towards = transform.forward;
+       
+        transform.DOLookAt(lookAtCamera.position, 0.5f);
+        yield return new WaitForSeconds(0.5f);
         anim.Play("jump");
-        transform.LookAt(camera);
+        yield return new WaitForSeconds(0.5f);
+        //transform.DOLookAt(towards, 0.5f);
+        //yield return new WaitForSeconds(0.5f);
+
+        state = temp;
+        if(state == FishState.idle)
+            anim.speed = 0.1f;
+        if (state == FishState.move)
+            path.DOPlay();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+       
+        switch (state) {
+            case FishState.idle: {
+                    timer += Time.deltaTime;
+                    if (timer>idleTime) {
+                        timer = 0;
+                        anim.speed = 1.0f;
+                        state = FishState.move;
+                        path.DOPlay();
+                    }
+                    
 
-
-        timer += Time.deltaTime;
-
-        if( (nav.destination - target).magnitude < 0.1f){
-            //anim.speed = 0.1f;
+                    break;
+                }
+            case FishState.move:
+                {
+                    timer += Time.deltaTime;
+                    if (timer > waitTime) {
+                        timer = 0;
+                        anim.speed = 0.1f;
+                        state = FishState.idle;
+                        path.DOPause();
+                    }
+                    break;
+                }
+            case FishState.show:
+                {
+                    break;
+                }
+            default:break;
         }
-    }
-    public void SetFishSpeed(float speed)
-    {
-        nav.speed = speed;
-    }
-    IEnumerator RandMove()
-    {
-        while (true)
-        {
-            float x = Random.Range(4, 10f);
-            yield return new WaitForSeconds(x);
-            target = GetRandomLocation();
-            nav.SetDestination(target);
-            anim.speed = 1f;
-
-            //if(!nav.hasPath){nav.SetDestination(transform.position);continue;}
-            timer = 0;
-            yield return new WaitUntil(Wait);
-        }
-    }
-
-    bool Wait() {
-        if ((nav.destination - target).magnitude < 0.1f && timer > 20.0f)
-            return true;
-        else
-            return false;
-    }
-
-    List<int> okVertice;
-    public Vector3 GetRandomLocation()
-    {
-
-        //navData = NavMesh.CalculateTriangulation();
-
-        
-   
-        for (int i = 0; i < navData.areas.Length; i+=3) {
-            if (1<<navData.areas[i / 3] == area) {
-               
-                okVertice.Add(i);
-            }
-        }
-        int t = Random.Range(0,okVertice.Count);
-        Vector3 point = Vector3.Lerp(navData.vertices[navData.indices[okVertice[t]]], navData.vertices[navData.indices[okVertice[t] + 1]], Random.value);
-        point = Vector3.Lerp(point, navData.vertices[navData.indices[okVertice[t] + 2]], Random.value);
-        okVertice.Clear();
-        return point;
-    }
+    } 
 }

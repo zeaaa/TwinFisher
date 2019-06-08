@@ -20,7 +20,7 @@ public class BGScroller : MonoBehaviour
     public static int spawnTimes;
 
 
-    private const int totalCount = 3;
+    private const int totalCount = 4;
 
     private void Awake()
     {
