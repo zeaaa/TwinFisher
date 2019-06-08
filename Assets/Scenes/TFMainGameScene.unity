@@ -21676,10 +21676,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf1d61b3dfc5097479725de7c327b435, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bgm:
-  - {fileID: 8300000, guid: b2ea41f78e7014720977393dc8038543, type: 3}
-  - {fileID: 8300000, guid: 7344e402e62d94bbab19374c91f4ec71, type: 3}
-  - {fileID: 8300000, guid: 327d6ebb7b0d8471099a11c144bcce0e, type: 3}
+  bgm: {fileID: 8300000, guid: 37861cb5b00c7e544a9d53a7960e9c11, type: 3}
+  nightBgm: {fileID: 8300000, guid: 352b1c6b3a8624245868457ae0f3258e, type: 3}
+  gameoverSound: {fileID: 8300000, guid: 327d6ebb7b0d8471099a11c144bcce0e, type: 3}
   bubble:
   - {fileID: 8300000, guid: 4014afd476b6bba4bb6f2f132c83ea31, type: 3}
   - {fileID: 8300000, guid: 8dbf72f4edd82984eae2581e32cbb89c, type: 3}

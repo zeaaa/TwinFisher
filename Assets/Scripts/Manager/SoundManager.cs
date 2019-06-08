@@ -5,7 +5,16 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
     [SerializeField]
-    AudioClip[] bgm;
+    AudioClip bgm;
+
+
+    [SerializeField]
+    AudioClip nightBgm;
+    [SerializeField]
+    AudioClip gameoverSound;
+    [SerializeField]
+    public AudioClip dockSound;
+
 
     public AudioClip[] bubble;
 
@@ -28,9 +37,8 @@ public class SoundManager : MonoBehaviour
 
     void PlayGameOverSound(int i)
     {    
-        status = bgm.Length - 1;
         bgmAS.loop = false;
-        bgmAS.clip = bgm[status];
+        bgmAS.clip = gameoverSound;
         bgmAS.Play();    
     }
 
@@ -38,24 +46,23 @@ public class SoundManager : MonoBehaviour
     {
         string path =  "player.log";
         GetTime.LogPlay(path);
-        bgmAS.clip = bgm[status];
+        if(GetTime.IsDay())
+            bgmAS.clip = bgm;
+        else
+            bgmAS.clip = nightBgm;
         bgmAS.Play();
     }
 
-    int status = 0;
     float playTimer = 0;
     // Update is called once per frame
     void Update()
     {
-       
         playTimer += Time.deltaTime;
-        if(status<1)
-        if (playTimer >= bgmAS.clip.length)
-        {
-            status++;
-            playTimer = 0;
-            bgmAS.clip = bgm[status];
-            bgmAS.Play();
-        }
+        //if (playTimer >= bgmAS.clip.length)
+        //{    
+        //    playTimer = 0;
+        //    bgmAS.clip = bgm;
+        //    bgmAS.Play();
+        //}
     }
 }

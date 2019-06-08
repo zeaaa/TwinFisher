@@ -334,7 +334,6 @@ public class GameManager : MonoBehaviour {
 
         }       
         else {
-            
             DisableCollision("Fish", "WebNode", false);
             //DisableCollision("Fish", "Player", false);
         }
