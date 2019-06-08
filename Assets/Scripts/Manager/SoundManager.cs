@@ -16,6 +16,10 @@ public class SoundManager : MonoBehaviour
     public AudioClip dockSound;
 
 
+    public Transform[] lights;
+    public Transform daylight;
+    public Transform nightlight;
+
     public AudioClip[] bubble;
 
     public static SoundManager instance;
@@ -46,10 +50,25 @@ public class SoundManager : MonoBehaviour
     {
         string path =  "player.log";
         GetTime.LogPlay(path);
-        if(GetTime.IsDay())
+        if (GetTime.IsDay())
+        {
             bgmAS.clip = bgm;
+            daylight.gameObject.SetActive(true);
+            nightlight.gameObject.SetActive(false);
+            foreach (Transform t in lights) {
+                t.gameObject.SetActive(false);
+            }
+        }
         else
+        {
+            daylight.gameObject.SetActive(false);
+            nightlight.gameObject.SetActive(true);
             bgmAS.clip = nightBgm;
+            foreach (Transform t in lights)
+            {
+                t.gameObject.SetActive(true);
+            }
+        }
         bgmAS.Play();
     }
 

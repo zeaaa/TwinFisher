@@ -127,7 +127,7 @@ public class PathManager : MonoBehaviour {
 
         if (mileage > shoal) {
             shoal += 500;
-            OnOverDistance.Invoke(this, EventArgs.Empty);
+           // OnOverDistance.Invoke(this, EventArgs.Empty);
         }
     }
 
