@@ -21254,7 +21254,7 @@ MonoBehaviour:
   spawnObstaclePointSize: 5
   spawnObstacleWide: 4.44
   fishAmount: 40
-  obstacleAmount: 45
+  obstacleAmount: 20
   dockAmount: 5
   firstObstacleTime: 5
   firstDockTime: 7
@@ -21337,8 +21337,10 @@ MonoBehaviour:
   pathTransform: {fileID: 1141868619}
   mileage: 0
   speed: 0
-  _maxSpeed: 0.6
+  _maxSpeed: 0.3
   _accelTime: 2
+  _maxSpeed2: 1
+  _accelTime2: 60
   cameraAnim: 1
   Mile: {fileID: 1513832359}
 --- !u!114 &1501247986

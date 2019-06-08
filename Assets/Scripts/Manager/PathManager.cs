@@ -21,7 +21,7 @@ public class PathManager : MonoBehaviour {
 
     public static float curspeed = 0;
 
-    [Rename("场景最大速度")]
+    [Rename("一次加速速度")]
     [SerializeField]
     float _maxSpeed;
 
@@ -29,6 +29,15 @@ public class PathManager : MonoBehaviour {
     [Rename("加速所需时间")]
     [SerializeField]
     float _accelTime;
+
+    [Rename("二次加速速度")]
+    [SerializeField]
+    float _maxSpeed2;
+
+
+    [Rename("加速所需时间")]
+    [SerializeField]
+    float _accelTime2;
 
     [Rename("开场镜头动画")]
     [SerializeField]
@@ -104,15 +113,20 @@ public class PathManager : MonoBehaviour {
         float cameraAnimTime = 3.0f;
         if (cameraAnim)
         {
-            Camera.main.transform.DOMoveZ(52f, cameraAnimTime).SetEase(Ease.Linear).onComplete = delegate { StartCoroutine(ChangeSpeed(_maxSpeed, _accelTime)); };
+            Camera.main.transform.DOMoveZ(52f, cameraAnimTime).SetEase(Ease.Linear).onComplete = delegate { StartCoroutine(SpeedUp()); };
             Camera.main.transform.DORotate(new Vector3(50, 0, 0), cameraAnimTime);
         }
         else {
             StartCoroutine(ChangeSpeed(_maxSpeed, _accelTime));
             Camera.main.transform.position = new Vector3(0,46f,52f);
             Camera.main.transform.localEulerAngles = new Vector3(50, 0, 0);
-        }
-       
+        } 
+    }
+
+    IEnumerator SpeedUp() {
+        StartCoroutine(ChangeSpeed(_maxSpeed, _accelTime));
+        yield return new WaitForSeconds(_accelTime);
+        StartCoroutine(ChangeSpeed(_maxSpeed2, _accelTime2));
     }
 
     public const float scaler = 0.5f;
