@@ -102,6 +102,7 @@ public class PathManager : MonoBehaviour {
             SetSpeed(0);
         }
         else {
+            StopAllCoroutines();
             StartCoroutine(ChangeSpeed(0f, 0.5f));     
         }
             

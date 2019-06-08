@@ -21254,9 +21254,10 @@ MonoBehaviour:
   spawnObstaclePointSize: 5
   spawnObstacleWide: 4.44
   fishAmount: 40
-  obstacleAmount: 20
+  obstacleAmountBegin: 5
+  obstacleAmountFinal: 40
   dockAmount: 5
-  firstObstacleTime: 5
+  firstObstacleTime: 10
   firstDockTime: 7
 --- !u!114 &1501247983
 MonoBehaviour:
