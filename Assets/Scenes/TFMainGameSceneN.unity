@@ -502,6 +502,10 @@ MonoBehaviour:
   - {fileID: 1778083103}
   - {fileID: 367641467}
   pf: {fileID: 1550187273991854, guid: acfebf65e3f375f469ca869f6b778a7d, type: 3}
+  left: 0
+  right: 0
+  up: 0
+  down: 0
 --- !u!23 &7234245
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1179,6 +1183,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   length: 66
   id: 1
+  Line: {fileID: 0}
 --- !u!1001 &50641269
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3962,6 +3967,10 @@ MonoBehaviour:
   - {fileID: 852660782}
   - {fileID: 2087699431}
   pf: {fileID: 1550187273991854, guid: acfebf65e3f375f469ca869f6b778a7d, type: 3}
+  left: 0
+  right: 0
+  up: 0
+  down: 0
 --- !u!23 &173219234
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6726,6 +6735,10 @@ MonoBehaviour:
   - {fileID: 2130171592}
   - {fileID: 1160976895}
   pf: {fileID: 1550187273991854, guid: acfebf65e3f375f469ca869f6b778a7d, type: 3}
+  left: 0
+  right: 0
+  up: 0
+  down: 0
 --- !u!23 &359220306
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13332,6 +13345,10 @@ MonoBehaviour:
   - {fileID: 2087699431}
   - {fileID: 1778083103}
   pf: {fileID: 1550187273991854, guid: acfebf65e3f375f469ca869f6b778a7d, type: 3}
+  left: 0
+  right: 0
+  up: 0
+  down: 0
 --- !u!23 &882078432
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14147,6 +14164,10 @@ MonoBehaviour:
   - {fileID: 1195475460}
   - {fileID: 882078427}
   pf: {fileID: 1550187273991854, guid: acfebf65e3f375f469ca869f6b778a7d, type: 3}
+  left: 0
+  right: 0
+  up: 0
+  down: 0
 --- !u!23 &907988539
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15781,6 +15802,10 @@ MonoBehaviour:
   - {fileID: 359220300}
   - {fileID: 173219228}
   pf: {fileID: 1550187273991854, guid: acfebf65e3f375f469ca869f6b778a7d, type: 3}
+  left: 0
+  right: 0
+  up: 0
+  down: 0
 --- !u!23 &985190342
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -18445,6 +18470,10 @@ MonoBehaviour:
   - {fileID: 359220300}
   - {fileID: 1195475460}
   pf: {fileID: 1550187273991854, guid: acfebf65e3f375f469ca869f6b778a7d, type: 3}
+  left: 0
+  right: 0
+  up: 0
+  down: 0
 --- !u!23 &1160976900
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -19311,6 +19340,10 @@ MonoBehaviour:
   - {fileID: 1160976895}
   - {fileID: 1751857271}
   pf: {fileID: 1550187273991854, guid: acfebf65e3f375f469ca869f6b778a7d, type: 3}
+  left: 0
+  right: 0
+  up: 0
+  down: 0
 --- !u!23 &1195475465
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -21545,7 +21578,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1607560706918208, guid: fc88845656133423d98143bf3c98e643, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4102540939006332, guid: fc88845656133423d98143bf3c98e643, type: 3}
       propertyPath: m_LocalPosition.x
@@ -22887,13 +22920,15 @@ MonoBehaviour:
   _curCapacity: 0
   _maxCapacity: 1000000
   maxSkillTimes: 100
-  WebColor: {r: 1, g: 0.78103447, b: 0.066176474, a: 1}
-  WebFullColor: {r: 1, g: 0, b: 0, a: 1}
   WebSkillColor: {r: 0, g: 0.5862069, b: 1, a: 0.384}
+  WebBaseColor: {r: 0, g: 0, b: 0, a: 0}
+  WebCapacityColor: {r: 0, g: 0, b: 0, a: 0}
+  WebFullColor: {r: 1, g: 0, b: 0, a: 1}
   lp: {fileID: 602766146}
   rp: {fileID: 137569219}
   forge: 460
   playerInnerColli: 0
+  webFullHint: {fileID: 0}
 --- !u!114 &1501247982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22914,6 +22949,11 @@ MonoBehaviour:
   drawLine: 1
   spawnObstaclePointSize: 1
   spawnObstacleWide: 6
+  fishAmount: 0
+  obstacleAmount: 0
+  dockAmount: 0
+  firstObstacleTime: 0
+  firstDockTime: 0
 --- !u!114 &1501247983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22933,8 +22973,21 @@ MonoBehaviour:
   b_reStart: {fileID: 1267025219}
   b_back: {fileID: 638405877}
   s_capacity: {fileID: 1130556549}
-  tbc: {fileID: 997023600}
+  b_continue: {fileID: 0}
+  b_toTitle: {fileID: 0}
   fog: {fileID: 0}
+  pauseImg: {fileID: 0}
+  firstMeetUI: {fileID: 0}
+  pauseUI: {fileID: 0}
+  t_meetFishName: {fileID: 0}
+  t_meetFishInfo: {fileID: 0}
+  b_meetFishOk: {fileID: 0}
+  meetFishImg: {fileID: 0}
+  t_toatlCount: {fileID: 0}
+  t_meetCount: {fileID: 0}
+  t_rank: {fileID: 0}
+  meetFishImgList: []
+  popMeetFishUI: 1
 --- !u!114 &1501247984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22966,6 +23019,7 @@ MonoBehaviour:
   _maxSpeed: 0.4
   _accelTime: 5
   cameraAnim: 0
+  Mile: {fileID: 0}
 --- !u!114 &1501247986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22978,10 +23032,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf1d61b3dfc5097479725de7c327b435, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bgm:
-  - {fileID: 8300000, guid: b2ea41f78e7014720977393dc8038543, type: 3}
-  - {fileID: 8300000, guid: 7344e402e62d94bbab19374c91f4ec71, type: 3}
-  - {fileID: 8300000, guid: 327d6ebb7b0d8471099a11c144bcce0e, type: 3}
+  bgm: {fileID: 0}
+  nightBgm: {fileID: 0}
+  gameoverSound: {fileID: 0}
+  dockSound: {fileID: 0}
   bubble:
   - {fileID: 8300000, guid: 4014afd476b6bba4bb6f2f132c83ea31, type: 3}
   - {fileID: 8300000, guid: 8dbf72f4edd82984eae2581e32cbb89c, type: 3}
@@ -24656,6 +24710,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   length: 66
   id: 2
+  Line: {fileID: 0}
 --- !u!1001 &1628749391
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26621,6 +26676,10 @@ MonoBehaviour:
   - {fileID: 1195475460}
   - {fileID: 2048019636}
   pf: {fileID: 1550187273991854, guid: acfebf65e3f375f469ca869f6b778a7d, type: 3}
+  left: 0
+  right: 0
+  up: 0
+  down: 0
 --- !u!23 &1751857276
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -27389,6 +27448,10 @@ MonoBehaviour:
   - {fileID: 882078427}
   - {fileID: 7234239}
   pf: {fileID: 1550187273991854, guid: acfebf65e3f375f469ca869f6b778a7d, type: 3}
+  left: 0
+  right: 0
+  up: 0
+  down: 0
 --- !u!23 &1778083108
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -28059,6 +28122,10 @@ MonoBehaviour:
   - {fileID: 1160976895}
   - {fileID: 2087699431}
   pf: {fileID: 1550187273991854, guid: acfebf65e3f375f469ca869f6b778a7d, type: 3}
+  left: 0
+  right: 0
+  up: 0
+  down: 0
 --- !u!23 &1807732199
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -30712,6 +30779,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   length: 66
   id: 0
+  Line: {fileID: 0}
 --- !u!4 &1950103921
 Transform:
   m_ObjectHideFlags: 0
@@ -32652,6 +32720,10 @@ MonoBehaviour:
   - {fileID: 1751857271}
   - {fileID: 634326869}
   pf: {fileID: 1550187273991854, guid: acfebf65e3f375f469ca869f6b778a7d, type: 3}
+  left: 0
+  right: 0
+  up: 0
+  down: 0
 --- !u!23 &2048019642
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -33200,6 +33272,10 @@ MonoBehaviour:
   - {fileID: 173219228}
   - {fileID: 882078427}
   pf: {fileID: 1550187273991854, guid: acfebf65e3f375f469ca869f6b778a7d, type: 3}
+  left: 0
+  right: 0
+  up: 0
+  down: 0
 --- !u!23 &2087699436
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -33843,6 +33919,10 @@ MonoBehaviour:
   - {fileID: 1751857271}
   - {fileID: 1778083103}
   pf: {fileID: 1550187273991854, guid: acfebf65e3f375f469ca869f6b778a7d, type: 3}
+  left: 0
+  right: 0
+  up: 0
+  down: 0
 --- !u!23 &2105805346
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -34549,6 +34629,10 @@ MonoBehaviour:
   - {fileID: 2048019636}
   - {fileID: 7234239}
   pf: {fileID: 1550187273991854, guid: acfebf65e3f375f469ca869f6b778a7d, type: 3}
+  left: 0
+  right: 0
+  up: 0
+  down: 0
 --- !u!23 &2129898972
 MeshRenderer:
   m_ObjectHideFlags: 0
