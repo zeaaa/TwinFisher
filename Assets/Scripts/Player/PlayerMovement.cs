@@ -118,7 +118,7 @@ public class PlayerMovement : MonoBehaviour
 
 
         if (SceneData.mode == 2) {
-            if (((P1RTPressed && P2RTPressed) || Input.GetKey(KeyCode.Q)) && !killMovement)
+            if (((P1RTPressed && P2RTPressed) || Input.GetKey(KeyCode.Space)) && !killMovement)
             {
 
                 skillInput = true;
@@ -129,7 +129,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else 
         if (SceneData.mode == 1) {
-            if (((P1LTPressed && P1RTPressed) || Input.GetKey(KeyCode.Q)) && !killMovement)
+                if (((P1LTPressed && P1RTPressed) || Input.GetKey(KeyCode.Space)) && !killMovement)
             {
 
                 skillInput = true;
