@@ -23973,27 +23973,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 805146848}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd70d448b18cfbc46af26466f752332c, type: 3}
+  m_Script: {fileID: 11500000, guid: a22b3a7095a744a428c134b5e26ad68e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  visualizeFocus: 0
-  focalLength: 10
-  focalSize: 0.113
-  aperture: 0.076
-  focalTransform: {fileID: 2093483564}
-  maxBlurSize: 0.66
-  highResolution: 1
-  blurType: 0
-  blurSampleCount: 2
-  nearBlur: 0
-  foregroundOverlap: 0.1
-  dofHdrShader: {fileID: 4800000, guid: acd613035ff3e455e8abf23fdc8c8c24, type: 3}
-  dx11BokehShader: {fileID: 4800000, guid: d8e82664aa8686642a424c88ab10164a, type: 3}
-  dx11BokehThreshold: 0.5
-  dx11SpawnHeuristic: 0.0875
-  dx11BokehTexture: {fileID: 2800000, guid: a4cdca73d61814d33ac1587f6c163bca, type: 3}
-  dx11BokehScale: 1.2
-  dx11BokehIntensity: 2.5
+  mode: 1
+  quality: 1
+  blurArea: 5.01
+  maxBlurSize: 11.7
+  downsample: 0
+  tiltShiftShader: {fileID: 4800000, guid: bf34d2a25450349699e8ae6456fa7ca9, type: 3}
 --- !u!1 &807515195
 GameObject:
   m_ObjectHideFlags: 0
@@ -27334,7 +27322,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ff89502e78e0b343ae7607baef062ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  filp: 0
+  filp: 1
   bgm: {fileID: 8300000, guid: ff798797f670faf4a8b2110f340ae329, type: 3}
   nightBgm: {fileID: 8300000, guid: b60bd417aed3fd84ab2f3a98bc600097, type: 3}
   pondcamera: {fileID: 805146852}
@@ -66804,12 +66792,6 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 70c5ed19a72e6400aaec7185685b2c80, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92a886451b79940feb475ef8ce1c6cf3, type: 3}
---- !u!4 &2093483564 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 400000, guid: 92a886451b79940feb475ef8ce1c6cf3,
-    type: 3}
-  m_PrefabInstance: {fileID: 2093483563}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2093619809
 GameObject:
   m_ObjectHideFlags: 3
