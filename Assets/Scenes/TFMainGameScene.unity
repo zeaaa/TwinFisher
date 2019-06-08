@@ -254,10 +254,10 @@ MonoBehaviour:
   upDirection: {x: 0, y: 1, z: 0}
   tweenRigidbody: 0
   wps:
-  - {x: 3.462, y: 2.5452304, z: 69.25865}
-  - {x: 3.462, y: 2.6044164, z: 70.56626}
-  - {x: 3.462, y: 1.2026076, z: 70.22653}
-  - {x: 3.462, y: -1.1377167, z: 68.34601}
+  - {x: 3.462, y: 2.5452304, z: 74.93865}
+  - {x: 3.462, y: 2.6044164, z: 76.24626}
+  - {x: 3.462, y: 1.2026076, z: 75.90653}
+  - {x: 3.462, y: -1.1377167, z: 74.02601}
   fullWps: []
   path:
     wpLengths:
@@ -271,12 +271,12 @@ MonoBehaviour:
     subdivisionsXSegment: 10
     subdivisions: 60
     wps:
-    - {x: 3.432, y: -1.3007941, z: 66.96029}
-    - {x: 3.462, y: 2.5452304, z: 69.25865}
-    - {x: 3.462, y: 2.6044164, z: 70.56626}
-    - {x: 3.462, y: 1.2026076, z: 70.22653}
-    - {x: 3.462, y: -1.1377167, z: 68.34601}
-    - {x: 3.432, y: -1.3007941, z: 66.96029}
+    - {x: 3.432, y: -1.3007941, z: 72.64029}
+    - {x: 3.462, y: 2.5452304, z: 74.93865}
+    - {x: 3.462, y: 2.6044164, z: 76.24626}
+    - {x: 3.462, y: 1.2026076, z: 75.90653}
+    - {x: 3.462, y: -1.1377167, z: 74.02601}
+    - {x: 3.432, y: -1.3007941, z: 72.64029}
     controlPoints: []
     length: 11.629732
     isFinalized: 1
@@ -297,7 +297,7 @@ MonoBehaviour:
   showIndexes: 1
   showWpLength: 0
   pathColor: {r: 1, g: 1, b: 1, a: 0.5}
-  lastSrcPosition: {x: 3.432, y: -1.3007941, z: 66.96029}
+  lastSrcPosition: {x: 3.432, y: -1.3007941, z: 72.64029}
   wpsDropdown: 1
   dropToFloorOffset: 0
 --- !u!65 &7234241
@@ -310,7 +310,7 @@ BoxCollider:
   m_GameObject: {fileID: 7234238}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 3, y: 3, z: 3}
   m_Center: {x: 0, y: 0, z: 0}
@@ -2917,7 +2917,7 @@ BoxCollider:
   m_GameObject: {fileID: 173219227}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 3, y: 3, z: 3}
   m_Center: {x: 0, y: 0, z: 0}
@@ -10960,7 +10960,7 @@ BoxCollider:
   m_GameObject: {fileID: 882078426}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 3, y: 3, z: 3}
   m_Center: {x: 0, y: 0, z: 0}
@@ -18272,8 +18272,8 @@ MonoBehaviour:
   WebBaseColor: {r: 1, g: 1, b: 1, a: 1}
   WebCapacityColor: {r: 0.98823535, g: 0.52156866, b: 0.6627451, a: 1}
   WebFullColor: {r: 1, g: 0, b: 0, a: 1}
-  lp: {fileID: 602766146}
-  rp: {fileID: 137569219}
+  lp: {fileID: 0}
+  rp: {fileID: 0}
   forge: 500
   playerInnerColli: 1
   webFullHint: {fileID: 220365125}
@@ -22259,7 +22259,7 @@ BoxCollider:
   m_GameObject: {fileID: 1778083102}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 3, y: 3, z: 3}
   m_Center: {x: 0, y: 0, z: 0}
@@ -26455,10 +26455,10 @@ MonoBehaviour:
   upDirection: {x: 0, y: 1, z: 0}
   tweenRigidbody: 0
   wps:
-  - {x: 3.7340002, y: 5.1175375, z: 70.86086}
-  - {x: 3.7340002, y: 5.1767235, z: 72.16847}
-  - {x: 3.7340002, y: 3.7749143, z: 71.82874}
-  - {x: 3.7340002, y: 1.4345903, z: 69.94823}
+  - {x: 3.7340002, y: 5.1175375, z: 76.54086}
+  - {x: 3.7340002, y: 5.1767235, z: 77.84847}
+  - {x: 3.7340002, y: 3.7749143, z: 77.50874}
+  - {x: 3.7340002, y: 1.4345903, z: 75.62823}
   fullWps: []
   path:
     wpLengths:
@@ -26472,12 +26472,12 @@ MonoBehaviour:
     subdivisionsXSegment: 10
     subdivisions: 60
     wps:
-    - {x: 3.7040002, y: 1.2715127, z: 64.9625}
-    - {x: 3.7340002, y: 5.1175375, z: 70.86086}
-    - {x: 3.7340002, y: 5.1767235, z: 72.16847}
-    - {x: 3.7340002, y: 3.7749143, z: 71.82874}
-    - {x: 3.7340002, y: 1.4345903, z: 69.94823}
-    - {x: 3.7040002, y: 1.2715127, z: 64.9625}
+    - {x: 3.7040002, y: 1.2715127, z: 70.6425}
+    - {x: 3.7340002, y: 5.1175375, z: 76.54086}
+    - {x: 3.7340002, y: 5.1767235, z: 77.84847}
+    - {x: 3.7340002, y: 3.7749143, z: 77.50874}
+    - {x: 3.7340002, y: 1.4345903, z: 75.62823}
+    - {x: 3.7040002, y: 1.2715127, z: 70.6425}
     controlPoints: []
     length: 17.783615
     isFinalized: 1
@@ -26498,7 +26498,7 @@ MonoBehaviour:
   showIndexes: 1
   showWpLength: 0
   pathColor: {r: 1, g: 1, b: 1, a: 0.5}
-  lastSrcPosition: {x: 3.7040002, y: 1.2715127, z: 64.9625}
+  lastSrcPosition: {x: 3.7040002, y: 1.2715127, z: 70.6425}
   wpsDropdown: 1
   dropToFloorOffset: 0
 --- !u!65 &2048019638
@@ -26809,7 +26809,7 @@ BoxCollider:
   m_GameObject: {fileID: 2087699430}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 3, y: 3, z: 3}
   m_Center: {x: 0, y: 0, z: 0}

@@ -12,6 +12,9 @@ public class PondFishMovement : MonoBehaviour
     float timer;
     Vector3 target;
 
+    [SerializeField]
+    Transform camera;
+
     public GameObject cube;
     Animator anim;
     private int area;
@@ -29,8 +32,14 @@ public class PondFishMovement : MonoBehaviour
 
     private void Start()
     {
-        anim.speed = 0.1f;
+        //anim.speed = 0.1f;
         StartCoroutine(RandMove());
+    }
+
+    public void OnShow() {
+        anim.speed = 1.0f;
+        anim.Play("jump");
+        transform.LookAt(camera);
     }
 
     // Update is called once per frame
@@ -41,7 +50,7 @@ public class PondFishMovement : MonoBehaviour
         timer += Time.deltaTime;
 
         if( (nav.destination - target).magnitude < 0.1f){
-            anim.speed = 0.1f;
+            //anim.speed = 0.1f;
         }
     }
     public void SetFishSpeed(float speed)
