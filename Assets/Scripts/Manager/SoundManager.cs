@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
+    [Rename("颠倒黑白")]
+    [SerializeField]
+    public bool filp = false;
+
     [SerializeField]
     AudioClip bgm;
 
@@ -50,7 +54,11 @@ public class SoundManager : MonoBehaviour
     {
         string path =  "player.log";
         GetTime.LogPlay(path);
-        if (GetTime.IsDay())
+        bool isday = GetTime.IsDay();
+        if (filp)
+            isday = !isday;
+
+        if (isday)
         {
             bgmAS.clip = bgm;
             daylight.gameObject.SetActive(true);

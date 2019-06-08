@@ -148,7 +148,6 @@ public class SceneLoader : MonoBehaviour
         //Application.OpenURL(@"C:\Windows\System32\osk.exe");
         b_pond.onClick.AddListener(ShowScroll);
         b_back.onClick.AddListener(HideScroll);
-
         b_list.onClick.AddListener(delegate { UpdateUIGroup(0); });
         b_archievement.onClick.AddListener(delegate { UpdateUIGroup(2); });
 
@@ -197,8 +196,6 @@ public class SceneLoader : MonoBehaviour
         b_archievement.GetComponent<Image>().sprite = buttonOrigin;
         img_sb0.color = imgSelectedColor;
         img_sb1.color = imgDeSelectedColor;
-
-
     }
 
 
@@ -206,9 +203,6 @@ public class SceneLoader : MonoBehaviour
     void UpdateUIGroup(int id)
     {
         curPage = id;
-
-        
-
         if (id == 0) {// list page
             arhievement.gameObject.SetActive(false);
             detailView.gameObject.SetActive(false);
@@ -342,7 +336,9 @@ public class SceneLoader : MonoBehaviour
                 else
                 {                
                     percent = arrayInt[i] / (float)fishDataList.fish[i].research;
-                }                
+                }
+                if (percent > 1)
+                    percent = 1.0f;
                 btns[i].gameObject.transform.Find("per").GetComponent<Text>().text = (percent * 100f).ToString("0") + "%";
                 btns[i].gameObject.transform.Find("Slider").GetComponent<Slider>().value = percent;
             }
@@ -388,6 +384,8 @@ public class SceneLoader : MonoBehaviour
                 {
                     percent = arrayInt[i] / (float)fishDataList.fish[i].research;
                 }
+                if (percent > 1)
+                    percent = 1.0f;
                 btns[i].gameObject.transform.Find("per").GetComponent<Text>().text = (percent * 100f).ToString("0") + "%";
                
             }

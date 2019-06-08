@@ -18,6 +18,7 @@ public enum GameState
 public class GameManager : MonoBehaviour {
 
     //public static GameManager instance;
+   
 
     [SerializeField]
     int _score;
@@ -178,6 +179,7 @@ public class GameManager : MonoBehaviour {
     void Awake()
     {
         Initialize();
+        
     }
     // Use this for initialization
     void Start () {

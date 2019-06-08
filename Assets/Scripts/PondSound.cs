@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class PondSound : MonoBehaviour
 {
+    [Rename("颠倒黑白")]
+    [SerializeField]
+    public bool filp = false;
+
     [SerializeField]
     AudioClip bgm;
 
@@ -21,7 +25,11 @@ public class PondSound : MonoBehaviour
     {
         bgmAS = transform.Find("Bgm").GetComponent<AudioSource>();
         //instance = this;
-        if (GetTime.IsDay())
+        bool isday = GetTime.IsDay();
+        if (filp)
+            isday = !isday;
+
+        if (isday)
         {
             bgmAS.clip = bgm;
             daylight.gameObject.SetActive(true);
