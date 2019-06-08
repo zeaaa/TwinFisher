@@ -16,7 +16,8 @@ public class PondFishMovement : MonoBehaviour
 
 
     FishState state;
-    public float speed;
+
+
     float timer;
     Vector3 target;
 
@@ -24,17 +25,26 @@ public class PondFishMovement : MonoBehaviour
     Transform lookAtCamera;
 
     
+    [Rename("游多久停")]
+    [SerializeField]
+    float waitTime = 5.0f;
+    [Rename("停多久")]
+    [SerializeField]
+    float idleTime = 10.0f;
+    float startTime = 10.0f;
 
-    float waitTime = 2.0f;
-    float idleTime = 1.0f;
+    float m_waitTime;
+    float m_idleTime;
 
     Animator anim;
     private int area;
     // Start is called before the first frame update
     void Awake()
     {
+        
         anim = GetComponent<Animator>();
         path = GetComponent<DOTweenPath>();
+        //path.duration = speed;
         state = FishState.move;
         //path.loopType = LoopType.Incremental;
         //path.loops = -1;
@@ -42,7 +52,9 @@ public class PondFishMovement : MonoBehaviour
 
     private void Start()
     {
-
+        m_waitTime = Random.Range(0, 5);
+        m_idleTime = Random.Range(0, 5);
+       
     }
 
     Vector3 stayPos;
@@ -83,12 +95,14 @@ public class PondFishMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+
+        transform.rotation = new Quaternion(-0.1f, transform.rotation.y, transform.rotation.z, transform.rotation.w);
         switch (state) {
             case FishState.idle: {
                     timer += Time.deltaTime;
-                    if (timer>idleTime) {
+                    if (timer>m_idleTime) {
                         timer = 0;
+                        m_idleTime = idleTime + TFMath.GaussRand() * idleTime;
                         anim.speed = 1.0f;
                         state = FishState.move;
                         path.DOPlay();
@@ -100,8 +114,9 @@ public class PondFishMovement : MonoBehaviour
             case FishState.move:
                 {
                     timer += Time.deltaTime;
-                    if (timer > waitTime) {
+                    if (timer > m_waitTime) {
                         timer = 0;
+                        m_waitTime = waitTime + TFMath.GaussRand() * waitTime;
                         anim.speed = 0.1f;
                         state = FishState.idle;
                         path.DOPause();

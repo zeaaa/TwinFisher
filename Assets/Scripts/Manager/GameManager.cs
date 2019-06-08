@@ -323,9 +323,8 @@ public class GameManager : MonoBehaviour {
         _inSkill = true;
         WebAnim();
         DisableCollision("Fish", "WebNode", true);
-        //DisableCollision("Fish", "Player", true);
         DisableCollision("Obstacle", "WebNode", true);    
-        DisableCollision("Obstacle", "Player", true);
+        //DisableCollision("Obstacle", "Player", true);
         ChangeWebMatColor(WebSkillColor);
         //after _skillDuration realTime;
         yield return new WaitForSeconds(_skillDuration);
@@ -340,7 +339,7 @@ public class GameManager : MonoBehaviour {
             //DisableCollision("Fish", "Player", false);
         }
         DisableCollision("Obstacle", "WebNode", false);   
-        DisableCollision("Obstacle", "Player", false);
+       // DisableCollision("Obstacle", "Player", false);
     }
 
 
