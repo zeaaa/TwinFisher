@@ -276,8 +276,6 @@ public class SpawnManager : MonoBehaviour {
         if (spawnObstacleTimer > spawnObstacleInterval)
         {
             spawnObstacleTimer = 0;
-
-            Debug.Log(Time.timeSinceLevelLoad);
             float amount = obstacleAmountBegin + (Time.timeSinceLevelLoad / 60.0f)*(obstacleAmountFinal - obstacleAmountBegin);
             if (Time.timeSinceLevelLoad > 60.0f)
                 amount = obstacleAmountFinal;
@@ -287,7 +285,7 @@ public class SpawnManager : MonoBehaviour {
             //int pt = GetSpawnPoint();
             int pt = UnityEngine.Random.Range(0, spawnObstaclePoints.Length);
             if (pt > -1) {
-                int id = UnityEngine.Random.Range(0, 1);
+                int id = UnityEngine.Random.Range(0, 3);
                 GameObject obj = (GameObject)Resources.Load("Prefabs/Rock/rock" + (id + 1).ToString());
                 Vector3 spawnPosition = spawnObstaclePoints[pt].point;
                 Instantiate(obj, spawnPosition, Quaternion.identity);

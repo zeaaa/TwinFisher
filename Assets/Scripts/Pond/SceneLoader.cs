@@ -404,7 +404,7 @@ public class SceneLoader : MonoBehaviour
     }
 
     public void OnClickListButton(int id) {
-        Debug.Log("call");
+        //Debug.Log("call");
         defaultFishID = id;
         listButtons[id].transform.Find("Selected").gameObject.SetActive(false);
         UpdateUIGroup(1);      

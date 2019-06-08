@@ -21360,7 +21360,7 @@ MonoBehaviour:
   bgm: {fileID: 8300000, guid: 37861cb5b00c7e544a9d53a7960e9c11, type: 3}
   nightBgm: {fileID: 8300000, guid: 352b1c6b3a8624245868457ae0f3258e, type: 3}
   gameoverSound: {fileID: 8300000, guid: 327d6ebb7b0d8471099a11c144bcce0e, type: 3}
-  dockSound: {fileID: 8300000, guid: 2e4a2ef0a07ace44aa6e4daa4871ce24, type: 3}
+  dockSound: {fileID: 8300000, guid: 5cdef6148b133dd40b4c99dd0db06ebc, type: 3}
   lights:
   - {fileID: 505641460}
   - {fileID: 1808020560}
