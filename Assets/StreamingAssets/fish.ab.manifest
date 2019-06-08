@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 64685203
+CRC: 2499159740
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 3b4efada884acdcb7a27f7e8d203f6d5
+    Hash: 5aaa970ed25d41b4c88d8922d89f0311
   TypeTreeHash:
     serializedVersion: 2
     Hash: a766d75ea8097aead62690ae27310fb0
@@ -57,7 +57,6 @@ Assets:
 - Assets/Resources/Prefabs/Fish/013.prefab
 - Assets/Resources/Prefabs/Fish/017.prefab
 - Assets/Resources/Prefabs/Fish/008.prefab
-- Assets/Resources/Prefabs/Fish/006.prefab
 - Assets/Resources/Prefabs/Fish/012.prefab
 - Assets/Resources/Prefabs/Fish/002.prefab
 - Assets/Resources/Prefabs/Fish/011.prefab

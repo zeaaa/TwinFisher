@@ -98,7 +98,7 @@ public class GameManager : MonoBehaviour {
 
         //ClearFishMeet();
 
-        Screen.SetResolution(1080, 1920, false);
+        //Screen.SetResolution(1080, 1920, false);
         _score = 0;
         _inSkill = false;
         _curCapacity = 0;
@@ -123,6 +123,7 @@ public class GameManager : MonoBehaviour {
         DisableCollision("Fish", "Web", false);
         DisableCollision("Obstacle", "Player", false);
         DisableCollision("Obstacle", "Web", false);
+        DisableCollision("Obstacle", "WebNode", false);
         //disable
         DisableCollision("Fish", "Obstacle", true);
         DisableCollision("WebNode", "Web", true);

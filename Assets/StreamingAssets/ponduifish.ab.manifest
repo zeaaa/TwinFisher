@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 1372698514
+CRC: 1433821112
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 734ce634f2ee703f9895bfcdb35f88f6
+    Hash: eedd4c2bfadcd14bcf94cfa0c43b449f
   TypeTreeHash:
     serializedVersion: 2
     Hash: ea5a42e0fd8ea905efa7aa926a3b8944
@@ -15,21 +15,38 @@ ClassTypes:
   Script: {instanceID: 0}
 Assets:
 - "Assets/UI/\u9C7C\u5858UI\u9C7C/17.png"
+- Assets/UI/Detail/13d.png
+- Assets/UI/Detail/6d.png
 - "Assets/UI/\u9C7C\u5858UI\u9C7C/10.png"
 - "Assets/UI/\u9C7C\u5858UI\u9C7C/1.png"
 - "Assets/UI/\u9C7C\u5858UI\u9C7C/8.png"
+- Assets/UI/Detail/2d.png
+- Assets/UI/Detail/10d.png
 - "Assets/UI/\u9C7C\u5858UI\u9C7C/4.png"
 - "Assets/UI/\u9C7C\u5858UI\u9C7C/16.png"
 - "Assets/UI/\u9C7C\u5858UI\u9C7C/7.png"
 - "Assets/UI/\u9C7C\u5858UI\u9C7C/2.png"
+- Assets/UI/Detail/5d.png
 - "Assets/UI/\u9C7C\u5858UI\u9C7C/13.png"
+- Assets/UI/Detail/11d.png
 - "Assets/UI/\u9C7C\u5858UI\u9C7C/14.png"
 - "Assets/UI/\u9C7C\u5858UI\u9C7C/12.png"
+- Assets/UI/Detail/14d.png
+- Assets/UI/Detail/9d.png
+- Assets/UI/Detail/4d.png
 - "Assets/UI/\u9C7C\u5858UI\u9C7C/Null.png"
+- Assets/UI/Detail/16d.png
+- Assets/UI/Detail/3d.png
+- Assets/UI/Detail/1d.png
+- Assets/UI/Detail/7d.png
+- Assets/UI/Detail/15d.png
 - "Assets/UI/\u9C7C\u5858UI\u9C7C/11.png"
+- Assets/UI/Detail/17d.png
 - "Assets/UI/\u9C7C\u5858UI\u9C7C/6.png"
 - "Assets/UI/\u9C7C\u5858UI\u9C7C/5.png"
 - "Assets/UI/\u9C7C\u5858UI\u9C7C/9.png"
 - "Assets/UI/\u9C7C\u5858UI\u9C7C/15.png"
+- Assets/UI/Detail/8d.png
 - "Assets/UI/\u9C7C\u5858UI\u9C7C/3.png"
+- Assets/UI/Detail/12d.png
 Dependencies: []

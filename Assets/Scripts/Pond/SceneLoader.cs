@@ -31,11 +31,10 @@ public class SceneLoader : MonoBehaviour
     RectTransform scroll;
 
     [SerializeField]
-    Button b_sb0;
+    Button b_list;
     [SerializeField]
-    Button b_sb1;
-    [SerializeField]
-    Button b_sb2;
+    Button b_archievement;
+
     [SerializeField]
     RectTransform scrollView;
     [SerializeField]
@@ -77,8 +76,7 @@ public class SceneLoader : MonoBehaviour
     [SerializeField]
     Sprite buttonSelected;
 
-    [SerializeField]
-    Button defaultFish;
+
 
     Image img_sb0;
     Image img_sb1;
@@ -99,13 +97,22 @@ public class SceneLoader : MonoBehaviour
     RectTransform detailContent;
     int curPage;
 
-    //Button[] buttons;
+    [SerializeField]
+    Button[] listButtons;
+    [SerializeField]
+    Button[] detailButtons;
+
+    int defaultFishID;
+
     private void Awake()
     {
         //PlayerPrefs.SetInt("FishCount", 0);
         //PlayerPrefs.SetFloat("Farthest", 100f);
         gameState = PondGameState.title;
         curPage = 0;
+        defaultFishID = 0;
+        detailWidth = detailButtons[0].GetComponent<RectTransform>().rect.width;
+        listHeight = listButtons[0].GetComponent<RectTransform>().rect.height;
     }
 
     void OpenMainCamera() {
@@ -142,16 +149,14 @@ public class SceneLoader : MonoBehaviour
         b_pond.onClick.AddListener(ShowScroll);
         b_back.onClick.AddListener(HideScroll);
 
-        b_sb0.onClick.AddListener(ShowList);
-        b_sb1.onClick.AddListener(delegate { int id = int.Parse(defaultFish.name.Split('(', ')')[1]) - 1; ShowDetail(id,false); });
-        b_sb2.onClick.AddListener(ShowArchievement);
+        b_list.onClick.AddListener(delegate { UpdateUIGroup(0); });
+        b_archievement.onClick.AddListener(delegate { UpdateUIGroup(2); });
 
-        buttonOrigin = b_sb0.GetComponent<Image>().sprite;
+        buttonOrigin = b_list.GetComponent<Image>().sprite;
         boyOrigin = boy.sprite;
         girlOrigin = girl.sprite;
-        img_sb0 = b_sb0.transform.Find("Image").GetComponent<Image>();
-        img_sb1 = b_sb1.transform.Find("Image").GetComponent<Image>();
-        img_sb2 = b_sb2.transform.Find("Image").GetComponent<Image>();
+        img_sb0 = b_list.transform.Find("Image").GetComponent<Image>();
+        img_sb1 = b_archievement.transform.Find("Image").GetComponent<Image>();
 
         //strangely it doesnt work
         //buttons = scrollView.GetComponentsInChildren<Button>();
@@ -185,41 +190,54 @@ public class SceneLoader : MonoBehaviour
         fishType.text = count.ToString();
         FillList();
         FillDetail();
-        ShowListUI();
-    }
-
-
-
-    void ShowListUI()
-    {
         arhievement.gameObject.SetActive(false);
         detailView.gameObject.SetActive(false);
         scrollView.gameObject.SetActive(true);
-        b_sb0.GetComponent<Image>().sprite = buttonSelected;
-        b_sb1.GetComponent<Image>().sprite = buttonOrigin;
-        b_sb2.GetComponent<Image>().sprite = buttonOrigin;
+        b_list.GetComponent<Image>().sprite = buttonSelected;
+        b_archievement.GetComponent<Image>().sprite = buttonOrigin;
         img_sb0.color = imgSelectedColor;
         img_sb1.color = imgDeSelectedColor;
-        img_sb2.color = imgDeSelectedColor;
+
+
     }
 
-    public void OnPondSelected()
-    {
-        girl.sprite = girlSelected;
-    }
-    public void OnPondDeselected()
-    {
-        girl.sprite = girlOrigin;
-    }
 
-    public void OnStartSelected()
+    //called when switch page
+    void UpdateUIGroup(int id)
     {
-        boy.sprite = boySelected;
-    }
-    public void OnStartDeselected()
-    {
-        boy.sprite = boyOrigin;
-       
+        curPage = id;
+
+        
+
+        if (id == 0) {// list page
+            arhievement.gameObject.SetActive(false);
+            detailView.gameObject.SetActive(false);
+            scrollView.gameObject.SetActive(true);
+            b_list.GetComponent<Image>().sprite = buttonSelected;
+            b_archievement.GetComponent<Image>().sprite = buttonOrigin;
+            img_sb0.color = imgSelectedColor;
+            img_sb1.color = imgDeSelectedColor;
+            MoveListRect();
+        }
+        else if (id == 1){// detail page
+            arhievement.gameObject.SetActive(false);
+            detailView.gameObject.SetActive(true);
+            scrollView.gameObject.SetActive(false);
+            b_list.GetComponent<Image>().sprite = buttonSelected;
+            b_archievement.GetComponent<Image>().sprite = buttonOrigin;
+            img_sb0.color = imgSelectedColor;
+            img_sb1.color = imgDeSelectedColor;
+            MoveDetailRect();
+        }
+        else if (id == 2){// archieve page
+            arhievement.gameObject.SetActive(true);
+            detailView.gameObject.SetActive(false);
+            scrollView.gameObject.SetActive(false);
+            b_list.GetComponent<Image>().sprite = buttonOrigin;
+            b_archievement.GetComponent<Image>().sprite = buttonSelected;
+            img_sb0.color = imgDeSelectedColor;
+            img_sb1.color = imgSelectedColor;
+        }
     }
 
     private void OnDestroy()
@@ -228,79 +246,75 @@ public class SceneLoader : MonoBehaviour
         spriteAB.Unload(true);
         b_pond.onClick.RemoveAllListeners();
         b_back.onClick.RemoveAllListeners();
-        b_sb1.onClick.RemoveAllListeners();
-        b_sb2.onClick.RemoveAllListeners();
+        b_archievement.onClick.RemoveAllListeners();
+        b_list.onClick.RemoveAllListeners();
         //for (int i = 0; i < buttons.Length; i++)
         //{
         //    buttons[i].onClick.RemoveAllListeners();
         //}
     }
 
+
+    //in list page , left or right 
     public void OnFishListSelected(GameObject sender) {
         int id = int.Parse(sender.name.Split('(', ')')[1]) - 1;
-        float offset = id * 204f;
-        if (offset > fishDataList.fish.Count * 204f - 680f)
-            offset = fishDataList.fish.Count * 204f - 680f;
-
+        defaultFishID = id;
+        float offset = id * listHeight;
+        if (offset > fishDataList.fish.Count * listHeight - 680f)
+            offset = fishDataList.fish.Count * listHeight - 680f;
         content.DOAnchorPosY(offset, 0.5f);
         sender.transform.Find("Selected").gameObject.SetActive(true);
     }
+
+
 
     public void OnFishListDeSelected(GameObject sender)
     {
         sender.transform.Find("Selected").gameObject.SetActive(false);
     }
 
+
+
     public void OnFishDetailSelected(GameObject sender)
     {
         int id = int.Parse(sender.name.Split('(', ')')[1]) - 1;
         float width = sender.GetComponent<RectTransform>().rect.width;
         float offset = id * width;
+        defaultFishID = id;
         bool[] array = PlayerPrefsX.GetBoolArray("FishType", false, 17);
         if (array[id])
         {
             OpenFishCamera(id);
             fish[id].GetComponent<PondFishMovement>().OnShow();
         }
-
-
         detailContent.DOAnchorPosX(-offset, 0.5f);
        
         sender.GetComponent<Button>().Select();
     }
 
+    float listHeight;
 
-    public void OnFishDetailSelectedNoAnim(GameObject sender)
+    public void MoveListRect()
     {
-        int id = int.Parse(sender.name.Split('(', ')')[1]) - 1;
-        float width = sender.GetComponent<RectTransform>().rect.width;
-        float offset = id * width;
-        bool[] array = PlayerPrefsX.GetBoolArray("FishType", false, 17);
-        if (array[id])
-        {
-            OpenFishCamera(id);
-            fish[id].GetComponent<PondFishMovement>().OnShow();      
-        }
-
-
-        detailContent.DOAnchorPosX(-offset, 0.0f);
-        sender.GetComponent<Button>().Select();
+        int id = defaultFishID;
+        float offset = id * listHeight;
+        if (offset > fishDataList.fish.Count * listHeight - 680f)
+            offset = fishDataList.fish.Count * listHeight - 680f;
+        content.DOAnchorPosY(offset, 0.0f);
+        listButtons[id].Select();
+        //sender.transform.Find("Selected").gameObject.SetActive(true);
     }
+
+    float detailWidth;
+
+
 
 
     public void OnFishDetailDeSelected(GameObject sender)
     {
         
     }
-
-
-
-
-    public void OnClickShowDetail(GameObject sender) {
-        defaultFish = sender.GetComponent<Button>();
-        int id = int.Parse(sender.name.Split('(', ')')[1]) - 1;
-        ShowDetail(id,false);
-    }
+    
     //when switch scene , unload automaticly
     AssetBundle spriteAB;
     void FillList() {
@@ -346,8 +360,6 @@ public class SceneLoader : MonoBehaviour
         }    
         //dont unload ab here
     }
-
-
     void FillDetail ()
     {
 
@@ -359,16 +371,12 @@ public class SceneLoader : MonoBehaviour
 #endif
         Button[] btns = detailContent.GetComponentsInChildren<Button>();
         bool[] array = PlayerPrefsX.GetBoolArray("FishType", false, fishDataList.fish.Count);
-
-        //for (int i = 0; i < fishDataList.fish.Count; i++) {
-        //    Debug.Log(fishDataList.fish[i].research);
-        //}
         for (int i = 0; i < btns.Length; i++)
         {
             int[] arrayInt = PlayerPrefsX.GetIntArray("FishCountArray", 0, fishDataList.fish.Count);
             if (array[i])
             {
-                btns[i].gameObject.transform.Find("Image").GetComponent<Image>().sprite = spriteAB.LoadAsset<Sprite>((i + 1).ToString());
+                btns[i].gameObject.transform.Find("Image").GetComponent<Image>().sprite = spriteAB.LoadAsset<Sprite>((i + 1).ToString() + "d");
                 btns[i].gameObject.transform.Find("name").GetComponent<Text>().text = fishDataList.fish[i].name;
                 btns[i].gameObject.transform.Find("Info").GetComponent<Text>().text = fishDataList.fish[i].info;
                 
@@ -385,69 +393,38 @@ public class SceneLoader : MonoBehaviour
             }
             else
             {
-
                 btns[i].gameObject.transform.Find("Image").GetComponent<Image>().sprite = spriteAB.LoadAsset<Sprite>("Null");
                 btns[i].gameObject.transform.Find("name").GetComponent<Text>().text = "尚未遇到的鱼";
                 btns[i].gameObject.transform.Find("Info").GetComponent<Text>().text = "???";
                 float percent = 0;
                 btns[i].gameObject.transform.Find("per").GetComponent<Text>().text = percent.ToString("0") + "%";            
             }
-            btns[i].gameObject.transform.Find("meet").GetComponent<Text>().text = arrayInt[i].ToString();
+            btns[i].gameObject.transform.Find("meet").GetComponent<Text>().text = arrayInt[i].ToString() + "次";
             btns[i].gameObject.transform.Find("Range").GetComponent<Text>().text = fishDataList.fish[i].range;
         }
         //dont unload ab here
     }
 
-    void ShowList()
-    {
-        curPage = 0;
-        ShowListUI();
+    public void OnClickListButton(int id) {
+        Debug.Log("call");
+        defaultFishID = id;
+        listButtons[id].transform.Find("Selected").gameObject.SetActive(false);
+        UpdateUIGroup(1);      
     }
 
-    //rewrite!
-    public void ShowDetail(int id,bool hasAnim)
+    //0 to 1 enter
+    public void MoveDetailRect()
     {
-        curPage = 1;
-        arhievement.gameObject.SetActive(false);
-        detailView.gameObject.SetActive(true);
-        scrollView.gameObject.SetActive(false);
-
-        b_sb0.GetComponent<Image>().sprite = buttonOrigin;
-        b_sb1.GetComponent<Image>().sprite = buttonSelected;
-        b_sb2.GetComponent<Image>().sprite = buttonOrigin;
-
-        img_sb0.color = imgDeSelectedColor;
-        img_sb1.color = imgSelectedColor;
-        img_sb2.color = imgDeSelectedColor;
-        //Debug.Log("data" + "(" + (id + 1).ToString() + ")");
-
-        if(hasAnim)
-            OnFishDetailSelected(GameObject.Find("data " + "(" + (id+1).ToString()+ ")"));
-        else
-            OnFishDetailSelectedNoAnim(GameObject.Find("data " + "(" + (id + 1).ToString() + ")"));
-
-        //name.text = fishDataList.fish[id].name;
-        //info.text = fishDataList.fish[id].info;
-        //int[] arrayInt = PlayerPrefsX.GetIntArray("FishCountArray", 0, fishDataList.fish.Count);
-        //meetTime.text = arrayInt[id].ToString();
-        //range.text = fishDataList.fish[id].range;
-        //research.text = (arrayInt[id]/(float)fishDataList.fish[id].research*100).ToString() + "%";
-
-    }
-
-    void ShowArchievement()
-    {
-        curPage = 2;
-        arhievement.gameObject.SetActive(true);
-        detailView.gameObject.SetActive(false);
-        scrollView.gameObject.SetActive(false);
-        b_sb0.GetComponent<Image>().sprite = buttonOrigin;
-        b_sb1.GetComponent<Image>().sprite = buttonOrigin;
-        b_sb2.GetComponent<Image>().sprite = buttonSelected;
-
-        img_sb0.color = imgDeSelectedColor;
-        img_sb1.color = imgDeSelectedColor;
-        img_sb2.color = imgSelectedColor;
+        int id = defaultFishID;
+        float offset = id * detailWidth;
+        bool[] array = PlayerPrefsX.GetBoolArray("FishType", false, 17);
+        if (array[id])
+        {
+            OpenFishCamera(id);
+            fish[id].GetComponent<PondFishMovement>().OnShow();
+        }
+        detailContent.DOAnchorPosX(-offset, 0.0f);   
+        detailButtons[id].Select();
     }
 
     //show pannel
@@ -507,19 +484,23 @@ public class SceneLoader : MonoBehaviour
     }
 
 
-    float lastFrameLRT = 0;
+    //update here!!
+    //!!!!!!!!!!!!
     // Update is called once per frame
     void Update()
     {
-        bool LTPressed= false;
-        bool RTPressed = false;
-        float LRT = Input.GetAxis("JoyStick1LRT");
-        if (lastFrameLRT == 0 && LRT > 0.05f)
-            RTPressed = true;
-        if (lastFrameLRT == 0 && LRT < -0.05f)
-            LTPressed = true;
-           
-        lastFrameLRT = LRT;
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Screen.fullScreen = false;  //退出全屏         
+
+        }
+        if (Input.GetKeyDown(KeyCode.F11))
+        {
+            Resolution[] resolutions = Screen.resolutions;
+            Screen.SetResolution(resolutions[resolutions.Length - 1].width, resolutions[resolutions.Length - 1].height, true);
+            Screen.fullScreen = true;
+        }
+    
         if (gameState.Equals(PondGameState.title)&& UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject==null) {
             if (Input.GetAxis("Vertical")!=0 || Input.GetAxis("Horizontal")!=0) {
                 b_start.Select();
@@ -527,39 +508,46 @@ public class SceneLoader : MonoBehaviour
         }
         if (gameState.Equals(PondGameState.pannel)){
             switch (curPage) {
-                case 0:
-                    { 
-                        if (Input.GetKeyDown(KeyCode.Joystick1Button5)) {
-                            if (UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject == null || UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name.Equals(b_back.name))
-                            {
-                                int id = int.Parse(defaultFish.name.Split('(', ')')[1]) - 1;
-                                ShowDetail(id,false);
-                            } else {
-                                int id = int.Parse(UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name.Split('(', ')')[1]) - 1;
-                                ShowDetail(id,false);
-                                defaultFish = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.GetComponent<Button>();
-                            }                        
+                case 0:// when in list page 
+                    {
+
+                        //press b Go back to title 
+                        if (Input.GetKeyDown(KeyCode.Joystick1Button1))
+                        {
+                            HideScroll();
+                            b_pond.Select();
+                            break;
                         }
 
+                        // key RB
+                        if (Input.GetKeyDown(KeyCode.Joystick1Button5)) {                    
+                            UpdateUIGroup(2);
+                        }
+
+                        //l-pad when selected nothing
                         if (UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject == null)
                         {
                             if (Input.GetAxis("Vertical") != 0 || Input.GetAxis("Horizontal") != 0)
                             {
-                                defaultFish.Select();
+                                listButtons[defaultFishID].Select();
                             }
                         }
                         break; }
                 case 1: 
                     {
-                        if (Input.GetKeyDown(KeyCode.Joystick1Button4))
+               
+                        //press b Go back to list 
+                        if (Input.GetKeyDown(KeyCode.Joystick1Button1))
                         {
-                            defaultFish.Select();
-                            ShowList();
+                            UpdateUIGroup(0);
+                            
                             break;
                         }
+
+                        //RT
                         if (Input.GetKeyDown(KeyCode.Joystick1Button5))
                         {
-                            ShowArchievement();
+                            UpdateUIGroup(2);
                             break;
                         }
 
@@ -596,10 +584,21 @@ public class SceneLoader : MonoBehaviour
                     }
                 case 2:
                     {
+                        //press b Go back to title 
+                        if (Input.GetKeyDown(KeyCode.Joystick1Button1))
+                        {
+                            HideScroll();
+                            b_pond.Select();
+                            break;
+                        }
+
+
+                        //lt
                         if (Input.GetKeyDown(KeyCode.Joystick1Button4))
                         {
-                            int id = int.Parse(defaultFish.name.Split('(', ')')[1]) - 1;
-                            ShowDetail(id,false);
+                            UpdateUIGroup(0);
+                            
+                            break;
                         }                     
                         
                         if (UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject == null)
@@ -638,5 +637,25 @@ public class SceneLoader : MonoBehaviour
         moveButton.onComplete =  delegate { SceneData.nextSceneId = 2; SceneManager.LoadScene(1); };
         //bg.DOFade(1.0f, 3.0f);
         yield return null;
+    }
+
+
+    public void OnPondSelected()
+    {
+        girl.sprite = girlSelected;
+    }
+    public void OnPondDeselected()
+    {
+        girl.sprite = girlOrigin;
+    }
+
+    public void OnStartSelected()
+    {
+        boy.sprite = boySelected;
+    }
+    public void OnStartDeselected()
+    {
+        boy.sprite = boyOrigin;
+
     }
 }

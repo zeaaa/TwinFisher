@@ -64,6 +64,8 @@ public class UIManager : MonoBehaviour {
     Text t_toatlCount;
     [SerializeField]
     Text t_meetCount;
+    [SerializeField]
+    Text t_rank;
 
     [SerializeField]
     Sprite[] meetFishImgList;
@@ -182,7 +184,9 @@ public class UIManager : MonoBehaviour {
     }
 
     IEnumerator IEShowGameOverUI() {
+        Debug.Log("set text");
         GameManager.gameState = GameState.Animating;
+        
         t_toatlCount.text = GameManager.totalMeet.ToString();
         t_meetCount.text = GameManager.newMeet.ToString();
         yield return new WaitForSeconds(1f);
@@ -192,6 +196,10 @@ public class UIManager : MonoBehaviour {
         move.SetEase(Ease.InQuad);
         move.SetUpdate(true);
         move.onComplete = delegate (){
+            if (PathManager.rank > 0)
+                t_rank.text = "   第" + PathManager.rank.ToString() + "名!";
+            else
+                t_rank.text = "收获";
             r_gameOver.DOShakeRotation(3.0f, 5.0f).SetUpdate(true);
             b_reStart.interactable = true;
             b_back.interactable = true;
