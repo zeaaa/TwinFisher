@@ -133,10 +133,12 @@ public class SpawnManager : MonoBehaviour {
     {
         InitSpawnPoints();
         Obstacle.GameOverHandler += StopSpawning;
+        PathManager.OnOverDistance += SpawnShoal;
     }
 
     void OnDestroy() {
         Obstacle.GameOverHandler -= StopSpawning;
+        PathManager.OnOverDistance -= SpawnShoal;
     }
 
     void StopSpawning(int i) {
@@ -210,6 +212,10 @@ public class SpawnManager : MonoBehaviour {
         }
     }
 
+    void SpawnShoal(object sender,EventArgs args) {
+        StartCoroutine(Spawnshoal());
+    }
+
     int GetSpawnPoint() {
         spawnPointsIdList.Clear();
         for (int i = 0; i < spawnPointSize; i++)
@@ -240,7 +246,7 @@ public class SpawnManager : MonoBehaviour {
     }
 
     IEnumerator Spawnshoal() {
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 20; i++) {
             SpawnFishByID(0, GetSpawnPoint());
             yield return new WaitForSeconds(0.2f);
         }
@@ -258,14 +264,15 @@ public class SpawnManager : MonoBehaviour {
             BGScroller.spawnTimes++;
         }
     }
-    
+
+
     void SpawnObstacle()
     {
         spawnObstacleTimer += Time.deltaTime;
         if (spawnObstacleTimer > spawnObstacleInterval)
         {
             spawnObstacleTimer = 0;
-            spawnObstacleInterval = TFMath.GaussRand() * 60 / (float)obstacleAmount;
+            spawnObstacleInterval = 1.0f + TFMath.GaussRand() * 60 / (float)obstacleAmount;
 
 
             //int pt = GetSpawnPoint();
@@ -275,8 +282,7 @@ public class SpawnManager : MonoBehaviour {
                 GameObject obj = (GameObject)Resources.Load("Prefabs/Rock/rock" + (id + 1).ToString());
                 Vector3 spawnPosition = spawnObstaclePoints[pt].point;
                 Instantiate(obj, spawnPosition, Quaternion.identity);
-            }        
+            }
         }
     }
-
 }

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.UI;
+using System;
+
 public class PathManager : MonoBehaviour {
 
     [SerializeField]
@@ -43,6 +45,7 @@ public class PathManager : MonoBehaviour {
     
 	// Use this for initialization
 	void Awake () {
+        rank = -1;
         paths = new List<BGScroller>();
         BGScroller[] bgs = pathTransform.GetComponentsInChildren<BGScroller>();
         for (int i = 0; i < bgs.Length; i++) {
@@ -58,6 +61,8 @@ public class PathManager : MonoBehaviour {
         Obstacle.GameOverHandler -= StopScrolling;
     }
 
+    public static int rank;
+
     void StopScrolling(int i) {
        
         float distance = PlayerPrefs.GetFloat("Farthest");
@@ -70,9 +75,12 @@ public class PathManager : MonoBehaviour {
                     data[j] = data[j - 1];
                 }
                 data[k] = mileage;
+                rank = k+1;
+                Debug.Log("set rank");
                 break;
             }
         }
+        
         //for (int k = 0; k < data.Length; k++) {
         //    print(data[k]);
         //}
@@ -80,6 +88,7 @@ public class PathManager : MonoBehaviour {
         if (i == 0)
         {
             Debug.Log("stop");
+            StopAllCoroutines();
             curspeed = 0;
             SetSpeed(0);
         }
@@ -108,12 +117,21 @@ public class PathManager : MonoBehaviour {
 
     public const float scaler = 0.5f;
 
+    float shoal = 500f;
+
     private void FixedUpdate()
     {
         mileage += speed * Time.fixedDeltaTime * 50;
         Mile.text = (mileage*scaler).ToString("0") + "米" ;
         speed = curspeed;
+
+        if (mileage > shoal) {
+            shoal += 500;
+            OnOverDistance.Invoke(this, EventArgs.Empty);
+        }
     }
+
+    public static event EventHandler OnOverDistance;
 
 
     IEnumerator ChangeSpeed(float endSpeed, float time) {
