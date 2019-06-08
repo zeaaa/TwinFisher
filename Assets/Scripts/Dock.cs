@@ -26,6 +26,15 @@ public class Dock : MonoBehaviour {
 
 
             DockHitHandler();
+            AudioSource source;
+            if (GetComponent<AudioSource>())
+                source = GetComponent<AudioSource>();
+            else
+                source = gameObject.AddComponent<AudioSource>();
+            source.clip = SoundManager.instance.dockSound;
+            source.loop = false;
+            source.Play();
+
             //TODO 防止多次触发
             Debug.Log("hit wharf" + colli.gameObject.name);
         }
