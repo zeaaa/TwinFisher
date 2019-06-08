@@ -22,7 +22,7 @@ public class GetTime
         StreamWriter sw;
         FileInfo fi = new FileInfo(path);
         sw = fi.AppendText();
-        sw.WriteLine(GetCurTime() + SceneData.mode);
+        sw.WriteLine(GetCurTime() + " " + SceneData.mode + "人");
         sw.Close();
         sw.Dispose();
     }

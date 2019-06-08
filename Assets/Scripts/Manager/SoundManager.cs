@@ -36,11 +36,10 @@ public class SoundManager : MonoBehaviour
 
     private void Start()
     {
-        string path =  "游玩记录.txt";
+        string path =  "player.log";
         GetTime.LogPlay(path);
         bgmAS.clip = bgm[status];
         bgmAS.Play();
-        
     }
 
     int status = 0;
