@@ -59,6 +59,7 @@ public class PathManager : MonoBehaviour {
     }
 
     void StopScrolling(int i) {
+       
         float distance = PlayerPrefs.GetFloat("Farthest");
         if(distance< mileage)
             PlayerPrefs.SetFloat("Farthest", mileage);
@@ -78,6 +79,7 @@ public class PathManager : MonoBehaviour {
         PlayerPrefsX.SetFloatArray("Rank",data);
         if (i == 0)
         {
+            Debug.Log("stop");
             curspeed = 0;
             SetSpeed(0);
         }
