@@ -27322,7 +27322,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ff89502e78e0b343ae7607baef062ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  filp: 1
+  filp: 0
   bgm: {fileID: 8300000, guid: ff798797f670faf4a8b2110f340ae329, type: 3}
   nightBgm: {fileID: 8300000, guid: b60bd417aed3fd84ab2f3a98bc600097, type: 3}
   pondcamera: {fileID: 805146852}
