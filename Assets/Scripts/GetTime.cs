@@ -5,11 +5,17 @@ using UnityEngine;
 
 public class GetTime
 {
+    
+    public static bool filp = false;
+
     public static bool IsDay() {
+        bool value = true; 
         if (System.DateTime.Now.Hour > 18 || System.DateTime.Now.Hour < 6) {
-            return false;
+            value = false;
         }
-        return true;
+        if (filp)
+            value = !value;
+        return value;
     }
 
     public static string GetCurTime() {

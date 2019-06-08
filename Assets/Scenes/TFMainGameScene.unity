@@ -21308,7 +21308,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 2bcd9090724d8a54185179aa97ceecb7, type: 3}
   - {fileID: 21300000, guid: 357e418779c59174b9043805614c5a66, type: 3}
   - {fileID: 21300000, guid: 7146c9b694d8a4946a49f495ebefe086, type: 3}
-  popMeetFishUI: 0
+  popMeetFishUI: 1
 --- !u!114 &1501247984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21353,6 +21353,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf1d61b3dfc5097479725de7c327b435, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  filp: 0
   bgm: {fileID: 8300000, guid: 37861cb5b00c7e544a9d53a7960e9c11, type: 3}
   nightBgm: {fileID: 8300000, guid: 352b1c6b3a8624245868457ae0f3258e, type: 3}
   gameoverSound: {fileID: 8300000, guid: 327d6ebb7b0d8471099a11c144bcce0e, type: 3}
