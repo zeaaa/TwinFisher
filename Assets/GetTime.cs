@@ -6,7 +6,7 @@ using UnityEngine;
 public class GetTime
 {
     public static bool IsDay() {
-        if (System.DateTime.Now.Hour > 19 || System.DateTime.Now.Hour < 6) {
+        if (System.DateTime.Now.Hour > 18 || System.DateTime.Now.Hour < 6) {
             return false;
         }
         return true;
@@ -18,7 +18,8 @@ public class GetTime
 
 
     public static void LogPlay(string path)
-    {         
+    {
+        Debug.Log(System.DateTime.Now.Hour);
         StreamWriter sw;
         FileInfo fi = new FileInfo(path);
         sw = fi.AppendText();

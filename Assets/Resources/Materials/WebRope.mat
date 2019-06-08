@@ -89,7 +89,7 @@ Material:
     - _TexLod: 5
     - _UVSec: 0
     - _UnlitOutlineThickness: 0.226
-    - _Value: 0
+    - _Value: 0.17598563
     - _ZSmooth: -0.5
     - _ZWrite: 0
     m_Colors:
