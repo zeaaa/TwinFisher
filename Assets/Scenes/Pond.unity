@@ -223,6 +223,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nav: {fileID: 0}
   speed: 1
+  camera: {fileID: 0}
   cube: {fileID: 0}
 --- !u!54 &8304700
 Rigidbody:
@@ -1035,6 +1036,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nav: {fileID: 0}
   speed: 1
+  camera: {fileID: 0}
   cube: {fileID: 0}
 --- !u!54 &48825876
 Rigidbody:
@@ -1931,7 +1933,7 @@ GameObject:
   - component: {fileID: 138475913}
   m_Layer: 0
   m_Name: CM Fish (16)
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2318,9 +2320,9 @@ RectTransform:
   m_Father: {fileID: 1553562842}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 12000, y: -340}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1000, y: 680}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &152145191
@@ -3174,9 +3176,9 @@ RectTransform:
   m_Father: {fileID: 2741417734143520186}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -3162}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1000, y: 204}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &162429294
@@ -3645,7 +3647,7 @@ GameObject:
   - component: {fileID: 186356201}
   m_Layer: 0
   m_Name: CM Fish (2)
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3982,7 +3984,7 @@ GameObject:
   - component: {fileID: 230129928}
   m_Layer: 0
   m_Name: CM Fish (5)
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4069,9 +4071,9 @@ RectTransform:
   m_Father: {fileID: 2741417734143520186}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -2346}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1000, y: 204}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &238286741
@@ -4686,9 +4688,9 @@ RectTransform:
   m_Father: {fileID: 1553562842}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 13000, y: -340}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1000, y: 680}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &268713548
@@ -5151,9 +5153,9 @@ RectTransform:
   m_Father: {fileID: 2741417734143520186}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -918}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1000, y: 204}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &307012749
@@ -5713,9 +5715,9 @@ RectTransform:
   m_Father: {fileID: 1553562842}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 7000, y: -340}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1000, y: 680}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &327496854
@@ -6074,7 +6076,7 @@ GameObject:
   - component: {fileID: 339665218}
   m_Layer: 0
   m_Name: CM Fish (12)
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6132,7 +6134,7 @@ GameObject:
   - component: {fileID: 344504654}
   m_Layer: 0
   m_Name: CM Fish (15)
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6929,6 +6931,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nav: {fileID: 0}
   speed: 1
+  camera: {fileID: 0}
   cube: {fileID: 0}
 --- !u!54 &386511895
 Rigidbody:
@@ -7209,6 +7212,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nav: {fileID: 0}
   speed: 1
+  camera: {fileID: 0}
   cube: {fileID: 0}
 --- !u!54 &398905288
 Rigidbody:
@@ -7391,9 +7395,9 @@ RectTransform:
   m_Father: {fileID: 1553562842}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 11000, y: -340}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1000, y: 680}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &410077388
@@ -7887,9 +7891,9 @@ RectTransform:
   m_Father: {fileID: 1553562842}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 5000, y: -340}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1000, y: 680}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &434838639
@@ -16907,6 +16911,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nav: {fileID: 0}
   speed: 1
+  camera: {fileID: 0}
   cube: {fileID: 0}
 --- !u!54 &600567660
 Rigidbody:
@@ -16964,9 +16969,9 @@ RectTransform:
   m_Father: {fileID: 1553562842}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1000, y: -340}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1000, y: 680}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &601039354
@@ -18403,6 +18408,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nav: {fileID: 0}
   speed: 1
+  camera: {fileID: 0}
   cube: {fileID: 0}
 --- !u!54 &677144955
 Rigidbody:
@@ -18771,9 +18777,9 @@ RectTransform:
   m_Father: {fileID: 1553562842}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 2000, y: -340}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1000, y: 680}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &705118286
@@ -20610,9 +20616,9 @@ RectTransform:
   m_Father: {fileID: 1553562842}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 9000, y: -340}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1000, y: 680}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &812566649
@@ -21219,9 +21225,9 @@ RectTransform:
   m_Father: {fileID: 1553562842}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 3000, y: -340}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1000, y: 680}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &830625819
@@ -22066,7 +22072,7 @@ GameObject:
   - component: {fileID: 854198821}
   m_Layer: 0
   m_Name: CM Fish (3)
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22141,6 +22147,8 @@ GameObject:
   m_Component:
   - component: {fileID: 856887546}
   - component: {fileID: 856887547}
+  - component: {fileID: 856887549}
+  - component: {fileID: 856887548}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -22172,6 +22180,38 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &856887548
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 856887545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa7155796051b734daa718462081dc5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_BindingMode: 1
+  m_FollowOffset: {x: 0.0024001389, y: 8.252851, z: -8.644255}
+  m_XDamping: 1
+  m_YDamping: 1
+  m_ZDamping: 1
+  m_PitchDamping: 0
+  m_YawDamping: 0
+  m_RollDamping: 0
+--- !u!114 &856887549
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 856887545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e8b78ac948f05a46a6d8339a503172b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &858351699
@@ -22334,7 +22374,7 @@ GameObject:
   - component: {fileID: 861412945}
   m_Layer: 0
   m_Name: CM Fish (4)
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23184,6 +23224,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nav: {fileID: 0}
   speed: 1
+  camera: {fileID: 0}
   cube: {fileID: 0}
 --- !u!54 &903852921
 Rigidbody:
@@ -26685,9 +26726,9 @@ RectTransform:
   m_Father: {fileID: 2741417734143520186}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -1530}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1000, y: 204}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1000522858
@@ -26854,7 +26895,7 @@ GameObject:
   - component: {fileID: 1001557465}
   m_Layer: 0
   m_Name: CM Fish (1)
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27812,6 +27853,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nav: {fileID: 0}
   speed: 1
+  camera: {fileID: 0}
   cube: {fileID: 0}
 --- !u!54 &1069475573
 Rigidbody:
@@ -27870,9 +27912,9 @@ RectTransform:
   m_Father: {fileID: 2741417734143520186}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -1734}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1000, y: 204}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1070277347
@@ -30030,7 +30072,7 @@ GameObject:
   - component: {fileID: 1152317530}
   m_Layer: 0
   m_Name: CM Main
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31434,6 +31476,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nav: {fileID: 0}
   speed: 1
+  camera: {fileID: 0}
   cube: {fileID: 0}
 --- !u!54 &1212091759
 Rigidbody:
@@ -32183,9 +32226,9 @@ RectTransform:
   m_Father: {fileID: 1553562842}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 14000, y: -340}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1000, y: 680}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1253617047
@@ -32327,9 +32370,9 @@ RectTransform:
   m_Father: {fileID: 2741417734143520186}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -2550}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1000, y: 204}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1260121670
@@ -32555,9 +32598,9 @@ RectTransform:
   m_Father: {fileID: 1553562842}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 8000, y: -340}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1000, y: 680}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1261730122
@@ -32854,9 +32897,9 @@ RectTransform:
   m_Father: {fileID: 2741417734143520186}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -1938}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1000, y: 204}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1264691199
@@ -34316,6 +34359,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nav: {fileID: 0}
   speed: 1
+  camera: {fileID: 0}
   cube: {fileID: 0}
 --- !u!54 &1357862711
 Rigidbody:
@@ -34493,7 +34537,7 @@ GameObject:
   - component: {fileID: 1363686794}
   m_Layer: 0
   m_Name: CM Fish (14)
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35184,6 +35228,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nav: {fileID: 0}
   speed: 1
+  camera: {fileID: 0}
   cube: {fileID: 0}
 --- !u!54 &1400023487
 Rigidbody:
@@ -39239,6 +39284,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nav: {fileID: 0}
   speed: 1
+  camera: {fileID: 0}
   cube: {fileID: 0}
 --- !u!54 &1553109560
 Rigidbody:
@@ -39535,7 +39581,7 @@ GameObject:
   - component: {fileID: 1562539616}
   m_Layer: 0
   m_Name: CM Fish (9)
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39622,9 +39668,9 @@ RectTransform:
   m_Father: {fileID: 2741417734143520186}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -1326}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1000, y: 204}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1566601371
@@ -39999,9 +40045,9 @@ RectTransform:
   m_Father: {fileID: 2741417734143520186}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -2958}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1000, y: 204}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1583801905
@@ -40950,6 +40996,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nav: {fileID: 0}
   speed: 1
+  camera: {fileID: 0}
   cube: {fileID: 725639623}
 --- !u!54 &1666803128
 Rigidbody:
@@ -40979,7 +41026,7 @@ GameObject:
   - component: {fileID: 1671049560}
   m_Layer: 0
   m_Name: CM Fish (8)
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -41139,9 +41186,9 @@ RectTransform:
   m_Father: {fileID: 1553562842}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 10000, y: -340}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1000, y: 680}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1678216761
@@ -41283,9 +41330,9 @@ RectTransform:
   m_Father: {fileID: 2741417734143520186}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -714}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1000, y: 204}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1678635349
@@ -42451,6 +42498,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nav: {fileID: 0}
   speed: 1
+  camera: {fileID: 0}
   cube: {fileID: 0}
 --- !u!54 &1706376872
 Rigidbody:
@@ -46811,9 +46859,9 @@ RectTransform:
   m_Father: {fileID: 2741417734143520186}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -510}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1000, y: 204}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1757923920
@@ -46961,6 +47009,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nav: {fileID: 0}
   speed: 1
+  camera: {fileID: 0}
   cube: {fileID: 0}
 --- !u!54 &1758177820
 Rigidbody:
@@ -47092,9 +47141,9 @@ RectTransform:
   m_Father: {fileID: 1553562842}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 16000, y: -340}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1000, y: 680}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1762473646
@@ -47305,6 +47354,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nav: {fileID: 0}
   speed: 1
+  camera: {fileID: 0}
   cube: {fileID: 0}
 --- !u!54 &1766765744
 Rigidbody:
@@ -47588,9 +47638,9 @@ RectTransform:
   m_Father: {fileID: 2741417734143520186}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -306}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1000, y: 204}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1783207269
@@ -48471,7 +48521,7 @@ GameObject:
   - component: {fileID: 1795486454}
   m_Layer: 0
   m_Name: CM Fish (10)
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48803,9 +48853,9 @@ RectTransform:
   m_Father: {fileID: 1553562842}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 6000, y: -340}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1000, y: 680}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1802163878
@@ -48918,7 +48968,7 @@ GameObject:
   - component: {fileID: 1804112243}
   m_Layer: 0
   m_Name: CM Fish (6)
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49079,9 +49129,9 @@ RectTransform:
   m_Father: {fileID: 2741417734143520186}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -2142}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1000, y: 204}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1810960982
@@ -49308,9 +49358,9 @@ RectTransform:
   m_Father: {fileID: 2741417734143520186}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -2754}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1000, y: 204}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1812365150
@@ -49708,7 +49758,7 @@ GameObject:
   - component: {fileID: 1819781647}
   m_Layer: 0
   m_Name: CM Fish (11)
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50017,6 +50067,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nav: {fileID: 0}
   speed: 1
+  camera: {fileID: 0}
   cube: {fileID: 0}
 --- !u!54 &1825581147
 Rigidbody:
@@ -50046,7 +50097,7 @@ GameObject:
   - component: {fileID: 1827959564}
   m_Layer: 0
   m_Name: CM Pond
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50932,9 +50983,9 @@ RectTransform:
   m_Father: {fileID: 1553562842}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 4000, y: -340}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1000, y: 680}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1900814707
@@ -53687,9 +53738,9 @@ RectTransform:
   m_Father: {fileID: 2741417734143520186}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -3366}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1000, y: 204}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1963494214
@@ -54092,9 +54143,9 @@ RectTransform:
   m_Father: {fileID: 1553562842}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -340}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1000, y: 680}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!1 &1994748682
@@ -57543,7 +57594,7 @@ GameObject:
   - component: {fileID: 2122126618}
   m_Layer: 0
   m_Name: CM Fish (7)
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57601,7 +57652,7 @@ GameObject:
   - component: {fileID: 2123444132}
   m_Layer: 0
   m_Name: CM Fish (13)
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57613,14 +57664,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2123444130}
-  m_LocalRotation: {x: 0.007313819, y: 0.88830775, z: -0.45897225, w: 0.01415566}
-  m_LocalPosition: {x: 0, y: 33.36, z: 0}
+  m_LocalRotation: {x: 0.26098594, y: 0.66139644, z: -0.2650288, w: 0.6513071}
+  m_LocalPosition: {x: -1.7299991, y: 9.390001, z: 5.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 856887546}
   m_Father: {fileID: 1025326085}
   m_RootOrder: 14
-  m_LocalEulerAnglesHint: {x: 54.969, y: 170.22202, z: -2.7470002}
+  m_LocalEulerAnglesHint: {x: 20.922, y: 178.17401, z: 0}
 --- !u!114 &2123444132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57641,7 +57692,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 2001862139}
   m_Follow: {fileID: 2001862139}
   m_Lens:
-    FieldOfView: 40
+    FieldOfView: 43.9
     OrthographicSize: 29
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -57687,9 +57738,9 @@ RectTransform:
   m_Father: {fileID: 1553562842}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 15000, y: -340}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1000, y: 680}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &2131214028
@@ -58034,7 +58085,7 @@ GameObject:
   - component: {fileID: 2144801595}
   m_Layer: 0
   m_Name: CM Fish (17)
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58121,9 +58172,9 @@ RectTransform:
   m_Father: {fileID: 2741417734143520186}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -1122}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1000, y: 204}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &2146360966
@@ -58696,14 +58747,9 @@ MonoBehaviour:
   content: {fileID: 2741417734143520186}
   arhievement: {fileID: 1779097964}
   detailView: {fileID: 1261771997}
-  name: {fileID: 1519710000}
-  info: {fileID: 1547751014}
   farthest: {fileID: 1926916189}
   fishCount: {fileID: 242387943}
   fishType: {fileID: 16767934}
-  meetTime: {fileID: 698737801}
-  research: {fileID: 177657014}
-  range: {fileID: 1272312993}
   boy: {fileID: 1373205345}
   girl: {fileID: 1087264011}
   boySelected: {fileID: 21300000, guid: 557ef76417207904c9977fd21c380d46, type: 3}
@@ -59105,9 +59151,9 @@ RectTransform:
   m_Father: {fileID: 2741417734143520186}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -102}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1000, y: 204}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &2741417734596566306

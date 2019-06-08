@@ -7,19 +7,15 @@ using System.IO;
 
 public class PondManager : MonoBehaviour
 {
-   
-    float timer=0f;
-
     public GameObject[] fishList;
 
 
 
-    PondDataList pondDataList;
     // Start is called before the first frame update
     void Start()
     {
-        string jsonPath = File.ReadAllText(Application.dataPath + "/Resources/Data/Fish.json");
-        pondDataList = JsonUtility.FromJson<PondDataList>(jsonPath); 
+       // string jsonPath = File.ReadAllText(Application.dataPath + "/Resources/Data/Fish.json");
+       // pondDataList = JsonUtility.FromJson<PondDataList>(jsonPath); 
         SetFish();
     }
 
@@ -29,20 +25,20 @@ public class PondManager : MonoBehaviour
         
     }
     void SetFish(){
-        for (int id = 0;id< pondDataList.pondfish.Count;id++)
-        {
-            //PondData tempData = pondDataList.pondfish[id]; 
 
-            //if(tempData.maxLength<0){
-            //    Destroy(fishList[id]);  
-            //    Debug.Log("destroy"+fishList[id]);
-            //    continue;
-            //}                                                         //未捕获过该鱼
+        bool[] array = PlayerPrefsX.GetBoolArray("FishType", false, 17);
+        for (int id = 0;id< 17;id++)
+        {
+           // PondData tempData = pondDataList.pondfish[id]; 
+
+            if(!array[id]){
+                Destroy(fishList[id]);  
+               continue;
+            }                                                         //未捕获过该鱼
 
             GameObject obj = fishList[id];
-            print(pondDataList.pondfish.Count);
             //obj.GetComponent<TFObject>().SetTFObject(tempData.maxLength , tempData.maxWeight,tempData.speed);
-            PondFishMovement pfm=obj.AddComponent<PondFishMovement>();
+            //PondFishMovement pfm=obj.AddComponent<PondFishMovement>();
             //pfm.speed=tempData.speed;
            
             //Debug.Log("生成了一条" + tempData.maxLength.ToString("f2") + "cm," + tempData.maxWeight.ToString("f2") + "kg的" + tempData.name);

@@ -44,10 +44,7 @@ public class SceneLoader : MonoBehaviour
     RectTransform arhievement;
     [SerializeField]
     RectTransform detailView;   
-    [SerializeField]
-    Text name;
-    [SerializeField]
-    Text info;
+
     [SerializeField]
     Text farthest;
     [SerializeField]
@@ -55,13 +52,6 @@ public class SceneLoader : MonoBehaviour
     [SerializeField]
     Text fishType;
 
-
-    [SerializeField]
-    Text meetTime;
-    [SerializeField]
-    Text research;
-    [SerializeField]
-    Text range;
     FishDataList fishDataList;
     private AsyncOperation async = null;
 
@@ -153,7 +143,7 @@ public class SceneLoader : MonoBehaviour
         b_back.onClick.AddListener(HideScroll);
 
         b_sb0.onClick.AddListener(ShowList);
-        b_sb1.onClick.AddListener(delegate { ShowDetail(0); });
+        b_sb1.onClick.AddListener(delegate { int id = int.Parse(defaultFish.name.Split('(', ')')[1]) - 1; ShowDetail(id,false); });
         b_sb2.onClick.AddListener(ShowArchievement);
 
         buttonOrigin = b_sb0.GetComponent<Image>().sprite;
@@ -266,10 +256,37 @@ public class SceneLoader : MonoBehaviour
         int id = int.Parse(sender.name.Split('(', ')')[1]) - 1;
         float width = sender.GetComponent<RectTransform>().rect.width;
         float offset = id * width;
-        Debug.Log(width);
+        bool[] array = PlayerPrefsX.GetBoolArray("FishType", false, 17);
+        if (array[id])
+        {
+            OpenFishCamera(id);
+            fish[id].GetComponent<PondFishMovement>().OnShow();
+        }
+
+
         detailContent.DOAnchorPosX(-offset, 0.5f);
+       
         sender.GetComponent<Button>().Select();
     }
+
+
+    public void OnFishDetailSelectedNoAnim(GameObject sender)
+    {
+        int id = int.Parse(sender.name.Split('(', ')')[1]) - 1;
+        float width = sender.GetComponent<RectTransform>().rect.width;
+        float offset = id * width;
+        bool[] array = PlayerPrefsX.GetBoolArray("FishType", false, 17);
+        if (array[id])
+        {
+            OpenFishCamera(id);
+            fish[id].GetComponent<PondFishMovement>().OnShow();      
+        }
+
+
+        detailContent.DOAnchorPosX(-offset, 0.0f);
+        sender.GetComponent<Button>().Select();
+    }
+
 
     public void OnFishDetailDeSelected(GameObject sender)
     {
@@ -280,8 +297,9 @@ public class SceneLoader : MonoBehaviour
 
 
     public void OnClickShowDetail(GameObject sender) {
+        defaultFish = sender.GetComponent<Button>();
         int id = int.Parse(sender.name.Split('(', ')')[1]) - 1;
-        ShowDetail(id);
+        ShowDetail(id,false);
     }
     //when switch scene , unload automaticly
     AssetBundle spriteAB;
@@ -386,13 +404,10 @@ public class SceneLoader : MonoBehaviour
         ShowListUI();
     }
 
-    public void ShowDetail(int id)
+    //rewrite!
+    public void ShowDetail(int id,bool hasAnim)
     {
         curPage = 1;
-        fish[id].GetComponent<Animator>().Play("jump");
-        OpenFishCamera(id);
-
-
         arhievement.gameObject.SetActive(false);
         detailView.gameObject.SetActive(true);
         scrollView.gameObject.SetActive(false);
@@ -404,10 +419,13 @@ public class SceneLoader : MonoBehaviour
         img_sb0.color = imgDeSelectedColor;
         img_sb1.color = imgSelectedColor;
         img_sb2.color = imgDeSelectedColor;
-        Debug.Log("data" + "(" + (id + 1).ToString() + ")");
-        OnFishDetailSelected(GameObject.Find("data " + "(" + (id+1).ToString()+ ")"));
-      
-       
+        //Debug.Log("data" + "(" + (id + 1).ToString() + ")");
+
+        if(hasAnim)
+            OnFishDetailSelected(GameObject.Find("data " + "(" + (id+1).ToString()+ ")"));
+        else
+            OnFishDetailSelectedNoAnim(GameObject.Find("data " + "(" + (id + 1).ToString() + ")"));
+
         //name.text = fishDataList.fish[id].name;
         //info.text = fishDataList.fish[id].info;
         //int[] arrayInt = PlayerPrefsX.GetIntArray("FishCountArray", 0, fishDataList.fish.Count);
@@ -507,20 +525,18 @@ public class SceneLoader : MonoBehaviour
                 b_start.Select();
             }
         }
-        
         if (gameState.Equals(PondGameState.pannel)){
             switch (curPage) {
                 case 0:
                     { 
                         if (Input.GetKeyDown(KeyCode.Joystick1Button5)) {
-                            Debug.Log("call");
                             if (UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject == null || UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name.Equals(b_back.name))
                             {
                                 int id = int.Parse(defaultFish.name.Split('(', ')')[1]) - 1;
-                                ShowDetail(id);
+                                ShowDetail(id,false);
                             } else {
                                 int id = int.Parse(UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name.Split('(', ')')[1]) - 1;
-                                ShowDetail(id);
+                                ShowDetail(id,false);
                                 defaultFish = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.GetComponent<Button>();
                             }                        
                         }
@@ -583,7 +599,7 @@ public class SceneLoader : MonoBehaviour
                         if (Input.GetKeyDown(KeyCode.Joystick1Button4))
                         {
                             int id = int.Parse(defaultFish.name.Split('(', ')')[1]) - 1;
-                            ShowDetail(id);
+                            ShowDetail(id,false);
                         }                     
                         
                         if (UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject == null)
@@ -623,6 +639,4 @@ public class SceneLoader : MonoBehaviour
         //bg.DOFade(1.0f, 3.0f);
         yield return null;
     }
-
-    
 }
