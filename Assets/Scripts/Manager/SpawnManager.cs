@@ -57,9 +57,13 @@ public class SpawnManager : MonoBehaviour {
     [SerializeField]
     int fishAmount;
 
-    [Rename("刷新障碍数量（每分钟）")]
+    [Rename("起始刷新障碍数量（每分钟）")]
     [SerializeField]
-    int obstacleAmount;
+    int obstacleAmountBegin;
+
+    [Rename("最终刷新障碍数量（每分钟）")]
+    [SerializeField]
+    int obstacleAmountFinal;
 
     [Rename("刷新码头数量（每分钟）")]
     [SerializeField]
@@ -272,13 +276,16 @@ public class SpawnManager : MonoBehaviour {
         if (spawnObstacleTimer > spawnObstacleInterval)
         {
             spawnObstacleTimer = 0;
-            spawnObstacleInterval = 1.0f + TFMath.GaussRand() * 60 / (float)obstacleAmount;
+            float amount = obstacleAmountBegin + (Time.timeSinceLevelLoad / 60.0f)*(obstacleAmountFinal - obstacleAmountBegin);
+            if (Time.timeSinceLevelLoad > 60.0f)
+                amount = obstacleAmountFinal;
+            spawnObstacleInterval = 1.0f + TFMath.GaussRand() * 60 / amount;
 
 
             //int pt = GetSpawnPoint();
             int pt = UnityEngine.Random.Range(0, spawnObstaclePoints.Length);
             if (pt > -1) {
-                int id = UnityEngine.Random.Range(0, 1);
+                int id = UnityEngine.Random.Range(0, 5);
                 GameObject obj = (GameObject)Resources.Load("Prefabs/Rock/rock" + (id + 1).ToString());
                 Vector3 spawnPosition = spawnObstaclePoints[pt].point;
                 Instantiate(obj, spawnPosition, Quaternion.identity);

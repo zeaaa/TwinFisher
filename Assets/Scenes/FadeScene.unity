@@ -546,8 +546,8 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 1
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 0.71
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -2277,7 +2277,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1438564415651758470}
   m_LocalRotation: {x: 0.021749252, y: 0.6834494, z: -0.06230669, w: 0.7270088}
-  m_LocalPosition: {x: 0.03, y: -4.2, z: 0.97992676}
+  m_LocalPosition: {x: 0.03, y: -4.56, z: 0.97992676}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 8964167758509724738}
@@ -2346,6 +2346,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offset: 0.2
+  speed: 1
 --- !u!1 &1503520048854546935
 GameObject:
   m_ObjectHideFlags: 0
@@ -3102,7 +3103,7 @@ Animator:
   m_GameObject: {fileID: 1438564415651758470}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 8817f0368a5558a45b39e75bd4d9a10f, type: 3}
-  m_Controller: {fileID: 9100000, guid: cab4498af89846248b2b05b7cb428b39, type: 2}
+  m_Controller: {fileID: 9100000, guid: 625efb8a31b440e4ca3990b4ce6dc784, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

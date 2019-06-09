@@ -22,7 +22,9 @@ public class PondManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.F1)) {
+            PlayerPrefs.DeleteAll();
+        }
     }
     void SetFish(){
 

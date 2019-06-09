@@ -21571,9 +21571,10 @@ MonoBehaviour:
   spawnObstaclePointSize: 5
   spawnObstacleWide: 4.44
   fishAmount: 40
-  obstacleAmount: 45
+  obstacleAmountBegin: 5
+  obstacleAmountFinal: 40
   dockAmount: 5
-  firstObstacleTime: 5
+  firstObstacleTime: 10
   firstDockTime: 7
 --- !u!114 &1501247983
 MonoBehaviour:
@@ -21654,8 +21655,10 @@ MonoBehaviour:
   pathTransform: {fileID: 1141868619}
   mileage: 0
   speed: 0
-  _maxSpeed: 0.6
+  _maxSpeed: 0.3
   _accelTime: 2
+  _maxSpeed2: 1
+  _accelTime2: 60
   cameraAnim: 1
   Mile: {fileID: 1513832359}
 --- !u!114 &1501247986
@@ -21674,7 +21677,7 @@ MonoBehaviour:
   bgm: {fileID: 8300000, guid: 37861cb5b00c7e544a9d53a7960e9c11, type: 3}
   nightBgm: {fileID: 8300000, guid: 352b1c6b3a8624245868457ae0f3258e, type: 3}
   gameoverSound: {fileID: 8300000, guid: 327d6ebb7b0d8471099a11c144bcce0e, type: 3}
-  dockSound: {fileID: 8300000, guid: 2e4a2ef0a07ace44aa6e4daa4871ce24, type: 3}
+  dockSound: {fileID: 8300000, guid: 5cdef6148b133dd40b4c99dd0db06ebc, type: 3}
   lights:
   - {fileID: 505641460}
   - {fileID: 1808020560}
