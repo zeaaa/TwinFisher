@@ -285,7 +285,7 @@ public class SpawnManager : MonoBehaviour {
             //int pt = GetSpawnPoint();
             int pt = UnityEngine.Random.Range(0, spawnObstaclePoints.Length);
             if (pt > -1) {
-                int id = UnityEngine.Random.Range(0, 3);
+                int id = UnityEngine.Random.Range(0, 5);
                 GameObject obj = (GameObject)Resources.Load("Prefabs/Rock/rock" + (id + 1).ToString());
                 Vector3 spawnPosition = spawnObstaclePoints[pt].point;
                 Instantiate(obj, spawnPosition, Quaternion.identity);

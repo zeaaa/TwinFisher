@@ -25,7 +25,7 @@ public class GetTime
 
     public static void LogPlay(string path)
     {
-        Debug.Log(System.DateTime.Now.Hour);
+        //Debug.Log(System.DateTime.Now.Hour);
         StreamWriter sw;
         FileInfo fi = new FileInfo(path);
         sw = fi.AppendText();
