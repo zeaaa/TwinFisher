@@ -301,9 +301,6 @@ public class SceneLoader : MonoBehaviour
 
     float detailWidth;
 
-
-
-
     public void OnFishDetailDeSelected(GameObject sender)
     {
         
@@ -510,7 +507,7 @@ public class SceneLoader : MonoBehaviour
                     {
 
                         //press b Go back to title 
-                        if (Input.GetKeyDown(KeyCode.Joystick1Button1))
+                        if (Input.GetKeyDown(KeyCode.Joystick1Button1)|| Input.GetKeyDown(KeyCode.Joystick2Button1))
                         {
                             HideScroll();
                             b_pond.Select();
@@ -518,7 +515,7 @@ public class SceneLoader : MonoBehaviour
                         }
 
                         // key RB
-                        if (Input.GetKeyDown(KeyCode.Joystick1Button5)) {                    
+                        if (Input.GetKeyDown(KeyCode.Joystick1Button5)|| Input.GetKeyDown(KeyCode.Joystick2Button5)) {                    
                             UpdateUIGroup(2);
                         }
 
@@ -535,7 +532,7 @@ public class SceneLoader : MonoBehaviour
                     {
                
                         //press b Go back to list 
-                        if (Input.GetKeyDown(KeyCode.Joystick1Button1))
+                        if (Input.GetKeyDown(KeyCode.Joystick1Button1)|| Input.GetKeyDown(KeyCode.Joystick2Button1))
                         {
                             UpdateUIGroup(0);
                             
@@ -543,7 +540,7 @@ public class SceneLoader : MonoBehaviour
                         }
 
                         //RT
-                        if (Input.GetKeyDown(KeyCode.Joystick1Button5))
+                        if (Input.GetKeyDown(KeyCode.Joystick1Button5)|| Input.GetKeyDown(KeyCode.Joystick2Button5))
                         {
                             UpdateUIGroup(2);
                             break;
@@ -583,7 +580,7 @@ public class SceneLoader : MonoBehaviour
                 case 2:
                     {
                         //press b Go back to title 
-                        if (Input.GetKeyDown(KeyCode.Joystick1Button1))
+                        if (Input.GetKeyDown(KeyCode.Joystick1Button1)|| Input.GetKeyDown(KeyCode.Joystick2Button1))
                         {
                             HideScroll();
                             b_pond.Select();
@@ -592,7 +589,7 @@ public class SceneLoader : MonoBehaviour
 
 
                         //lt
-                        if (Input.GetKeyDown(KeyCode.Joystick1Button4))
+                        if (Input.GetKeyDown(KeyCode.Joystick1Button4)|| Input.GetKeyDown(KeyCode.Joystick2Button4))
                         {
                             UpdateUIGroup(0);
                             

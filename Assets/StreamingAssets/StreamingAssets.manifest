@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 2589028087
+CRC: 3264276663
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
-      Name: fish.ab
+      Name: data.ab
       Dependencies: {}
     Info_1:
-      Name: data.ab
+      Name: fish.ab
       Dependencies: {}
     Info_2:
       Name: ponduifish.ab

@@ -179,7 +179,7 @@ public class GameManager : MonoBehaviour {
     void Awake()
     {
         Initialize();
-        
+        overtimer = 0;
     }
     // Use this for initialization
     void Start () {
@@ -199,25 +199,34 @@ public class GameManager : MonoBehaviour {
         if (!Application.isPlaying)
             SetWebNodeForge(forge);
     }
-    
+
+    float overtimer = 0;
+
     // Update is called once per frame
     void Update () {
         OnCapaCityChanged();
 
         if (gameState.Equals(GameState.GameOver)) {
-            if (Input.GetKeyDown(KeyCode.Joystick1Button0)) {
+            overtimer += Time.deltaTime;
+
+            if (Input.GetKeyDown(KeyCode.Joystick1Button0)|| Input.GetKeyDown(KeyCode.Joystick2Button0)) {
                 //reload
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); Time.timeScale = 1;
             }
             else
-            if (Input.GetKeyDown(KeyCode.Joystick1Button1))
+            if (Input.GetKeyDown(KeyCode.Joystick1Button1)||Input.GetKeyDown(KeyCode.Joystick2Button1))
             {
                 SceneManager.LoadScene(0); Time.timeScale = 1;
             }
+
+            if (overtimer > 60f) {
+                SceneManager.LoadScene(0); Time.timeScale = 1;
+            }
+
         }
         else if (gameState.Equals(GameState.FirstMeet))
         {
-            if (Input.GetKeyDown(KeyCode.Joystick1Button0))
+            if (Input.GetKeyDown(KeyCode.Joystick1Button0)|| Input.GetKeyDown(KeyCode.Joystick2Button0))
             {
                 GameManager.gameState = GameState.Animating;
                 OnCloseMeetUI.Invoke(this, EventArgs.Empty);
@@ -239,7 +248,8 @@ public class GameManager : MonoBehaviour {
             if (Input.GetKeyDown(KeyCode.Joystick1Button1) || Input.GetKeyDown(KeyCode.Joystick2Button1))
             {
                 //OnReturnToMenu.Invoke(this, EventArgs.Empty);
-                SceneManager.LoadScene(0); Time.timeScale = 1;
+                Time.timeScale = 1;
+                SceneManager.LoadScene(0);
             }
         }
     }

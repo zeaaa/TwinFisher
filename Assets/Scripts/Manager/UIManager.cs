@@ -94,6 +94,9 @@ public class UIManager : MonoBehaviour {
         if (popMeetFishUI)
             Fish.FirstMeetHandler -= ShowFirstMeetUI;
         GameManager.OnCloseMeetUI -= CloseMeetUI;
+        GameManager.OnEnterPause -= OpenPauseUI;
+        GameManager.OnLeavePause -= ClosePauseUI;
+        b_meetFishOk.onClick.RemoveAllListeners();
     }
 
 
@@ -113,7 +116,7 @@ public class UIManager : MonoBehaviour {
     public void OpenPauseUI(object sender,EventArgs args) {
         GameManager.gameState = GameState.Animating;
         Time.timeScale = 0;
-        Tweener move = pauseUI.DOLocalMove(Vector3.zero, 0.5f);
+        Tweener move = pauseUI.DOLocalMove(Vector3.zero, 1.0f);
         move.SetEase(Ease.InQuad);
         move.SetUpdate(true);
         pauseImg.gameObject.SetActive(true);
@@ -190,16 +193,17 @@ public class UIManager : MonoBehaviour {
         t_toatlCount.text = GameManager.totalMeet.ToString();
         t_meetCount.text = GameManager.newMeet.ToString();
         yield return new WaitForSeconds(1f);
+        if (PathManager.rank > 0)
+            t_rank.text = "   第" + PathManager.rank.ToString() + "名!";
+        else
+            t_rank.text = "收获";
         //Time.timeScale = 0;
         bg.DOFade(0.5f, 1f).SetUpdate(true);
         Tweener move = r_gameOver.DOLocalMove(Vector3.zero, 1.0f);
         move.SetEase(Ease.InQuad);
         move.SetUpdate(true);
         move.onComplete = delegate (){
-            if (PathManager.rank > 0)
-                t_rank.text = "   第" + PathManager.rank.ToString() + "名!";
-            else
-                t_rank.text = "收获";
+            
             r_gameOver.DOShakeRotation(3.0f, 5.0f).SetUpdate(true);
             b_reStart.interactable = true;
             b_back.interactable = true;

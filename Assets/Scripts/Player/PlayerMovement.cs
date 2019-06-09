@@ -55,7 +55,9 @@ public class PlayerMovement : MonoBehaviour
 
     bool P1RTPressed = false;
     bool P2RTPressed = false;
+
     bool P1LTPressed = false;
+    bool P2LTPressed = false;
 
     IEnumerator CountDown1P(float time)
     {
@@ -69,6 +71,13 @@ public class PlayerMovement : MonoBehaviour
         P1LTPressed = false;
     }
 
+    IEnumerator CountDown2PLT(float time)
+    {
+        yield return new WaitForSeconds(time);
+        P2LTPressed = false;
+    }
+
+
     IEnumerator CountDown2P(float time)
     {
         yield return new WaitForSeconds(time);
@@ -78,9 +87,10 @@ public class PlayerMovement : MonoBehaviour
     Coroutine count1p;
     Coroutine count2p;
     Coroutine count1pLT;
+    Coroutine count2pLT;
 
-    
-    
+    const float skillInputLast= 0.6f;
+
     void FixedUpdate ()
 	{
         FixPlayerModelPosition();
@@ -95,21 +105,28 @@ public class PlayerMovement : MonoBehaviour
             P1RTPressed = true;
             if (count1p != null)
                 StopCoroutine(count1p);
-            count1p = StartCoroutine(CountDown1P(0.5f));
+            count1p = StartCoroutine(CountDown1P(skillInputLast));
 
         }
         if (lastFrameP2RT == 0 && RTP2 > 0.05f) {
             P2RTPressed = true;
             if(count2p!=null)
                 StopCoroutine(count2p);
-            count2p = StartCoroutine(CountDown2P(0.5f));
+            count2p = StartCoroutine(CountDown2P(skillInputLast));
         }
         if (lastFrameP1RT == 0 && RTP1 < 0.05f)
         {
             P1LTPressed = true;
             if (count1pLT != null)
                 StopCoroutine(count1pLT);
-            count1pLT = StartCoroutine(CountDown1PLT(0.5f));
+            count1pLT = StartCoroutine(CountDown1PLT(skillInputLast));
+        }
+        if (lastFrameP2RT == 0 && RTP2 < 0.05f)
+        {
+            P2LTPressed = true;
+            if (count2pLT != null)
+                StopCoroutine(count2pLT);
+            count2pLT = StartCoroutine(CountDown2PLT(skillInputLast));
         }
 
 
@@ -129,14 +146,30 @@ public class PlayerMovement : MonoBehaviour
         }
         else 
         if (SceneData.mode == 1) {
-                if (((P1LTPressed && P1RTPressed) || Input.GetKey(KeyCode.Space)) && !killMovement)
+            if (SceneData.singlePlayerID == 0)
             {
+                if (((P1LTPressed && P1RTPressed) || Input.GetKey(KeyCode.Space)) && !killMovement)
+                {
 
-                skillInput = true;
-                SkillInputHandler();
+                    skillInput = true;
+                    SkillInputHandler();
+                }
+                else
+                    skillInput = false;
             }
-            else
-                skillInput = false;
+            else if (SceneData.singlePlayerID == 1) {
+                if (((P2LTPressed && P2RTPressed) || Input.GetKey(KeyCode.Space)) && !killMovement)
+                {
+
+                    skillInput = true;
+                    SkillInputHandler();
+                }
+                else
+                    skillInput = false;
+
+            }
+
+           
         }
         
 
@@ -187,8 +220,14 @@ public class PlayerMovement : MonoBehaviour
             }
             else if (joyStickNames.Length >= 2)
             {
-                moveHorizontalL = killMovement ? 0 : Input.GetAxis("JoyStick1LPad");
-                moveHorizontalR = killMovement ? 0 : Input.GetAxis("JoyStick1RPad");
+                if (SceneData.singlePlayerID == 0) {
+                    moveHorizontalL = killMovement ? 0 : Input.GetAxis("JoyStick1LPad");
+                    moveHorizontalR = killMovement ? 0 : Input.GetAxis("JoyStick1RPad");
+                } else if (SceneData.singlePlayerID == 1) {
+                    moveHorizontalL = killMovement ? 0 : Input.GetAxis("JoyStick2LPad");
+                    moveHorizontalR = killMovement ? 0 : Input.GetAxis("JoyStick2RPad");
+                }
+               
             }
         }
 

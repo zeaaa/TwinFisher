@@ -19,10 +19,11 @@ public class PondSound : MonoBehaviour
 
     public Transform daylight;
     public Transform nightlight;
-
+   
     // Start is called before the first frame update
     void Start()
     {
+        Cursor.visible = false;
         bgmAS = transform.Find("Bgm").GetComponent<AudioSource>();
         //instance = this;
         bool isday = GetTime.IsDay();

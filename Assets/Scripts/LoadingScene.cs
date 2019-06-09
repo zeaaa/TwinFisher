@@ -69,6 +69,7 @@ public class LoadingScene : MonoBehaviour
         }
 
         if (LoadComplete) {
+           
             if (Input.GetKeyDown(KeyCode.Joystick1Button0))
             {
                 SceneData.mode = 2;
@@ -76,9 +77,22 @@ public class LoadingScene : MonoBehaviour
             }
             else if (Input.GetKeyDown(KeyCode.Joystick1Button1))
             {
+                SceneData.singlePlayerID = 0;
                 SceneData.mode = 1;
                 async.allowSceneActivation = true;
             }
+            else if (Input.GetKeyDown(KeyCode.Joystick2Button0))
+            {               
+                SceneData.mode = 2;
+                async.allowSceneActivation = true;
+            }
+            else if (Input.GetKeyDown(KeyCode.Joystick2Button1))
+            {
+                SceneData.singlePlayerID = 1;
+                SceneData.mode = 1;
+                async.allowSceneActivation = true;
+            }
+
         }
     }
     public void GoToSceneByMode(int mode) {
