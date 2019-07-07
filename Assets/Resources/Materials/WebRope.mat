@@ -41,7 +41,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
+        m_Scale: {x: 0.1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
@@ -66,7 +66,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DiffuseThreshold: 0
     - _DstBlend: 10
-    - _EndX: 6.1759996
+    - _EndX: -1.3499975
     - _GlossMapScale: 1
     - _Glossiness: 0
     - _GlossyReflections: 1
@@ -85,11 +85,11 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _StartX: -5.5360003
+    - _StartX: -6.486933
     - _TexLod: 5
     - _UVSec: 0
     - _UnlitOutlineThickness: 0.226
-    - _Value: 0
+    - _Value: 0.72432864
     - _ZSmooth: -0.5
     - _ZWrite: 0
     m_Colors:

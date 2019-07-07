@@ -24,6 +24,9 @@ public class PondSound : MonoBehaviour
     void Start()
     {
         Cursor.visible = false;
+        Resolution[] resolutions = Screen.resolutions;
+        Screen.SetResolution(resolutions[resolutions.Length - 1].width, resolutions[resolutions.Length - 1].height, true);
+        Screen.fullScreen = true;
         bgmAS = transform.Find("Bgm").GetComponent<AudioSource>();
         //instance = this;
         bool isday = GetTime.IsDay();
