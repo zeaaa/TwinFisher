@@ -26,6 +26,7 @@ public class Dock : MonoBehaviour {
 
 
             DockHitHandler();
+            transform.DOScale(1.1f, 0.3f).onComplete = delegate { transform.DOScale(1.0f, 0.3f); };
             AudioSource source;
             if (GetComponent<AudioSource>())
                 source = GetComponent<AudioSource>();

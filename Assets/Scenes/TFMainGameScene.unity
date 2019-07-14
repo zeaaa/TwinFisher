@@ -353,7 +353,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e2fd291448506248a64ae62a28856cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forge: 500
+  forge: 1000
   linkNodeTran:
   - {fileID: 1778083103}
   - {fileID: 367641467}
@@ -3295,7 +3295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e2fd291448506248a64ae62a28856cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forge: 500
+  forge: 1000
   linkNodeTran:
   - {fileID: 852660782}
   - {fileID: 2087699431}
@@ -6208,7 +6208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e2fd291448506248a64ae62a28856cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forge: 500
+  forge: 1000
   linkNodeTran:
   - {fileID: 2130171592}
   - {fileID: 1160976895}
@@ -13206,7 +13206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e2fd291448506248a64ae62a28856cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forge: 500
+  forge: 1000
   linkNodeTran:
   - {fileID: 2087699431}
   - {fileID: 1778083103}
@@ -13801,7 +13801,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e2fd291448506248a64ae62a28856cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forge: 500
+  forge: 1000
   linkNodeTran:
   - {fileID: 1807732194}
   - {fileID: 2105805341}
@@ -14951,7 +14951,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e2fd291448506248a64ae62a28856cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forge: 500
+  forge: 1000
   linkNodeTran:
   - {fileID: 79091835}
   - {fileID: 1807732194}
@@ -16976,7 +16976,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e2fd291448506248a64ae62a28856cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forge: 500
+  forge: 1000
   linkNodeTran:
   - {fileID: 359220300}
   - {fileID: 1195475460}
@@ -17545,7 +17545,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e2fd291448506248a64ae62a28856cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forge: 500
+  forge: 1000
   linkNodeTran:
   - {fileID: 1160976895}
   - {fileID: 1751857271}
@@ -21094,7 +21094,7 @@ MonoBehaviour:
   WebFullColor: {r: 1, g: 0, b: 0, a: 1}
   lp: {fileID: 602766146}
   rp: {fileID: 137569219}
-  forge: 500
+  forge: 1000
   playerInnerColli: 1
   webFullHint: {fileID: 220365125}
 --- !u!114 &1501247982
@@ -25429,7 +25429,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e2fd291448506248a64ae62a28856cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forge: 500
+  forge: 1000
   linkNodeTran:
   - {fileID: 1195475460}
   - {fileID: 2048019636}
@@ -25964,7 +25964,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e2fd291448506248a64ae62a28856cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forge: 500
+  forge: 1000
   linkNodeTran:
   - {fileID: 882078427}
   - {fileID: 7234239}
@@ -26881,7 +26881,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e2fd291448506248a64ae62a28856cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forge: 500
+  forge: 1000
   linkNodeTran:
   - {fileID: 985190336}
   - {fileID: 907988534}
@@ -30859,7 +30859,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e2fd291448506248a64ae62a28856cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forge: 500
+  forge: 1000
   linkNodeTran:
   - {fileID: 1751857271}
   - {fileID: 634326869}
@@ -31344,7 +31344,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e2fd291448506248a64ae62a28856cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forge: 500
+  forge: 1000
   linkNodeTran:
   - {fileID: 173219228}
   - {fileID: 882078427}
@@ -31783,7 +31783,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e2fd291448506248a64ae62a28856cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forge: 500
+  forge: 1000
   linkNodeTran:
   - {fileID: 907988534}
   - {fileID: 2129898966}
@@ -32490,7 +32490,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e2fd291448506248a64ae62a28856cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forge: 500
+  forge: 1000
   linkNodeTran:
   - {fileID: 2105805341}
   - {fileID: 367850767}
