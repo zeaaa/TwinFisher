@@ -127,7 +127,9 @@ public class GameManager : MonoBehaviour {
         DisableCollision("Obstacle", "WebNode", false);
         //disable
         DisableCollision("Fish", "Obstacle", true);
+
         DisableCollision("WebNode", "Web", true);
+
         DisableCollision("WebNode", "WebNode", true);
         DisableCollision("Player", "WebNode", true);
         DisableCollision("WebNode", "Dock", true);
@@ -328,6 +330,11 @@ public class GameManager : MonoBehaviour {
         Physics.IgnoreLayerCollision(LayerMask.NameToLayer(layerName1), LayerMask.NameToLayer(layerName2), enable);
     }
 
+    private void FixedDisableCollision(string tag1, string tag2, bool enable)
+    {
+        
+    } 
+
     IEnumerator SkillCoroutine()
     {
         //wait for next fixedUpdate
@@ -335,8 +342,9 @@ public class GameManager : MonoBehaviour {
         _inSkill = true;
         WebAnim();
         DisableCollision("Fish", "WebNode", true);
-        DisableCollision("Obstacle", "WebNode", true);    
-        //DisableCollision("Obstacle", "Player", true);
+        DisableCollision("Obstacle", "WebNode", true);
+
+
         ChangeWebMatColor(WebSkillColor);
         //after _skillDuration realTime;
         yield return new WaitForSeconds(_skillDuration);

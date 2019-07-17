@@ -50,6 +50,14 @@ public class PlayerMovement : MonoBehaviour
 
     bool killMovement = false;
 
+    public float LeftX() {
+        return WebPole_L.position.x;
+    }
+
+    public float RightX() {
+        return WebPole_R.position.x;
+    }
+
     float lastFrameP1RT = 0;
     float lastFrameP2RT = 0;
 

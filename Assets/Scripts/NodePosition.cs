@@ -13,10 +13,18 @@ public class NodePosition : MonoBehaviour {
     //left right up down
     public Transform[] linkNodeTran;
 
+    bool isInnerWeb = false;
+
+    BoxCollider col;
+
     Rigidbody rig;
 
     float linewide=0.4f;
     public GameObject pf;
+
+    public bool IsInner() {
+        return isInnerWeb;
+    }
 
     GameObject[] line;
 
@@ -27,7 +35,9 @@ public class NodePosition : MonoBehaviour {
 
     private void Start()
 	{
+        
         rig = GetComponent<Rigidbody>();
+        col = GetComponent<BoxCollider>();
         //生成连接线
         line = new GameObject[4];
         if (linkNodeTran[0] && left)
@@ -63,7 +73,8 @@ public class NodePosition : MonoBehaviour {
 
 	private void FixedUpdate()
 	{
-		Judge();
+        JudgeInner();
+        Judge();
 		WebJump ();
 		Deceleration();
         AddForce();
@@ -74,6 +85,16 @@ public class NodePosition : MonoBehaviour {
         rig.AddForce(Vector3.back*forge*0.02f * Mathf.Abs(PlayerMovement.dis));
     }
 
+    void JudgeInner() {
+        if (PlayerMovement.p1x < transform.position.x && PlayerMovement.p2x > transform.position.x)
+        {
+            isInnerWeb = true;
+        }
+        else
+            isInnerWeb = false;
+      
+        col.enabled = isInnerWeb;
+    }
 
 	void Judge()
 	{
