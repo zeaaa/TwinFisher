@@ -143,7 +143,7 @@ public class PlayerMovement : MonoBehaviour
 
 
         if (SceneData.mode == 2) {
-            if (((P1RTPressed && P2RTPressed) || Input.GetKey(KeyCode.Space)) && !killMovement)
+            if (((P1RTPressed && P2RTPressed) && !killMovement || (Input.GetKey(KeyCode.W)&&Input.GetKey(KeyCode.UpArrow))))
             {
 
                 skillInput = true;
