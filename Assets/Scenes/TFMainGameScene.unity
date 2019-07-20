@@ -21089,9 +21089,9 @@ MonoBehaviour:
   _maxCapacity: 300
   maxSkillTimes: 3
   WebSkillColor: {r: 1, g: 1, b: 1, a: 1}
-  WebBaseColor: {r: 1, g: 1, b: 1, a: 1}
-  WebCapacityColor: {r: 0.98823535, g: 0.52156866, b: 0.6627451, a: 1}
-  WebFullColor: {r: 1, g: 0, b: 0, a: 1}
+  WebBaseColor: {r: 0.8773585, g: 0.8773585, b: 0.8773585, a: 1}
+  WebCapacityColor: {r: 0.9433962, g: 0.5206479, b: 0.71363413, a: 1}
+  WebFullColor: {r: 0.8867924, g: 0.06274474, b: 0.5991837, a: 1}
   lp: {fileID: 602766146}
   rp: {fileID: 137569219}
   forge: 1000
