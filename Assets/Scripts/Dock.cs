@@ -43,6 +43,16 @@ public class Dock : MonoBehaviour {
 
     private void FixedUpdate()
     {
+
+        RaycastHit hit;
+        if(Physics.Raycast(transform.position, Vector3.left, out hit ,3f,1 << LayerMask.NameToLayer("Obstacle")))
+        {
+            Destroy(hit.collider.gameObject);
+        }
+        if (Physics.Raycast(transform.position, Vector3.right, out hit, 3f, 1 << LayerMask.NameToLayer("Obstacle")))
+        {
+            Destroy(hit.collider.gameObject);
+        }
         if (transform.position.z < 40f)
         {
             Open(false);
