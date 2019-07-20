@@ -21116,7 +21116,7 @@ MonoBehaviour:
   spawnPointSize: 7
   drawLine: 1
   spawnObstaclePointSize: 4
-  spawnObstacleWide: 5.9
+  spawnObstacleWide: 4.77
   fishAmount: 50
   obstacleAmountBegin: 30
   obstacleAmountFinal: 50
