@@ -492,7 +492,7 @@ public class SceneLoader : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F11))
         {
             Resolution[] resolutions = Screen.resolutions;
-            Screen.SetResolution(resolutions[resolutions.Length - 1].width, resolutions[resolutions.Length - 1].height, true);
+            Screen.SetResolution((int)(Screen.currentResolution.height * 9.0f / 16.0f), Screen.currentResolution.height, true);
             Screen.fullScreen = true;
         }
     
