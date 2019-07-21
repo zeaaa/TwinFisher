@@ -16,7 +16,7 @@ public class Dock : MonoBehaviour {
     {
         speed = 0;
         dock = transform.Find("1");
-        woodPlate = transform.Find("Dong");
+        woodPlate = dock.transform.Find("Dong");
         tree = transform.Find("2");
         Open(false);
     }
@@ -29,7 +29,7 @@ public class Dock : MonoBehaviour {
 
 
             DockHitHandler();
-            woodPlate.DOScale(1.1f, 0.2f).onComplete = delegate { transform.DOScale(1.0f, 0.2f); };
+            woodPlate.DOScale(3.9f, 0.2f).onComplete = delegate { woodPlate.DOScale(3.5f, 0.2f); };
             AudioSource source;
             if (GetComponent<AudioSource>())
                 source = GetComponent<AudioSource>();
