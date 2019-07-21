@@ -1,21 +1,21 @@
 {
 	"fish": [
         { "name":"墨镜鱼", "modelID":"001", "minLength":6,"maxLength":13, "minWeight":12, "maxWeight":15, "info":"身体前部长着像墨镜一样的花纹。","rarity":[100,0],"score":500, "speed":0.5,"range":"200-1000","research":100},
-        { "name":"莫西干", "modelID":"002", "minLength":6,"maxLength":13, "minWeight":20, "maxWeight":25, "info":"头顶的鱼鳍长成了时髦的样子。","rarity":[100,0], "score":200 ,"speed":0.3,"range":"0-2000","research":100},
-        { "name":"骨头鱼", "modelID":"003", "minLength":6,"maxLength":13, "minWeight":8,  "maxWeight":10, "info":"除了骨头以外的部分都是透明的。","rarity":[100,0], "score":100 ,"speed":0.4,"range":"100-0","research":100},
-		{ "name":"夜光鱼", "modelID":"004", "minLength":6,"maxLength":13, "minWeight":20, "maxWeight":25, "info":"在夜晚会发出莹绿色的光，夏季会成群出没。","rarity":[60,0], "score":200 ,"speed":0.3,"range":"100-0","research":100},
-		{ "name":"单结蛇", "modelID":"005", "minLength":6,"maxLength":13, "minWeight":20, "maxWeight":25, "info":"忍不住把自己打成结的欲望，可惜长度只够打一个结。","rarity":[50,0], "score":200 ,"speed":0.5,"range":"100-0","research":100},
-		{ "name":"蝴蝶结蛇", "modelID":"006", "minLength":6,"maxLength":13, "minWeight":20, "maxWeight":25, "info":"单结蛇长大后变得可以打蝴蝶结了。","rarity":[30,0], "score":200 ,"speed":0.4,"range":"100-0","research":100},
-		{ "name":"落水狗", "modelID":"007", "minLength":6,"maxLength":13, "minWeight":20, "maxWeight":25, "info":"不小心跌落水中的小狗，自从抓到了一个泡沫游泳圈后就放弃了上岸。","rarity":[1,0], "score":200 ,"speed":0.3,"range":"100-0","research":100},
-		{ "name":"罐头寄居蟹", "modelID":"008", "minLength":6,"maxLength":13, "minWeight":20, "maxWeight":25, "info":"认为住在贝壳里很落伍，更喜欢住在闪着光的金属罐头中。","rarity":[20,0], "score":200 ,"speed":0.3,"range":"100-0","research":100},
-		{ "name":"苔藓寄居蟹", "modelID":"009", "minLength":6,"maxLength":13, "minWeight":20, "maxWeight":25, "info":"喜欢安静的地方，但身上的苔藓总会会吸引其他鱼类靠近。","rarity":[20,0], "score":200 ,"speed":0.4,"range":"100-0","research":100},
-		{ "name":"舔舔珍珠贝", "modelID":"010", "minLength":6,"maxLength":13, "minWeight":20, "maxWeight":25, "info":"有着巨大的舌头，每个舔舔珍珠贝都有一颗自己的珍珠。","rarity":[5,0], "score":200 ,"speed":0.3,"range":"100-0","research":100},
-		{ "name":"乌贼王子", "modelID":"011", "minLength":6,"maxLength":13, "minWeight":20, "maxWeight":25, "info":"从乌贼国离家出走的青春期乌贼。","rarity":[1,0], "score":200 ,"speed":0.5,"range":"100-0","research":100},
-		{ "name":"吸盘鱼", "modelID":"012", "minLength":6,"maxLength":13, "minWeight":20, "maxWeight":25, "info":"生活在水里的吸盘鱼","rarity":[60,0], "score":200 ,"speed":0.3,"range":"100-0","research":100},
-		{ "name":"迷路海豹", "modelID":"013", "minLength":6,"maxLength":13, "minWeight":20, "maxWeight":25, "info":"来自很远的地方，方向感非常不好。","rarity":[50,0], "score":200 ,"speed":0.4,"range":"100-0","research":100},
-		{ "name":"猫鱼", "modelID":"014", "minLength":6,"maxLength":13, "minWeight":20, "maxWeight":25, "info":"长得不像本地人，猫们不喜欢吃它。","rarity":[10,0], "score":200 ,"speed":0.3,"range":"100-0","research":100},
-		{ "name":"木偶鱼", "modelID":"015", "minLength":6,"maxLength":13, "minWeight":20, "maxWeight":25, "info":"一直战战兢兢的，脸上有雀斑。","rarity":[10,0], "score":200 ,"speed":0.3,"range":"100-0","research":100},
-		{ "name":"爆爆河豚", "modelID":"016", "minLength":6,"maxLength":13, "minWeight":20, "maxWeight":25, "info":"喜欢欺负木偶鱼，但又不准其他鱼类靠近它。","rarity":[10,0], "score":200 ,"speed":0.3,"range":"100-0","research":100},
-		{ "name":"轰轰鱼", "modelID":"017", "minLength":6,"maxLength":13, "minWeight":20, "maxWeight":25, "info":"左右两侧身体的颜色不同，经常与木偶鱼同时出现。","rarity":[10,0], "score":200 ,"speed":0.3,"range":"100-0","research":100}
+        { "name":"莫西干", "modelID":"002", "minLength":6,"maxLength":13, "minWeight":20, "maxWeight":25, "info":"头顶的鱼鳍长成了时髦的样子。","rarity":[100,0], "score":200 ,"speed":0.3,"range":"0-800","research":100},
+        { "name":"骨头鱼", "modelID":"003", "minLength":6,"maxLength":13, "minWeight":8,  "maxWeight":10, "info":"除了骨头以外的部分都是透明的。","rarity":[100,0], "score":100 ,"speed":0.4,"range":"700-800","research":100},
+		{ "name":"夜光鱼", "modelID":"004", "minLength":6,"maxLength":13, "minWeight":20, "maxWeight":25, "info":"在夜晚会发出莹绿色的光，夏季会成群出没。","rarity":[60,0], "score":200 ,"speed":0.3,"range":"300-400","research":100},
+		{ "name":"单结蛇", "modelID":"005", "minLength":6,"maxLength":13, "minWeight":20, "maxWeight":25, "info":"忍不住把自己打成结的欲望，可惜长度只够打一个结。","rarity":[50,0], "score":200 ,"speed":0.5,"range":"0-300","research":100},
+		{ "name":"蝴蝶结蛇", "modelID":"006", "minLength":6,"maxLength":13, "minWeight":20, "maxWeight":25, "info":"单结蛇长大后变得可以打蝴蝶结了。","rarity":[30,0], "score":200 ,"speed":0.4,"range":"200-500","research":100},
+		{ "name":"落水狗", "modelID":"007", "minLength":6,"maxLength":13, "minWeight":20, "maxWeight":25, "info":"不小心跌落水中的小狗，自从抓到了一个泡沫游泳圈后就放弃了上岸。","rarity":[1,0], "score":200 ,"speed":0.3,"range":"500-700","research":100},
+		{ "name":"罐头寄居蟹", "modelID":"008", "minLength":6,"maxLength":13, "minWeight":20, "maxWeight":25, "info":"认为住在贝壳里很落伍，更喜欢住在闪着光的金属罐头中。","rarity":[20,0], "score":200 ,"speed":0.3,"range":"0-200","research":100},
+		{ "name":"苔藓寄居蟹", "modelID":"009", "minLength":6,"maxLength":13, "minWeight":20, "maxWeight":25, "info":"喜欢安静的地方，但身上的苔藓总会会吸引其他鱼类靠近。","rarity":[20,0], "score":200 ,"speed":0.4,"range":"200-600","research":100},
+		{ "name":"舔舔珍珠贝", "modelID":"010", "minLength":6,"maxLength":13, "minWeight":20, "maxWeight":25, "info":"有着巨大的舌头，每个舔舔珍珠贝都有一颗自己的珍珠。","rarity":[5,0], "score":200 ,"speed":0.3,"range":"1500-0","research":100},
+		{ "name":"乌贼王子", "modelID":"011", "minLength":6,"maxLength":13, "minWeight":20, "maxWeight":25, "info":"从乌贼国离家出走的青春期乌贼。","rarity":[1,0], "score":200 ,"speed":0.5,"range":"800-0","research":100},
+		{ "name":"吸盘鱼", "modelID":"012", "minLength":6,"maxLength":13, "minWeight":20, "maxWeight":25, "info":"生活在水里的吸盘鱼","rarity":[60,0], "score":200 ,"speed":0.3,"range":"400-1200","research":100},
+		{ "name":"迷路海豹", "modelID":"013", "minLength":6,"maxLength":13, "minWeight":20, "maxWeight":25, "info":"来自很远的地方，方向感非常不好。","rarity":[50,0], "score":200 ,"speed":0.4,"range":"700-1000","research":100},
+		{ "name":"猫鱼", "modelID":"014", "minLength":6,"maxLength":13, "minWeight":20, "maxWeight":25, "info":"长得不像本地人，猫们不喜欢吃它。","rarity":[10,0], "score":200 ,"speed":0.3,"range":"100-200","research":100},
+		{ "name":"木偶鱼", "modelID":"015", "minLength":6,"maxLength":13, "minWeight":20, "maxWeight":25, "info":"一直战战兢兢的，脸上有雀斑。","rarity":[10,0], "score":200 ,"speed":0.3,"range":"100-300","research":100},
+		{ "name":"爆爆河豚", "modelID":"016", "minLength":6,"maxLength":13, "minWeight":20, "maxWeight":25, "info":"喜欢欺负木偶鱼，但又不准其他鱼类靠近它。","rarity":[10,0], "score":200 ,"speed":0.3,"range":"300-500","research":100},
+		{ "name":"轰轰鱼", "modelID":"017", "minLength":6,"maxLength":13, "minWeight":20, "maxWeight":25, "info":"左右两侧身体的颜色不同，经常与木偶鱼同时出现。","rarity":[10,0], "score":200 ,"speed":0.3,"range":"500-600","research":100}
     ]
 }
