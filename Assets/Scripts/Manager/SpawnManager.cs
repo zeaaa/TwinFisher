@@ -180,7 +180,13 @@ public class SpawnManager : MonoBehaviour {
             rand -= fishDataList.fish[i].rarity[mapID];
             if (rand <= 0)
             {
-                return i;
+                float min = float.Parse(fishDataList.fish[i].range.Split('-')[0]);
+                float max = float.Parse(fishDataList.fish[i].range.Split('-')[1]);
+                if (max == 0) max = 9999999f;
+                if (min <= PathManager.GetCurrentMileage() && max >= PathManager.GetCurrentMileage())
+                    return i;
+                else
+                    return GetRandomFishID();
             }
         }
         return 0;

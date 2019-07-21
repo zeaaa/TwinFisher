@@ -395,7 +395,10 @@ public class SceneLoader : MonoBehaviour
                 btns[i].gameObject.transform.Find("per").GetComponent<Text>().text = percent.ToString("0") + "%";            
             }
             btns[i].gameObject.transform.Find("meet").GetComponent<Text>().text = arrayInt[i].ToString() + "次";
-            btns[i].gameObject.transform.Find("Range").GetComponent<Text>().text = fishDataList.fish[i].range;
+            if (fishDataList.fish[i].range.Split('-')[1].Equals("0"))
+                btns[i].gameObject.transform.Find("Range").GetComponent<Text>().text = fishDataList.fish[i].range.Split('-')[0] + "m后出现";
+            else
+                btns[i].gameObject.transform.Find("Range").GetComponent<Text>().text = fishDataList.fish[i].range.Split('-')[0] + "m - " + fishDataList.fish[i].range.Split('-')[1] + "m";
         }
         //dont unload ab here
     }

@@ -12,7 +12,7 @@ public class PathManager : MonoBehaviour {
 
     [ReadOnly]
     [SerializeField]
-    float mileage = 0;
+    static float mileage = 0;
 
     //Just for showing on inspector
     [ReadOnly]
@@ -134,6 +134,10 @@ public class PathManager : MonoBehaviour {
 
     float shoal = 500f;
 
+
+    public static float GetCurrentMileage() {
+        return mileage * scaler;
+    }
     private void FixedUpdate()
     {
         mileage += speed * Time.fixedDeltaTime * 50;
