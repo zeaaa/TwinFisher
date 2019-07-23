@@ -174,17 +174,11 @@ public class PlayerMovement : MonoBehaviour
                 }
                 else
                     skillInput = false;
-
-            }
-
-           
+            }  
         }
         
-
         anim_L.SetBool("Skill", skillInput);
-        anim_R.SetBool("Skill", skillInput);
-
-        
+        anim_R.SetBool("Skill", skillInput);     
         string[] joyStickNames = Input.GetJoystickNames();
         /*
         for (int x = 0; x < joyStickNames.Length; x++)

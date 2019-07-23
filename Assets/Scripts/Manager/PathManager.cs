@@ -110,6 +110,10 @@ public class PathManager : MonoBehaviour {
 
     void Start()
     {
+        if (Screen.currentResolution.height > 1080)
+            Mile.fontSize = 77;
+        else
+            Mile.fontSize = 50;
         SetSpeed(0);
         float cameraAnimTime = 3.0f;
         if (cameraAnim)

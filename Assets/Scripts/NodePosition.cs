@@ -166,10 +166,10 @@ public class NodePosition : MonoBehaviour {
 
 	void WebJump()
 	{
-		if (Input.GetKeyDown(KeyCode.Space))
-		{
-			rig.AddForce( transform.up * forge*5);
-		}
+		//if (Input.GetKeyDown(KeyCode.Space))
+		//{
+		//	rig.AddForce( transform.up * forge*5);
+		//}
 	}
 
     private void OnCollisionEnter(Collision collision)

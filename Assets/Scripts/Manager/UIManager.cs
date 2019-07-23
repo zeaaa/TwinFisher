@@ -86,6 +86,11 @@ public class UIManager : MonoBehaviour {
         b_meetFishOk.onClick.AddListener(HideMeetUI); 
         fog.color = new Color(1, 1, 1, 0);
         fog.DOFade(1.0f, 0.0f);
+
+        if (Screen.currentResolution.height > 1080)
+            t_skill.fontSize = 77;
+        else
+            t_skill.fontSize = 50;
     }
     private void OnDestroy()
     {
