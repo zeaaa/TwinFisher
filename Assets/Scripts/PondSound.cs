@@ -23,7 +23,7 @@ public class PondSound : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Cursor.visible = false;
+        Cursor.visible = true;
         //Resolution[] resolutions = Screen.resolutions;f
 
         Screen.SetResolution((int)(Screen.currentResolution.height*9.0f/16.0f),Screen.currentResolution.height,true);

@@ -21219,7 +21219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf1d61b3dfc5097479725de7c327b435, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  filp: 1
+  filp: 0
   bgm: {fileID: 8300000, guid: 37861cb5b00c7e544a9d53a7960e9c11, type: 3}
   nightBgm: {fileID: 8300000, guid: 352b1c6b3a8624245868457ae0f3258e, type: 3}
   gameoverSound: {fileID: 8300000, guid: 327d6ebb7b0d8471099a11c144bcce0e, type: 3}

@@ -142,7 +142,7 @@ public class SpawnManager : MonoBehaviour {
 
     void OnDestroy() {
         Obstacle.GameOverHandler -= StopSpawning;
-       // PathManager.OnOverDistance -= SpawnShoal;
+        //PathManager.OnOverDistance -= SpawnShoal;
     }
 
     void StopSpawning(int i) {
