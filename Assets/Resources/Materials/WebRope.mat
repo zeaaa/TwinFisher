@@ -66,7 +66,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DiffuseThreshold: 0
     - _DstBlend: 10
-    - _EndX: 6.1759996
+    - _EndX: 5.4560003
     - _GlossMapScale: 1
     - _Glossiness: 0
     - _GlossyReflections: 1
@@ -89,7 +89,7 @@ Material:
     - _TexLod: 5
     - _UVSec: 0
     - _UnlitOutlineThickness: 0.226
-    - _Value: 0.10702061
+    - _Value: 0.52767396
     - _ZSmooth: -0.5
     - _ZWrite: 0
     m_Colors:
