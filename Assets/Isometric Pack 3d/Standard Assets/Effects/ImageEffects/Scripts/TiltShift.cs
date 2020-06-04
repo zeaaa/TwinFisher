@@ -31,6 +31,7 @@ namespace UnityStandardAssets.ImageEffects
         public int downsample = 0;
 
         public Shader tiltShiftShader = null;
+        public Shader tiltShiftShader1 = null;
         private Material tiltShiftMaterial = null;
 
 
@@ -49,20 +50,17 @@ namespace UnityStandardAssets.ImageEffects
                 Graphics.Blit (source, destination);
                 return;
             }
-
             tiltShiftMaterial.SetFloat("_BlurSize", maxBlurSize < 0.0f ? 0.0f : maxBlurSize);
             tiltShiftMaterial.SetFloat("_BlurArea", blurArea);
             source.filterMode = FilterMode.Bilinear;
-
             RenderTexture rt = destination;
             if (downsample > 0f) {
                 rt = RenderTexture.GetTemporary (source.width>>downsample, source.height>>downsample, 0, source.format);
                 rt.filterMode = FilterMode.Bilinear;
             }
-
+            
             int basePassNr = (int) quality; basePassNr *= 2;
             Graphics.Blit (source, rt, tiltShiftMaterial, mode == TiltShiftMode.TiltShiftMode ? basePassNr : basePassNr + 1);
-
             if (downsample > 0) {
                 tiltShiftMaterial.SetTexture ("_Blurred", rt);
                 Graphics.Blit (source, destination, tiltShiftMaterial, 6);

@@ -46,7 +46,6 @@ namespace UnityStandardAssets.ImageEffects
         public Shader colorCorrectionCurvesShader = null;
         public Shader simpleColorCorrectionCurvesShader = null;
         public Shader colorCorrectionSelectiveShader = null;
-
         private bool  updateTexturesOnStartup = true;
 
 
@@ -56,13 +55,13 @@ namespace UnityStandardAssets.ImageEffects
             updateTexturesOnStartup = true;
         }
 
-        void Awake () {	}
+        void Awake () { }
 
 
         public override bool CheckResources ()
 		{
             CheckSupport (mode == ColorCorrectionMode.Advanced);
-
+            
             ccMaterial = CheckShaderAndCreateMaterial (simpleColorCorrectionCurvesShader, ccMaterial);
             ccDepthMaterial = CheckShaderAndCreateMaterial (colorCorrectionCurvesShader, ccDepthMaterial);
             selectiveCcMaterial = CheckShaderAndCreateMaterial (colorCorrectionSelectiveShader, selectiveCcMaterial);
@@ -129,6 +128,7 @@ namespace UnityStandardAssets.ImageEffects
 
         void OnRenderImage (RenderTexture source, RenderTexture destination)
 		{
+            
             if (CheckResources()==false)
 			{
                 Graphics.Blit (source, destination);
@@ -150,7 +150,7 @@ namespace UnityStandardAssets.ImageEffects
 			{
                 renderTarget2Use = RenderTexture.GetTemporary (source.width, source.height);
             }
-
+ 
             if (useDepthCorrection)
 			{
                 ccDepthMaterial.SetTexture ("_RgbTex", rgbChannelTex);
@@ -176,6 +176,7 @@ namespace UnityStandardAssets.ImageEffects
 
                 RenderTexture.ReleaseTemporary (renderTarget2Use);
             }
+           
         }
     }
 }

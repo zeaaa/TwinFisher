@@ -13,6 +13,7 @@ namespace UnityStandardAssets.ImageEffects
 
         protected Material CheckShaderAndCreateMaterial ( Shader s, Material m2Create)
 		{
+
             if (!s)
 			{
                 Debug.Log("Missing shader in " + ToString ());
