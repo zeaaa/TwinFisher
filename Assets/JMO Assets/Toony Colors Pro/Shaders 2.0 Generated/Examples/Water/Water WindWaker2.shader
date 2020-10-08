@@ -10,7 +10,7 @@ Shader "Toony Colors Pro 2/Examples/Water/Water WindWaker2"
 		//TOONY COLORS
 		_HColor ("Highlight Color", Color) = (0.6,0.6,0.6,1.0)
 		_SColor ("Shadow Color", Color) = (0.3,0.3,0.3,1.0)
-		_WaveColor("Wave Color", Color) = (1,1,1,1)
+
 		//DIFFUSE
 		_MainTex ("Main Texture (RGB)", 2D) = "white" {}
 	[TCP2Separator]
@@ -60,7 +60,7 @@ Shader "Toony Colors Pro 2/Examples/Water/Water WindWaker2"
 
 		CGPROGRAM
 
-		#pragma surface surf ToonyColorsWater keepalpha vertex:vert nolightmap
+		#pragma surface surf ToonyColorsWater keepalpha vertex:vert nolightmap nofog fullforwardshadows
 		#pragma target 3.0
 
 		//================================================================
@@ -77,7 +77,6 @@ Shader "Toony Colors Pro 2/Examples/Water/Water WindWaker2"
 		half _FoamStrength;
 		sampler2D _FoamTex;
 		fixed4 _FoamColor;
-		fixed4 _WaveColor;
 		half _FoamSmooth;
 		half _WaveHeight;
 		half _WaveFrequency;
@@ -254,7 +253,7 @@ Shader "Toony Colors Pro 2/Examples/Water/Water WindWaker2"
 			half foamTerm = (smoothstep(foam.r - _FoamSmooth, foam.r + _FoamSmooth, saturate(_FoamStrength - foamDepth)) * saturate(1 - foamDepth)) * _FoamColor.a;
 			//Alter color based on depth buffer (soft particles technique)
 			mainTex.rgb = lerp(_DepthColor.rgb, mainTex.rgb, saturate(_DepthDistance * depthDiff));	//N.V corrects the result based on view direction (depthDiff tends to not look consistent depending on view angle)));
-			_Color = lerp(fixed4(_WaveColor.r, _WaveColor.g, _WaveColor.b,1), _Color, mainTex.a);
+			_Color = lerp(fixed4(1,1,1,1), _Color, mainTex.a);
 			o.Albedo = lerp(mainTex.rgb * _Color.rgb, _FoamColor.rgb, foamTerm);
 			o.Alpha = mainTex.a * _Color.a;
 			o.Alpha = lerp(o.Alpha, _FoamColor.a, foamTerm);

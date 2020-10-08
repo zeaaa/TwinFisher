@@ -28,11 +28,9 @@ public class UVScroll : MonoBehaviour
         float newOffsetU = USpeed * Time.time;
         float newOffsetV = curve.Evaluate((Time.time/time)%1);
  
-        if (null != tex)
-        {
-            tex.enabled = false;
+ 
             tex.material.mainTextureOffset = new Vector2(newOffsetU, -newOffsetV);
-            tex.enabled = true;
-        }
+
+        
     }
 }

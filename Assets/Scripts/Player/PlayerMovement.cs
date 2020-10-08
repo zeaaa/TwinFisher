@@ -180,15 +180,18 @@ public class PlayerMovement : MonoBehaviour
         anim_L.SetBool("Skill", skillInput);
         anim_R.SetBool("Skill", skillInput);     
         string[] joyStickNames = Input.GetJoystickNames();
-        /*
+
         for (int x = 0; x < joyStickNames.Length; x++)
         {
             print(x + joyStickNames[x]);
-        }*/
+        }
         float moveHorizontalL = 0;
         float moveHorizontalR = 0;
 
-        //Debug.Log(joyStickNames.Length);
+        Debug.Log("joy1 "+ Input.GetAxis("JoyStick1LPad"));
+        Debug.Log("joy2 "+ Input.GetAxis("JoyStick2LPad"));
+        Debug.Log("hl " + Input.GetAxis("HorizontalL"));
+        Debug.Log("hr " + Input.GetAxis("HorizontalR"));
         //multiplayer
         if (SceneData.mode == 2)
         {
@@ -199,8 +202,9 @@ public class PlayerMovement : MonoBehaviour
             }
             else if (joyStickNames.Length == 1)
             {
-                moveHorizontalL = killMovement ? 0 : Input.GetAxis("JoyStick1LPad");
-                moveHorizontalR = killMovement ? 0 : Input.GetAxis("HorizontalL");
+                ///
+                moveHorizontalL = killMovement ? 0 : Input.GetAxis("HorizontalL");
+                moveHorizontalR = killMovement ? 0 : Input.GetAxis("HorizontalR");
             }
             else if (joyStickNames.Length >= 2)
             {
@@ -217,8 +221,8 @@ public class PlayerMovement : MonoBehaviour
             }
             else if (joyStickNames.Length == 1)
             {
-                moveHorizontalL = killMovement ? 0 : Input.GetAxis("JoyStick1LPad");
-                moveHorizontalR = killMovement ? 0 : Input.GetAxis("JoyStick1RPad");
+                moveHorizontalL = killMovement ? 0 : Input.GetAxis("HorizontalL");
+                moveHorizontalR = killMovement ? 0 : Input.GetAxis("HorizontalR");
             }
             else if (joyStickNames.Length >= 2)
             {
@@ -255,23 +259,7 @@ public class PlayerMovement : MonoBehaviour
         else
             skillInput = false;
 
-        Vector3 rotationVelocity = Input.gyro.attitude.eulerAngles;
-        float l = Input.gyro.attitude.eulerAngles.x;
-        float threshold = 5f;
-        l = l > 180f ? l - 360f : l;
-        if (l > threshold)
-            l = 1.0f;
-        else if (l < -threshold)
-            l = -1.0f;
-        else
-            l = 0;
-        Debug.Log(l);
-        Vector3 movementL = new Vector3(l, 0.0f, 0.0f);
-
-        int r = Random.Range(0, 3) - 1;
-        Vector3 movementR = new Vector3(0f, 0.0f, 0.0f);
-        WebPole_R.velocity = movementL * playerMoveSpeed;
-        WebPole_R.velocity = movementR * playerMoveSpeed;
+        
 #endif
             //Player_L.position = new Vector3(Mathf.Clamp (Player_L.position.x, boundary.xMin, Player_R.position.x), Player_L.position.y, Player_L.position.z);
             //Player_R.position = new Vector3(Mathf.Clamp (Player_R.position.x, Player_L.position.x, boundary.xMax), Player_R.position.y, Player_R.position.z);
@@ -306,9 +294,9 @@ public class PlayerMovement : MonoBehaviour
 
     void Start ()
 	{
-#if UNITY_ANDROID
-        Input.gyro.enabled = true;
-#endif
+//#if UNITY_ANDROID
+//        Input.gyro.enabled = true;
+//#endif
 
         //Application.targetFrameRate = 30;
         //playerL = transform.parent.Find("PlayerL");

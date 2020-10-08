@@ -66,7 +66,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DiffuseThreshold: 0
     - _DstBlend: 10
-    - _EndX: 6.1759996
+    - _EndX: -7.031443
     - _GlossMapScale: 1
     - _Glossiness: 0
     - _GlossyReflections: 1
@@ -85,11 +85,11 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _StartX: -6.4500003
+    - _StartX: 7.8314466
     - _TexLod: 5
     - _UVSec: 0
     - _UnlitOutlineThickness: 0.226
-    - _Value: 0.60615975
+    - _Value: 0.4309352
     - _ZSmooth: -0.5
     - _ZWrite: 0
     m_Colors:
@@ -102,3 +102,4 @@ Material:
     - _SecColor: {r: 0.8773585, g: 0.8773585, b: 0.8773585, a: 1}
     - _SpecColor: {r: 1, g: 1, b: 1, a: 1}
     - _UnlitColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []

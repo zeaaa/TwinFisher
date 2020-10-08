@@ -62,7 +62,7 @@ Material:
     m_Floats:
     - _BumpScale: 1
     - _Cutoff: 0.5
-    - _DepthDistance: 0.5
+    - _DepthDistance: 0.56
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _FoamSmooth: 0.02
@@ -100,3 +100,4 @@ Material:
     - _HColor: {r: 1, g: 1, b: 1, a: 1}
     - _SColor: {r: 0.3, g: 0.3, b: 0.3, a: 1}
     - _WaveColor: {r: 0.6047526, g: 0.8490566, b: 0.8133718, a: 1}
+  m_BuildTextureStacks: []
