@@ -42,6 +42,8 @@ public class Dock : MonoBehaviour {
             //TODO 防止多次触发
             Debug.Log("hit wharf" + colli.gameObject.name);
         }
+        if (colli.gameObject.tag == "Rock")
+            DestroyImmediate(colli.gameObject);
     }
 
     private void FixedUpdate()
